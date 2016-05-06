@@ -206,6 +206,62 @@
 
       <div class="body-wrap">
   
+    <article id="post-linux" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/06/linux/" class="article-date">
+  	<time datetime="2016-05-06T05:35:00.590Z" itemprop="datePublished">2016-05-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="宿主机连接linux-web服务器失败"><a href="#宿主机连接linux-web服务器失败" class="headerlink" title="宿主机连接linux web服务器失败"></a>宿主机连接linux web服务器失败</h1><p>环境：centos xftp xshell<br>原因分析：linux的问题、VMware的问题、windows的问题</p>
+<ul>
+<li>linux的问题：<ul>
+<li>iptables -F<br> iptables -P INPUT ACCEPT（设置默认允许规则）</li>
+<li>设置linux防火墙<br>  在 /etc/sysconfig/iptables 添加<pre><code>-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+</code></pre> 在linux中将web服务添加进入信任的服务中<pre><code>系统-&gt;管理-&gt;安全级别和防火墙-&gt;防火墙选项-&gt;将www（http）打钩
+</code></pre></li>
+</ul>
+</li>
+<li>VMware的问题：是否在端口转发上出问题<br>设置VMware，端口转发<br>要把80端口打开，还要在VMware的Edit-&gt;Virtual Network Editor-&gt;NAT（选择VMnet8）-&gt;Edit-&gt;Port Forwarding中添加转发<br><img src="http://o6qp6st9j.bkt.clouddn.com/1.PNG" alt="此处输入图片的描述"></li>
+<li>windows问题<ul>
+<li>windows主机上设置防火墙<br>window下进入控制面板-&gt;windows防火墙-&gt;高级-&gt;设置VMware Network Adapter VMnet8-&gt;Web 服务器（HTTP）-&gt;将虚拟机的ip加入：192.168.152.129</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-float" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -325,54 +381,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/05/03/BFC/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-whois" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/03/whois/" class="article-date">
-  	<time datetime="2016-05-03T11:17:26.000Z" itemprop="datePublished">2016-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="WHOIS-特征提取及-URL-Parse（持续更新）"><a href="#WHOIS-特征提取及-URL-Parse（持续更新）" class="headerlink" title="WHOIS 特征提取及 URL Parse（持续更新）"></a>WHOIS 特征提取及 URL Parse（持续更新）</h1><p>DataSet： <strong>PhishTank &amp;&amp; DMOZ</strong>   -数据集不平衡</p>
-<pre><code>PhishTank爬取 23378条URL （2008-2016） 
-DMOZ 定时更新
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/03/whois/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
