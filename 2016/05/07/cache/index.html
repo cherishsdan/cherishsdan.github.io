@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="浏览器缓存知识小结及应用（摘自开发者头条）
+浏览器缓存，也就是客户端缓存，既是网页性能优化里面静态资源相关优化的一大利器，也是无数web开发人员在工作过程不可避免的一大问题，所以在产品开发的时候我们总是想办法避免缓存产生，而在产品发布之时又在想策略管理缓存提升网页的访问速度。了解浏览器的缓存命中原理，是开发web应用的基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2016/05/07/cache/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="浏览器缓存知识小结及应用（摘自开发者头条）
+浏览器缓存，也就是客户端缓存，既是网页性能优化里面静态资源相关优化的一大利器，也是无数web开发人员在工作过程不可避免的一大问题，所以在产品开发的时候我们总是想办法避免缓存产生，而在产品发布之时又在想策略管理缓存提升网页的访问速度。了解浏览器的缓存命中原理，是开发web应用的基础">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/e37b1d50-657d-4de8-955e-a2da83632a94/267b4bb1b09acf9dce8b9d3c2d51c385">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/5fb0f670-80ab-4a7c-9968-b8b83d7fad2b/a3900fb8564f0c815a88eaeb24be73f4">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/0080dc6f-727b-4a62-b97e-de8f17790bdc/b3a59cc4bdbe47b39f2a264f4066ee0e">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/e76f9b23-918f-432a-8473-62002c23e5b7/71cb7fa0a7d078a4db32a259f32514c8">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/6296223d-3aeb-44ba-b042-cb47509edbfb/2091309ef6c14d4aac23bbacf3756206">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/b6513373-5bdb-4c28-b9cd-1f47f28f9a60/90d3cb3dbddc1a861330242e62e914c3">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/1a949930-dc98-4369-a4d4-ddb90e8f862f/bf2df85505d5973e82931ec551fd979c">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/bc34251c-dcf5-4dfd-8c51-d4451e117519/dcc2a5a116497371919f129e18bb5456">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/d4d917ae-b44b-40e2-a717-f2a72c8486e2/becfc34765181dc722ac932190195443">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/4fcb6bb2-ec3d-48f3-9f00-d1169a2b563e/db50348fc78f4f9fac8effcc4ea9cfa6">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/fb4e5d97-dec9-4ffa-8120-d7fb2ca21282/c47ee065d0d9ecc91a5dd04a4d3f5453">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/5b572cba-d447-44e1-9c44-4c8666b21713/006805f356d54197d824dc074b078986">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/ef0f8221-16ce-47b4-89cd-050c3aaa7961/c9c96dd7bf7185d24e667b00cc2fd52c">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s48/res/70d4ca63-5c8c-418e-a676-73fe8929e028/f26bef7a05b521487fc8a38f6ebc0d72">
+<meta property="og:updated_time" content="2016-05-07T14:59:29.243Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="浏览器缓存知识小结及应用（摘自开发者头条）
+浏览器缓存，也就是客户端缓存，既是网页性能优化里面静态资源相关优化的一大利器，也是无数web开发人员在工作过程不可避免的一大问题，所以在产品开发的时候我们总是想办法避免缓存产生，而在产品发布之时又在想策略管理缓存提升网页的访问速度。了解浏览器的缓存命中原理，是开发web应用的基础">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s48/res/e37b1d50-657d-4de8-955e-a2da83632a94/267b4bb1b09acf9dce8b9d3c2d51c385">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://ww4.sinaimg.cn/thumb150/968ae2f8jw8exiz7rtbb5j20u00u0wh7.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">cherishsdan</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">唯美食与代码不可辜负</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">cherishsdan</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://ww4.sinaimg.cn/thumb150/968ae2f8jw8exiz7rtbb5j20u00u0wh7.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">cherishsdan</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-cache" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/07/cache/" class="article-date">
+  	<time datetime="2016-05-07T14:58:30.000Z" itemprop="datePublished">2016-05-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="浏览器缓存知识小结及应用"><a href="#浏览器缓存知识小结及应用" class="headerlink" title="浏览器缓存知识小结及应用"></a>浏览器缓存知识小结及应用</h1><p>（摘自开发者头条）</p>
+<p>浏览器缓存，也就是客户端缓存，既是网页性能优化里面静态资源相关优化的一大利器，也是无数web开发人员在工作过程不可避免的一大问题，所以在产品开发的时候我们总是想办法避免缓存产生，而在产品发布之时又在想策略管理缓存提升网页的访问速度。了解浏览器的缓存命中原理，是开发web应用的基础</p>
+<a id="more"></a>
+<ul>
+<li><p>浏览器缓存基本认识<br>它分为强缓存和协商缓存： </p>
+<ul>
+<li>浏览器在加载资源时，先根据这个资源的一些http header判断它是否命中强缓存，强缓存如果命中，浏览器直接从自己的缓存中读取资源，不会发请求到服务器。比如某个css文件，如果浏览器在加载它所在的网页时，这个css文件的缓存配置命中了强缓存，浏览器就直接从缓存中加载这个css，连请求都不会发送到网页所在服务器；</li>
+<li>当强缓存没有命中的时候，浏览器一定会发送一个请求到服务器，通过服务器端依据资源的另外一些http header验证这个资源是否命中协商缓存，如果协商缓存命中，服务器会将这个请求返回，但是不会返回这个资源的数据，而是告诉客户端可以直接从缓存中加载这个资源，于是浏览器就又会从自己的缓存中去加载这个资源；</li>
+<li><p>强缓存与协商缓存的共同点是：如果命中，都是从客户端缓存中加载资源，而不是从服务器加载资源数据；区别是：强缓存不发请求到服务器，协商缓存会发请求到服务器。</p>
+</li>
+<li><p>当协商缓存也没有命中的时候，浏览器直接从服务器加载资源数据。</p>
+</li>
+</ul>
+</li>
+<li><p>强缓存的原理<br>当浏览器对某个资源的请求命中了强缓存时，返回的http状态为200，在chrome的开发者工具的network里面size会显示为from cache，比如京东的首页里就有很多静态资源配置了强缓存，用chrome打开几次，再用f12查看network，可以看到有不少请求就是从缓存中加载的：</p>
+<p> <img src="https://app.yinxiang.com/shard/s48/res/e37b1d50-657d-4de8-955e-a2da83632a94/267b4bb1b09acf9dce8b9d3c2d51c385" alt="此处输入图片的描述"></p>
+<p> 强缓存是利用Expires或者Cache-Control这两个http response header实现的，它们都用来表示资源在客户端缓存的有效期。</p>
+<p> Expires是http1.0提出的一个表示资源过期时间的header，它描述的是一个绝对时间，由服务器返回，用GMT格式的字符串表示，如：Expires:Thu, 31 Dec 2037 23:55:55 GMT，它的缓存原理是：</p>
+<ul>
+<li>浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上Expires的header，如：<br><img src="https://app.yinxiang.com/shard/s48/res/5fb0f670-80ab-4a7c-9968-b8b83d7fad2b/a3900fb8564f0c815a88eaeb24be73f4" alt="此处输入图片的描述"></li>
+<li>浏览器在接收到这个资源后，会把这个资源连同所有response header一起缓存下来（所以缓存命中的请求返回的header并不是来自服务器，而是来自之前缓存的header）；</li>
+<li>浏览器再请求这个资源时，先从缓存中寻找，找到这个资源后，拿出它的Expires跟当前的请求时间比较，如果请求时间在Expires指定的时间之前，就能命中缓存，否则就不行。</li>
+<li><p>如果缓存没有命中，浏览器直接从服务器加载资源时，Expires Header在重新加载的时候会被更新。</p>
+<p>Expires是较老的强缓存管理header，由于它是服务器返回的一个绝对时间，在服务器时间与客户端时间相差较大时，缓存管理容易出现问题，比如随意修改下客户端时间，就能影响缓存命中的结果。所以在http1.1的时候，提出了一个新的header，就是Cache-Control，这是一个相对时间，在配置缓存的时候，以秒为单位，用数值表示，如：Cache-Control:max-age=315360000，它的缓存原理是：</p>
+</li>
+<li><p>浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上Cache-Control的header，如：</p>
+<pre><code>![此处输入图片的描述][3]
+</code></pre></li>
+<li><p>浏览器在接收到这个资源后，会把这个资源连同所有response header一起缓存下来；</p>
+</li>
+<li><p>浏览器再请求这个资源时，先从缓存中寻找，找到这个资源后，根据它第一次的请求时间和Cache-Control设定的有效期，计算出一个资源过期时间，再拿这个过期时间跟当前的请求时间比较，如果请求时间在过期时间之前，就能命中缓存，否则就不行。</p>
+</li>
+<li><p>如果缓存没有命中，浏览器直接从服务器加载资源时，Cache-Control Header在重新加载的时候会被更新。<br>Cache-Control描述的是一个相对时间，在进行缓存命中的时候，都是利用客户端时间进行判断，所以相比较Expires，Cache-Control的缓存管理更有效，安全一些。<br>这两个header可以只启用一个，也可以同时启用，当response header中，Expires和Cache-Control同时存在时，Cache-Control优先级高于Expires：<br><img src="https://app.yinxiang.com/shard/s48/res/0080dc6f-727b-4a62-b97e-de8f17790bdc/b3a59cc4bdbe47b39f2a264f4066ee0e" alt="此处输入图片的描述"></p>
+</li>
+</ul>
+</li>
+<li><p>强缓存的管理<br>前面介绍的是强缓存的原理，在实际应用中我们会碰到需要强缓存的场景和不需要强缓存的场景，通常有2种方式来设置是否启用强缓存：</p>
+<ul>
+<li>通过代码的方式，在web服务器返回的响应中添加Expires和Cache-Control Header；</li>
+<li><p>通过配置web服务器的方式，让web服务器在响应资源的时候统一添加Expires和Cache-Control Header。<br>比如在javaweb里面，我们可以使用类似下面的代码设置强缓存：</p>
+<p>  <code>java.util.Date date = new java.util.Date(); response.setDateHeader(&quot;Expires&quot;,date.getTime()+20000);</code> <code>//Expires:过时期限值  response.setHeader(&quot;Cache-Control&quot;, &quot;public&quot;); //Cache-Control来控制页面的缓存与否,public:浏览器和缓存服务器都可以缓存页面信息； response.setHeader(&quot;Pragma&quot;, &quot;Pragma&quot;); //Pragma:设置页面是否缓存，为Pragma则缓存，no-cache则不缓存</code><br>还可以通过类似下面的java代码设置不启用强缓存：<br>  response.setHeader( “Pragma”, “no-cache” );<br>  response.setDateHeader(“Expires”, 0);<br>  response.addHeader( “Cache-Control”,”no-cache”);//浏览器和缓存服务器都不应该缓存页面信息<br>tomcat还提供了一个ExpiresFilter专门用来配置强缓存，具体使用的方式可参考tomcat的官方文档：<a href="http://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#Expires_Filter" target="_blank" rel="external">http://tomcat.apache.org/tomcat-7.0-doc/config/filter.html#Expires_Filter</a></p>
+<p>由于在开发的时候不会专门去配置强缓存，而浏览器又默认会缓存图片，css和js等静态资源，所以开发环境下经常会因为强缓存导致资源没有及时更新而看不到最新的效果，解决这个问题的方法有很多，常用的有以下几种：</p>
+<p>1）直接ctrl+f5，这个办法能解决页面直接引用的资源更新的问题；</p>
+<p>2）使用浏览器的隐私模式开发；</p>
+<p>3）如果用的是chrome，可以f12在network那里把缓存给禁掉（这是个非常有效的方法）：</p>
+<p><img src="https://app.yinxiang.com/shard/s48/res/e76f9b23-918f-432a-8473-62002c23e5b7/71cb7fa0a7d078a4db32a259f32514c8" alt="此处输入图片的描述"></p>
+<p>4）在开发阶段，给资源加上一个动态的参数，如css/index.css?v=0.0001，由于每次资源的修改都要更新引用的位置，同时修改参数的值，所以操作起来不是很方便，除非你是在动态页面比如jsp里开发就可以用服务器变量来解决（v=${sysRnd}），或者你能用一些前端的构建工具来处理这个参数修改的问题；</p>
+<p>5）如果资源引用的页面，被嵌入到了一个iframe里面，可以在iframe的区域右键单击重新加载该页面<br>6）如果缓存问题出现在ajax请求中，最有效的解决办法就是ajax的请求地址追加随机数；</p>
+<p>7）还有一种情况就是动态设置iframe的src时，有可能也会因为缓存问题，导致看不到最新的效果，这时候在要设置的src后面添加随机数也能解决问题；</p>
+<p>8）如果你用的是grunt和gulp这种前端工具开发，通过它们的插件比如grunt-contrib-connect来启动一个静态服务器，则完全不用担心开发阶段的资源更新问题，因为在这个静态服务器下的所有资源返回的respone header中，cache-control始终被设置为不缓存：</p>
+<p><img src="https://app.yinxiang.com/shard/s48/res/6296223d-3aeb-44ba-b042-cb47509edbfb/2091309ef6c14d4aac23bbacf3756206" alt="此处输入图片的描述"></p>
+</li>
+</ul>
+</li>
+<li><p>强缓存的应用</p>
+<p> 强缓存是前端性能优化最有力的工具，没有之一，对于有大量静态资源的网页，一定要利用强缓存，提高响应速度。通常的做法是，为这些静态资源全部配置一个超时时间超长的Expires或Cache-Control，这样用户在访问网页时，只会在第一次加载时从服务器请求静态资源，其它时候只要缓存没有失效并且用户没有强制刷新的条件下都会从自己的缓存中加载，比如前面提到过的京东首页缓存的资源，它的缓存过期时间都设置到了2026年：</p>
+<p> 然而这种缓存配置方式会带来一个新的问题，就是发布时资源更新的问题，比如某一张图片，在用户访问第一个版本的时候已经缓存到了用户的电脑上，当网站发布新版本，替换了这个图片时，已经访问过第一个版本的用户由于缓存的设置，导致在默认的情况下不会请求服务器最新的图片资源，除非他清掉或禁用缓存或者强制刷新，否则就看不到最新的图片效果。</p>
+<p> 这个问题已经有成熟的解决方案，具体内容可阅读知乎这篇文章详细了解：</p>
+<p> <a href="http://www.zhihu.com/question/20790576" target="_blank" rel="external">http://www.zhihu.com/question/20790576</a></p>
+<p> 文章提到的东西都属于理论上的解决方案，不过现在已经有很多前端工具能够实际地解决这个问题，<br> <a href="http://fis.baidu.com/fis3/api/index.html" target="_blank" rel="external">http://fis.baidu.com/fis3/api/index.html</a><br> <a href="http://ecomfe.github.io/edp/doc/initialization/install/" target="_blank" rel="external">http://ecomfe.github.io/edp/doc/initialization/install/</a></p>
+<p> 强缓存还有一点需要注意的是，通常都是针对静态资源使用，动态资源需要慎用，除了服务端页面可以看作动态资源外，那些引用静态资源的html也可以看作是动态资源，如果这种html也被缓存，当这些html更新之后，可能就没有机制能够通知浏览器这些html有更新，尤其是前后端分离的应用里，页面都是纯html页面，每个访问地址可能都是直接访问html页面，这些页面通常不加强缓存，以保证浏览器访问这些页面时始终请求服务器最新的资源。</p>
+</li>
+<li><p>协商缓存的原理<br>当浏览器对某个资源的请求没有命中强缓存，就会发一个请求到服务器，验证协商缓存是否命中，如果协商缓存命中，请求响应返回的http状态为304并且会显示一个Not Modified的字符串，比如你打开京东的首页，按f12打开开发者工具，再按f5刷新页面，查看network，可以看到有不少请求就是命中了协商缓存的：</p>
+<p> <img src="https://app.yinxiang.com/shard/s48/res/b6513373-5bdb-4c28-b9cd-1f47f28f9a60/90d3cb3dbddc1a861330242e62e914c3" alt="此处输入图片的描述"></p>
+<p> 查看单个请求的Response Header，也能看到304的状态码和Not Modified的字符串，只要看到这个就可说明这个资源是命中了协商缓存，然后从客户端缓存中加载的，而不是服务器最新的资源：</p>
+<p> <img src="https://app.yinxiang.com/shard/s48/res/1a949930-dc98-4369-a4d4-ddb90e8f862f/bf2df85505d5973e82931ec551fd979c" alt="此处输入图片的描述"></p>
+<p> 协商缓存是利用的是【Last-Modified，If-Modified-Since】和【ETag、If-None-Match】这两对Header来管理的。</p>
+<p> 【Last-Modified，If-Modified-Since】的控制缓存的原理是：</p>
+</li>
+</ul>
+<ul>
+<li><p>浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上Last-Modified的header，这个header表示这个资源在服务器上的最后修改时间：</p>
+<p>   <img src="https://app.yinxiang.com/shard/s48/res/bc34251c-dcf5-4dfd-8c51-d4451e117519/dcc2a5a116497371919f129e18bb5456" alt="此处输入图片的描述"></p>
+</li>
+<li><p>浏览器再次跟服务器请求这个资源时，在request的header上加上If-Modified-Since的header，这个header的值就是上一次请求时返回的Last-Modified的值：</p>
+<pre><code>![此处输入图片的描述][10]
+</code></pre></li>
+<li><p>服务器再次收到资源请求时，根据浏览器传过来If-Modified-Since和资源在服务器上的最后修改时间判断资源是否有变化，如果没有变化则返回304 Not Modified，但是不会返回资源内容；如果有变化，就正常返回资源内容。当服务器返回304 Not Modified的响应时，response header中不会再添加Last-Modified的header，因为既然资源没有变化，那么Last-Modified也就不会改变，这是服务器返回304时的response header：<br><img src="https://app.yinxiang.com/shard/s48/res/d4d917ae-b44b-40e2-a717-f2a72c8486e2/becfc34765181dc722ac932190195443" alt="此处输入图片的描述"></p>
+</li>
+<li><p>浏览器收到304的响应后，就会从缓存中加载资源。</p>
+</li>
+<li><p>如果协商缓存没有命中，浏览器直接从服务器加载资源时，Last-Modified Header在重新加载的时候会被更新，下次请求时，If-Modified-Since会启用上次返回的Last-Modified值。</p>
+<p>  【Last-Modified，If-Modified-Since】都是根据服务器时间返回的header，一般来说，在没有调整服务器时间和篡改客户端缓存的情况下，这两个header配合起来管理协商缓存是非常可靠的，但是有时候也会服务器上资源其实有变化，但是最后修改时间却没有变化的情况，而这种问题又很不容易被定位出来，而当这种情况出现的时候，就会影响协商缓存的可靠性。所以就有了另外一对header来管理协商缓存，这对header就是【ETag、If-None-Match】。它们的缓存管理的方式是：</p>
+<ul>
+<li><p>浏览器第一次跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上ETag的header，这个header是服务器根据当前请求的资源生成的一个唯一标识，这个唯一标识是一个字符串，只要资源有变化这个串就不同，跟最后修改时间没有关系，所以能很好的补充Last-Modified的问题：<br>  <img src="https://app.yinxiang.com/shard/s48/res/4fcb6bb2-ec3d-48f3-9f00-d1169a2b563e/db50348fc78f4f9fac8effcc4ea9cfa6" alt="此处输入图片的描述"></p>
+</li>
+<li><p>浏览器再次跟服务器请求这个资源时，在request的header上加上If-None-Match的header，这个header的值就是上一次请求时返回的ETag的值：<br>  <img src="https://app.yinxiang.com/shard/s48/res/fb4e5d97-dec9-4ffa-8120-d7fb2ca21282/c47ee065d0d9ecc91a5dd04a4d3f5453" alt="此处输入图片的描述"></p>
+</li>
+<li><p>服务器再次收到资源请求时，根据浏览器传过来If-None-Match和然后再根据资源生成一个新的ETag，如果这两个值相同就说明资源没有变化，否则就是有变化；如果没有变化则返回304 Not Modified，但是不会返回资源内容；如果有变化，就正常返回资源内容。与Last-Modified不一样的是，当服务器返回304 Not Modified的响应时，由于ETag重新生成过，response header中还会把这个ETag返回，即使这个ETag跟之前的没有变化：</p>
+<p>  <img src="https://app.yinxiang.com/shard/s48/res/5b572cba-d447-44e1-9c44-4c8666b21713/006805f356d54197d824dc074b078986" alt="此处输入图片的描述"></p>
+</li>
+<li><p>浏览器收到304的响应后，就会从缓存中加载资源。</p>
+</li>
+</ul>
+</li>
+<li><p>协商缓存的管理<br>  协商缓存跟强缓存不一样，强缓存不发请求到服务器，所以有时候资源更新了浏览器还不知道，但是协商缓存会发请求到服务器，所以资源是否更新，服务器肯定知道。大部分web服务器都默认开启协商缓存，而且是同时启用【Last-Modified，If-Modified-Since】和【ETag、If-None-Match】，比如apache:</p>
+<p>  <img src="https://app.yinxiang.com/shard/s48/res/ef0f8221-16ce-47b4-89cd-050c3aaa7961/c9c96dd7bf7185d24e667b00cc2fd52c" alt="此处输入图片的描述"></p>
+<p>  如果没有协商缓存，每个到服务器的请求，就都得返回资源内容，这样服务器的性能会极差。</p>
+</li>
+</ul>
+<p>【Last-Modified，If-Modified-Since】和【ETag、If-None-Match】一般都是同时启用，这是为了处理Last-Modified不可靠的情况。有一种场景需要注意：<br>分布式系统里多台机器间文件的Last-Modified必须保持一致，以免负载均衡到不同机器导致比对失败；<br>分布式系统尽量关闭掉ETag(每台机器生成的ETag都会不一样）；<br>京东页面的资源请求，返回的repsones header就只有Last-Modified，没有ETag：<br>    <img src="https://app.yinxiang.com/shard/s48/res/70d4ca63-5c8c-418e-a676-73fe8929e028/f26bef7a05b521487fc8a38f6ebc0d72" alt="此处输入图片的描述"><br>协商缓存需要配合强缓存使用，你看前面这个截图中，除了Last-Modified这个header，还有强缓存的相关header，因为如果不启用强缓存的话，协商缓存根本没有意义。</p>
+<ul>
+<li><p>浏览器行为对缓存的影响<br>如果资源已经被浏览器缓存下来，在缓存失效之前，再次请求时，默认会先检查是否命中强缓存，如果强缓存命中则直接读取缓存，如果强缓存没有命中则发请求到服务器检查是否命中协商缓存，如果协商缓存命中，则告诉浏览器还是可以从缓存读取，否则才从服务器返回最新的资源。这是默认的处理方式，这个方式可能被浏览器的行为改变：</p>
+<ul>
+<li>当ctrl+f5强制刷新网页时，直接从服务器加载，跳过强缓存和协商缓存；</li>
+<li>当f5刷新网页时，跳过强缓存，但是会检查协商缓存；</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/06/jsanimation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="cache" data-title="" data-url="http://yoursite.com/2016/05/07/cache/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 cherishsdan
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
