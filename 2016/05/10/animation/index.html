@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="实现平滑动画的两个因素：Frame Timing（新的一帧准备好的时机）&amp;amp;&amp;amp; Frame Budget（渲染新的一帧需要多长的时间）
 绘制频率页面上每一帧变化都是系统绘制出来的(GPU或者CPU)，它的最高绘制频率受限于显示器的刷新频率(而非显卡)，所以大多数情况下最高的绘制频率只能是每秒60帧(frame per second，以下用fps简称)，对应于显示器的60Hz。60fp">
-<meta property="og:updated_time" content="2016-05-10T07:54:01.959Z">
+<meta property="og:updated_time" content="2016-05-10T08:11:53.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Animation小结">
 <meta name="twitter:description" content="实现平滑动画的两个因素：Frame Timing（新的一帧准备好的时机）&amp;amp;&amp;amp; Frame Budget（渲染新的一帧需要多长的时间）
@@ -209,66 +209,78 @@
 <h2 id="HZ-vs-fps"><a href="#HZ-vs-fps" class="headerlink" title="HZ vs fps"></a>HZ vs fps</h2><p>两者没有任何关系，fps代表GPU渲染画面的频率，Hz代表显示器刷新屏幕的频率。刷新率不随图像内容的变化而变化，游戏也好浏览器也好，我们谈到掉帧，是指GPU渲染画面频率降低。比如跌落到30fps甚至20fps，但因为视觉暂留原理，我们看到的画面仍然是运动和连贯的。</p>
 <hr>
 <h2 id="实现动画的几种方式"><a href="#实现动画的几种方式" class="headerlink" title="实现动画的几种方式"></a>实现动画的几种方式</h2><p>1、CSS Animation</p>
-<pre><code>- Transitions
-
-    css的transition允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并圆滑地以动画效果改变CSS的属性值。
-
-- Keyframes animation
-
-    &gt; Keyframes animation通过定义多个关键帧以及定义每个关键帧中的元素的属性值来实现更为复杂的动画效果。
-
-- Pros
-
-简单、高效
-声明式的
-不依赖与主线程，采用硬件加速（GPU）
-简单的控制keyframe animation 播放和暂停
-
-- Cons：
-
-不能动态的修改或定义动画内容
-不同的动画无法实现同步
-多个动画彼此无法堆叠
-
-&gt; CSS3 transition强制硬件加速会加大GPU消耗，高负荷情形下将导致运行不流畅。这种情况在移动设备上尤为明显。transition的兼容性问题是个诟病，IE10+及现代浏览器，使用起来会造成很多不便。
-</code></pre><p>2、SVG<br>Pros：</p>
-<pre><code>- 矢量图形，不受像素影响——SVG的这个特性使得它在不同的平台或者媒体下表现良好，无论屏幕分辨率如何。
-- SVG对动画的支持较好，其DOM结构可以被其特定语法或者Javascript控制，从而轻松的实现动画
-- Javascript可以完全控制SVG Dom 元素
-- SVG的结构是XML，其可访问性（盲文、声音朗读等）、可操作性、可编程性、可被CSS样式化完胜Canvas。另外，其支持 ARIA 属性，使其如虎添翼。
-</code></pre><p>Cons：</p>
-<pre><code>- DOM比正常的图形慢，而且如果其结点多而杂，就更慢。
-- SVG 画点报表什么的，还行；在网页游戏前，就束手无策了；当然可以结合 Canvas + SVG实现。
-- 不能动态的修改动画内容，不能与HTML内容集成
-- 浏览器兼容性问题，IE8-以及Android 2.3默认浏览器是不支持SVG
-</code></pre><p>3、Javascript</p>
-<pre><code>- js setInterval
-    Pros：易用，低效，兼容好；
-    Cons： setInterval多个间隔可能会被跳过，不同浏览器的精度量级不同，无法解决频繁触发 Layout 导致的抽动。
-- requestAnimationFrame
-    RequestAnimationFrame是浏览器用于定时循环操作的一个接口，类似于setTimeout，主要用途是按帧对网页进行重绘。
-    Pros：
-        - 在每次浏览器更新页面时，能获取通知并执行应用。 简单理解为，RAF能在每个16.7ms间执行一次函数，不多不少。
-        - 最小化的消耗资源，RAF在页面被切换或浏览器最小化时，会暂停执行，等页面再次关注时，继续执行动画。
-        - 相比 CSS 动画有更好的掌控，能合理降低CPU的使用。
-    Cons：
-        - 无法控制执行时间，执行时间由系统根据屏幕刷新时间决定。
-        -  浏览器兼容性问题，IE10+及现代浏览器，低版本浏览器建议降级处理，使用setInterval或setTimeout
-- Canvas
-    Pros：
-        - 画2D图形时，页面渲染性能比较高
-        - 页面渲染性能受图形复杂度影响小，渲染性能只受图形的分辨率的影响
-        -  画出来的图形可以直接保存为 .png 或者 .jpg的图形
-        -  最适合于画光栅图像（如游戏和不规则几何图形等），编辑图片还有其他基于像素的图形操作。
-    Cons：
-        - 整个就是一张图，无论你往上画什么东西——没有DOM 结点可供操作
-        - 没有实现动画的API，你必须依靠定时器和其他事件来更新Canvas
-        - 对文本的渲染支持是比较差
-        - 对要求有高可访问性（盲文、声音朗读等）页面，比较困难
-        - 对交互要求高的（比如TIBCO的很多产品）的界面，不建议使用Canvas
-- WebGL
-    &gt; WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起，通过增加OpenGL ES 2.0的一个JavaScript绑定，WebGL可以为HTML5 Canvas提供硬件3D加速渲染，这样Web开发人员就可以借助系统显卡来在浏览器里更流畅地展示3D场景和模型了，还能创建复杂的导航和数据视觉化。显然，WebGL技术标准免去了开发网页专用渲染插件的麻烦，可被用于创建具有复杂3D结构的网站页面，甚至可以用来设计3D网页游戏等等。
-</code></pre><p>5、Web Animations 1.0 ——A new general purpose animation model</p>
+<ul>
+<li><p>Transitions<br>css的transition允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并圆滑地以动画效果改变CSS的属性值。</p>
+</li>
+<li><p>Keyframes animation</p>
+<blockquote>
+<p>Keyframes animation通过定义多个关键帧以及定义每个关键帧中的元素的属性值来实现更为复杂的动画效。</p>
+</blockquote>
+</li>
+<li><p>Pros</p>
+<p> 简单、高效<br> 声明式的<br> 不依赖与主线程，采用硬件加速（GPU）<br> 简单的控制keyframe animation 播放和暂停。</p>
+</li>
+<li><p>Cons：<br> 不能动态的修改或定义动画内容<br> 不同的动画无法实现同步<br> 多个动画彼此无法堆叠</p>
+<blockquote>
+<p>CSS3 transition强制硬件加速会加大GPU消耗，高负荷情形下将导致运行不流畅。这种情况在移动设备上尤为明显。transition的兼容性问题是个诟病，IE10+及现代浏览器，使用起来会造成很多不便。</p>
+</blockquote>
+</li>
+</ul>
+<p>2、SVG</p>
+<p>Pros：</p>
+<ul>
+<li>矢量图形，不受像素影响——SVG的这个特性使得它在不同的平台或者媒体下表现良好，无论屏幕分辨率如何。</li>
+<li>SVG对动画的支持较好，其DOM结构可以被其特定语法或者Javascript控制，从而轻松的实现动画</li>
+<li>Javascript可以完全控制SVG Dom 元素</li>
+<li>SVG的结构是XML，其可访问性（盲文、声音朗读等）、可操作性、可编程性、可被CSS样式化完胜Canvas。另外，其支持 ARIA 属性，使其如虎添翼。</li>
+</ul>
+<p>Cons：</p>
+<ul>
+<li>DOM比正常的图形慢，而且如果其结点多而杂，就更慢。</li>
+<li>SVG 画点报表什么的，还行；在网页游戏前，就束手无策了；当然可以结合 Canvas + SVG实现。</li>
+<li>不能动态的修改动画内容，不能与HTML内容集成</li>
+<li>浏览器兼容性问题，IE8-以及Android 2.3默认浏览器是不支持SVG</li>
+</ul>
+<p>3、Javascript</p>
+<ul>
+<li><p>js setInterval<br>Pros：易用，低效，兼容好；<br>Cons： setInterval多个间隔可能会被跳过，不同浏览器的精度量级不同，无法解决频繁触发 Layout 导致的抽动。</p>
+</li>
+<li><p>requestAnimationFrame<br>RequestAnimationFrame是浏览器用于定时循环操作的一个接口，类似于setTimeout，主要用途是按帧对网页进行重绘。<br>Pros：</p>
+<ul>
+<li>在每次浏览器更新页面时，能获取通知并执行应用。 简单理解为，RAF能在每个16.7ms间执行一次函数，不多不少。</li>
+<li>最小化的消耗资源，RAF在页面被切换或浏览器最小化时，会暂停执行，等页面再次关注时，继续执行动画。</li>
+<li>相比 CSS 动画有更好的掌控，能合理降低CPU的使用。</li>
+</ul>
+<p>Cons：</p>
+<ul>
+<li>无法控制执行时间，执行时间由系统根据屏幕刷新时间决定。</li>
+<li>浏览器兼容性问题，IE10+及现代浏览器，低版本浏览器建议降级处理，使用setInterval或setTimeout </li>
+</ul>
+</li>
+<li><p>Canvas<br>Pros：</p>
+<ul>
+<li>画2D图形时，页面渲染性能比较高</li>
+<li>页面渲染性能受图形复杂度影响小，渲染性能只受图形的分辨率的影响</li>
+<li>画出来的图形可以直接保存为 .png 或者 .jpg的图形</li>
+<li>最适合于画光栅图像（如游戏和不规则几何图形等），编辑图片还有其他基于像素的图形操作。</li>
+</ul>
+</li>
+</ul>
+<p> Cons：</p>
+<ul>
+<li>整个就是一张图，无论你往上画什么东西——没有DOM 结点可供操作</li>
+<li>没有实现动画的API，你必须依靠定时器和其他事件来更新Canvas</li>
+<li>对文本的渲染支持是比较差</li>
+<li>对要求有高可访问性（盲文、声音朗读等）页面，比较困难</li>
+<li>对交互要求高的（比如TIBCO的很多产品）的界面，不建议使用Canvas</li>
+</ul>
+<ul>
+<li>WebGL</li>
+</ul>
+<blockquote>
+<p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起，通过增加OpenGL ES<br>2.0的一个JavaScript绑定，WebGL可以为HTML5 Canvas提供硬件3D加速渲染，这样Web开发人员就可以借助系统显卡来在浏览器里更流畅地展示3D场景和模型了，还能创建复杂的导航和数据视觉化。显然，WebGL技术标准免去了开发网页专用渲染插件的麻烦，可被用于创建具有复杂3D结构的网站页面，甚至可以用来设计3D网&gt;页游戏等等。</p>
+</blockquote>
+<p>5、Web Animations 1.0 ——A new general purpose animation model</p>
 <h2 id="现行兼容方案"><a href="#现行兼容方案" class="headerlink" title="现行兼容方案"></a>现行兼容方案</h2><pre><code>1、页面增强动画建议使用CSS动画
 2、复杂动画交互建议使用RAF及setInterval 或setTimeout优雅降级处理
  推荐动画库Velocity.js、GreenSock
