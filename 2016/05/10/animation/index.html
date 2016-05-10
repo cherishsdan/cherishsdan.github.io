@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="实现平滑动画的两个因素：Frame Timing（新的一帧准备好的时机）&amp;amp;&amp;amp; Frame Budget（渲染新的一帧需要多长的时间）
 绘制频率页面上每一帧变化都是系统绘制出来的(GPU或者CPU)，它的最高绘制频率受限于显示器的刷新频率(而非显卡)，所以大多数情况下最高的绘制频率只能是每秒60帧(frame per second，以下用fps简称)，对应于显示器的60Hz。60fp">
-<meta property="og:updated_time" content="2016-05-10T07:34:10.925Z">
+<meta property="og:updated_time" content="2016-05-10T07:54:01.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Animation小结">
 <meta name="twitter:description" content="实现平滑动画的两个因素：Frame Timing（新的一帧准备好的时机）&amp;amp;&amp;amp; Frame Budget（渲染新的一帧需要多长的时间）
@@ -208,20 +208,24 @@
 </blockquote>
 <h2 id="HZ-vs-fps"><a href="#HZ-vs-fps" class="headerlink" title="HZ vs fps"></a>HZ vs fps</h2><p>两者没有任何关系，fps代表GPU渲染画面的频率，Hz代表显示器刷新屏幕的频率。刷新率不随图像内容的变化而变化，游戏也好浏览器也好，我们谈到掉帧，是指GPU渲染画面频率降低。比如跌落到30fps甚至20fps，但因为视觉暂留原理，我们看到的画面仍然是运动和连贯的。</p>
 <hr>
-<h2 id="实现动画的几种方式"><a href="#实现动画的几种方式" class="headerlink" title="实现动画的几种方式"></a>实现动画的几种方式</h2><p>1、CSS Animation()</p>
+<h2 id="实现动画的几种方式"><a href="#实现动画的几种方式" class="headerlink" title="实现动画的几种方式"></a>实现动画的几种方式</h2><p>1、CSS Animation</p>
 <pre><code>- Transitions
-    &gt; css的transition允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并圆滑地以动画效果改变CSS的属性值。
+
+    css的transition允许css的属性值在一定的时间区间内平滑地过渡。这种效果可以在鼠标单击、获得焦点、被点击或对元素任何改变中触发，并圆滑地以动画效果改变CSS的属性值。
 
 - Keyframes animation
+
     &gt; Keyframes animation通过定义多个关键帧以及定义每个关键帧中的元素的属性值来实现更为复杂的动画效果。
 
 - Pros
+
 简单、高效
 声明式的
 不依赖与主线程，采用硬件加速（GPU）
 简单的控制keyframe animation 播放和暂停
 
 - Cons：
+
 不能动态的修改或定义动画内容
 不同的动画无法实现同步
 多个动画彼此无法堆叠
