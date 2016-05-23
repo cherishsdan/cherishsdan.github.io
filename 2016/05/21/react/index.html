@@ -4,29 +4,35 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hexo</title>
+  <title>react杂记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: react�Ӽ�date: 2016-05-21 13:27:13
-tags: [react, view]reactѧϰ�����е�һЩ��¼~
+  <meta name="description" content="react学习过程中的一些记录~
 
-���������Ѿ�������React�������ͱ�������������DOM�޹أ�������ΪReact�����������ǹ���������Ԫ�ص������뷨��������ʽ�ķ�ʽ�������κ���">
+现在我们已经清楚，React的美妙和本质与浏览器或DOM无关，我们认为React的真正基础是关于组件和元素的质朴想法：用声明式的方式来描述任何你想渲染的东西。
+
+virtual Dom
+react本身就是帮我们管理view的，它提出了一个virtual dom的概念，在虚拟dom中，react会去检查它与浏览器dom有什么不同，然后去更新dom树中发生了改变的子">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="react杂记">
 <meta property="og:url" content="http://yoursite.com/2016/05/21/react/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: react�Ӽ�date: 2016-05-21 13:27:13
-tags: [react, view]reactѧϰ�����е�һЩ��¼~
+<meta property="og:description" content="react学习过程中的一些记录~
 
-���������Ѿ�������React�������ͱ�������������DOM�޹أ�������ΪReact�����������ǹ���������Ԫ�ص������뷨��������ʽ�ķ�ʽ�������κ���">
+现在我们已经清楚，React的美妙和本质与浏览器或DOM无关，我们认为React的真正基础是关于组件和元素的质朴想法：用声明式的方式来描述任何你想渲染的东西。
+
+virtual Dom
+react本身就是帮我们管理view的，它提出了一个virtual dom的概念，在虚拟dom中，react会去检查它与浏览器dom有什么不同，然后去更新dom树中发生了改变的子">
 <meta property="og:image" content="http://o6qp6st9j.bkt.clouddn.com/reactVirtualDom.PNG">
 <meta property="og:image" content="http://images.cnitblog.com/blog2015/622439/201505/072132381261891.png">
-<meta property="og:updated_time" content="2016-05-21T08:39:28.102Z">
+<meta property="og:updated_time" content="2016-05-23T08:38:57.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: react�Ӽ�date: 2016-05-21 13:27:13
-tags: [react, view]reactѧϰ�����е�һЩ��¼~
+<meta name="twitter:title" content="react杂记">
+<meta name="twitter:description" content="react学习过程中的一些记录~
 
-���������Ѿ�������React�������ͱ�������������DOM�޹أ�������ΪReact�����������ǹ���������Ԫ�ص������뷨��������ʽ�ķ�ʽ�������κ���">
+现在我们已经清楚，React的美妙和本质与浏览器或DOM无关，我们认为React的真正基础是关于组件和元素的质朴想法：用声明式的方式来描述任何你想渲染的东西。
+
+virtual Dom
+react本身就是帮我们管理view的，它提出了一个virtual dom的概念，在虚拟dom中，react会去检查它与浏览器dom有什么不同，然后去更新dom树中发生了改变的子">
 <meta name="twitter:image" content="http://o6qp6st9j.bkt.clouddn.com/reactVirtualDom.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -113,7 +119,7 @@ tags: [react, view]reactѧϰ�����е�һЩ��¼~
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a>
+						<a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -175,7 +181,7 @@ tags: [react, view]reactѧϰ�����е�һЩ��¼~
   
     <div class="article-meta">
       <a href="/2016/05/21/react/" class="article-date">
-  	<time datetime="2016-05-21T08:39:28.097Z" itemprop="datePublished">2016-05-21</time>
+  	<time datetime="2016-05-21T05:27:13.000Z" itemprop="datePublished">2016-05-21</time>
 </a>
     </div>
   
@@ -184,36 +190,55 @@ tags: [react, view]reactѧϰ�����е�һЩ��¼~
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react杂记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/view/">view</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: react�Ӽ�<br>date: 2016-05-21 13:27:13</p>
-<h2 id="tags-react-view"><a href="#tags-react-view" class="headerlink" title="tags: [react, view]"></a>tags: [react, view]</h2><p>reactѧϰ�����е�һЩ��¼~</p>
+        <p>react学习过程中的一些记录~</p>
 <blockquote>
-<p>���������Ѿ�������React�������ͱ�������������DOM�޹أ�<br>������ΪReact�����������ǹ���������Ԫ�ص������뷨��������ʽ�ķ�ʽ�������κ�������Ⱦ�Ķ�����</p>
+<p>现在我们已经清楚，React的美妙和本质与浏览器或DOM无关，<br>我们认为React的真正基础是关于组件和元素的质朴想法：用声明式的方式来描述任何你想渲染的东西。</p>
 </blockquote>
 <h2 id="virtual-Dom"><a href="#virtual-Dom" class="headerlink" title="virtual Dom"></a>virtual Dom</h2><p><img src="http://o6qp6st9j.bkt.clouddn.com/reactVirtualDom.PNG" alt="virtual Dom"></p>
-<p>react�������ǰ����ǹ���view�ģ���������һ��virtual dom�ĸ��������dom�У�react<br>��ȥ��������������dom��ʲô��ͬ��Ȼ��ȥ����dom���з����˸ı����ӽڵ㡣</p>
-<p>���Ǳ�д��react�е�render()������Ȼ��ȥ����������Ҫ��һЩ״̬��������������������<br>��������Ⱦ���ɺ������������仯������ֻ��Ҫ�޸�state��react�������Ǹ�����Щdom����<br>�����У�����domҲ�����ڷ���������Ⱦ��</p>
-<p>React������ʹ���ض�������ʽ��ʽ��д������jQuery��������ͳJS�⣬�㲻��DOMֱ�ӽ�����<br>�����������ݸı�ʱ��React�ӹ����е�UI���¡�</p>
-<p>��Ϊ������Ա������ֻ��Ҫ����������Ȼ��ȥ��������������״̬��</p>
-<pre><code>&gt; ������������Javascriptʵ����һ��DOM API������React���п���ʱ���е�DOM����
-����ͨ������DOM���У�ÿ�����ݱ仯ʱ��React�������¹�������DOM����Ȼ��React��
-ǰ����DOM������һ�ε�DOM�����жԱȣ��õ�DOM�ṹ��������Ȼ����������Ҫ�仯�Ĳ���
-����ʵ�ʵ�������DOM���¡�����React�ܹ�����������DOM��ˢ�£���һ���¼�ѭ��
-��Event Loop���ڵ��������ݱ仯�ᱻ�ϲ����������������Ƚ��ڵ����ݴ�A����B��Ȼ���ִ�B����A��
-React����ΪUI�������κα仯��������ͨ���ֶ����ƣ������߼�ͨ���Ǽ��临�ӵġ�����ÿһ��
-����Ҫ��������������DOM����������Ϊ����DOM���ڴ����ݣ������Ǽ��ߵģ�����ʵ��DOM����
-�����Ľ�����Diff���֣������ܴﵽ�������ܵ�Ŀ�ġ��������ڱ�֤���ܵ�ͬʱ�������߽�����
-��Ҫ��עĳ�����ݵı仯���θ��µ�һ��������������DOMԪ�أ���ֻ��Ҫ����������һ������
-״̬�£���������������Render�ġ�
+<p>react本身就是帮我们管理view的，它提出了一个virtual dom的概念，在虚拟dom中，react<br>会去检查它与浏览器dom有什么不同，然后去更新dom树中发生了改变的子节点。</p>
+<p>我们编写了react中的render()方法，然后去设置我们需要的一些状态，定义好这个组件后，<br>当组件渲染完成后，组件发生变化，我们只需要修改state，react会替我们更新这些dom到浏<br>览器中，虚拟dom也可以在服务器端渲染。<br><a id="more"></a><br>React的组件使用特定的声明式样式书写，不像jQuery或其它传统JS库，你不与DOM直接交互。<br>当背后的数据改变时，React接管所有的UI更新。</p>
+<p>作为开发人员，我们只需要开发组件，然后去管理组件本身的状态。</p>
+<pre><code>&gt; 在浏览器端用Javascript实现了一套DOM API。基于React进行开发时所有的DOM构造
+都是通过虚拟DOM进行，每当数据变化时，React都会重新构建整个DOM树，然后React当
+前整个DOM树和上一次的DOM树进行对比，得到DOM结构的区别，然后仅仅将需要变化的部分
+进行实际的浏览器DOM更新。而且React能够批处理虚拟DOM的刷新，在一个事件循环
+（Event Loop）内的两次数据变化会被合并，例如你连续的先将节点内容从A变成B，然后又从B变成A，
+React会认为UI不发生任何变化，而如果通过手动控制，这种逻辑通常是极其复杂的。尽管每一次
+都需要构造完整的虚拟DOM树，但是因为虚拟DOM是内存数据，性能是极高的，而对实际DOM进行
+操作的仅仅是Diff部分，因而能达到提高性能的目的。这样，在保证性能的同时，开发者将不再
+需要关注某个数据的变化如何更新到一个或多个具体的DOM元素，而只需要关心在任意一个数据
+状态下，整个界面是如何Render的。
 </code></pre><h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><blockquote>
-<p>��ν����������װ�����ľ��ж������ܵ�UI������React�Ƽ��������ķ�ʽȥ����˼��UI���ɣ�<br>  ��UI��ÿһ���������Զ�����ģ�鶨����������Ȼ����С������ͨ�����ϻ���Ƕ�׵ķ�ʽ���ɴ���������������������UI�Ĺ�����</p>
+<p>所谓组件，即封装起来的具有独立功能的UI部件。React推荐以组件的方式去重新思考UI构成，<br>  将UI上每一个功能相对独立的模块定义成组件，然后将小的组件通过组合或者嵌套的方式构成大的组件，最终完成整体UI的构建。</p>
 </blockquote>
-<p>����MVC����ģʽ��˵�������߽����߶����ɲ�ͬ���࣬ʵ���˱��֣����ݣ����Ƶķ��롣<br>�����߸������ǴӼ����ĽǶ�����UI���в��֣�ʵ�������ϡ�<br>����React���ԣ�����ȫ��һ���µ�˼·�������ߴӹ��ܵĽǶȳ�������UI�ֳɲ�ͬ��������ÿ��������������װ��</p>
-<p>��React�У��㰴�ս���ģ����Ȼ���ֵķ�ʽ����֯�ͱ�д���Ĵ��룬�������۽������ԣ�<br>����UI��һ��ͨ��С�������ɵĴ�������ÿ������ֻ�����Լ����ֵ��߼����˴˶�����</p>
+<p>对于MVC开发模式来说，开发者将三者定义成不同的类，实现了表现，数据，控制的分离。<br>开发者更多的是从技术的角度来对UI进行拆分，实现松耦合。<br>对于React而言，则完全是一个新的思路，开发者从功能的角度出发，将UI分成不同的组件，每个组件都独立封装。</p>
+<p>在React中，你按照界面模块自然划分的方式来组织和编写你的代码，对于评论界面而言，<br>整个UI是一个通过小组件构成的大组件，每个组件只关心自己部分的逻辑，彼此独立。</p>
 <p><img src="http://images.cnitblog.com/blog2015/622439/201505/072132381261891.png" alt="component"></p>
-<p>React��Ϊһ������Ӧ�þ�������������<br>��1�������ϣ�Composeable����һ���������ں���������һ��ʹ�ã�����Ƕ������һ�������ڲ���<br>����һ�������ڲ���������һ����������ô˵������ӵ�У�own������������������ͨ���������ԣ�һ�����ӵ�UI���Բ��ֳɶ����򵥵�UI������<br>��2�������ã�Reusable����ÿ���������Ǿ��ж������ܵģ������Ա�ʹ���ڶ���UI������<br>��3����ά����Maintainable����ÿ��С���������������������߼��������ױ�������ά����</p>
+<p>React认为一个组件应该具有如下特征：<br>（1）可组合（Composeable）：一个组件易于和其它组件一起使用，或者嵌套在另一个组件内部。<br>如果一个组件内部创建了另一个组件，那么说父组件拥有（own）它创建的子组件，通过这个特性，一个复杂的UI可以拆分成多个简单的UI组件；<br>（2）可重用（Reusable）：每个组件都是具有独立功能的，它可以被使用在多个UI场景；<br>（3）可维护（Maintainable）：每个小的组件仅仅包含自身的逻辑，更容易被理解和维护；</p>
 
       
     </div>
@@ -225,7 +250,7 @@ React����ΪUI�������κα仯��������ͨ��
   
   
     <a href="/2016/05/20/gulp/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">关于gulp</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -260,7 +285,7 @@ React����ΪUI�������κα仯��������ͨ��
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="react" data-title="" data-url="http://yoursite.com/2016/05/21/react/"></div>
+	<div class="ds-thread" data-thread-key="react" data-title="react杂记" data-url="http://yoursite.com/2016/05/21/react/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
