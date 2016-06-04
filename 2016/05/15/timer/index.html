@@ -19,7 +19,7 @@
 定时器有一个很重要的概念  javascript定时器的延迟时间是不确定的 
 在web worker可用之前，浏览器中的所有javascript代码都是在单线程中运行的。这种情况下，异步事件的处理程序，如用">
 <meta property="og:image" content="http://laruence-wordpress.stor.sinaapp.com/uploads/jstimer.jpg">
-<meta property="og:updated_time" content="2016-06-03T13:00:44.939Z">
+<meta property="og:updated_time" content="2016-06-04T07:29:24.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="定时器和线程">
 <meta name="twitter:description" content="读了《javascript 忍者秘籍》后对定时器的一些心得。
@@ -212,9 +212,8 @@
 <p>定时器有一个很重要的概念 <strong> javascript定时器的延迟时间是不确定的 </strong></p>
 <p>在web worker可用之前，浏览器中的所有javascript代码都是在单线程中运行的。这种情况下，异步事件的处理程序，如用户界面事件和定时器，在线程中没有代码执行时才进行执行。也就是说，处理程序在执行时必须进行排队执行，并且一个处理程序不能中断另一个处理程序的执行。</p>
 <blockquote>
-<p>定时器对队列的工作方式是，当特定的时间过去后，将代码插入，注意添加到队列并不<br>意味着它会马上执行，而只能说它会尽快执行。对于定时器来说，指定的时间间隔表示何<br>时将定时器的代码添加到队列中，而不是何时执行代码。</p>
+<p>定时器对队列的工作方式是，当特定的时间过去后，将代码插入，注意添加到队列并不<br>意味着它会马上执行，而只能说它会尽快执行。对于定时器来说，指定的时间间隔表示何<br>时将定时器的代码添加到队列中，而不是何时执行代码。<br><a id="more"></a><br>举例来说，设定一个250ms后执行的定时器，不代表250ms后它会马上执行，它只会表示在250ms后被加入到队列中，如果这个时间点队列是空闲的，那么这段代码就会被执行。</p>
 </blockquote>
-<p>举例来说，设定一个250ms后执行的定时器，不代表250ms后它会马上执行，它只会表示在250ms后被加入到队列中，如果这个时间点队列是空闲的，那么这段代码就会被执行。</p>
 <h2 id="浏览器内核处理方式"><a href="#浏览器内核处理方式" class="headerlink" title="浏览器内核处理方式"></a>浏览器内核处理方式</h2><p>浏览器内核实现允许多个线程异步执行,这些线程在内核制控下相互配合以保持同步.假如某一浏览器内核的实现至少有三个常驻线程:javascript引擎线程,界面渲染线程,浏览器事件触发线程,除些以外,也有一些执行完就终止的线程,如Http请求线程,这些异步线程都会产生不同的异步事件,下面通过一个图来阐明单线程的JavaScript引擎与另外那些线程是怎样互动通信的.虽然每个浏览器内核实现细节不同,但这其中的调用原理都是大同小异.</p>
 <p><img src="http://laruence-wordpress.stor.sinaapp.com/uploads/jstimer.jpg" alt="browser"></p>
 <p>由图可看出,浏览器中的JavaScript引擎是基于事件驱动的,这里的事件可看作是浏览器派给它的各种任务,从代码角度看来任务实体就是各种回调函数,JavaScript引擎一直等待着任务队列中任务的到来.由于单线程关系,这些任务得进行排队,一个接着一个被引擎处理</p>
