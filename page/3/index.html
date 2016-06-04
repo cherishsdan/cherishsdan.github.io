@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16.67px;">css3</a> <a href="/tags/float/" style="font-size: 13.33px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 16.67px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
 					</div>
 				</section>
 				
@@ -160,11 +160,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-BFC" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-animation" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/03/BFC/" class="article-date">
-  	<time datetime="2016-05-03T12:49:05.819Z" itemprop="datePublished">2016-05-03</time>
+      <a href="/2016/05/10/animation/" class="article-date">
+  	<time datetime="2016-05-10T06:32:53.000Z" itemprop="datePublished">2016-05-10</time>
 </a>
     </div>
   
@@ -172,6 +172,142 @@
     
       <input type="hidden" class="isFancy" />
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/10/animation/">Animation小结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>实现平滑动画的两个因素：Frame Timing（新的一帧准备好的时机）&amp;&amp; Frame Budget（渲染新的一帧需要多长的时间）</p>
+<h2 id="绘制频率"><a href="#绘制频率" class="headerlink" title="绘制频率"></a>绘制频率</h2><p>页面上每一帧变化都是系统绘制出来的(GPU或者CPU)，它的最高绘制频率受限于显示器的刷新频率(而非显卡)，所以大多数情况下最高的绘制频率只能是每秒60帧(frame per second，以下用fps简称)，对应于显示器的60Hz。60fps是一个最理想的状态，60fps是动力也是压力，因为它意味着我们只有16.7毫秒(1000 / 60)来绘制每一帧。在日常对页面性能的测试中，60fps也是一个重要的指标，the closer the better。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/animation/">animation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/10/animation/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-strength" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/09/strength/" class="article-date">
+  	<time datetime="2016-05-09T07:17:25.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/strength/">Progressive Enhancement</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="所谓农村包围城市——渐进增强"><a href="#所谓农村包围城市——渐进增强" class="headerlink" title="所谓农村包围城市——渐进增强"></a>所谓农村包围城市——渐进增强</h1><blockquote>
+<p>针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+</blockquote>
+<p>CSS的“渐进增强”有别于CSS hack，hack可以说是提供选择，你死我亡，竞争效应;而“渐进增强”属于更进一步，锦上添花，辅助效应。前者应尽量避免使用，而后者适当使用则有裨益。</p>
+<p>渐进增强比较注重内容，即从内容出发，内容为样式和交互构建起坚实的基础。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/05/09/strength/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-BFC" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/08/BFC/" class="article-date">
+  	<time datetime="2016-05-08T05:27:13.000Z" itemprop="datePublished">2016-05-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/08/BFC/">关于 BFC</a>
+    </h1>
+  
+
+      </header>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -186,11 +322,15 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/05/03/BFC/#more">more >></a>
+          <a  href="/2016/05/08/BFC/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -209,11 +349,11 @@
 
 
   
-    <article id="post-whois" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-cache" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/03/whois/" class="article-date">
-  	<time datetime="2016-05-03T11:17:26.000Z" itemprop="datePublished">2016-05-03</time>
+      <a href="/2016/05/07/cache/" class="article-date">
+  	<time datetime="2016-05-07T07:17:25.000Z" itemprop="datePublished">2016-05-07</time>
 </a>
     </div>
   
@@ -222,72 +362,36 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/07/cache/">浏览器缓存知识小结及应用（摘自开发者头条）</a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="WHOIS-特征提取及-URL-Parse（持续更新）"><a href="#WHOIS-特征提取及-URL-Parse（持续更新）" class="headerlink" title="WHOIS 特征提取及 URL Parse（持续更新）"></a>WHOIS 特征提取及 URL Parse（持续更新）</h1><p>DataSet： <strong>PhishTank &amp;&amp; DMOZ</strong>   -数据集不平衡</p>
-<pre><code>PhishTank爬取 23378条URL （2008-2016） 
-DMOZ 定时更新
-</code></pre>
+        <p>浏览器缓存，也就是客户端缓存，既是网页性能优化里面静态资源相关优化的一大利器，也是无数web开发人员在工作过程不可避免的一大问题，所以在产品开发的时候我们总是想办法避免缓存产生，而在产品发布之时又在想策略管理缓存提升网页的访问速度。了解浏览器的缓存命中原理，是开发web应用的基础</p>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/">browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cache/">cache</a></li></ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/05/03/whois/#more">more >></a>
+          <a  href="/2016/05/07/cache/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ECMAScript-6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/03/ECMAScript-6/" class="article-date">
-  	<time datetime="2016-05-03T02:52:10.199Z" itemprop="datePublished">2016-05-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="ECMAScript-6-入门资料"><a href="#ECMAScript-6-入门资料" class="headerlink" title="ECMAScript 6 入门资料"></a>ECMAScript 6 入门资料</h1><hr>
-<p>记录ECMAScript相关的学习资料，持续更新中…</p>
-<hr>
-<ol>
-<li><a href="http://ghosertblog.github.com" target="_blank" rel="external"> ECMAScript 6 入门</a> </li>
-<li><a href="http://www.hubwiz.com/course/5594e91ac086935f4a6fb8ef/" target="_blank" rel="external">汇智</a></li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
       
       <div class="clearfix"></div>
     </div>
@@ -307,7 +411,7 @@ DMOZ 定时更新
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>

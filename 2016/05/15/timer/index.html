@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>定时器和线程 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="读了《javascript 忍者秘籍》后对定时器的一些心得。
+定时器提供了一种让一段代码在一定毫秒之后，在异步执行的能力。（html5 web worker 对定时器做了很多改变，IE不支持）
+定时器有一个很重要的概念  javascript定时器的延迟时间是不确定的 
+在web worker可用之前，浏览器中的所有javascript代码都是在单线程中运行的。这种情况下，异步事件的处理程序，如用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="定时器和线程">
+<meta property="og:url" content="http://yoursite.com/2016/05/15/timer/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="读了《javascript 忍者秘籍》后对定时器的一些心得。
+定时器提供了一种让一段代码在一定毫秒之后，在异步执行的能力。（html5 web worker 对定时器做了很多改变，IE不支持）
+定时器有一个很重要的概念  javascript定时器的延迟时间是不确定的 
+在web worker可用之前，浏览器中的所有javascript代码都是在单线程中运行的。这种情况下，异步事件的处理程序，如用">
+<meta property="og:image" content="http://laruence-wordpress.stor.sinaapp.com/uploads/jstimer.jpg">
+<meta property="og:updated_time" content="2016-06-03T13:00:44.939Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="定时器和线程">
+<meta name="twitter:description" content="读了《javascript 忍者秘籍》后对定时器的一些心得。
+定时器提供了一种让一段代码在一定毫秒之后，在异步执行的能力。（html5 web worker 对定时器做了很多改变，IE不支持）
+定时器有一个很重要的概念  javascript定时器的延迟时间是不确定的 
+在web worker可用之前，浏览器中的所有javascript代码都是在单线程中运行的。这种情况下，异步事件的处理程序，如用">
+<meta name="twitter:image" content="http://laruence-wordpress.stor.sinaapp.com/uploads/jstimer.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://ww4.sinaimg.cn/thumb150/968ae2f8jw8exiz7rtbb5j20u00u0wh7.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">cherishsdan</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16.67px;">css3</a> <a href="/tags/float/" style="font-size: 13.33px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 16.67px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">cherishsdan</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://ww4.sinaimg.cn/thumb150/968ae2f8jw8exiz7rtbb5j20u00u0wh7.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">cherishsdan</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-timer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/15/timer/" class="article-date">
+  	<time datetime="2016-05-15T09:32:53.000Z" itemprop="datePublished">2016-05-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      定时器和线程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>读了《javascript 忍者秘籍》后对定时器的一些心得。</p>
+<p>定时器提供了一种让一段代码在一定毫秒之后，在异步执行的能力。（html5 web worker 对定时器做了很多改变，IE不支持）</p>
+<p>定时器有一个很重要的概念 <strong> javascript定时器的延迟时间是不确定的 </strong></p>
+<p>在web worker可用之前，浏览器中的所有javascript代码都是在单线程中运行的。这种情况下，异步事件的处理程序，如用户界面事件和定时器，在线程中没有代码执行时才进行执行。也就是说，处理程序在执行时必须进行排队执行，并且一个处理程序不能中断另一个处理程序的执行。</p>
+<blockquote>
+<p>定时器对队列的工作方式是，当特定的时间过去后，将代码插入，注意添加到队列并不<br>意味着它会马上执行，而只能说它会尽快执行。对于定时器来说，指定的时间间隔表示何<br>时将定时器的代码添加到队列中，而不是何时执行代码。</p>
+</blockquote>
+<p>举例来说，设定一个250ms后执行的定时器，不代表250ms后它会马上执行，它只会表示在250ms后被加入到队列中，如果这个时间点队列是空闲的，那么这段代码就会被执行。</p>
+<h2 id="浏览器内核处理方式"><a href="#浏览器内核处理方式" class="headerlink" title="浏览器内核处理方式"></a>浏览器内核处理方式</h2><p>浏览器内核实现允许多个线程异步执行,这些线程在内核制控下相互配合以保持同步.假如某一浏览器内核的实现至少有三个常驻线程:javascript引擎线程,界面渲染线程,浏览器事件触发线程,除些以外,也有一些执行完就终止的线程,如Http请求线程,这些异步线程都会产生不同的异步事件,下面通过一个图来阐明单线程的JavaScript引擎与另外那些线程是怎样互动通信的.虽然每个浏览器内核实现细节不同,但这其中的调用原理都是大同小异.</p>
+<p><img src="http://laruence-wordpress.stor.sinaapp.com/uploads/jstimer.jpg" alt="browser"></p>
+<p>由图可看出,浏览器中的JavaScript引擎是基于事件驱动的,这里的事件可看作是浏览器派给它的各种任务,从代码角度看来任务实体就是各种回调函数,JavaScript引擎一直等待着任务队列中任务的到来.由于单线程关系,这些任务得进行排队,一个接着一个被引擎处理</p>
+<pre><code>+ GUI渲染线程
+    该线程负责渲染浏览器界面HTML元素,当界面需要重绘(Repaint)或由于某种操作引发回流(reflow)时,该线程就会执行.该线程与JavaScript引擎线程是互斥的,这容易理解,因为JavaScript脚本是可操纵DOM元素,在修改这些元素属性同时渲染界面,那么渲染线程前后获得的元素数据就可能不一致了.
+    在JavaScript引擎运行脚本期间,浏览器渲染线程都是处于挂起状态的,也就是说被”冻结”了.所以,在脚本中执行对界面进行更新操作,如添加结点,删除结点或改变结点的外观等更新并不会立即体现出来,这些操作将保存在一个队列中,待JavaScript引擎空闲时才有机会渲染出来.
+
++ GUI事件触发线程:
+    JavaScript脚本的执行不影响html元素事件的触发,在t1时间段内,首先是用户点击了一个鼠标键,点击被浏览器事件触发线程捕捉后形成一个鼠标点击事件,由图可知,对于JavaScript引擎线程来说,这事件是由其它线程异步传到任务队列尾的,由于引擎正在处理t1时的任务,这个鼠标点击事件正在等待处理.
+
++ 定时触发线程:
+    注意这里的浏览器模型定时计数器并不是由JavaScript引擎计数的,因为JavaScript引擎是单线程的,如果处于阻塞线程状态就计不了时,它必须依赖外部来计时并触发定时,所以队列中的定时事件也是异步事件.
+</code></pre><h2 id="setTimeout-amp-set-Interval"><a href="#setTimeout-amp-set-Interval" class="headerlink" title="setTimeout &amp; set Interval"></a>setTimeout &amp; set Interval</h2><p>`<br>    setTimeout(function(){<br>        …<br>        setTimeout(repeat,10);<br>    },10);</p>
+<pre><code>setInterval(function(){
+    ...
+},10);
+</code></pre><p>`<br>这两段代码，功能看似相同，但实际上不是。setTimeout，要在前一个callback执行结束后并延迟10s，才再次执行。而setInterval则是每隔10s就尝试执行callback回调，而不关注上一个callback何时执行。</p>
+<p>所以 <strong>setTimeout &amp; set Interval</strong>在触发周期上的定义是完全不同的。</p>
+<p> setInterval创建的定时器确保了定时器规则地插入队列中，这个方式问题在于（1）某些间隔会被跳过了（2）多个定时器的代码执行间隔可能会比预期的要小 （3）如果一直被延迟，可能发生定时器无延迟执行，并且同一个interval处理程序的多个实例不能同时进行排队。</p>
+<h2 id="定时器的用处"><a href="#定时器的用处" class="headerlink" title="定时器的用处"></a>定时器的用处</h2><ul>
+<li>计算密集型的代码，将代码的各个部分分解成不会让浏览器挂掉的碎片</li>
+<li>中央定时器控制</li>
+<li>异步测试</li>
+</ul>
+<p>参考：《javascript 忍者秘籍》<br>        <a href="http://www.laruence.com/2009/09/23/1089.html" target="_blank" rel="external">http://www.laruence.com/2009/09/23/1089.html</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/20/gulp/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          关于gulp
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/10/animation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Animation小结</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="timer" data-title="定时器和线程" data-url="http://yoursite.com/2016/05/15/timer/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 cherishsdan
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
