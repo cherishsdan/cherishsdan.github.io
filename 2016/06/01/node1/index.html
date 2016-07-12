@@ -6,24 +6,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Node.js(一)-简介 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="再次阅读《深入浅出Node.js》的笔记系列
+  <meta name="description" content="再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中
 
-概述-思维脑图">
+概述Node.js主要分为四大部分，Node Standard Library，Node Bindings，V8，Libuv，架构图如下：
+
+Node Standard Library 是我们每天都在用的标准库，如Http, Buffer 模块。
+Node Bindings 是沟通JS 和 C++的桥梁，封装V8和Libuv的细节">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js(一)-简介">
 <meta property="og:url" content="http://yoursite.com/2016/06/01/node1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="再次阅读《深入浅出Node.js》的笔记系列
+<meta property="og:description" content="再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中
 
-概述-思维脑图">
+概述Node.js主要分为四大部分，Node Standard Library，Node Bindings，V8，Libuv，架构图如下：
+
+Node Standard Library 是我们每天都在用的标准库，如Http, Buffer 模块。
+Node Bindings 是沟通JS 和 C++的桥梁，封装V8和Libuv的细节">
+<meta property="og:image" content="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/a9e67142615f49863438cc0086b594e48984d1c9.jpeg">
 <meta property="og:image" content="http://o6qp6st9j.bkt.clouddn.com/images/node/Node%E7%AE%80%E4%BB%8B.png">
-<meta property="og:updated_time" content="2016-06-04T07:34:11.538Z">
+<meta property="og:updated_time" content="2016-06-17T02:59:40.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js(一)-简介">
-<meta name="twitter:description" content="再次阅读《深入浅出Node.js》的笔记系列
+<meta name="twitter:description" content="再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中
 
-概述-思维脑图">
-<meta name="twitter:image" content="http://o6qp6st9j.bkt.clouddn.com/images/node/Node%E7%AE%80%E4%BB%8B.png">
+概述Node.js主要分为四大部分，Node Standard Library，Node Bindings，V8，Libuv，架构图如下：
+
+Node Standard Library 是我们每天都在用的标准库，如Http, Buffer 模块。
+Node Bindings 是沟通JS 和 C++的桥梁，封装V8和Libuv的细节">
+<meta name="twitter:image" content="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/a9e67142615f49863438cc0086b594e48984d1c9.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -109,7 +119,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16.67px;">css3</a> <a href="/tags/float/" style="font-size: 13.33px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 16.67px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+						<a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 12.5px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
 					</div>
 				</section>
 				
@@ -205,9 +215,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>再次阅读《深入浅出Node.js》的笔记系列</p>
+<p>再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中</p>
 </blockquote>
-<h2 id="概述-思维脑图"><a href="#概述-思维脑图" class="headerlink" title="概述-思维脑图"></a>概述-思维脑图</h2><p><img src="http://o6qp6st9j.bkt.clouddn.com/images/node/Node%E7%AE%80%E4%BB%8B.png" alt="node"></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Node.js主要分为四大部分，Node Standard Library，Node Bindings，V8，Libuv，架构图如下：<br><img src="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/a9e67142615f49863438cc0086b594e48984d1c9.jpeg" alt="node1"></p>
+<ul>
+<li>Node Standard Library 是我们每天都在用的标准库，如Http, Buffer 模块。</li>
+<li>Node Bindings 是沟通JS 和 C++的桥梁，封装V8和Libuv的细节，向上层提供基础API服务</li>
+<li>第三层是支撑 Node.js 运行的关键，由 C/C++ 实现<ul>
+<li>V8 是Google开发的JavaScript引擎，提供JavaScript运行环境，可以说它就是 Node.js 的发动机。</li>
+<li>Libuv 是专门为Node.js开发的一个封装库，提供跨平台的异步I/O能力</li>
+<li>C-ares：提供了异步处理 DNS 相关的能力。</li>
+<li>http_parser、OpenSSL、zlib 等：提供包括 http 解析、SSL、数据压缩等其他的能力</li>
+</ul>
+</li>
+</ul>
+<h2 id="思维脑图"><a href="#思维脑图" class="headerlink" title="思维脑图"></a>思维脑图</h2><p><img src="http://o6qp6st9j.bkt.clouddn.com/images/node/Node%E7%AE%80%E4%BB%8B.png" alt="node"></p>
+<p>部分摘自：<a href="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/chapter1-0.html" target="_blank" rel="external">https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/chapter1-0.html</a></p>
 
       
     </div>

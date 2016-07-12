@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Module | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于模块化：
+
+可重用
+封装了变量和function，和全局的namaspace不接触，松耦合
+只暴露可用public的方法，其它私有方法全部隐藏
+
+1、基本的模块化
+对象写法`var Module = {    m1: function(){},    m2: function(){}}
+`减少 Global 上的变量数目,起到了一点点的命名空间作用同样缺点明显: 会暴露所有模块成员，内部状态可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Module">
+<meta property="og:url" content="http://yoursite.com/2016/06/13/module/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于模块化：
+
+可重用
+封装了变量和function，和全局的namaspace不接触，松耦合
+只暴露可用public的方法，其它私有方法全部隐藏
+
+1、基本的模块化
+对象写法`var Module = {    m1: function(){},    m2: function(){}}
+`减少 Global 上的变量数目,起到了一点点的命名空间作用同样缺点明显: 会暴露所有模块成员，内部状态可">
+<meta property="og:updated_time" content="2016-06-16T06:22:57.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Module">
+<meta name="twitter:description" content="关于模块化：
+
+可重用
+封装了变量和function，和全局的namaspace不接触，松耦合
+只暴露可用public的方法，其它私有方法全部隐藏
+
+1、基本的模块化
+对象写法`var Module = {    m1: function(){},    m2: function(){}}
+`减少 Global 上的变量数目,起到了一点点的命名空间作用同样缺点明显: 会暴露所有模块成员，内部状态可">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://ww4.sinaimg.cn/thumb150/968ae2f8jw8exiz7rtbb5j20u00u0wh7.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">cherishsdan</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 12.5px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">cherishsdan</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://ww4.sinaimg.cn/thumb150/968ae2f8jw8exiz7rtbb5j20u00u0wh7.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">cherishsdan</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-module" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/13/module/" class="article-date">
+  	<time datetime="2016-06-13T09:15:08.000Z" itemprop="datePublished">2016-06-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Module
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/module/">module</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于模块化：</p>
+<ul>
+<li>可重用</li>
+<li>封装了变量和function，和全局的namaspace不接触，松耦合</li>
+<li>只暴露可用public的方法，其它私有方法全部隐藏</li>
+</ul>
+<p>1、基本的模块化</p>
+<h2 id="对象写法"><a href="#对象写法" class="headerlink" title="对象写法"></a>对象写法</h2><p>`<br>var Module = {<br>    m1: function(){},<br>    m2: function(){}<br>}</p>
+<p>`<br>减少 Global 上的变量数目,起到了一点点的命名空间作用<br>同样缺点明显: 会暴露所有模块成员，内部状态可以被外部改写</p>
+<h2 id="匿名闭包-：IIFE-模式"><a href="#匿名闭包-：IIFE-模式" class="headerlink" title="匿名闭包 ：IIFE 模式"></a>匿名闭包 ：IIFE 模式</h2><p>`<br>var Module = (function(){<br>    var _private = “safe”;<br>    var m1 = function(){<br>        /<em> code </em>/<br>    }</p>
+<pre><code>return {
+    m1: m1
+}
+</code></pre><p>})()</p>
+<p>Module.m1();<br>Module._private; // undefined<br>`<br>可以很好的保护私有变量，通过return来设置公开的方法<br>动态添加方法的时候比较麻烦，且无法修改内部私有变量.</p>
+<p>##引用全局变量<br>`<br>var Module = (function($){<br>    var _$body = $(“body”);     // can use jQuery<br>    var m1 = function(){<br>         /<em> code </em>/<br>    }</p>
+<pre><code>return {
+    m1: m1
+}
+</code></pre><p>})(jQuery)</p>
+<p>Module.m1();<br>`<br>全局变量当成一个参数传入到匿名函数然后使用.</p>
+<p>`<br>var Module = (function () {<br>    var m = {},<br>    _private = “”;</p>
+<pre><code>function privateM1(data) {
+     /* code */  
+}
+
+m.attr = _private;
+m.method = function (data) {
+    privateM1(data);
+};
+
+return m;
+</code></pre><p>} ());<br>`<br>全局变量Module带有2个可访问的属性Module.method和Module.，除此之外，其它代码都在匿名函数的闭包里保持着私有状态。</p>
+<h2 id="module-扩展"><a href="#module-扩展" class="headerlink" title="module 扩展"></a>module 扩展</h2><p>将一个功能分离成多个文件<br><code>var Module = (function (m) {
+    m.method = function () {
+        /* code */  
+    };
+    return m;
+} (Module));</code></p>
+<h3 id="松耦合扩展"><a href="#松耦合扩展" class="headerlink" title="松耦合扩展"></a>松耦合扩展</h3><p>解决顺序问题<br><code>var Module = (function (m) {
+    m.method = function () {
+        /* code */  
+    };
+    return m;
+} (Module || {}));</code><br>首个被引入的文件会创建Module命名空间（就是个JavaScript对象），而且所有使用这种结构的后续文件都只是重用此现有实例。</p>
+<h3 id="紧耦合扩展"><a href="#紧耦合扩展" class="headerlink" title="紧耦合扩展"></a>紧耦合扩展</h3><p>紧耦合扩展限制了加载顺序，但是提供了我们重载的机会<br>`<br>var Module = (function (m) {<br>    var oldMethod = m.AddMethod;</p>
+<pre><code>m.AddMethod = function () {
+    /* code 
+    可通过oldMethod调用旧的方法
+    */
+};
+
+return m;
+</code></pre><p>} (Module));</p>
+<h2 id=""><a href="#" class="headerlink" title="`"></a>`</h2><p>2、发展</p>
+<p>难以维护、依赖模糊、请求过多</p>
+<p>YUI3..</p>
+<p>代码的合并、压缩、混淆</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank" rel="external">COMMONJS</a></li>
+</ul>
+<p>浏览器环境模块化方案</p>
+<ul>
+<li>AMD RequireJS</li>
+<li>CMD SeaJS</li>
+</ul>
+<p>大势所趋：<br>Browserify - CommonJS In Browser<br>Webpack - Module Bundler</p>
+<p>ES6：ES6 MODULE</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/13/semantic/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          semantic
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/12/iife/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">立即执行函数表达式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="module" data-title="Module" data-url="http://yoursite.com/2016/06/13/module/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 cherishsdan
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

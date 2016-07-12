@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 16.67px;">css3</a> <a href="/tags/float/" style="font-size: 13.33px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 16.67px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+						<a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 12.5px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
 					</div>
 				</section>
 				
@@ -160,11 +160,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-network" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-promise" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/26/network/" class="article-date">
-  	<time datetime="2016-05-26T04:56:15.000Z" itemprop="datePublished">2016-05-26</time>
+      <a href="/2016/06/20/promise/" class="article-date">
+  	<time datetime="2016-06-20T11:03:01.000Z" itemprop="datePublished">2016-06-20</time>
 </a>
     </div>
   
@@ -177,7 +177,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/26/network/">对于计算机网络一些基本概念的复习</a>
+      <a class="article-title" href="/2016/06/20/promise/">JavaScript 异步编程</a>
     </h1>
   
 
@@ -186,7 +186,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>## </p>
+        <p>所谓的异步指的是函数的调用并不直接返回执行的结果，而往往是通过回调函数异步的执行。异步的主要目的是处理非阻塞，在和HTML交互的过程中，会需要一些IO操作（典型的就是Ajax请求，脚本文件加载），如果这些操作是同步的，就会阻塞其它操作，用户的体验就是页面失去了响应。avascript通过事件驱动机制，在单线程模型下，以异步回调函数的形式来实现非阻塞的IO操作。</p>
+<h2 id="常见的异步模型"><a href="#常见的异步模型" class="headerlink" title="常见的异步模型"></a>常见的异步模型</h2><ul>
+<li>高阶函数</li>
+<li><p>事件监听</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f.on(<span class="string">"evt"</span>, g);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    f.trigger(<span class="string">"evt"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>发布/订阅</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">E.subscribe(<span class="string">"evt"</span>, g);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    　　<span class="comment">// f的任务代码</span></span><br><span class="line">    　　E.publish(<span class="string">"evt"</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Promise</p>
+</li>
+</ul>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>传统的回调函数写法使得代码混成一团，变得横向发展而不是向下发展。Promises规范就是为了解决这个问题而提出的，目标是使用正常的程序流程（同步），来处理异步操作。</p>
+<p>Promise把类似的异步处理对象和处理规则进行规范化， 并按照采用统一的接口来编写，采取规定方法之外的写法都会出错。promise的功能是可以将复杂的异步处理轻松地进行模式化。<br>简单来说，它起到代理作用（proxy），充当异步操作与回调函数之间的中介。它使得异步操作具备同步操作的接口，使得程序具备正常的同步运行的流程，回调函数不必再一层层嵌套。它的思想是，每一个异步任务立刻返回一个Promise对象，由于是立刻返回，所以可以采用同步操作的流程。这个Promises对象有一个then方法，允许指定回调函数，在异步任务完成后调用。<br>ECMAScript 6将其写入语言标准，因此目前JavaScript语言原生支持Promise对象。<br>更多Promise操作-<a href="">Promise</a></p>
+<h2 id="异步操作的流程控制"><a href="#异步操作的流程控制" class="headerlink" title="异步操作的流程控制"></a>异步操作的流程控制</h2><p>1、串行执行</p>
+<p>可以编写一个流程控制函数，让它来控制异步任务，一个任务完成以后，再执行另一个。这就叫串行执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> ];</span><br><span class="line"><span class="keyword">var</span> results = [];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">series</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(item) &#123;</span><br><span class="line">    <span class="keyword">async</span>( item, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">      results.push(result);</span><br><span class="line">      <span class="keyword">return</span> series(items.shift());</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> final(results);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">series(items.shift());</span><br></pre></td></tr></table></figure>
+<p>函数series就是串行函数，它会依次执行异步任务，所有任务都完成后，才会执行final函数。items数组保存每一个异步任务的参数，results数组保存每一个异步任务的运行结果</p>
+<p>2、并行执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> ];</span><br><span class="line"><span class="keyword">var</span> results = [];</span><br><span class="line"></span><br><span class="line">items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">async</span>(item, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    results.push(result);</span><br><span class="line">    <span class="keyword">if</span>(results.length == items.length) &#123;</span><br><span class="line">      final(results);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，forEach方法会同时发起6个异步任务，等到它们全部完成以后，才会执行final函数。</p>
+<p>并行执行的好处是效率较高，比起串行执行一次只能执行一个任务，较为节约时间。但是问题在于如果并行的任务较多，很容易耗尽系统资源，拖慢运行速度。因此有了第三种流程控制方式</p>
+<p>3、并行与串行的结合<br>所谓并行与串行的结合，就是设置一个门槛，每次最多只能并行执行n个异步任务。这样就避免了过分占用系统资源。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> ];</span><br><span class="line"><span class="keyword">var</span> results = [];</span><br><span class="line"><span class="keyword">var</span> running = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> limit = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">launcher</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(running &lt; limit &amp;&amp; items.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> item = items.shift();</span><br><span class="line">    <span class="keyword">async</span>(item, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">      results.push(result);</span><br><span class="line">      running--;</span><br><span class="line">      <span class="keyword">if</span>(items.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        launcher();</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span>(running == <span class="number">0</span>) &#123;</span><br><span class="line">        final();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    running++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">launcher();</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript-多线程"><a href="#JavaScript-多线程" class="headerlink" title="JavaScript 多线程"></a>JavaScript 多线程</h2><p>JavaScript 中的 Worker 对象可以创建一个独立线程来处理数据，很自然的处理了阻塞问题。我们可以把繁重的计算任务交给 Worker,等他处理完了再把数据 Post 过来。</p>
+<p>Worker 是一个有用的工具,可以创建 ajax 对象和 WebSocket 对象，也就是说他可以直接向服务器请求数据。不过他不能访问 DOM 的信息，更不能直接处理 DOM。</p>
+<p>更多的worker-<a href="">worker</a></p>
+<h2 id="Generator-对象解决异步"><a href="#Generator-对象解决异步" class="headerlink" title="Generator 对象解决异步"></a>Generator 对象解决异步</h2><p>参考：<a href="https://segmentfault.com/a/1190000002545312" target="_blank" rel="external">https://segmentfault.com/a/1190000002545312</a><br>      <a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html</a></p>
 
       
     </div>
@@ -195,7 +221,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/network/">network</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Promise/">Promise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       
@@ -217,11 +243,11 @@
 
 
   
-    <article id="post-react" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-semantic" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/21/react/" class="article-date">
-  	<time datetime="2016-05-21T05:27:13.000Z" itemprop="datePublished">2016-05-21</time>
+      <a href="/2016/06/13/semantic/" class="article-date">
+  	<time datetime="2016-06-13T12:08:32.000Z" itemprop="datePublished">2016-06-13</time>
 </a>
     </div>
   
@@ -234,7 +260,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/21/react/">react杂记</a>
+      <a class="article-title" href="/2016/06/13/semantic/">semantic</a>
     </h1>
   
 
@@ -243,82 +269,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>react学习过程中的一些记录~</p>
-<blockquote>
-<p>现在我们已经清楚，React的美妙和本质与浏览器或DOM无关，<br>我们认为React的真正基础是关于组件和元素的质朴想法：用声明式的方式来描述任何你想渲染的东西。</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/view/">view</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/21/react/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/20/gulp/" class="article-date">
-  	<time datetime="2016-05-20T06:18:38.000Z" itemprop="datePublished">2016-05-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/20/gulp/">关于gulp</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对gulp的一些记录，以及自己使用gulp的一些心得(●’?’●)</p>
-<h1 id="gulp是什么？"><a href="#gulp是什么？" class="headerlink" title="gulp是什么？"></a>gulp是什么？</h1><p>gulp.js基是一个于流的构建系统，通过JavaScript编写并依托Node.js平台，优点是速度，效率和简化。<br>由于 Gulp 是基于流的，所以 Gulp 对于文件内容的操作就像是水槽对于水流，水流流经水槽，<br>水槽将水流塑造成不同的形状。</p>
-
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
-	</div>
-
       
 
       
@@ -338,11 +295,11 @@
 
 
   
-    <article id="post-timer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-module" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/15/timer/" class="article-date">
-  	<time datetime="2016-05-15T09:32:53.000Z" itemprop="datePublished">2016-05-15</time>
+      <a href="/2016/06/13/module/" class="article-date">
+  	<time datetime="2016-06-13T09:15:08.000Z" itemprop="datePublished">2016-06-13</time>
 </a>
     </div>
   
@@ -355,7 +312,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/15/timer/">定时器和线程</a>
+      <a class="article-title" href="/2016/06/13/module/">Module</a>
     </h1>
   
 
@@ -364,12 +321,144 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>读了《javascript 忍者秘籍》后对定时器的一些心得。</p>
-<p>定时器提供了一种让一段代码在一定毫秒之后，在异步执行的能力。（html5 web worker 对定时器做了很多改变，IE不支持）</p>
-<p>定时器有一个很重要的概念 <strong> javascript定时器的延迟时间是不确定的 </strong></p>
-<p>在web worker可用之前，浏览器中的所有javascript代码都是在单线程中运行的。这种情况下，异步事件的处理程序，如用户界面事件和定时器，在线程中没有代码执行时才进行执行。也就是说，处理程序在执行时必须进行排队执行，并且一个处理程序不能中断另一个处理程序的执行。</p>
-<blockquote>
-<p>定时器对队列的工作方式是，当特定的时间过去后，将代码插入，注意添加到队列并不<br>意味着它会马上执行，而只能说它会尽快执行。对于定时器来说，指定的时间间隔表示何<br>时将定时器的代码添加到队列中，而不是何时执行代码。<br>
+        <p>关于模块化：</p>
+<ul>
+<li>可重用</li>
+<li>封装了变量和function，和全局的namaspace不接触，松耦合</li>
+<li>只暴露可用public的方法，其它私有方法全部隐藏</li>
+</ul>
+<p>1、基本的模块化</p>
+<h2 id="对象写法"><a href="#对象写法" class="headerlink" title="对象写法"></a>对象写法</h2><p>`<br>var Module = {<br>    m1: function(){},<br>    m2: function(){}<br>}</p>
+<p>`<br>减少 Global 上的变量数目,起到了一点点的命名空间作用<br>同样缺点明显: 会暴露所有模块成员，内部状态可以被外部改写</p>
+<h2 id="匿名闭包-：IIFE-模式"><a href="#匿名闭包-：IIFE-模式" class="headerlink" title="匿名闭包 ：IIFE 模式"></a>匿名闭包 ：IIFE 模式</h2><p>`<br>var Module = (function(){<br>    var _private = “safe”;<br>    var m1 = function(){<br>        /<em> code </em>/<br>    }</p>
+<pre><code>return {
+    m1: m1
+}
+</code></pre><p>})()</p>
+<p>Module.m1();<br>Module._private; // undefined<br>`<br>可以很好的保护私有变量，通过return来设置公开的方法<br>动态添加方法的时候比较麻烦，且无法修改内部私有变量.</p>
+<p>##引用全局变量<br>`<br>var Module = (function($){<br>    var _$body = $(“body”);     // can use jQuery<br>    var m1 = function(){<br>         /<em> code </em>/<br>    }</p>
+<pre><code>return {
+    m1: m1
+}
+</code></pre><p>})(jQuery)</p>
+<p>Module.m1();<br>`<br>全局变量当成一个参数传入到匿名函数然后使用.</p>
+<p>`<br>var Module = (function () {<br>    var m = {},<br>    _private = “”;</p>
+<pre><code>function privateM1(data) {
+     /* code */  
+}
+
+m.attr = _private;
+m.method = function (data) {
+    privateM1(data);
+};
+
+return m;
+</code></pre><p>} ());<br>`<br>全局变量Module带有2个可访问的属性Module.method和Module.，除此之外，其它代码都在匿名函数的闭包里保持着私有状态。</p>
+<h2 id="module-扩展"><a href="#module-扩展" class="headerlink" title="module 扩展"></a>module 扩展</h2><p>将一个功能分离成多个文件<br><code>var Module = (function (m) {
+    m.method = function () {
+        /* code */  
+    };
+    return m;
+} (Module));</code></p>
+<h3 id="松耦合扩展"><a href="#松耦合扩展" class="headerlink" title="松耦合扩展"></a>松耦合扩展</h3><p>解决顺序问题<br><code>var Module = (function (m) {
+    m.method = function () {
+        /* code */  
+    };
+    return m;
+} (Module || {}));</code><br>首个被引入的文件会创建Module命名空间（就是个JavaScript对象），而且所有使用这种结构的后续文件都只是重用此现有实例。</p>
+<h3 id="紧耦合扩展"><a href="#紧耦合扩展" class="headerlink" title="紧耦合扩展"></a>紧耦合扩展</h3><p>紧耦合扩展限制了加载顺序，但是提供了我们重载的机会<br>`<br>var Module = (function (m) {<br>    var oldMethod = m.AddMethod;</p>
+<pre><code>m.AddMethod = function () {
+    /* code 
+    可通过oldMethod调用旧的方法
+    */
+};
+
+return m;
+</code></pre><p>} (Module));</p>
+<h2 id=""><a href="#" class="headerlink" title="`"></a>`</h2><p>2、发展</p>
+<p>难以维护、依赖模糊、请求过多</p>
+<p>YUI3..</p>
+<p>代码的合并、压缩、混淆</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank" rel="external">COMMONJS</a></li>
+</ul>
+<p>浏览器环境模块化方案</p>
+<ul>
+<li>AMD RequireJS</li>
+<li>CMD SeaJS</li>
+</ul>
+<p>大势所趋：<br>Browserify - CommonJS In Browser<br>Webpack - Module Bundler</p>
+<p>ES6：ES6 MODULE</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/module/">module</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-iife" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/12/iife/" class="article-date">
+  	<time datetime="2016-06-12T07:31:24.000Z" itemprop="datePublished">2016-06-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/12/iife/">立即执行函数表达式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>function foo(){ /<em> code </em>/ }();//SyntaxError: Unexpected token<br>function(){ /<em> code </em>/}(); //SyntaxError: Unexpected token</p>
+<p>圆括号为了调用函数出现在函数后面时，无论在全局环境或者局部环境里遇到了这样的function关键字，默认的，它会将它当作是一个函数声明，而不是函数表达式.因为 JavaScript 文法明确规定表达式语句不得以 function 或者 { 开头.</p>
+<p>所以便出现了下面几种形式：<br>(function(){/<em> code </em>/}())<br>(function(){/<em> code </em>/})()<br>!function(){/<em> code </em>/}();<br>~function(){/<em> code </em>/}();<br>-function(){/<em> code </em>/}();<br>+function(){/<em> code </em>/}();<br>…</p>
+<h2 id="最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了-function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。"><a href="#最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了-function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。" class="headerlink" title="最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了 function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。"></a>最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了 function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。</h2><p>函数表达式 &amp;&amp; 函数声明</p>
+<p>函数表达式中的函数可以为匿名函数，也可以有函数名，但是不能直接使用，只能通过表达式左边的变量 a 来调用。<br><code>var a = function(){
+alert(&#39;Function expression&#39;);
+}
+var b = new a();</code></p>
+<p>函数声明时必须有函数名<br><code>function a(){
+alert(&#39;Function declaration&#39;);
+}
+a();</code><br>`</p>
+<p><script><br>!function() {<br>alert(“hello, world.”);<br>} ();<br></script><br>`<br>匿名函数通过一元操作符变成了函数表达式，因而可以通过（）来调用。<br>因此，执行匿名函数可以通过+，-，！，（） 这样的形式来转化为函数表达式，就可以通过（）来运行了。</p>
+
       
     </div>
     
@@ -382,10 +471,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/15/timer/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -405,7 +490,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
