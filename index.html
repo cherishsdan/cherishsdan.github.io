@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 12.5px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+						<a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 16.67px;">css</a> <a href="/tags/css3/" style="font-size: 13.33px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 16.67px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
 					</div>
 				</section>
 				
@@ -177,7 +177,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/12/note/">note</a>
+      <a class="article-title" href="/2016/07/12/note/">前端知识杂记</a>
     </h1>
   
 
@@ -186,13 +186,68 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>对前端开发知识的一些梳理</p>
+</blockquote>
+<h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h2><ul>
+<li>###![理解web标准][<a href="http://www.cnblogs.com/coco1s/p/3588716.html" target="_blank" rel="external">http://www.cnblogs.com/coco1s/p/3588716.html</a>]</li>
+<li>###浏览器内核<br>  主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。<br>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</li>
+</ul>
+<p>JS引擎则：解析和执行javascript来实现网页的动态效果。</p>
+<p>最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</p>
+<p>![更多][<a href="http://web.jobbole.com/84826/" target="_blank" rel="external">http://web.jobbole.com/84826/</a>]</p>
+<ul>
+<li>###Doctype<br>  &lt;!DOCTYPE&gt;声明位于位于HTML文档中的第一行，处于 <html> 标签之前。<br>  这个标签是一种通用标记语言的文档类型声明，它主要就是告诉标准通用标记语言解析器应该使用什么样的文档类型定义 Document Type Definition（DTD）来解析文档。DTD定义了文档中的元素(标记和属性)和实体，以及相互关系。数据和结构分离。 通俗的来说，DTD就是一套关于标记符的语法规则，是html的验证机制。<br>  DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。<br>  <code>&lt;!DOCTYPE HTMLPUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+  &lt;!DOCTYPE html&gt;</code><br>  在HTML4.01中，&lt;!DOCTYPE&gt;声明引用DTD，因为HTML4.01基于标准通用标记语言(SGML)。DTD规定了标记语言的规则，这样浏览器才能正确地呈现内容。<br>  然而现在的HTML5不基于SGML，所以不需要引用DTD，因此没有声明DTD。<br>  总的来说，Doctype的作用就是声明文档的解析类型(document.compatMode),也就是告知浏览器的解析器用什么文档标准解析这个文档。如果DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。</html></li>
+<li>###页面的渲染模式<br>  页面的渲染模式document.compatMode有两种可能的返回值：BackCompat和CSS1CompatBackCompat：怪异模式（兼容模式），浏览器使用自己的怪异模式解析渲染页面。<br>  CSS1Compat：标准模式，浏览器使用W3C的标准解析渲染页面。<br>  所谓的怪异模式就是没有页面的DOCTYPE声明，标准模式具有DOCTYPE声明。<br>  标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。<br>  在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</li>
+<li>###元素<ol>
+<li>行内元素：a b span img input select strong</li>
+<li>块级元素：div ul ol li dl dt dd h1~h6 p</li>
+<li>空元素: “<br> <hr> <img> <input> <link> <meta> <area> <base> <col> <command> <embed> <keygen> <param> <source> <track> <wbr> “</li>
+</ol>
+</li>
+<li>###link和@import<ol>
+<li>导入的语法不相同<br> link （链接式）语法为：<br> <link rel="stylesheet" href="style.css" type="text/css"><br> @import （导入式）语法为： <style type="text/css">
+ @import url("style.css");
+ </style></li>
+<li>link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;</li>
+<li>加载顺序的差别。当一个页面被加载的时候（就是被浏览者浏览的时候），link引用的CSS会同时被加载，而@import引用的CSS会等到页面全部被下载完再被加载。所以有时候浏览@import加载CSS的页面时开始会没有样式（就是闪烁），网速慢的时候还挺明显</li>
+<li>兼容性的差别。由于@import是CSS2.1提出的所以老的浏览器不支持，@import只有在IE5以上的才能识别，而link标签无此问题。</li>
+<li>使用dom控制样式时的差别。当使用javascript控制dom去改变样式的时候，只能使用link标签，因为@import不是dom可以控制的。</li>
+<li>@import可以在css中再次引入其他样式表，比如可以创建一个主样式表，在主样式表中再引入其他的样式表</li>
+</ol>
+</li>
+<li><h3 id="HTML语义化"><a href="#HTML语义化" class="headerlink" title="HTML语义化"></a>HTML语义化</h3>  用正确的标签做正确的事情。<br>  代码更简洁，复用性更高。使用合适的标签，可以少些很多css或者js<br>  html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;<br>  即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的;<br>  搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO;<br>  使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。<br>  ![更多][<a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank" rel="external">http://nicolasgallagher.com/about-html-semantics-front-end-architecture/</a>]</li>
+<li><p>###iframe<br>  iframe：一个普通的html元素，可以通过css设置样式，是一个inline-block元素</p>
+<p>  iframe 的页面和父页面（parent）是分开的，所以它意味着，这是一个独立的区域，不受 parent 的 CSS 或者全局的 JavaScript 的影响，在一定程度上，类似于沙箱隔离（sandbox）。</p>
+<ol>
+<li>用来实现长连接，在websocket不可用的时候作为一种替代 ![more][<a href="http://www.ibm.com/developerworks/cn/web/wa-lo-comet/#N10101" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/web/wa-lo-comet/#N10101</a>]</li>
+<li>跨域通信</li>
+<li>历史记录管理，解决ajax化网站响应浏览器前进后退按钮的方案，在html5的history api不可用时作为一种替代。</li>
+<li>纯前端的utf8和gbk编码互转。比如在utf8页面需要生成一个gbk的encodeURIComponent字符串，可以通过页面加载一个gbk的iframe，然后主页面与子页面通信的方式实现转换，这样就不用在页面上插入一个非常巨大的编码映射表文件了</li>
+<li>用iframe实现无刷新文件上传（同域），在FormData不可用时作为替代方案</li>
+<li>在移动端用于从网页调起客户端应用(此方法在iphone上并不安全，慎用)</li>
+<li>创建一个全新的独立的宿主环境,用于隔离或者访问原始接口及对象，比如有些前端安全的防范会覆盖一些原生的方法防止恶意调用，那我们就能通过创建一个iframe，然后从iframe中取回原始对象和方法来破解这种防范</li>
+<li>需要保持独立焦点和历史管理的子窗口，如复杂的Web应用</li>
+<li>IE6下用于遮罩select</li>
+<li>解决加载缓慢的第三方内容如图标和广告等的加载问题<br><strong>缺点</strong></li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于SEO</li>
+<li>会阻塞主页面的Onload事件</li>
+<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载<br>如果需要使用iframe，最好是通过javascript<br>动态给iframe添加src属性值，这样可以绕开以上两个问题<h3 id="label"><a href="#label" class="headerlink" title="label"></a>label</h3>label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上<h3 id="form关闭自动完成"><a href="#form关闭自动完成" class="headerlink" title="form关闭自动完成"></a>form关闭自动完成</h3>给不想要提示的 form 或某个 input 设置为 autocomplete=off</li>
+</ol>
+</li>
+</ul>
+
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
       
 
       
@@ -358,82 +413,7 @@
         <blockquote>
 <p>校招准备中，fighting！<br>答案主要是网上一些资料的整理</p>
 </blockquote>
-<p>输入网址之后发生了什么？()</p>
-<ol>
-<li>输入网址</li>
-<li><p>浏览器查找域名对应IP<br> 2.1 DNS查找过程</p>
-<pre><code>1. 浏览器缓存——浏览器会记录DNS一段时间（2-30分钟不等，视浏览器而定）
-2. 系统缓存——浏览器里没找到DNS缓存，此时浏览器做一个系统调用（window下是gethostbyname）。gethostbyname 函数在试图进行DNS解析之前首先检查域名是否在本地 Hosts 里，Hosts 的位置 不同的操作系统有所不同。如果 gethostbyname 没有这个域名的缓存记录，也没有在 hosts 里找到，它将会向 DNS 服务器发送一条 DNS 查询请求。DNS 服务器是由网络通信栈提供的，通常是本地路由器或者 ISP 的缓存 DNS 服务器。
-3. 路由器缓存——路由器也会有DNS缓存（缓存你上过的网站，所以有时路由器需要进行DNS刷新）
-4. ISP DNS缓存——接下来是在ISP（互联网服务提供商）的DNS服务器的缓存上查找。
-5. 递归查找——DNS缓存里没有的话，ISP DNS服务器会先后从根域名服务器（root）、.com顶级域名服务器、Facebook域名服务器获取IP（一般缓存内都会有，所以这一步一般不会发生） 
-</code></pre></li>
-<li><p>通过 Socket 发送数据</p>
-<pre><code>当浏览器得到了目标服务器的 IP 地址，以及 URL 中给出来端口号（http 协议默认端口号是 80， https 默认端口号是 443）就可以通过 Socket API 来发送数据了，这时可以选择 TCP 或 UDP 协议，HTTP 常用的是 TCP 协议。它会调用系统库函数 socket ，请求一个 TCP流套接字，对应的参数是 AF_INET 和 SOCK_STREAM 
-
-    - 这个请求首先被交给传输层，在传输层请求被封装成 TCP segment。目标端口会会被加入头部，源端口会在系统内核的动态端口范围内选取（Linux下是ip_local_port_range)
-    - TCP segment 被送往网络层，网络层会在其中再加入一个 IP 头部，里面包含了目标服务器的IP地址以及本机的IP地址，把它封装成一个TCP packet。
-    - 这个 TCP packet 接下来会进入链路层，链路层会在封包中加入 frame头 部，里面包含了本地内置网卡的MAC地址以及网关（本地路由器）的 MAC 地址。像前面说的一样，如果内核不知道网关的 MAC 地址，它必须进行 ARP 广播来查询其地址。
-
-到了现在，TCP 封包已经准备好了，可以使用以太网、WiFi、蜂窝数据网络进行传输。大型企业和比较新的住宅通常使用光纤或直接以太网连接，这种情况下信号一直是数字的，会被直接传到下一个 网络节点 进行处理。
-
-最终封包会到达管理本地子网的路由器。在那里出发，它会继续经过自治区域的边界路由器，其他自治区域，最终到达目标服务器。一路上经过的这些路由器会从IP数据报头部里提取出目标地址，并将封包正确地路由到下一个目的地。IP数据报头部TTL域的值每经过一个路由器就减1，如果封包的TTL变为0，或者路由器由于网络拥堵等原因封包队列满了，那么这个包会被路由器丢弃。
-</code></pre></li>
-<li><p>到达服务器</p>
-<ol>
-<li><p>负载均衡</p>
-<p>请求在进入到真正的应用服务器前，可能还会先经过负责负载均衡的机器，它的作用是将请求合理地分配到多个服务器上，同时具备具备防攻击等功能。<br>负载均衡具体实现有很多种，有直接基于硬件的 F5，有操作系统传输层(TCP)上的 LVS，也有在应用层(HTTP)实现的反向代理（也叫七层代理），接下来将介绍 LVS 及反向代理。</p>
-<p>负载均衡的策略也有很多，如果后面的多个服务器性能均衡，最简单的方法就是挨个循环一遍(Round-Robin)</p>
-<ul>
-<li>LVS<br>LVS 的作用是从对外看来只有一个 IP，而实际上这个 IP 后面对应是多台机器，因此也被成为 Virtual IP。</li>
-<li>反向代理<br>向代理是工作在 HTTP 上的，具体实现可以基于 HAProxy 或 Nginx，因为反向代理能理解 HTTP 协议，所以能做非常多的事情，比如：</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-<p>进行很多统一处理，比如防攻击策略、放抓取、SSL、gzip、自动性能优化等<br>应用层的分流策略都能在这里做，比如对 /xx 路径的请求分到 a 服务器，对 /yy &gt;<br>路径的请求分到 b 服务器，或者按照 cookie 进行小流量测试等<br>缓存，并在后端服务挂掉的时候显示友好的 404 页面<br>监控后端服务是否异常</p>
-</blockquote>
-<ol>
-<li><p>重定向<br>当我们输入不完整的网址（<br>时，或者网站迁移做了重定向设置时，服务器会进行一次重定向响应。 重定向之后会发布一个新的获取请求</p>
-</li>
-<li><p>服务器处理请求</p>
-</li>
-</ol>
-<blockquote>
-<p>web服务器软件（如IIS或者Apache）接收到HTTP请求<br>确定执行那个请求处理程序<br>请求处理器阅读请求头的参数和cookies信息<br>更新服务器上的信息：例如更新数据库信息、服务端cookies<br>生成HTML，压缩（gzip或其他），响应请求发送给用户</p>
-</blockquote>
-<ol>
-<li><p>服务器发回一个HTML响应<br>响应包括响应头（响应参数与信息）、响应包（主体文件）<br>响应包采用特定方法压缩，整个响应以blob类型传输，响应头指示响应包以何种方式压缩<br>这个响应头与重定向的响应头不太一样，这个响应头还包含着缓存选项，cookies设置和隐私信息等</p>
-</li>
-<li><p>浏览器背后的故事</p>
-</li>
-</ol>
-<p>服务端处理完请求后，结果将通过网络发回客户端的浏览器.当服务器提供了资源之后（HTML，CSS，JS，图片等），浏览器会执行下面的操作：</p>
-<ul>
-<li>解析 HTML，CSS，JS</li>
-<li>渲染——构建 DOM 树 -&gt; 渲染 -&gt; 布局 -&gt; 绘制</li>
-</ul>
-<p><strong>浏览器高层架构</strong></p>
-<p>组成浏览器的组件有:</p>
-<ul>
-<li>用户界面 用户界面包含了地址栏，前进后退按钮，书签菜单等等，除了请求页面之外所有你看到的内容都是用户界面的一部分</li>
-<li>浏览器引擎 浏览器引擎负责让 UI 和渲染引擎协调工作</li>
-<li>渲染引擎 渲染引擎负责展示请求内容。如果请求的内容是 HTML，渲染引擎会解析 HTML 和 CSS，然后将内容展示在屏幕上</li>
-<li>网络组件 网络组件负责网络调用，例如 HTTP 请求等，使用一个平台无关接口，下层是针对不同平台的具体实现</li>
-<li>UI后端 UI 后端用于绘制基本 UI 组件，例如下拉列表框和窗口。UI 后端暴露一个统一的平台无关的接口，下层使用操作系统的 UI 方法实现</li>
-<li>Javascript 引擎 Javascript 引擎用于解析和执行 Javascript 代码</li>
-<li>数据存储 数据存储组件是一个持久层。浏览器可能需要在本地存储各种各样的数据，例如 Cookie 等。浏览器也需要支持诸如 localStorage，IndexedDB，WebSQL 和 FileSystem 之类的存储机制</li>
-</ul>
-<p><strong>浏览器获取其他文件</strong><br>浏览器解析HTML遇到需要下载的文件时，便再次向服务器（CDN）发送获取文件的请求。</p>
-<ul>
-<li>动态页面无法缓存，静态文件允许浏览器进行缓存。 </li>
-<li>静态文件本地有缓存时直接从本地读取 </li>
-<li>请求响应头内包含着静态文件保存的期限，浏览器知道下载的静态文件要静默保留多久。 </li>
-<li>响应头还会有静态文件的ETag（相当于版本号），当浏览器发现请求的静态文件的响应头的ETag与现有的缓存文件不符时，便会再次向服务器获取静态文件。</li>
-</ul>
-
+<p>输入网址之后发生了什么？<br>
       
     </div>
     
@@ -446,6 +426,10 @@
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/23/test/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
