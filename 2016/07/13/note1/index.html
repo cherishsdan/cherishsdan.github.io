@@ -9,8 +9,7 @@
   <meta name="description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
 
 CSS
-盒子模型    box-sizing属性：
-content-boxWidth = width + padding-left + padding-right + border-left + border-rightHeight = height + padding-top + padding-bottom + bo">
+盒子模型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端知识杂记">
 <meta property="og:url" content="http://yoursite.com/2016/07/13/note1/index.html">
@@ -18,17 +17,15 @@ content-boxWidth = width + padding-left + padding-right + border-left + border-r
 <meta property="og:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
 
 CSS
-盒子模型    box-sizing属性：
-content-boxWidth = width + padding-left + padding-right + border-left + border-rightHeight = height + padding-top + padding-bottom + bo">
+盒子模型">
 <meta property="og:image" content="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg">
-<meta property="og:updated_time" content="2016-07-15T03:01:03.543Z">
+<meta property="og:updated_time" content="2016-07-15T03:22:32.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端知识杂记">
 <meta name="twitter:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
 
 CSS
-盒子模型    box-sizing属性：
-content-boxWidth = width + padding-left + padding-right + border-left + border-rightHeight = height + padding-top + padding-bottom + bo">
+盒子模型">
 <meta name="twitter:image" content="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -214,13 +211,16 @@ content-boxWidth = width + padding-left + padding-right + border-left + border-r
 <p>对前端开发知识的一些梳理,主要参考<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Questions-and-Answers/README.md" target="_blank" rel="external">前端开发面试题</a>及对它的补充，持续完善…</p>
 </blockquote>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
-<li>盒子模型<br>  <img src="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg" alt="box"><br>  box-sizing属性：<ol>
+<li><p>盒子模型<br>  <img src="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg" alt="box"></p>
+  <a id="more"></a>
+<p>  box-sizing属性：</p>
+<ol>
 <li>content-box<br>Width = width + padding-left + padding-right + border-left + border-right<br>Height = height + padding-top + padding-bottom + border-top + border-bottom</li>
 <li>padding-box<br>Width = width(包含padding-left + padding-right) + border-top + border-bottom<br>Height = height(包含padding-top + padding-bottom) + border-top + border-bottom</li>
-<li>border-box<br>Width = width(包含padding-left + padding-right + border-left + border-right)<br>Height = height(包含padding-top + padding-bottom + border-top + border-bottom)<a id="more"></a></li>
+<li>border-box<br>Width = width(包含padding-left + padding-right + border-left + border-right)<br>Height = height(包含padding-top + padding-bottom + border-top + border-bottom)</li>
 </ol>
 </li>
-<li><p>CSS选择符<br>  `<br>  1.id选择器（ # myid）<br>  2.类选择器（.myclassname）<br>  3.标签选择器（div, h1, p）<br>  4.相邻选择器（h1 + p）<br>  5.子选择器（ul &gt; li）<br>  6.后代选择器（li a）<br>  7.通配符选择器（ * ）<br>  8.属性选择器（a[rel = “external”]）<br>  9.伪类选择器（a:hover, li:nth-child）</p>
+<li><p>CSS选择符<br>  1.id选择器（ # myid）<br>  2.类选择器（.myclassname）<br>  3.标签选择器（div, h1, p）<br>  4.相邻选择器（h1 + p）<br>  5.子选择器（ul &gt; li）<br>  6.后代选择器（li a）<br>  7.通配符选择器（ * ）<br>  8.属性选择器（a[rel = “external”]）<br>  9.伪类选择器（a:hover, li:nth-child）</p>
 <p>  可继承的样式： font-size font-family color, UL LI DL DD DT;<br>  不可继承的样式：border padding margin width height ;<br>  `</p>
 </li>
 <li><p>CSS优先级<br>  优先级就近原则，同权重情况下样式定义最近者为准;<br>  优先级关系：内联样式 &gt; ID 选择器 &gt; 类选择器 = 属性选择器 = 伪类选择器 &gt; 标签选择器 = 伪元素选择器<br>  属性后插有 !important 的属性拥有最高优先级<br>  以下是权重的规则：：</p>
