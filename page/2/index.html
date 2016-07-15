@@ -32,7 +32,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="http://www.wlshw.com/d/file/20120315/62231ad5ebdd70367811520838c9fe91.jpg" class="js-avatar">
+			<img lazy-src="http://img3.duitang.com/uploads/item/201503/24/20150324003541_RSJX8.jpeg" class="js-avatar">
 			
 		</a>
 
@@ -124,7 +124,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="http://www.wlshw.com/d/file/20120315/62231ad5ebdd70367811520838c9fe91.jpg" class="js-avatar">
+				<img lazy-src="http://img3.duitang.com/uploads/item/201503/24/20150324003541_RSJX8.jpeg" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -248,10 +248,10 @@
       
         <p>有这样一个场景，A访问了一个网站，登录后，打开第二个标签页并注销登录，那么第一个标签页应该先判断A是否注销，然后做相应改变。这就涉及到多标签页之间如何通讯<br>有以下几种方法：</p>
 <ol>
-<li><img src="" alt="SharedWorker"></li>
+<li><a href="">SharedWorker</a></li>
 <li><p>localstorage<br> 不论其中的哪一项在另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件。实际上，这就意味着不论在哪个浏览器的标签页里访问了 localStorage，所有其它的标签页都能通过 window 对象监听到这个事件</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(event.key, event.newValue);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p> 不论某个标签页在何时修改了 localStorage，都会对其余的所有标签触发事件。这就意味着我们只要为 localStorage 赋值，就能够跨浏览器标签通信了。<br> 不过，一些浏览器的仍然存在着 quirks，譬如无痕模式下的 Safari 在设置值时会抛出 QuotaExceededError 的异常，有某些浏览器不支持开箱即用的 JSON,可以使用<img src="https://github.com/bevacqua/local-storage" alt="bevacqua local-storage"></p>
+<p> 不论某个标签页在何时修改了 localStorage，都会对其余的所有标签触发事件。这就意味着我们只要为 localStorage 赋值，就能够跨浏览器标签通信了。<br> 不过，一些浏览器的仍然存在着 quirks，譬如无痕模式下的 Safari 在设置值时会抛出 QuotaExceededError 的异常，有某些浏览器不支持开箱即用的 JSON,可以使用<a href="https://github.com/bevacqua/local-storage" target="_blank" rel="external">bevacqua local-storage</a></p>
 </li>
 <li>WebSocket</li>
 <li>cookies</li>
