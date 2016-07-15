@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/Html5/" style="font-size: 14px;">Html5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 18px;">css</a> <a href="/tags/css3/" style="font-size: 12px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html/" style="font-size: 14px;">html</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 16px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+						<a href="/tags/CSS/" style="font-size: 12.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 15px;">HTML5</a> <a href="/tags/Html5/" style="font-size: 10px;">Html5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 12.5px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
 					</div>
 				</section>
 				
@@ -160,6 +160,73 @@
 
       <div class="body-wrap">
   
+    <article id="post-visibility" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/15/visibility/" class="article-date">
+  	<time datetime="2016-07-15T02:57:27.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/15/visibility/">visibility</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;<br>Page Visibility API，主要有三部分组成</p>
+<pre><code>* document.hidden：表示页面是否隐藏的布尔值。页面隐藏包括 页面在后台标签页中 或者 浏览器最小化
+* document.visibilityState：表示下面 4 个可能状态的值
+  * hidden：页面在后台标签页中或者浏览器最小化
+  * visible：页面在前台标签页中
+  * prerender：页面在屏幕外执行预渲染处理 document.hidden 的值为 true
+  * unloaded：页面正在从内存中卸载
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/15/visibility/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-note2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -186,68 +253,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
+        <blockquote>
+<p>对前端开发知识的一些梳理,主要<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Questions-and-Answers/README.md">参考</a></p>
+</blockquote>
+<ul>
 <li>基本数据类型<br>   Undefined、Null、Boolean、Number、String、Symbol(ES6)</li>
 <li><p>内置对象<br>  Object 是 JavaScript 中所有对象的父对象</p>
 <p>  数据封装类对象：Object、Array、Boolean、Number 和 String<br>  其他对象：Function、Arguments、Math、Date、RegExp、Error</p>
-</li>
-<li>基本规范<br>  1.不要在同一行声明多个变量。<br>2.请使用 ===/!==来比较true/false或者数值<br>3.使用对象字面量替代new Array这种形式<br>4.不要使用全局函数。<br>5.Switch语句必须带有default分支<br>6.函数不应该有时候有返回值，有时候没有返回值。<br>7.For循环必须使用大括号<br>8.If语句必须使用大括号<br>9.for-in循环中的变量 应该使用var关键字明确限定作用域，从而避免作用域污染。</li>
-<li><p>JavaScript有几种类型的值<br>  栈：原始数据类型（Undefined，Null，Boolean，Number、String）<br>堆：引用数据类型（对象、数组和函数）</p>
-<p>  两种类型的区别是：存储位置不同；<br>  原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；<br>引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其<br>在栈中的地址，取得地址后从堆中获得实体</p>
-</li>
-<li><a href="">继承</a></li>
-<li>创建对象</li>
-<li>作用域链</li>
-<li>This对象</li>
-<li>null，undefined </li>
-<li>window，document</li>
-<li>事件机制</li>
-<li>闭包</li>
-<li>use strict</li>
-<li>判断一个对象是否属于某个类</li>
-<li>new操作符</li>
-<li>js延迟加载</li>
-<li>Ajax</li>
-<li>同步和异步</li>
-<li>跨域</li>
-<li>模块化开发</li>
-<li>AMD CMD</li>
-<li>requireJS</li>
-<li>ECMAScript6</li>
-<li>documen.write，innerHtml</li>
-<li>DOM操作</li>
-<li>.call()  .apply()</li>
-<li>类及实例化</li>
-<li>作用域与变量声明提升</li>
-<li>高性能的Javascript</li>
-<li>内存泄漏</li>
-<li>jquery实现原理</li>
-<li>jQuery.fn的init方法返回的this指的是什么对象</li>
-<li>extend的实现原理</li>
-<li>jquery.extend  jquery.fn.extend</li>
-<li>jQuery 的队列</li>
-<li>bind(),live(),delegate(),on()</li>
-<li>JQuery一个对象可以同时绑定多个事件，这是如何实现的</li>
-<li>fire函数、自定义事件</li>
-<li>jQuery 是通过哪个方法和 Sizzle 选择器结合的</li>
-<li>jQuery性能的优化</li>
-<li>Jquery与jQuery UI </li>
-<li>jquery 中如何将数组转化为json字符串，然后再转化回来</li>
-<li>jQuery和Zepto</li>
-<li>Zepto的点透问题</li>
-<li>jQueryUI如何自定义组件</li>
-<li>移动端最小触控区域</li>
-<li>移动端的点击事件的延迟</li>
-<li>route, middleware, cluster, nodemon, pm2, server-side rendering</li>
-<li>前端路由适用场景、优点和缺点</li>
-<li>测试前端代码、BDD, TDD, Unit Test、mocha, sinon, jasmin, qUnit</li>
-<li>前端templating(Mustache, underscore, handlebars)是干嘛的, 怎么用</li>
-<li>js实现千位分隔符</li>
-<li>检测浏览器版本</li>
-<li>Polyfill</li>
-<li>给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡。会执行几次事件，会先执行冒泡还是捕获</li>
-</ul>
-
       
     </div>
     
@@ -255,11 +267,15 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/14/note2/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -311,7 +327,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
 	</div>
 
       
@@ -364,110 +380,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>对前端开发知识的一些梳理,主要参考<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Questions-and-Answers/README.md" target="_blank" rel="external">前端开发面试题</a>及对它的补充，持续完善…</p>
+<p>对前端开发知识的一些梳理,主要参考<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Questions-and-Answers/README.md">前端开发面试题</a>及对它的补充，持续完善…</p>
 </blockquote>
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
-<li>盒子模型<br>  <a href="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg" target="_blank" rel="external">box</a><br>  box-sizing属性：<ol>
+<li>盒子模型<br>  <img src="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg" alt="box"><br>  box-sizing属性：<ol>
 <li>content-box<br>Width = width + padding-left + padding-right + border-left + border-right<br>Height = height + padding-top + padding-bottom + border-top + border-bottom</li>
 <li>padding-box<br>Width = width(包含padding-left + padding-right) + border-top + border-bottom<br>Height = height(包含padding-top + padding-bottom) + border-top + border-bottom</li>
-<li>border-box<br>Width = width(包含padding-left + padding-right + border-left + border-right)<br>Height = height(包含padding-top + padding-bottom + border-top + border-bottom)</li>
-</ol>
-</li>
-<li><p>CSS选择符<br>  `<br>  1.id选择器（ # myid）<br>  2.类选择器（.myclassname）<br>  3.标签选择器（div, h1, p）<br>  4.相邻选择器（h1 + p）<br>  5.子选择器（ul &gt; li）<br>  6.后代选择器（li a）<br>  7.通配符选择器（ * ）<br>  8.属性选择器（a[rel = “external”]）<br>  9.伪类选择器（a:hover, li:nth-child）</p>
-<p>  可继承的样式： font-size font-family color, UL LI DL DD DT;<br>  不可继承的样式：border padding margin width height ;<br>  `</p>
-</li>
-<li><p>CSS优先级<br>  优先级就近原则，同权重情况下样式定义最近者为准;<br>  优先级关系：内联样式 &gt; ID 选择器 &gt; 类选择器 = 属性选择器 = 伪类选择器 &gt; 标签选择器 = 伪元素选择器<br>  属性后插有 !important 的属性拥有最高优先级<br>  以下是权重的规则：：</p>
-  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">标签的权重为1，<span class="selector-tag">class</span>的权重为10，<span class="selector-tag">id</span>的权重为100，以下例子是演示各种定义的权重值</span><br><span class="line"><span class="comment">/*权重为1*/</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为10*/</span></span><br><span class="line"><span class="selector-class">.class1</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为100*/</span></span><br><span class="line"><span class="selector-id">#id1</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为100+1=101*/</span></span><br><span class="line"><span class="selector-id">#id1</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为10+1=11*/</span></span><br><span class="line"><span class="selector-class">.class1</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为10+10+1=21*/</span></span><br><span class="line"><span class="selector-class">.class1</span> <span class="selector-class">.class2</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>CSS3新增伪类</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">p:first-of-type 选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:last-of-type  选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:only-of-type  选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:only-child        选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:nth-child(2)  选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。</span><br><span class="line"></span><br><span class="line">:after          在元素之前添加内容,也可以用来做清除浮动。</span><br><span class="line">:before         在元素之后添加内容</span><br><span class="line">:enabled        </span><br><span class="line">:disabled       控制表单控件的禁用状态。</span><br><span class="line">:checked        单选框或复选框被选中。`</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>居中</p>
-<ol>
-<li>div<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">width:200px;</span><br><span class="line">margin:0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>display<br>  常用的：</p>
-<ol>
-<li>none 关闭一个元素的显示（对布局没有影响）；其所有后代元素都也被会被关闭显示。文档渲染时，该元素如同不存在。</li>
-<li>inline 元素宽度由内容决定，与其他元素并列在一行</li>
-<li>block 可以设置宽度，独占一行</li>
-<li>inline-block 宽度可以自行设置，类似block，但是与其他元素共占一行，类似inline。长用于设置垂直居中</li>
-<li>table-cell 标签元素以表格单元格的形式呈现<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external">更多</a></li>
-</ol>
-</li>
-<li><p>position<br>  元素在页面中的布局遵守一套文档流的方式，默认的定位属性值为static。它其实是未被设置定位的。</p>
-<p>  元素如果被定位了，那么它的top,left,bottom,right值就会生效，能设置定位的属性是relative,absolute和fixed。<br>  需要注意的另一点是被定位的元素层次(z-index)会得到提高。</p>
-<ol>
-<li>relative<br>设置了相对定位之后，通过修改top,left,bottom,right值，元素会在自身文档流所在位置上被移动，其他的元素则不会调整位置来弥补它偏离后剩下的空隙。</li>
-<li>absolute<br>设置了绝对定位之后，元素脱离文档流，其他的元素会调整位置来弥补它偏离后剩下的空隙。元素偏移是相对于是它最近的设置了定位属性（position值不为static）的元素。</li>
-<li>fixed(固定定位)<br>设置了固定定位之后，元素相对的偏移的参考是可视窗口，即使页面滚动，元素仍然会在固定位置<br>4.规定从父元素继承 position 属性的值。</li>
-</ol>
-</li>
-<li>CSS3新特性<ol>
-<li>各种CSS选择器</li>
-<li>圆角  </li>
-<li>多列布局</li>
-<li>阴影和反射</li>
-<li>文字特效</li>
-<li>文字渲染</li>
-<li>线性渐变</li>
-<li>旋转,缩放,定位,倾斜,动画，多背景</li>
-</ol>
-</li>
-<li>Flexbox</li>
-<li>浏览器的兼容性</li>
-<li>浮动</li>
-<li>媒体查询</li>
-<li>CSS 预处理器</li>
-<li>浏览器解析CSS选择器</li>
-<li>响应式设计</li>
-<li><a href="">containing block</a></li>
-<li>visibility<ol>
-<li>visible:默认值。元素是可见的。</li>
-<li>hidden:元素是不可见的。会占据页面上的空间</li>
-<li>collapse:当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 “hidden”。<br>4.inherit: 规定应该从父元素继承 visibility 属性的值。<br>任何的版本的 Internet Explorer （包括 IE8）都不支持 “inherit” 和 “collapse” 属性值。</li>
-</ol>
-</li>
-<li><a href="">BFC</a></li>
-<li><a href="http://www.cnblogs.com/jackyWHJ/p/3756087.html" target="_blank" rel="external">position跟display、margin collapse、overflow、float这些特性相互叠加</a></li>
-<li><a href="">css优化</a></li>
-<li><a href="https://www.zhihu.com/question/20440679" target="_blank" rel="external">在网页中的应该使用奇数还是偶数的字体</a></li>
-<li>margin和padding使用场景<ol>
-<li>margin：<br>需要在border外侧添加空白时<br>空白处不需要背景（色）时<br>上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白<ol>
-<li>padding<br>需要在border内测添加空白时<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>抽离样式模块<br>我理解的应该是提取页面公共样式。<br>一个项目的CSS可以拆分成2部分：公共CSS和业务CSS。我们在项目中抽出的这部分可以模块化的CSS就可以归类为公共CSS。这部分的代码命名不应涉及到具体的业务，只应对其在模块中负责的具体逻辑负责。<br>可以把网站的字体大小，公共控制，共用模块的样式都抽离出来，作为单独的模块来处理。这样，团队中的每个人如果需要这样的样式，都可以用这种公共样式，以此提高代码的重用率。<br>好的复用模块，应该是完整的、独立的。完整就是包含 PSD 中遇到的各种情况，对于不同的情况，只需要添加不同的类或者改用不同结构即可。独立性就是与其他模块和结构完全独立，直接粘贴复制不会产生任何影响。</li>
-<li>全屏滚动</li>
-<li><a href="http://www.alloyteam.com/2014/01/parallax-scrolling-love-story/" target="_blank" rel="external">视觉差</a></li>
-<li><p>Chrome支持小于12px 的文字</p>
-<ol>
-<li>-webkit-text-size-adjust:none;通过它即可实现字体大小不随终端设备或浏览器影响。是在最新版的谷歌里。已经不在支持这个属性，需要通过css3的transform来解决</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">span&#123;-webkit-transform:scale(0.8);-o-transform:scale(1);                 display:inline-block;&#125;</span><br></pre></td></tr></table></figure>
-<p>{webkit-transform:scale(0.8);  display:inline-block} //0.8位缩放倍数，具体自己根据实际需求修改，只能缩放可以定义宽高的元素，而span是行内元素，{-o-transform:scale(1);}opera现在最新版也是webkit内核，新版本的opera，本来就是10px的字体了</p>
-</li>
-</ol>
-</li>
-<li><p>手动写动画最小时间间隔<br>  多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms</p>
-</li>
-<li>display:inline-block 间隙<br>  真正意义上的inline-block水平呈现的元素间，换行显示或空格分隔的情况下会有间距<br>  解决：移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing<br>  <a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">more</a></li>
-<li>overflow: scroll时不能平滑滚动<br>  <code>-webkit-overflow-scrolling: touch</code><br>  <a href="http://www.cnblogs.com/PeunZhang/p/3553020.html" target="_blank" rel="external">more</a></li>
-<li>png、jpg、gif<ol>
-<li>png<br>清晰，无损压缩，压缩比率很高，可渐变透明<br>PNG有着另一个优点，那就是逐次逼近显示(progressive display)：传输图像文件的同时，可以先把整个轮廓显示出来，然后逐步显示图像的细节，即先显示低分辨率显示图像，从模糊到清晰，然后逐步提高它的分辨率。这是一个很好的用户体验。</li>
-<li>JPG / JPEG<br>特点是色彩还原性好，可以在照片不明显失真的情况下，大幅度压缩图片文件，所以储存体积不是很大。其缺点是不像PNG那样支持图片的透明度。 属于有损压缩，每次保存都会产生数据损失</li>
-<li>GIF<br>体积小，有着极好的压缩效果，支持动画，并且支持透明效果<br><a href="http://frontenddev.org/link/gif-png-jpg-webp-base64-the-advantages-and-disadvantages-of-apng-format-images.html" target="_blank" rel="external">more</a></li>
-</ol>
-</li>
-<li>Cookie 隔离<br>如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，非常浪费流量，<br>所以不如隔离开。<br>cookie隔离技术则是通过使用多个非主要域名来请求静态文件<br>因为cookie有域的限制，因此不能跨域提交请求，故使用非主要域名的时候，请求头中就不会带有cookie数据，这样可以降低请求头的大小，降低请求时间，从而达到降低整体请求延时的目的。同时这种方式不会将cookie传入webserver，也减少了webserver对cookie的处理分析环节，提高了webserver的http请求的解析速度。</li>
-<li><p>CSS 预处理器 / 后处理器<br>  预处理器例如：LESS、Sass、Stylus，用来预编译Sass或less，增强了css代码的复用性，<br>还有层级、mixin、变量、循环、函数等，具有很方便的UI组件模块化开发能力，极大的提高工作效率。</p>
-<p>  后处理器例如：PostCSS，通常被视为在完成的样式表中根据CSS规范处理CSS，让其更有效；目前最常做的<br>是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。</p>
-</li>
-</ul>
-
+<li>border-box<br>Width = width(包含padding-left + padding-right + border-left + border-right)<br>Height = height(包含padding-top + padding-bottom + border-top + border-bottom)
       
     </div>
     
@@ -475,113 +394,15 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
 	</div>
 
       
 
       
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-manifest" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/13/manifest/" class="article-date">
-  	<time datetime="2016-07-13T09:54:12.000Z" itemprop="datePublished">2016-07-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/13/manifest/">Html5 离线存储</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件<br>为了让web应用程序在离线状态下也能正常工作，就必须把构成web应用程序的资源文件，如HTML、CSS、JS脚本文件等放在本地缓存中，当服务器没有和Interne连接时，也可以利用本地缓存中的资源文件来正常运行web程序。</p>
-<ul>
-<li>本地缓存&amp;浏览器网页缓存<br>  本地缓存为整个web应用服务，浏览器的网页缓存只服务于单个网页<br>  本地缓存是可靠的，我们可以控制对哪些内容进行缓存，控制缓存的更新。<br>  用户可离线访问应用，这对于无法随时保持联网状态的移动终端用户来说尤其重要<br>  用户访问本地的缓存文件，通常意味着更快的访问速度<br>  仅仅加载被修改过的资源，避免同一资源对服务器多次的请求，大大降低了对服务器的访问压力</li>
-</ul>
-<ul>
-<li><p>manifest文件<br>  <code>&lt;!DOCTYPE HTML&gt;
-&lt;html manifest = &quot;cache.manifest&quot;&gt;
-...
-&lt;/html&gt;</code><br>  web应用程序是通过每个页面的manifest文件来管理的，manifest文件是一个简单文本文件，在该文件中以清单的方式列举了需要被缓存或不需要被缓存的资源文件名称，以及这些资源文件的访问路径(在manifest中使用的相对路径，相对参照物为manifest文件)。可以为每一个文件单独指定一个manifest文件，也可以对整个web应用程序指定一个总的manifest文件。</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"> #v0.11</span><br><span class="line"></span><br><span class="line"> CACHE:</span><br><span class="line"> other.html</span><br><span class="line"> js/app.js</span><br><span class="line"> css/style.css</span><br><span class="line"></span><br><span class="line"> NETWORK:</span><br><span class="line"> http://YIDan/</span><br><span class="line"> resourse/logo.png</span><br><span class="line"> *</span><br><span class="line"></span><br><span class="line"> FALLBACK:</span><br><span class="line"> / /offline.html</span><br></pre></td></tr></table></figure>
-<ol>
-<li>CACHE:表示需要离线存储的资源列表，由于包含manifest文件的页面将被自动离线存储，所以不需要把页面自身也列出来</li>
-<li>#号开头的是注释，一般会在第二行写个版本号，用来在缓存的文件更新时，更改manifest的作用，可以是版本号，时间戳或者md5码等等。</li>
-<li>NETWORK:表示在它下面列出来的资源只有在在线的情况下才能访问，他们不会被离线存储，所以在离线情况下无法使用这些资源。不过，如果在CACHE和NETWORK中有一个相同的资源，那么这个资源还是会被离线存储，也就是说CACHE的优先级更高。”*”表示没有在manifest文件中指定的资源文件都不进行本地缓存</li>
-<li>FALLBACK:表示如果访问第一个资源失败，那么就使用第二个资源来替换他，比如上面这个文件表示的就是如果访问根目录下任何一个资源失败了，那么就去访问offline.html<br>每个类别都是可选的，当文件开头没有指定类别而直接书写资源文件时，浏览器把这些资源文件视为CACHE类别，直至看见文件中第一个书写出来的类别为止。<br>真正运行离线web应用程序时，需要对服务器进行配置，让服务器支持text/text/cache-manifest这个MIME类型</li>
-</ol>
-</li>
-<li><p>浏览器怎么解析manifest</p>
-<ol>
-<li>在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。</li>
-<li>离线的情况下，浏览器就直接使用离线存储的资源。</li>
-</ol>
-</li>
-</ul>
-<p>  有几个问题需要注意：</p>
-<ol>
-<li>如果服务器对离线的资源进行了更新，那么必须更新manifest文件之后这些资源才能被浏览器重新下载，如果只是更新了资源而没有更新manifest文件的话，浏览器并不会重新下载资源，也就是说还是使用原来离线存储的资源。可以通过修改版本号的方式来让浏览器认为manifest文件已经被更新过了。</li>
-<li>对于manifest文件进行缓存的时候需要十分小心，因为可能出现一种情况就是你对manifest文件进行了更新，但是http的缓存规则告诉浏览器本地缓存的manifest文件还没过期，这个情况下浏览器还是使用原来的manifest文件，所以对于manifest文件最好不要设置缓存</li>
-<li>浏览器在下载manifest文件中的资源的时候，它会一次性下载所有资源，如果某个资源由于某种原因下载失败，那么这次的所有更新就算是失败的，浏览器还是会使用原来的资源</li>
-<li>在更新了资源之后，新的资源需要到下次再打开app才会生效，如果需要资源马上就能生效，那么可以使用window.applicationCache.swapCache()方法来使之生效，出现这种现象的原因是浏览器会先使用离线资源加载页面，然后再去检查manifest是否有更新，所以需要到下次打开页面才能生效。</li>
-<li>引用manifest的html必须与manifest文件同源，在同一个域下.FALLBACK中的资源必须和manifest文件同源.当一个资源被缓存后，该浏览器直接请求这个绝对路径也会访问缓存中的资源。站点中的其他页面即使没有设置manifest属性，请求的资源如果在缓存中也从缓存中访问</li>
-<li>站点离线存储的容量限制是5M</li>
-</ol>
-<ul>
-<li>applicationCache对象<br>  applicationCache对象代表了本地缓存，可以用它来通知用户本地缓存中已经被更新，也允许用户手工更新本地缓存。<br>  当浏览器对本地缓存进行更新，装入新的资源文件时，会触发applicationCache对象的updateready事件，通知本地缓存已被更新。<br>  swapCache用来手工执行本地缓存的更新，swapCache方法的意思是重新应用跟新后的缓存来替换原来的缓存,只能在applicationCache对象的updateready事件被触发时调用。即“本地缓存准备被更新”<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.applicationCache.addEventListener(<span class="string">'updateready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'updateready!'</span>);</span><br><span class="line">            <span class="built_in">window</span>.applicationCache.swapCache();</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>window.applicationCache有几个事件：</p>
-<ol>
-<li>oncached:当离线资源存储完成之后触发这个事件</li>
-<li>onchecking:当浏览器对离线存储资源进行更新检查的时候会触发这个事件</li>
-<li>ondownloading:当浏览器开始下载离线资源的时候会触发这个事件</li>
-<li>onprogress:当浏览器在下载每一个资源的时候会触发这个事件，每下载一个资源就会触发一次</li>
-<li>onupdateready:当浏览器对离线资源更新完成之后会触发这个事件</li>
-<li>onnoupdate:当浏览器检查更新之后发现没有资源更新的时候触发这个事件</li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html5/">Html5</a></li></ul>
-	</div>
-
-      
-
+        <p class="article-more-link">
+          <a  href="/2016/07/13/note1/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
