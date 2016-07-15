@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>前端知识杂记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对前端开发知识的一些梳理,主要参考
+
+HTML
+理解web标准
+浏览器内核  主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端知识杂记">
+<meta property="og:url" content="http://yoursite.com/2016/07/05/note/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对前端开发知识的一些梳理,主要参考
+
+HTML
+理解web标准
+浏览器内核  主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有">
+<meta property="og:updated_time" content="2016-07-15T05:25:16.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端知识杂记">
+<meta name="twitter:description" content="对前端开发知识的一些梳理,主要参考
+
+HTML
+理解web标准
+浏览器内核  主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://o6qp6st9j.bkt.clouddn.com/logo.PNG" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">cherishsdan</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 12.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 15px;">HTML5</a> <a href="/tags/Html5/" style="font-size: 10px;">Html5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 12.5px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">cherishsdan</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://o6qp6st9j.bkt.clouddn.com/logo.PNG" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">cherishsdan</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-note" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/05/note/" class="article-date">
+  	<time datetime="2016-07-05T03:19:45.000Z" itemprop="datePublished">2016-07-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端知识杂记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>对前端开发知识的一些梳理,主要<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Questions-and-Answers/README.md" target="_blank" rel="external">参考</a></p>
+</blockquote>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ul>
+<li><a href="http://www.cnblogs.com/coco1s/p/3588716.html" target="_blank" rel="external">理解web标准</a></li>
+<li><p><strong>浏览器内核</strong><br>  主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。<br>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
+<a id="more"></a>
+<p>  JS引擎则：解析和执行javascript来实现网页的动态效果。</p>
+<p>  最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。</p>
+<p>  <a href="http://web.jobbole.com/84826/" target="_blank" rel="external">更多</a></p>
+</li>
+<li><p>###Doctype<br>  &lt;!DOCTYPE&gt;声明位于位于HTML文档中的第一行，处于 <html> 标签之前。<br>  这个标签是一种通用标记语言的文档类型声明，它主要就是告诉标准通用标记语言解析器应该使用什么样的文档类型定义 Document Type Definition（DTD）来解析文档。DTD定义了文档中的元素(标记和属性)和实体，以及相互关系。数据和结构分离。 通俗的来说，DTD就是一套关于标记符的语法规则，是html的验证机制。<br>  DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。<br>  <code>&lt;!DOCTYPE HTMLPUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+  &lt;!DOCTYPE html&gt;</code><br>  在HTML4.01中，&lt;!DOCTYPE&gt;声明引用DTD，因为HTML4.01基于标准通用标记语言(SGML)。DTD规定了标记语言的规则，这样浏览器才能正确地呈现内容。<br>  然而现在的HTML5不基于SGML，所以不需要引用DTD，因此没有声明DTD。<br>  总的来说，Doctype的作用就是声明文档的解析类型(document.compatMode),也就是告知浏览器的解析器用什么文档标准解析这个文档。如果DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。</html></p>
+</li>
+<li><strong>页面的渲染模式</strong><br>  页面的渲染模式document.compatMode有两种可能的返回值：BackCompat和CSS1CompatBackCompat：怪异模式（兼容模式），浏览器使用自己的怪异模式解析渲染页面。<br>  CSS1Compat：标准模式，浏览器使用W3C的标准解析渲染页面。<br>  所谓的怪异模式就是没有页面的DOCTYPE声明，标准模式具有DOCTYPE声明。<br>  标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。<br>  在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</li>
+<li><strong>元素</strong><br>  行内元素：a b span img input select strong<br>  块级元素：div ul ol li dl dt dd h1~h6 p<br>  空元素: “br hr img input link meta area base col command embed keygen param source track wbr “</li>
+<li><strong>link和@import</strong><ol>
+<li>导入的语法不相同<br>link （链接式）语法为：<br><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot; type=&quot;text/css&quot;/&gt;
+@import （导入式）语法为：
+&lt;style type=&quot;text/css&quot;&gt;
+@import url(&quot;style.css&quot;);
+&lt;/style&gt;</code></li>
+<li>link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;</li>
+<li>加载顺序的差别。当一个页面被加载的时候（就是被浏览者浏览的时候），link引用的CSS会同时被加载，而@import引用的CSS会等到页面全部被下载完再被加载。所以有时候浏览@import加载CSS的页面时开始会没有样式（就是闪烁），网速慢的时候还挺明显</li>
+<li>兼容性的差别。由于@import是CSS2.1提出的所以老的浏览器不支持，@import只有在IE5以上的才能识别，而link标签无此问题。</li>
+<li>使用dom控制样式时的差别。当使用javascript控制dom去改变样式的时候，只能使用link标签，因为@import不是dom可以控制的。</li>
+<li>@import可以在css中再次引入其他样式表，比如可以创建一个主样式表，在主样式表中再引入其他的样式表</li>
+</ol>
+</li>
+<li><strong>HTML语义化</strong><br>  用正确的标签做正确的事情。<br>  代码更简洁，复用性更高。使用合适的标签，可以少些很多css或者js<br>  html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;<br>  即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的;<br>  搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO;<br>  使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。<br>  <a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/" target="_blank" rel="external">更多</a></li>
+<li><p><a href=""><strong>iframe</strong></a></p>
+</li>
+<li><p><strong>label</strong><br>  label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上</p>
+</li>
+<li><strong>form关闭自动完成</strong><br>  给不想要提示的 form 或某个 input 设置为 autocomplete=off</li>
+<li><a href="http://cherishsdan.github.io/2016/07/13/mulitiTab/" target="_blank" rel="external"><strong>浏览器内多个标签页之间的通信</strong></a></li>
+<li><a href=""><strong>页面可见性</strong></a></li>
+<li><p><strong>圆形可点击区域</strong></p>
+<ol>
+<li><p>area+map</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src =<span class="string">"planets.gif"</span> alt=<span class="string">"Planets"</span> usemap =<span class="string">"#planetmap"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;map id ="planetmap"&gt;</span><br><span class="line">    &lt;area shape ="rect" coords ="0,0,82,126" href ="sun.htm" alt="Sun" /&gt;</span><br><span class="line">    &lt;area shape ="circle" coords ="90,58,3" href ="mercur.htm" alt="Mercury" /&gt;</span><br><span class="line">&lt;area shape ="circle" coords ="124,58,8" href ="venus.htm" alt="Venus" /&gt;</span><br><span class="line">&lt;/map&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>svg</p>
+</li>
+<li>border-radius</li>
+<li>js </li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>不使用 border 画出1px高的线<br><code>&lt;div style=&quot;height:1px;overflow:hidden;background:red&quot;&gt;&lt;/div&gt;</code></li>
+<li><p>table&amp;h1 b&amp;strong i&amp;em<br>  title属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响；</p>
+<p>  strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<strong>会重读，而<b>是展示强调内容。</b></strong></p>
+<p>  i内容展示为斜体，em表示强调的文本；</p>
+<p>  Physical Style Elements – 自然样式标签<br>  b, i, u, s, pre<br>  Semantic Style Elements – 语义样式标签<br>  strong, em, ins, del, code<br>  应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。</p>
+<hr>
+</li>
+<li><p>HTML5新特性</p>
+<ul>
+<li><p>HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加<br>绘画 canvas;<br>  用于媒介回放的 video 和 audio 元素;<br>  本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;<br>  sessionStorage 的数据在浏览器关闭后自动删除;<br>  语意化更好的内容元素，比如 article、footer、header、nav、section;<br>  表单控件，calendar、date、time、email、url、search;<br>  新的技术webworker, websocket, Geolocation;</p>
+</li>
+<li><p>移除的元素：<br>纯表现的元素：basefont，big，center，font, s，strike，tt，u;<br>  对可用性产生负面影响的元素：frame，frameset，noframes；<br>可以使用 html5shim 兼容IE6/7/8</p>
+</li>
+</ul>
+</li>
+<li><a href="http://cherishsdan.github.io/2016/07/13/manifest/" target="_blank" rel="external">离线存储</a></li>
+<li><a href="">webSocket</a><br>  Adobe Flash Socket、AJAX长轮询、AJAX multipart streaming、持久Iframe、JSONP轮询等</li>
+<li><a href="">cookies，sessionStorage、localStorage</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/05/ejs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          前端性能优化——javascript
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/03/eDom/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端性能优化——DOM</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="note" data-title="前端知识杂记" data-url="http://yoursite.com/2016/07/05/note/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 cherishsdan
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

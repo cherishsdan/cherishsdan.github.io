@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>前端知识杂记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
+
+CSS
+盒子模型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端知识杂记">
+<meta property="og:url" content="http://yoursite.com/2016/07/10/note1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
+
+CSS
+盒子模型">
+<meta property="og:image" content="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg">
+<meta property="og:updated_time" content="2016-07-15T05:25:26.463Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端知识杂记">
+<meta name="twitter:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
+
+CSS
+盒子模型">
+<meta name="twitter:image" content="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://o6qp6st9j.bkt.clouddn.com/logo.PNG" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">cherishsdan</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 12.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 15px;">HTML5</a> <a href="/tags/Html5/" style="font-size: 10px;">Html5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 12.5px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">cherishsdan</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://o6qp6st9j.bkt.clouddn.com/logo.PNG" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">cherishsdan</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-note1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/10/note1/" class="article-date">
+  	<time datetime="2016-07-10T13:30:16.000Z" itemprop="datePublished">2016-07-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端知识杂记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>对前端开发知识的一些梳理,主要参考<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Questions-and-Answers/README.md" target="_blank" rel="external">前端开发面试题</a>及对它的补充，持续完善…</p>
+</blockquote>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
+<li><p>盒子模型<br>  <img src="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg" alt="box"></p>
+  <a id="more"></a>
+<p>  box-sizing属性：</p>
+<ol>
+<li>content-box<br>Width = width + padding-left + padding-right + border-left + border-right<br>Height = height + padding-top + padding-bottom + border-top + border-bottom</li>
+<li>padding-box<br>Width = width(包含padding-left + padding-right) + border-top + border-bottom<br>Height = height(包含padding-top + padding-bottom) + border-top + border-bottom</li>
+<li>border-box<br>Width = width(包含padding-left + padding-right + border-left + border-right)<br>Height = height(包含padding-top + padding-bottom + border-top + border-bottom)</li>
+</ol>
+</li>
+<li><p>CSS选择符<br>  1.id选择器（ # myid）<br>  2.类选择器（.myclassname）<br>  3.标签选择器（div, h1, p）<br>  4.相邻选择器（h1 + p）<br>  5.子选择器（ul &gt; li）<br>  6.后代选择器（li a）<br>  7.通配符选择器（ * ）<br>  8.属性选择器（a[rel = “external”]）<br>  9.伪类选择器（a:hover, li:nth-child）</p>
+<p>  可继承的样式： font-size font-family color, UL LI DL DD DT;<br>  不可继承的样式：border padding margin width height ;<br>  `</p>
+</li>
+<li><p>CSS优先级<br>  优先级就近原则，同权重情况下样式定义最近者为准;<br>  优先级关系：内联样式 &gt; ID 选择器 &gt; 类选择器 = 属性选择器 = 伪类选择器 &gt; 标签选择器 = 伪元素选择器<br>  属性后插有 !important 的属性拥有最高优先级<br>  以下是权重的规则：：</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">标签的权重为1，<span class="selector-tag">class</span>的权重为10，<span class="selector-tag">id</span>的权重为100，以下例子是演示各种定义的权重值</span><br><span class="line"><span class="comment">/*权重为1*/</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为10*/</span></span><br><span class="line"><span class="selector-class">.class1</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为100*/</span></span><br><span class="line"><span class="selector-id">#id1</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为100+1=101*/</span></span><br><span class="line"><span class="selector-id">#id1</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为10+1=11*/</span></span><br><span class="line"><span class="selector-class">.class1</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*权重为10+10+1=21*/</span></span><br><span class="line"><span class="selector-class">.class1</span> <span class="selector-class">.class2</span> <span class="selector-tag">div</span>&#123;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>CSS3新增伪类</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">p:first-of-type 选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:last-of-type  选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:only-of-type  选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:only-child        选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:nth-child(2)  选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。</span><br><span class="line"></span><br><span class="line">:after          在元素之前添加内容,也可以用来做清除浮动。</span><br><span class="line">:before         在元素之后添加内容</span><br><span class="line">:enabled        </span><br><span class="line">:disabled       控制表单控件的禁用状态。</span><br><span class="line">:checked        单选框或复选框被选中。`</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>居中</p>
+<ol>
+<li>div<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">width:200px;</span><br><span class="line">margin:0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>display<br>  常用的：</p>
+<ol>
+<li>none 关闭一个元素的显示（对布局没有影响）；其所有后代元素都也被会被关闭显示。文档渲染时，该元素如同不存在。</li>
+<li>inline 元素宽度由内容决定，与其他元素并列在一行</li>
+<li>block 可以设置宽度，独占一行</li>
+<li>inline-block 宽度可以自行设置，类似block，但是与其他元素共占一行，类似inline。长用于设置垂直居中</li>
+<li>table-cell 标签元素以表格单元格的形式呈现<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external">更多</a></li>
+</ol>
+</li>
+<li><p>position<br>  元素在页面中的布局遵守一套文档流的方式，默认的定位属性值为static。它其实是未被设置定位的。</p>
+<p>  元素如果被定位了，那么它的top,left,bottom,right值就会生效，能设置定位的属性是relative,absolute和fixed。<br>  需要注意的另一点是被定位的元素层次(z-index)会得到提高。</p>
+<ol>
+<li>relative<br>设置了相对定位之后，通过修改top,left,bottom,right值，元素会在自身文档流所在位置上被移动，其他的元素则不会调整位置来弥补它偏离后剩下的空隙。</li>
+<li>absolute<br>设置了绝对定位之后，元素脱离文档流，其他的元素会调整位置来弥补它偏离后剩下的空隙。元素偏移是相对于是它最近的设置了定位属性（position值不为static）的元素。</li>
+<li>fixed(固定定位)<br>设置了固定定位之后，元素相对的偏移的参考是可视窗口，即使页面滚动，元素仍然会在固定位置<br>4.规定从父元素继承 position 属性的值。</li>
+</ol>
+</li>
+<li>CSS3新特性<ol>
+<li>各种CSS选择器</li>
+<li>圆角  </li>
+<li>多列布局</li>
+<li>阴影和反射</li>
+<li>文字特效</li>
+<li>文字渲染</li>
+<li>线性渐变</li>
+<li>旋转,缩放,定位,倾斜,动画，多背景</li>
+</ol>
+</li>
+<li>Flexbox</li>
+<li>浏览器的兼容性</li>
+<li>浮动</li>
+<li>媒体查询</li>
+<li>CSS 预处理器</li>
+<li>浏览器解析CSS选择器</li>
+<li>响应式设计</li>
+<li><a href="">containing block</a></li>
+<li>visibility<ol>
+<li>visible:默认值。元素是可见的。</li>
+<li>hidden:元素是不可见的。会占据页面上的空间</li>
+<li>collapse:当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 “hidden”。<br>4.inherit: 规定应该从父元素继承 visibility 属性的值。<br>任何的版本的 Internet Explorer （包括 IE8）都不支持 “inherit” 和 “collapse” 属性值。</li>
+</ol>
+</li>
+<li><a href="">BFC</a></li>
+<li><a href="http://www.cnblogs.com/jackyWHJ/p/3756087.html" target="_blank" rel="external">position跟display、margin collapse、overflow、float这些特性相互叠加</a></li>
+<li><a href="">css优化</a></li>
+<li><a href="https://www.zhihu.com/question/20440679" target="_blank" rel="external">在网页中的应该使用奇数还是偶数的字体</a></li>
+<li>margin和padding使用场景<ol>
+<li>margin：<br>需要在border外侧添加空白时<br>空白处不需要背景（色）时<br>上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白<ol>
+<li>padding<br>需要在border内测添加空白时<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>抽离样式模块<br>我理解的应该是提取页面公共样式。<br>一个项目的CSS可以拆分成2部分：公共CSS和业务CSS。我们在项目中抽出的这部分可以模块化的CSS就可以归类为公共CSS。这部分的代码命名不应涉及到具体的业务，只应对其在模块中负责的具体逻辑负责。<br>可以把网站的字体大小，公共控制，共用模块的样式都抽离出来，作为单独的模块来处理。这样，团队中的每个人如果需要这样的样式，都可以用这种公共样式，以此提高代码的重用率。<br>好的复用模块，应该是完整的、独立的。完整就是包含 PSD 中遇到的各种情况，对于不同的情况，只需要添加不同的类或者改用不同结构即可。独立性就是与其他模块和结构完全独立，直接粘贴复制不会产生任何影响。</li>
+<li>全屏滚动</li>
+<li><a href="http://www.alloyteam.com/2014/01/parallax-scrolling-love-story/" target="_blank" rel="external">视觉差</a></li>
+<li><p>Chrome支持小于12px 的文字</p>
+<ol>
+<li>-webkit-text-size-adjust:none;通过它即可实现字体大小不随终端设备或浏览器影响。是在最新版的谷歌里。已经不在支持这个属性，需要通过css3的transform来解决</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">span&#123;-webkit-transform:scale(0.8);-o-transform:scale(1);                 display:inline-block;&#125;</span><br></pre></td></tr></table></figure>
+<p>{webkit-transform:scale(0.8);  display:inline-block} //0.8位缩放倍数，具体自己根据实际需求修改，只能缩放可以定义宽高的元素，而span是行内元素，{-o-transform:scale(1);}opera现在最新版也是webkit内核，新版本的opera，本来就是10px的字体了</p>
+</li>
+</ol>
+</li>
+<li><p>手动写动画最小时间间隔<br>  多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms</p>
+</li>
+<li>display:inline-block 间隙<br>  真正意义上的inline-block水平呈现的元素间，换行显示或空格分隔的情况下会有间距<br>  解决：移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing<br>  <a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">more</a></li>
+<li>overflow: scroll时不能平滑滚动<br>  <code>-webkit-overflow-scrolling: touch</code><br>  <a href="http://www.cnblogs.com/PeunZhang/p/3553020.html" target="_blank" rel="external">more</a></li>
+<li>png、jpg、gif<ol>
+<li>png<br>清晰，无损压缩，压缩比率很高，可渐变透明<br>PNG有着另一个优点，那就是逐次逼近显示(progressive display)：传输图像文件的同时，可以先把整个轮廓显示出来，然后逐步显示图像的细节，即先显示低分辨率显示图像，从模糊到清晰，然后逐步提高它的分辨率。这是一个很好的用户体验。</li>
+<li>JPG / JPEG<br>特点是色彩还原性好，可以在照片不明显失真的情况下，大幅度压缩图片文件，所以储存体积不是很大。其缺点是不像PNG那样支持图片的透明度。 属于有损压缩，每次保存都会产生数据损失</li>
+<li>GIF<br>体积小，有着极好的压缩效果，支持动画，并且支持透明效果<br><a href="http://frontenddev.org/link/gif-png-jpg-webp-base64-the-advantages-and-disadvantages-of-apng-format-images.html" target="_blank" rel="external">more</a></li>
+</ol>
+</li>
+<li>Cookie 隔离<br>如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，非常浪费流量，<br>所以不如隔离开。<br>cookie隔离技术则是通过使用多个非主要域名来请求静态文件<br>因为cookie有域的限制，因此不能跨域提交请求，故使用非主要域名的时候，请求头中就不会带有cookie数据，这样可以降低请求头的大小，降低请求时间，从而达到降低整体请求延时的目的。同时这种方式不会将cookie传入webserver，也减少了webserver对cookie的处理分析环节，提高了webserver的http请求的解析速度。</li>
+<li><p>CSS 预处理器 / 后处理器<br>  预处理器例如：LESS、Sass、Stylus，用来预编译Sass或less，增强了css代码的复用性，<br>还有层级、mixin、变量、循环、函数等，具有很方便的UI组件模块化开发能力，极大的提高工作效率。</p>
+<p>  后处理器例如：PostCSS，通常被视为在完成的样式表中根据CSS规范处理CSS，让其更有效；目前最常做的<br>是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/13/iframe/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          iframe
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/05/ejs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端性能优化——javascript</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="note1" data-title="前端知识杂记" data-url="http://yoursite.com/2016/07/10/note1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 cherishsdan
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

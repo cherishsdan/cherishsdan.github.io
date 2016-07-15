@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/07/13/manifest/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件为了让web应用程序在离线状态下也能正常工作，就必须把构成web应用程序的资源文件，如HTML、CSS、JS脚本文件等放在本地缓存中，当服务器没有和Interne连接时，也可以利用本地缓存中的资源文件来正常运行web程序。">
-<meta property="og:updated_time" content="2016-07-15T03:00:36.081Z">
+<meta property="og:updated_time" content="2016-07-15T05:30:41.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Html5 离线存储">
 <meta name="twitter:description" content="在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件为了让web应用程序在离线状态下也能正常工作，就必须把构成web应用程序的资源文件，如HTML、CSS、JS脚本文件等放在本地缓存中，当服务器没有和Interne连接时，也可以利用本地缓存中的资源文件来正常运行web程序。">
@@ -206,10 +206,8 @@
 ...
 &lt;/html&gt;</code><br>  web应用程序是通过每个页面的manifest文件来管理的，manifest文件是一个简单文本文件，在该文件中以清单的方式列举了需要被缓存或不需要被缓存的资源文件名称，以及这些资源文件的访问路径(在manifest中使用的相对路径，相对参照物为manifest文件)。可以为每一个文件单独指定一个manifest文件，也可以对整个web应用程序指定一个总的manifest文件。</p>
  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line"> #v0.11</span><br><span class="line"></span><br><span class="line"> CACHE:</span><br><span class="line"> other.html</span><br><span class="line"> js/app.js</span><br><span class="line"> css/style.css</span><br><span class="line"></span><br><span class="line"> NETWORK:</span><br><span class="line"> http://YIDan/</span><br><span class="line"> resourse/logo.png</span><br><span class="line"> *</span><br><span class="line"></span><br><span class="line"> FALLBACK:</span><br><span class="line"> / /offline.html</span><br></pre></td></tr></table></figure>
+<p>  CACHE:表示需要离线存储的资源列表，由于包含manifest文件的页面将被自动离线存储，所以不需要把页面自身也列出来<br>  2、#号开头的是注释，一般会在第二行写个版本号，用来在缓存的文件更新时，更改manifest的作用，可以是版本号，时间戳或者md5码等等。<br>  3 NETWORK:表示在它下面列出来的资源只有在在线的情况下才能访问，他们不会被离线存储，所以在离线情况下无法使用这些资源。不过，如果在CACHE和NETWORK中有一个相同的资源，那么这个资源还是会被离线存储，也就是说CACHE的优先级更高。”*”表示没有在manifest文件中指定的资源文件都不进行本地缓存</p>
 <ol>
-<li>CACHE:表示需要离线存储的资源列表，由于包含manifest文件的页面将被自动离线存储，所以不需要把页面自身也列出来</li>
-<li>#号开头的是注释，一般会在第二行写个版本号，用来在缓存的文件更新时，更改manifest的作用，可以是版本号，时间戳或者md5码等等。</li>
-<li>NETWORK:表示在它下面列出来的资源只有在在线的情况下才能访问，他们不会被离线存储，所以在离线情况下无法使用这些资源。不过，如果在CACHE和NETWORK中有一个相同的资源，那么这个资源还是会被离线存储，也就是说CACHE的优先级更高。”*”表示没有在manifest文件中指定的资源文件都不进行本地缓存</li>
 <li>FALLBACK:表示如果访问第一个资源失败，那么就使用第二个资源来替换他，比如上面这个文件表示的就是如果访问根目录下任何一个资源失败了，那么就去访问offline.html<br>每个类别都是可选的，当文件开头没有指定类别而直接书写资源文件时，浏览器把这些资源文件视为CACHE类别，直至看见文件中第一个书写出来的类别为止。<br>真正运行离线web应用程序时，需要对服务器进行配置，让服务器支持text/text/cache-manifest这个MIME类型</li>
 </ol>
 </li>
@@ -251,11 +249,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/13/note1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/07/14/containing-block/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          前端知识杂记
+          Containing block
         
       </div>
     </a>
