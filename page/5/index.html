@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 12.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 15px;">HTML5</a> <a href="/tags/Html5/" style="font-size: 10px;">Html5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/css3/" style="font-size: 12.5px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 17.5px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
 					</div>
 				</section>
 				
@@ -160,11 +160,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-node3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/04/node3/" class="article-date">
-  	<time datetime="2016-06-04T07:22:23.000Z" itemprop="datePublished">2016-06-04</time>
+      <a href="/2016/04/15/linux/" class="article-date">
+  	<time datetime="2016-04-15T08:32:53.000Z" itemprop="datePublished">2016-04-15</time>
 </a>
     </div>
   
@@ -177,7 +177,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/04/node3/">Node.js(三)-异步I/O</a>
+      <a class="article-title" href="/2016/04/15/linux/">宿主机连接linux web服务器失败</a>
     </h1>
   
 
@@ -186,17 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中</p>
-</blockquote>
-<p>Node 利用单线程，远离多线程死锁、状态同步等问题；利用异步I/O,让单线程远离阻塞，以更好的使用CPU。</p>
-<p>阻塞I/O的一个特点是调用完成后一定要等到系统内核层面完成所有操作后。调用才结束。阻塞I/O造成CPU等待，浪费等待时间，CPU处理能力得不到充分利用，为了提高性能，内核提供了非阻塞I/O。非阻塞I/O调用之后会立即返回.返回之后，cpu的时间片可以用来处理其他事务。</p>
-<h2 id="基于libuv的架构"><a href="#基于libuv的架构" class="headerlink" title="基于libuv的架构"></a>基于libuv的架构</h2><p>node提供了libuv作为抽象层，使得所有平台兼容性的判断都由这一层完成，并保证上层的Node与下层的自定义线程池及IOCP之间各自独立，Node在编译期间会判断平台条件。在Node v0.9.3，*nix自行实现了线程池来完成。<br><img src="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/FuX1qcGJgwYtX9zNbBAOSaQeD8Qz.png" alt="libuv"></p>
-<p>从图中可以看出，对于Network I/O和以File I/O为代表的另一类请求，异步处理的底层支撑机制是完全不一样的。</p>
-<p>对于Network I/O相关的请求， 根据OS平台不同，分别使用Linux上的epoll，OSX和BSD类OS上的kqueue，SunOS上的event ports以及Windows上的IOCP机制。</p>
-<p>而对于File I/O为代表的请求，则使用thread pool。利用thread pool的方式实现异步请求处理，在各类OS上都能获得很好的支持。</p>
-<p>要强调的是，我们时常提到的Node是单线程的，这里的单线程指的是javascript执行在单线程中，在Node中，无论是*nix还是windows平台，内部完成I/O的另有线程池。</p>
-
+        <p>环境：centos xftp xshell<br>原因分析：linux的问题、VMware的问题、windows的问题<br>
       
     </div>
     
@@ -204,79 +194,14 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/I-O/">I/O</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-node2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/02/node2/" class="article-date">
-  	<time datetime="2016-06-02T05:15:47.000Z" itemprop="datePublished">2016-06-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/02/node2/">Node.js(二)-模块机制</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中</p>
-</blockquote>
-<h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>CommonJS规范加载模块是同步的。根据CommonJS规范，一个单独的文件就是一个模块。每一个模块都是一个单独的作用域，也就是说，在一个文件定义的变量（还包括函数和类），都是私有的，对其他文件是不可见的。<br>CommonJS规定，每个文件的对外接口是module.exports对象。这个对象的所有属性和方法，都可以被其他文件导入。</p>
-<p>CommonJS模块的特点如下：</p>
-<ul>
-<li>所有代码都运行在模块作用域，不会污染全局作用域</li>
-<li>模块可以多次加载，但是只会在第一次加载时运行一次，然后运行结果就被缓存了，以后再加载，就直接读取缓存结果。要想让模块再次运行，必须清除缓存。</li>
-<li>模块加载的顺序，按照其在代码中出现的顺序</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CommonJS/">CommonJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/06/02/node2/#more">more >></a>
+          <a  href="/2016/04/15/linux/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -295,11 +220,11 @@
 
 
   
-    <article id="post-node1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-whois" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/01/node1/" class="article-date">
-  	<time datetime="2016-06-01T02:15:16.000Z" itemprop="datePublished">2016-06-01</time>
+      <a href="/2016/04/10/whois/" class="article-date">
+  	<time datetime="2016-04-10T06:32:53.000Z" itemprop="datePublished">2016-04-10</time>
 </a>
     </div>
   
@@ -312,7 +237,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/01/node1/">Node.js(一)-简介</a>
+      <a class="article-title" href="/2016/04/10/whois/">WHOIS 特征提取及 URL Parse（持续更新）</a>
     </h1>
   
 
@@ -321,24 +246,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中</p>
-</blockquote>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Node.js主要分为四大部分，Node Standard Library，Node Bindings，V8，Libuv，架构图如下：<br><img src="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/a9e67142615f49863438cc0086b594e48984d1c9.jpeg" alt="node1"></p>
-<ul>
-<li>Node Standard Library 是我们每天都在用的标准库，如Http, Buffer 模块。</li>
-<li>Node Bindings 是沟通JS 和 C++的桥梁，封装V8和Libuv的细节，向上层提供基础API服务</li>
-<li>第三层是支撑 Node.js 运行的关键，由 C/C++ 实现<ul>
-<li>V8 是Google开发的JavaScript引擎，提供JavaScript运行环境，可以说它就是 Node.js 的发动机。</li>
-<li>Libuv 是专门为Node.js开发的一个封装库，提供跨平台的异步I/O能力</li>
-<li>C-ares：提供了异步处理 DNS 相关的能力。</li>
-<li>http_parser、OpenSSL、zlib 等：提供包括 http 解析、SSL、数据压缩等其他的能力</li>
-</ul>
-</li>
-</ul>
-<h2 id="思维脑图"><a href="#思维脑图" class="headerlink" title="思维脑图"></a>思维脑图</h2><p><img src="http://o6qp6st9j.bkt.clouddn.com/images/node/Node%E7%AE%80%E4%BB%8B.png" alt="node"></p>
-<p>部分摘自：<a href="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/chapter1-0.html" target="_blank" rel="external">https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/chapter1-0.html</a></p>
-
+        <p>DataSet： <strong>PhishTank &amp;&amp; DMOZ</strong>   -数据集不平衡</p>
+<pre><code>PhishTank爬取 23378条URL （2008-2016） 
+DMOZ 定时更新
+</code></pre>
       
     </div>
     
@@ -346,69 +257,15 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/URL-Parse/">URL Parse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WHOIS/">WHOIS</a></li></ul>
 	</div>
 
       
 
       
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/28/vue/" class="article-date">
-  	<time datetime="2016-05-28T07:54:47.000Z" itemprop="datePublished">2016-05-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/28/vue/">Vue.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Vue.js重点集中在 <strong>MVVM</strong> 模式的ViewModel层，非常容易与其它库或已有项目整合。<br>Vue.js的目标是通过尽可能简单的API实现响应的数据绑定和组合的视图组件。</p>
-<p><img src="http://www.hubwiz.com/course/566e67417e7d40946afc5ddc/mvvm.png" alt="vue"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/">vue.js</a></li></ul>
-	</div>
-
-      
-
+        <p class="article-more-link">
+          <a  href="/2016/04/10/whois/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -428,7 +285,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
     </nav>
   
 </div>
