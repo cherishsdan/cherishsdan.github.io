@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/vue-js/" style="font-size: 10px;">vue.js</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -525,10 +525,10 @@
 
 
   
-    <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Cors" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/28/vue/" class="article-date">
+      <a href="/2016/05/28/Cors/" class="article-date">
   	<time datetime="2016-05-28T07:54:47.000Z" itemprop="datePublished">2016-05-28</time>
 </a>
     </div>
@@ -542,7 +542,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/28/vue/">Vue.js</a>
+      <a class="article-title" href="/2016/05/28/Cors/">跨域</a>
     </h1>
   
 
@@ -551,8 +551,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Vue.js重点集中在 <strong>MVVM</strong> 模式的ViewModel层，非常容易与其它库或已有项目整合。<br>Vue.js的目标是通过尽可能简单的API实现响应的数据绑定和组合的视图组件。</p>
-<p><img src="http://www.hubwiz.com/course/566e67417e7d40946afc5ddc/mvvm.png" alt="vue"></p>
+        <blockquote>
+<p>对跨域的一些总结，方便日后查阅</p>
+</blockquote>
+<p>跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但返回结果被浏览器拦截了，有些浏览器不允许从HTTPS协议的域 跨域访问 HTTP协议，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求</p>
+<ul>
+<li><p>同源策略<br>  如果两个页面拥有相同的协议（protocol），端口，和域名，那么这两个页面就属于同一个源（origin），JavaScript 允许这种同源页面的数据互相通信。<br>  一般web页面的端口号默认都是80</p>
+<p>  例如：<a href="http://xxx.com/a.html" target="_blank" rel="external">http://xxx.com/a.html</a> 协议是http、端口：80、域名：xxx.com</p>
+<p>  若非同源，则以下行为会受到限制：</p>
+<ol>
+<li>Cookie、LocalStorage 和 IndexedDB 无法读取</li>
+<li>DOM 无法获得</li>
+<li>AJAX 请求不能发送</li>
+</ol>
+</li>
+</ul>
+<p>跨域方案</p>
+<ul>
+<li><p>经典的JSONP<br>  <strong>回调函数和数据</strong><br>  同源策略有一个很重要的例外：HTML脚本元素会被免于SOP检查，它允许网站加载来自其他来源的JavaScript。<br>  原理：HTML的script标签可以加载并执行其他域JS文件。站点B把要提供的数据作为参数传给一个站点A定义的全局函数，站点A引用这个文件就可以跨域获取数据了</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    &lt;script src=<span class="string">"http://xxx.com/data.php?callback=dosomething"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dosomething</span>(<span class="params">jsondata</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(jsondata);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  js文件载入成功后，会执行我们在url参数中指定的函数（dosomething），并且会把我们需要的json数据（jsondata）作为参数传入。所以再次强调jsonp是需要服务器端的页面进行相应的配合的。</p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$callback = $_GET[<span class="string">'callback'</span>];</span><br><span class="line">$data = &#123;<span class="string">'name'</span>:<span class="string">'XXX'</span>,sex:<span class="string">'X'</span>,age:<span class="string">'X'</span>&#125;;</span><br><span class="line"><span class="keyword">echo</span> $callback.<span class="string">'('</span>.json_encode($data).<span class="string">')'</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  缺点：1、 仅适应于HTTP的Get请求</p>
+<pre><code>2、 缺乏错误处理机制
+3、 请求总是异步的（XMLHttpRequest是传统的异步操作，但可以强制设置为阻塞浏览器直至响应返回）
+</code></pre><p>  优点：1、 兼容性更好，在老版本的浏览器中可以运行</p>
+<pre><code>2、 请求完毕后可以通过调用callback的方式回传结果，方便调用
+</code></pre></li>
+<li><p>子域名代理<br>  在不同的子域 + iframe交互的时候，获取到另外一个 iframe 的 window对象是没有问题的，但是获取到的这个window的方法和属性大多数都是不能使用的</p>
+<p>  解决方法：document.domain</p>
+<p>  例如：A页面：<a href="http://xxx.com/a.html,在这个页面里面有一个iframe，它的src是http://y.xxx.com/b.html" target="_blank" rel="external">http://xxx.com/a.html,在这个页面里面有一个iframe，它的src是http://y.xxx.com/b.html</a></p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.html</span></span><br><span class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://y.xxx.com/b.html"</span> onload = <span class="string">"test()"</span>&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'xxx.com'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>).contentWindow);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//b.html</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'xxx.com'</span>;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>  document.domain的设置是有限制的，我们只能把document.domain设置成自身或更高一级的父域，且主域必须相同。</p>
+</li>
+<li><p>CORS<br>  跨域资源共享。定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通.原理就是使用自定义的 HTTP 头部，让服务器能声明 哪些来源可以通过浏览器访问该服务器上的资源，从而决定请求或响应是应该成功还是失败,主要是通过设置响应头的 Access-Control-Allow-Origin 来达到目的的<br>  <a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">more</a></p>
+</li>
+<li><p>window.name</p>
+</li>
+</ul>
+<p>在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的。</p>
+<ul>
+<li>window.postMessage()<br>使用它来向其它的window对象发送消息,无论这个window对象是属于同源或不同源</li>
+</ul>
 
       
     </div>
@@ -561,7 +602,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/">vue.js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       

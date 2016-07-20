@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>跨域 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对跨域的一些总结，方便日后查阅
+
+跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但返回结果被浏览器拦截了，有些浏览器不允许从HTTPS协议的域 跨域访问 HTTP协议，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求
+
+同源策略  如果两个页面拥有相同的协议（protocol），端口，和域名，那么这两个页面就属于同一个源（origin），JavaScri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域">
+<meta property="og:url" content="http://yoursite.com/2016/05/28/Cors/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对跨域的一些总结，方便日后查阅
+
+跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但返回结果被浏览器拦截了，有些浏览器不允许从HTTPS协议的域 跨域访问 HTTP协议，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求
+
+同源策略  如果两个页面拥有相同的协议（protocol），端口，和域名，那么这两个页面就属于同一个源（origin），JavaScri">
+<meta property="og:updated_time" content="2016-07-20T08:34:17.283Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨域">
+<meta name="twitter:description" content="对跨域的一些总结，方便日后查阅
+
+跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但返回结果被浏览器拦截了，有些浏览器不允许从HTTPS协议的域 跨域访问 HTTP协议，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求
+
+同源策略  如果两个页面拥有相同的协议（protocol），端口，和域名，那么这两个页面就属于同一个源（origin），JavaScri">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://o6qp6st9j.bkt.clouddn.com/logo.PNG" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">cherishsdan</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">cherishsdan</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://o6qp6st9j.bkt.clouddn.com/logo.PNG" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">cherishsdan</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/cherishsdan" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/cherishsdan@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Cors" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/28/Cors/" class="article-date">
+  	<time datetime="2016-05-28T07:54:47.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨域
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>对跨域的一些总结，方便日后查阅</p>
+</blockquote>
+<p>跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但返回结果被浏览器拦截了，有些浏览器不允许从HTTPS协议的域 跨域访问 HTTP协议，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求</p>
+<ul>
+<li><p>同源策略<br>  如果两个页面拥有相同的协议（protocol），端口，和域名，那么这两个页面就属于同一个源（origin），JavaScript 允许这种同源页面的数据互相通信。<br>  一般web页面的端口号默认都是80</p>
+<p>  例如：<a href="http://xxx.com/a.html" target="_blank" rel="external">http://xxx.com/a.html</a> 协议是http、端口：80、域名：xxx.com</p>
+<p>  若非同源，则以下行为会受到限制：</p>
+<ol>
+<li>Cookie、LocalStorage 和 IndexedDB 无法读取</li>
+<li>DOM 无法获得</li>
+<li>AJAX 请求不能发送</li>
+</ol>
+</li>
+</ul>
+<p>跨域方案</p>
+<ul>
+<li><p>经典的JSONP<br>  <strong>回调函数和数据</strong><br>  同源策略有一个很重要的例外：HTML脚本元素会被免于SOP检查，它允许网站加载来自其他来源的JavaScript。<br>  原理：HTML的script标签可以加载并执行其他域JS文件。站点B把要提供的数据作为参数传给一个站点A定义的全局函数，站点A引用这个文件就可以跨域获取数据了</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    &lt;script src=<span class="string">"http://xxx.com/data.php?callback=dosomething"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dosomething</span>(<span class="params">jsondata</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(jsondata);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  js文件载入成功后，会执行我们在url参数中指定的函数（dosomething），并且会把我们需要的json数据（jsondata）作为参数传入。所以再次强调jsonp是需要服务器端的页面进行相应的配合的。</p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$callback = $_GET[<span class="string">'callback'</span>];</span><br><span class="line">$data = &#123;<span class="string">'name'</span>:<span class="string">'XXX'</span>,sex:<span class="string">'X'</span>,age:<span class="string">'X'</span>&#125;;</span><br><span class="line"><span class="keyword">echo</span> $callback.<span class="string">'('</span>.json_encode($data).<span class="string">')'</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  缺点：1、 仅适应于HTTP的Get请求</p>
+<pre><code>2、 缺乏错误处理机制
+3、 请求总是异步的（XMLHttpRequest是传统的异步操作，但可以强制设置为阻塞浏览器直至响应返回）
+</code></pre><p>  优点：1、 兼容性更好，在老版本的浏览器中可以运行</p>
+<pre><code>2、 请求完毕后可以通过调用callback的方式回传结果，方便调用
+</code></pre></li>
+<li><p>子域名代理<br>  在不同的子域 + iframe交互的时候，获取到另外一个 iframe 的 window对象是没有问题的，但是获取到的这个window的方法和属性大多数都是不能使用的</p>
+<p>  解决方法：document.domain</p>
+<p>  例如：A页面：<a href="http://xxx.com/a.html,在这个页面里面有一个iframe，它的src是http://y.xxx.com/b.html" target="_blank" rel="external">http://xxx.com/a.html,在这个页面里面有一个iframe，它的src是http://y.xxx.com/b.html</a></p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.html</span></span><br><span class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://y.xxx.com/b.html"</span> onload = <span class="string">"test()"</span>&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'xxx.com'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>).contentWindow);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//b.html</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'xxx.com'</span>;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>  document.domain的设置是有限制的，我们只能把document.domain设置成自身或更高一级的父域，且主域必须相同。</p>
+</li>
+<li><p>CORS<br>  跨域资源共享。定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通.原理就是使用自定义的 HTTP 头部，让服务器能声明 哪些来源可以通过浏览器访问该服务器上的资源，从而决定请求或响应是应该成功还是失败,主要是通过设置响应头的 Access-Control-Allow-Origin 来达到目的的<br>  <a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">more</a></p>
+</li>
+<li><p>window.name</p>
+</li>
+</ul>
+<p>在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的。</p>
+<ul>
+<li>window.postMessage()<br>使用它来向其它的window对象发送消息,无论这个window对象是属于同源或不同源</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/01/node1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Node.js(一)-简介
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/26/network/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对于计算机网络一些基本概念的复习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Cors" data-title="跨域" data-url="http://yoursite.com/2016/05/28/Cors/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 cherishsdan
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
