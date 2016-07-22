@@ -4,18 +4,54 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>前端性能优化——javascript | Hexo</title>
+  <title>前端性能优化——载入 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="唯美食与代码不可辜负~">
+  <meta name="description" content="性能优化系列笔记，提升用户体验
+
+从Yahoo军规到现在各种各样的优化技术，不能一概而论，还是要根据用户需求，制定适合自己的优化方案
+载入优化，简单来说，就是重要的同步加载，不重要的异步加载。以FaceBook的BigPipe方案为例，它大概有3步：
+
+首屏先同步加载，返回一些占位符
+根据需求，请求占位符的资源（ID）
+填充占位符
+
+不过这种方案也有缺点:
+
+SEO 引擎较难抓取
+异步请求较多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端性能优化——javascript">
+<meta property="og:title" content="前端性能优化——载入">
 <meta property="og:url" content="http://yoursite.com/2016/07/05/ejs/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="唯美食与代码不可辜负~">
-<meta property="og:updated_time" content="2016-07-06T15:38:17.083Z">
+<meta property="og:description" content="性能优化系列笔记，提升用户体验
+
+从Yahoo军规到现在各种各样的优化技术，不能一概而论，还是要根据用户需求，制定适合自己的优化方案
+载入优化，简单来说，就是重要的同步加载，不重要的异步加载。以FaceBook的BigPipe方案为例，它大概有3步：
+
+首屏先同步加载，返回一些占位符
+根据需求，请求占位符的资源（ID）
+填充占位符
+
+不过这种方案也有缺点:
+
+SEO 引擎较难抓取
+异步请求较多">
+<meta property="og:updated_time" content="2016-07-21T08:31:20.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端性能优化——javascript">
-<meta name="twitter:description" content="唯美食与代码不可辜负~">
+<meta name="twitter:title" content="前端性能优化——载入">
+<meta name="twitter:description" content="性能优化系列笔记，提升用户体验
+
+从Yahoo军规到现在各种各样的优化技术，不能一概而论，还是要根据用户需求，制定适合自己的优化方案
+载入优化，简单来说，就是重要的同步加载，不重要的异步加载。以FaceBook的BigPipe方案为例，它大概有3步：
+
+首屏先同步加载，返回一些占位符
+根据需求，请求占位符的资源（ID）
+填充占位符
+
+不过这种方案也有缺点:
+
+SEO 引擎较难抓取
+异步请求较多">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -101,7 +137,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -176,7 +212,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      前端性能优化——javascript
+      前端性能优化——载入
     </h1>
   
 
@@ -196,7 +232,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>性能优化系列笔记，提升用户体验</p>
+</blockquote>
+<p>从Yahoo军规到现在各种各样的优化技术，不能一概而论，还是要根据用户需求，<br>制定适合自己的优化方案</p>
+<p>载入优化，简单来说，就是重要的同步加载，不重要的异步加载。<br>以FaceBook的BigPipe方案为例，它大概有3步：</p>
+<ol>
+<li>首屏先同步加载，返回一些占位符</li>
+<li>根据需求，请求占位符的资源（ID）</li>
+<li>填充占位符</li>
+</ol>
+<p>不过这种方案也有缺点:</p>
+<ol>
+<li>SEO 引擎较难抓取</li>
+<li>异步请求较多</li>
+<li>模块之间相互通信引用</li>
+<li>模板引擎渲染</li>
+</ol>
+
       
     </div>
     
@@ -251,7 +304,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="ejs" data-title="前端性能优化——javascript" data-url="http://yoursite.com/2016/07/05/ejs/"></div>
+	<div class="ds-thread" data-thread-key="ejs" data-title="前端性能优化——载入" data-url="http://yoursite.com/2016/07/05/ejs/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

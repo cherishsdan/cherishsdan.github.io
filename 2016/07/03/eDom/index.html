@@ -6,20 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>前端性能优化——DOM | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="导致大多数网站和应用程序出现性能滞缓的一个主要因素就是通过javascript低效访问HTML页面元素。因为所有浏览器的javascript引擎独立于其渲染引擎，操作了DOM对象后，会触发一些浏览器行为，比如布局（layout）和绘制（paint），这些行为是非常耗时的。
+  <meta name="description" content="性能优化系列笔记，提升用户体验
+
+导致大多数网站和应用程序出现性能滞缓的一个主要因素就是通过javascript低效访问HTML页面元素。因为所有浏览器的javascript引擎独立于其渲染引擎，操作了DOM对象后，会触发一些浏览器行为，比如布局（layout）和绘制（paint），这些行为是非常耗时的。
 浏览器工作大致流程以Webkit为例：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端性能优化——DOM">
 <meta property="og:url" content="http://yoursite.com/2016/07/03/eDom/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="导致大多数网站和应用程序出现性能滞缓的一个主要因素就是通过javascript低效访问HTML页面元素。因为所有浏览器的javascript引擎独立于其渲染引擎，操作了DOM对象后，会触发一些浏览器行为，比如布局（layout）和绘制（paint），这些行为是非常耗时的。
+<meta property="og:description" content="性能优化系列笔记，提升用户体验
+
+导致大多数网站和应用程序出现性能滞缓的一个主要因素就是通过javascript低效访问HTML页面元素。因为所有浏览器的javascript引擎独立于其渲染引擎，操作了DOM对象后，会触发一些浏览器行为，比如布局（layout）和绘制（paint），这些行为是非常耗时的。
 浏览器工作大致流程以Webkit为例：">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/005YR2J3jw1eys88jq2soj30hc081t99.jpg">
 <meta property="og:image" content="http://coolshell.cn//wp-content/uploads/2013/05/Render-Process-Skipping-1024x282.jpg">
-<meta property="og:updated_time" content="2016-07-03T12:31:57.937Z">
+<meta property="og:updated_time" content="2016-07-21T08:31:19.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能优化——DOM">
-<meta name="twitter:description" content="导致大多数网站和应用程序出现性能滞缓的一个主要因素就是通过javascript低效访问HTML页面元素。因为所有浏览器的javascript引擎独立于其渲染引擎，操作了DOM对象后，会触发一些浏览器行为，比如布局（layout）和绘制（paint），这些行为是非常耗时的。
+<meta name="twitter:description" content="性能优化系列笔记，提升用户体验
+
+导致大多数网站和应用程序出现性能滞缓的一个主要因素就是通过javascript低效访问HTML页面元素。因为所有浏览器的javascript引擎独立于其渲染引擎，操作了DOM对象后，会触发一些浏览器行为，比如布局（layout）和绘制（paint），这些行为是非常耗时的。
 浏览器工作大致流程以Webkit为例：">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/005YR2J3jw1eys88jq2soj30hc081t99.jpg">
   
@@ -107,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -202,7 +208,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>导致大多数网站和应用程序出现性能滞缓的一个主要因素就是通过javascript低效访问HTML页面元素。因为所有浏览器的javascript引擎独立于其渲染引擎，操作了DOM对象后，会触发一些浏览器行为，比如布局（layout）和绘制（paint），这些行为是非常耗时的。</p>
+        <blockquote>
+<p>性能优化系列笔记，提升用户体验</p>
+</blockquote>
+<p>导致大多数网站和应用程序出现性能滞缓的一个主要因素就是通过javascript低效访问HTML页面元素。因为所有浏览器的javascript引擎独立于其渲染引擎，操作了DOM对象后，会触发一些浏览器行为，比如布局（layout）和绘制（paint），这些行为是非常耗时的。</p>
 <h2 id="浏览器工作大致流程"><a href="#浏览器工作大致流程" class="headerlink" title="浏览器工作大致流程"></a>浏览器工作大致流程</h2><p>以Webkit为例：<br><img src="http://ww2.sinaimg.cn/large/005YR2J3jw1eys88jq2soj30hc081t99.jpg" alt="webkit"><br><a id="more"></a></p>
 <ul>
 <li>解析HTML/SVG/XHTML，并生成一棵DOM tree,解析CSS会产生CSS规则树,解析Javascript脚本，主要是通过DOM API和CSSOM API来操作DOM Tree和CSS Rule Tree.</li>
@@ -212,8 +221,8 @@
 </ul>
 <p>注意：</p>
 <ol>
-<li>Rendering Tree 渲染树并不等同于DOM树，因为一些像Header或display:none的东西就没必要放在渲染树中了。</li>
-<li>CSS 的 Rule Tree主要是为了完成匹配并把CSS Rule附加上Rendering Tree上的每个Element。也就是DOM结点。然后，计算每个Element的位置，这又叫layout和reflow过程</li>
+<li>Rendering Tree 渲染树并不等同于DOM树，因为一些像Head或display:none的东西就没必要放在渲染树中了(但是 visibility 属性值为“hidden”的元素仍会显示)。</li>
+<li>CSS 的 Rule Tree主要是为了完成匹配并把CSS Rule附加上Rendering Tree上的每个Element。也就是DOM结点。然后，计算每个Element的位置，这又叫layout和reflow过程<br><a href="http://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/#Parsing_general" target="_blank" rel="external">more</a></li>
 </ol>
 <h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><p><img src="http://coolshell.cn//wp-content/uploads/2013/05/Render-Process-Skipping-1024x282.jpg" alt="paint"><br>上图流程中有很多连接线，这表示了Javascript动态修改了DOM属性或是CSS属会导致重新Layout，有些改变不会.</p>
 <ul>

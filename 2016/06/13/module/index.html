@@ -28,7 +28,7 @@
 1、基本的模块化
 对象写法1234var Module = &amp;#123;    m1: function()&amp;#123;&amp;#125;,    m2: function()&amp;#123;&amp;#125;&amp;#125;
 减少 Global 上的变量数目,起到了一">
-<meta property="og:updated_time" content="2016-07-17T10:45:32.938Z">
+<meta property="og:updated_time" content="2016-07-21T15:03:43.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Module">
 <meta name="twitter:description" content="关于模块化：
@@ -125,7 +125,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -243,21 +243,38 @@
 <h3 id="紧耦合扩展"><a href="#紧耦合扩展" class="headerlink" title="紧耦合扩展"></a>紧耦合扩展</h3><p>紧耦合扩展限制了加载顺序，但是提供了我们重载的机会</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Module = (<span class="function"><span class="keyword">function</span> (<span class="params">m</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oldMethod = m.AddMethod;</span><br><span class="line"></span><br><span class="line">    m.AddMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">/* code </span><br><span class="line">        可通过oldMethod调用旧的方法</span><br><span class="line">        */</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> m;</span><br><span class="line">&#125; (Module));</span><br></pre></td></tr></table></figure>
 <hr>
+<p>缺点：</p>
+<ul>
+<li>全局作用域下容易造成变量冲突</li>
+<li>文件只能按照 <script> 的书写顺序进行加载</li>
+<li>开发人员必须主观解决模块和代码库的依赖关系</li>
+<li>在大型项目中各种资源难以管理，长期积累的问题导致代码库混乱不堪</li>
+</ul>
 <p>2、发展</p>
-<p>难以维护、依赖模糊、请求过多</p>
-<p>YUI3..</p>
-<p>代码的合并、压缩、混淆</p>
+<p>模块规范</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/CommonJS" target="_blank" rel="external">COMMONJS</a></li>
-</ul>
-<p>浏览器环境模块化方案</p>
+<li>COMMONJS<br>  CommonJS中，一个单独的文件就是一个模块。每一个模块都是一个单独的作用域，也就是说，在一个文件定义的变量（还包括函数和类），都是私有的，对其他文件是不可见的，除非定义为global对象的属性。<br>  通过 require 方法来同步加载所要依赖的其他模块，然后通过 exports 或 module.exports 来导出需要暴露的接口<br>  CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。<br>  <a href="http://javascript.ruanyifeng.com/nodejs/module.html">more</a></li>
+<li><p>AMD<br>  AMD模式可以用于浏览器环境，并且允许非同步加载模块，也可以根据需要动态加载模块。RequireJS遵守AMD规范<br>  模块通过 define 函数定义在闭包中，格式如下<br>  <code>define(id?, dependencies?, factory);</code><br>  id 是模块的名字，它是可选的参数。<br>  dependencies 指定了所要依赖的模块列表，它是一个数组，也是可选的参数，每个依赖的模块的输出将作为参数一次传入 factory 中。如果没有指定 dependencies，那么它的默认值是 [“require”, “exports”, “module”]<br>  factory 是最后一个参数，它包裹了模块的具体实现，它是一个函数或者对象。如果是函数，那么它的返回值就是模块的输出接口或值。</p>
+<p>  <a href="http://javascript.ruanyifeng.com/tool/requirejs.html">more</a></p>
+</li>
+<li><p>CMD<br>  AMD 很相似，尽量保持简单，并与 CommonJS 和 Node.js 的 Modules 规范保持了很大的兼容性。</p>
 <ul>
-<li>AMD RequireJS</li>
-<li>CMD SeaJS</li>
+<li>依赖就近，延迟执行</li>
+<li>可以很容易在 Node.js 中运行</li>
 </ul>
-<p>大势所趋：<br>Browserify - CommonJS In Browser<br>Webpack - Module Bundler</p>
+</li>
+</ul>
+<p>大势所趋：</p>
+<ul>
+<li>Browserify - CommonJS In Browser</li>
+<li><p>Webpack - Module Bundler<br>  Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
+</li>
+<li><p>ES6 Module<br>  ES6模块的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS和AMD模块，都只能在运行时确定这些东西</p>
+<p>  模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。<br>  <a href="http://es6.ruanyifeng.com/#docs/module">more</a></p>
+</li>
+</ul>
 <p>ES6：ES6 MODULE</p>
-
+</script></li></ul>
       
     </div>
     
