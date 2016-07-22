@@ -8,38 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="性能优化系列笔记，提升用户体验
 
-图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。
-
-图片格式比较
-
-JPEG 真彩色、有损压缩，不支持透明度及动画，适用于复杂颜色及形状、尤其是照片
-GIF 调色板、无损压缩、支持透明度（二进制类型，要么完全透明，要么完全不透明，不支持alpha（可变的）透明度）及动画、 适应于简单颜色，动画
-PNG 有">
+图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端性能优化——图片">
 <meta property="og:url" content="http://yoursite.com/2016/07/21/ePic/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="性能优化系列笔记，提升用户体验
 
-图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。
-
-图片格式比较
-
-JPEG 真彩色、有损压缩，不支持透明度及动画，适用于复杂颜色及形状、尤其是照片
-GIF 调色板、无损压缩、支持透明度（二进制类型，要么完全透明，要么完全不透明，不支持alpha（可变的）透明度）及动画、 适应于简单颜色，动画
-PNG 有">
-<meta property="og:updated_time" content="2016-07-21T08:29:58.870Z">
+图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。">
+<meta property="og:updated_time" content="2016-07-22T10:36:52.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能优化——图片">
 <meta name="twitter:description" content="性能优化系列笔记，提升用户体验
 
-图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。
-
-图片格式比较
-
-JPEG 真彩色、有损压缩，不支持透明度及动画，适用于复杂颜色及形状、尤其是照片
-GIF 调色板、无损压缩、支持透明度（二进制类型，要么完全透明，要么完全不透明，不支持alpha（可变的）透明度）及动画、 适应于简单颜色，动画
-PNG 有">
+图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -223,7 +205,7 @@ PNG 有">
         <blockquote>
 <p>性能优化系列笔记，提升用户体验</p>
 </blockquote>
-<p>图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。</p>
+<p>图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。<br><a id="more"></a></p>
 <ul>
 <li><p>图片格式比较</p>
 <ul>
@@ -238,7 +220,7 @@ PNG 有">
 <li>webP 支持有损与无损压缩、Alpha 透明以及动画，优势体现在它具有更优的图像数据压缩算法，<a href="https://isux.tencent.com/introduction-of-webp.html" target="_blank" rel="external">more</a></li>
 <li><p>SVG 无损压缩，支持透明度及动画，适应于简单图形，需要良好的放缩体验<br>需要动态控制图片特效</p>
 </li>
-<li><p>优化<br><a href="http://o6qp6st9j.bkt.clouddn.com/images/effective/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.png" target="_blank" rel="external">ePic</a></p>
+<li><p>优化<br>![ePic][<a href="http://o6qp6st9j.bkt.clouddn.com/images/effective/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.png" target="_blank" rel="external">http://o6qp6st9j.bkt.clouddn.com/images/effective/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.png</a>]</p>
 <p>dataURL<br>对于极小的图片可以使用DataURL，除非在尽快要求展现的时候使用，其他时候应该避免使用，因为它在移动端的性能非常差</p>
 </li>
 </ul>
