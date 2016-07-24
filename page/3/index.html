@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -693,10 +693,10 @@ a();</code><br>`</p>
 
 
   
-    <article id="post-network" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/05/26/network/" class="article-date">
+      <a href="/2016/05/26/vue/" class="article-date">
   	<time datetime="2016-05-26T04:56:15.000Z" itemprop="datePublished">2016-05-26</time>
 </a>
     </div>
@@ -710,7 +710,7 @@ a();</code><br>`</p>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/26/network/">对于计算机网络一些基本概念的复习</a>
+      <a class="article-title" href="/2016/05/26/vue/">Vue杂记</a>
     </h1>
   
 
@@ -719,7 +719,12 @@ a();</code><br>`</p>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>## </p>
+        <blockquote>
+<p>VueJS学习过程中一些想法，杂记</p>
+</blockquote>
+<ol>
+<li>el<br> 一般传入一个id，简单来说，就是表示在这个id之后的内容，由vue接管了。<br> <code>input(type=&quot;text&quot;, placeholder=&quot;请输入关键字&quot;, v-model=&quot;keywords&quot;, v-el:keywords, autocapitalize=&quot;off&quot;, debounce=&quot;500&quot;)</code><br> v-el在这里，表示对这个标签的一个引用，简单来说就是一个别名<br>2.缩写<br> v-bind:href=”url”——:href=”url”<br> v-on:click=”doSomething”——@click=”doSomething”</li>
+</ol>
 
       
     </div>
@@ -728,7 +733,7 @@ a();</code><br>`</p>
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/network/">network</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VueJS/">VueJS</a></li></ul>
 	</div>
 
       

@@ -16,12 +16,14 @@
 <meta property="og:description" content="校招准备中，fighting！答案主要是网上一些资料的整理
 
 输入网址之后发生了什么？">
-<meta property="og:updated_time" content="2016-07-12T03:47:30.155Z">
+<meta property="og:image" content="http://www.linux178.com/usr/uploads/2014/01/3920594834.png">
+<meta property="og:updated_time" content="2016-07-23T05:28:52.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Interview">
 <meta name="twitter:description" content="校招准备中，fighting！答案主要是网上一些资料的整理
 
 输入网址之后发生了什么？">
+<meta name="twitter:image" content="http://www.linux178.com/usr/uploads/2014/01/3920594834.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -107,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/network/" style="font-size: 10px;">network</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -210,11 +212,10 @@
 <li>输入网址</li>
 <li><p>浏览器查找域名对应IP<br> 2.1 DNS查找过程</p>
 <ol>
-<li>浏览器缓存——浏览器会记录DNS一段时间（2-30分钟不等，视浏览器而定）</li>
-<li>系统缓存——浏览器里没找到DNS缓存，此时浏览器做一个系统调用（window下是gethostbyname）。gethostbyname 函数在试图进行DNS解析之前首先检查域名是否在本地 Hosts 里，Hosts 的位置 不同的操作系统有所不同。如果 gethostbyname 没有这个域名的缓存记录，也没有在 hosts 里找到，它将会向 DNS 服务器发送一条 DNS 查询请求。DNS 服务器是由网络通信栈提供的，通常是本地路由器或者 ISP 的缓存 DNS 服务器。</li>
-<li>路由器缓存——路由器也会有DNS缓存（缓存你上过的网站，所以有时路由器需要进行DNS刷新）</li>
-<li>ISP DNS缓存——接下来是在ISP（互联网服务提供商）的DNS服务器的缓存上查找。</li>
-<li>递归查找——DNS缓存里没有的话，ISP DNS服务器会先后从根域名服务器（root）、.com顶级域名服务器、Facebook域名服务器获取IP（一般缓存内都会有，所以这一步一般不会发生） </li>
+<li>Chrome浏览器 会首先搜索浏览器自身的DNS缓存（缓存时间比较短，大概只有1分钟，且只能容纳1000条缓存）（2-30分钟不等，视浏览器而定）</li>
+<li>如果浏览器自身的缓存里面没有找到对应的条目，那么Chrome会搜索操作系统自身的DNS缓存,如果找到且没有过期则停止搜索解析到此结束.</li>
+<li>如果在Windows系统的DNS缓存也没有找到，那么尝试读取hosts文件（位于C:\Windows\System32\drivers\etc），看看这里面有没有该域名对应的IP地址，如果有则解析成功</li>
+<li>如果在hosts文件中也没有找到对应的条目，浏览器就会发起一个DNS的系统调用，就会向本地配置的首选DNS服务器（一般是电信运营商提供的，也可以使用像Google提供的DNS服务器）发起域名解析请求（通过的是UDP协议向DNS的53端口发起请求，这个请求是递归的请求，也就是运营商的DNS服务器必须得提供给我们该域名的IP地址），运营商的DNS服务器首先查找自身的缓存，找到对应的条目，且没有过期，则解析成功。如果没有找到对应的条目，则有运营商的DNS代我们的浏览器发起迭代DNS解析请求，它首先是会找根域的DNS的IP地址（这个DNS服务器都内置13台根域的DNS的IP地址），找打根域的DNS地址，就会向其发起请求（请问www.linux178.com这个域名的IP地址是多少啊？），根域发现这是一个顶级域com域的一个域名，于是就告诉运营商的DNS我不知道这个域名的IP地址，但是我知道com域的IP地址，你去找它去，于是运营商的DNS就得到了com域的IP地址，又向com域的IP地址发起了请求（请问www.linux178.com这个域名的IP地址是多少?）,com域这台服务器告诉运营商的DNS我不知道www.linux178.com这个域名的IP地址，但是我知道linux178.com这个域的DNS地址，你去找它去，于是运营商的DNS又向linux178.com这个域名的DNS地址（这个一般就是由域名注册商提供的，像万网，新网等）发起请求（请问www.linux178.com这个域名的IP地址是多少？），这个时候linux178.com域的DNS服务器一查，诶，果真在我这里，于是就把找到的结果发送给运营商的DNS服务器，这个时候运营商的DNS服务器就拿到了www.linux178.com这个域名对应的IP地址，并返回给Windows系统内核，内核又把结果返回给浏览器，终于浏览器拿到了www.linux178.com对应的IP地址，该进行一步的动作了。</li>
 </ol>
 </li>
 <li><p>通过 Socket 发送数据<br> 当浏览器得到了目标服务器的 IP 地址，以及 URL 中给出来端口号（http 协议默认端口号是 80， https 默认端口号是 443）就可以通过 Socket API 来发送数据了，这时可以选择 TCP 或 UDP 协议，HTTP 常用的是 TCP 协议。它会调用系统库函数 socket ，请求一个 TCP流套接字，对应的参数是 AF_INET 和 SOCK_STREAM </p>
@@ -224,9 +225,20 @@
 <li><p>这个 TCP packet 接下来会进入链路层，链路层会在封包中加入 frame头 部，里面包含了本地内置网卡的MAC地址以及网关（本地路由器）的 MAC 地址。像前面说的一样，如果内核不知道网关的 MAC 地址，它必须进行 ARP 广播来查询其地址。</p>
 <p>到了现在，TCP 封包已经准备好了，可以使用以太网、WiFi、蜂窝数据网络进行传输。大型企业和比较新的住宅通常使用光纤或直接以太网连接，这种情况下信号一直是数字的，会被直接传到下一个 网络节点 进行处理。    </p>
 <p>最终封包会到达管理本地子网的路由器。在那里出发，它会继续经过自治区域的边界路由器，其他自治区域，最终到达目标服务器。一路上经过的这些路由器会从IP数据报头部里提取出目标地址，并将封包正确地路由到下一个目的地。IP数据报头部TTL域的值每经过一个路由器就减1，如果封包的TTL变为0，或者路由器由于网络拥堵等原因封包队列满了，那么这个包会被路由器丢弃。</p>
+<p><strong>TCP 3次握手</strong><br><img src="http://www.linux178.com/usr/uploads/2014/01/3920594834.png" alt="tcp"></p>
+<p>1） Client首先发送一个连接试探，ACK=0 表示确认号无效，SYN = 1 表示这是一个连接请求或连接接受报文，同时表示这个数据报不能携带数据，seq = x 表示Client自己的初始序号（seq = 0 就代表这是第0号包），这时候Client进入syn_sent状态，表示客户端等待服务器的回复<br>2） Server监听到连接请求报文后，如同意建立连接，则向Client发送确认。TCP报文首部中的SYN 和 ACK都置1 ，ack = x + 1表示期望收到对方下一个报文段的第一个数据字节序号是x+1，同时表明x为止的所有数据都已正确收到（ack=1其实是ack=0+1,也就是期望客户端的第1个包），seq = y 表示Server 自己的初始序号（seq=0就代表这是服务器这边发出的第0号包）。这时服务器进入syn_rcvd，表示服务器已经收到Client的连接请求，等待client的确认。<br>3） Client收到确认后还需再次发送确认，同时携带要发送给Server的数据。ACK 置1 表示确认号ack= y + 1 有效（代表期望收到服务器的第1个包），Client自己的序号seq= x + 1（表示这就是我的第1个包，相对于第0个包来说的），一旦收到Client的确认之后，这个TCP连接就进入Established状态，就可以发起http请求了。</p>
+<p><strong>建立TCP连接后发起http请求</strong></p>
 </li>
 </ul>
+<ol>
+<li>请求报文 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">起始行：如 GET / HTTP/<span class="number">1.0</span> （请求的方法  请求的URL 请求所使用的协议）</span><br><span class="line">头部信息：User-Agent  Host等成对出现的值</span><br><span class="line">主体</span><br><span class="line"></span><br><span class="line">请求方法有</span><br><span class="line">GET: 完整请求一个资源 （常用）</span><br><span class="line">HEAD: 仅请求响应首部</span><br><span class="line">POST：提交表单  （常用）</span><br><span class="line">PUT: (webdav) 上传 </span><br><span class="line">DELETE：(webdav) 删除 </span><br><span class="line">OPTIONS：返回请求的资源所支持的方法的方法 </span><br><span class="line">TRACE: 追求一个资源请求中间所经过的代理</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+</li>
+</ol>
+<pre><code>例如：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Accept:*/*</span><br><span class="line">Accept-Encoding:gzip, deflate, sdch, br</span><br><span class="line">Accept-Language:zh-CN,zh;q=0.8</span><br><span class="line">Connection:keep-alive</span><br><span class="line">Cookie:***</span><br><span class="line">Host:mpp.taobao.com</span><br><span class="line">Referer:https://mpp.taobao.com/ajaxconn2.html?appId=1064&amp;token=1cbd5761858c5cfb7ff98da434af6f7766e517db5498216576b9k1s2x4b0f1c35&amp;domain=taobao.org</span><br><span class="line">User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36</span><br><span class="line"></span><br><span class="line">Accept  就是告诉服务器端，我接受那些MIME类型</span><br><span class="line">Accept-Encoding  这个看起来是接受那些压缩方式的文件</span><br><span class="line">Accept-Lanague   告诉服务器能够发送哪些语言 </span><br><span class="line">Connection       告诉服务器支持keep-alive特性</span><br><span class="line">Cookie           每次请求时都会携带上Cookie以方便服务器端识别是否是同一个客户端</span><br><span class="line">Host             用来标识请求服务器上的那个虚拟主机，比如Nginx里面可以定义很多个虚拟主机</span><br><span class="line">             那这里就是用来标识要访问那个虚拟主机。</span><br><span class="line">User-Agent       用户代理，一般情况是浏览器，也有其他类型，如：wget curl 搜索引擎的蜘蛛等     </span><br><span class="line"></span><br><span class="line">条件请求首部：</span><br><span class="line">If-Modified-Since 是浏览器向服务器端询问某个资源文件如果自从什么时间修改过，那么重新发给我，这样就保证服务器端资源</span><br><span class="line">         文件更新时，浏览器再次去请求，而不是使用缓存中的文件</span><br><span class="line">安全请求首部：</span><br><span class="line">Authorization: 客户端提供给服务器的认证信息；</span><br></pre></td></tr></table></figure>
+</code></pre><ol>
 <li><p>到达服务器</p>
 <ol>
 <li><p>负载均衡</p>
@@ -254,13 +266,13 @@
 </blockquote>
 <p>7.服务器发回一个HTML响应</p>
 <p>响应包括响应头（响应参数与信息）、响应包（主体文件）<br>响应包采用特定方法压缩，整个响应以blob类型传输，响应头指示响应包以何种方式压缩<br>这个响应头与重定向的响应头不太一样，这个响应头还包含着缓存选项，cookies设置和隐私信息等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">connection:keep-alive</span><br><span class="line">Content-Type:text/html;charset=utf-8</span><br><span class="line">date:Sat, 23 Jul 2016 04:15:48 GMT</span><br><span class="line">server:Cowboy</span><br><span class="line">transfer-encoding:chunked</span><br><span class="line"></span><br><span class="line">Connection            使用keep-alive特性</span><br><span class="line">Content-type          MIME类型为html类型，字符集是 UTF-8</span><br><span class="line">Date                  响应的日期</span><br><span class="line">Server                使用的WEB服务器</span><br><span class="line">Transfer-Encoding:chunked   分块传输编码 是http中的一种数据传输机制，允许HTTP由网页服务器发送给客户端应用（通常是网页浏览器）的数据可以分成多个部分，分块传输编码只在HTTP协议1.1版本（HTTP/1.1）中提供</span><br><span class="line"></span><br><span class="line">获取静态资源时</span><br><span class="line">Content-Encoding      资源压缩</span><br><span class="line">Cache-Control:max-age=3600</span><br><span class="line">Expires:Sat, 23 Jul 2016 06:11:08 GMT</span><br><span class="line">Last-Modified:Thu, 24 Sep 2015 12:50:17 GMT</span><br></pre></td></tr></table></figure>
 <p>8.浏览器背后的故事</p>
 <p>服务端处理完请求后，结果将通过网络发回客户端的浏览器.当服务器提供了资源之后（HTML，CSS，JS，图片等），浏览器会执行下面的操作：</p>
 <ul>
 <li>解析 HTML，CSS，JS</li>
-<li>渲染——构建 DOM 树 -&gt; 渲染 -&gt; 布局 -&gt; 绘制</li>
+<li>渲染——构建 DOM 树 -&gt; 渲染 -&gt; 布局 -&gt; 绘制<br><a href="http://cherishsdan.github.io/2016/07/03/eDom/" target="_blank" rel="external">more</a><br><strong>浏览器高层架构</strong></li>
 </ul>
-<p><strong>浏览器高层架构</strong></p>
 <p>组成浏览器的组件有:</p>
 <ul>
 <li>用户界面 用户界面包含了地址栏，前进后退按钮，书签菜单等等，除了请求页面之外所有你看到的内容都是用户界面的一部分</li>
