@@ -702,17 +702,20 @@
 <li>可以很容易在 Node.js 中运行</li>
 </ul>
 </li>
+<li>AMD VS CMD<ul>
+<li>CMD推崇依赖就近，可以把依赖写进你的代码中的任意一行，代码在运行时，首先是不知道依赖的，需要遍历所有的require关键字，找出后面的依赖。具体做法是将function toString后，用正则匹配出require关键字后面的依赖。显然，这是一种牺牲性能来换取更多开发便利的方法。</li>
+<li>而AMD是依赖前置的，换句话说，在解析和执行当前模块之前，模块作者必须指明当前模块所依赖的模块，无需遍历整个函数体找到它的依赖，因此性能有所提升，缺点就是开发者必须显式得指明依赖——这会使得开发工作量变大<br>大势所趋：</li>
 </ul>
-<p>大势所趋：</p>
-<ul>
-<li>Browserify - CommonJS In Browser</li>
-<li><p>Webpack - Module Bundler<br>  Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
 </li>
+<li>Browserify - CommonJS In Browser<br>  Browserify是一个node.js模块，主要用于改写现有的CommonJS模块，使得浏览器端也可以使用这些模块</li>
+<li>Webpack - Module Bundler<br>  Webpack 是一个模块打包器。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</li>
+</ul>
+<p>requirejs是一种在线”编译” 模块的方案，相当于在页面上加载一个AMD 解释器，以便于览器能够识别 define、exports、module，而这些东西就是用于模块化的关键。<br>而browserify / webpack，则是一个预编译模块的方案。它是预编译的，不需要在浏览器中加载解释器。</p>
+<ul>
 <li><p>ES6 Module<br>  ES6模块的设计思想，是尽量的静态化，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS和AMD模块，都只能在运行时确定这些东西</p>
 <p>  模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。<br>  <a href="http://es6.ruanyifeng.com/#docs/module">more</a></p>
 </li>
 </ul>
-<p>ES6：ES6 MODULE</p>
 </script></li></ul>
       
     </div>
