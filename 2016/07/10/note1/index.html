@@ -19,7 +19,7 @@ CSS
 CSS
 盒子模型  盒模型指定元素如何显示，页面上的每个元素都被看成一个矩形框，这个框由元素的内容、内边距、边框和外边距组成。  内边距出现在元素的周围，如果在元素上添加背景，那么背景就会被应用于内容和内边距组成区域。常常使用内边距在元素周围创建一个隔离带。外边距是透明的，一般使用它控制元素之间的间隔。  CSS3中新增">
 <meta property="og:image" content="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg">
-<meta property="og:updated_time" content="2016-07-24T07:22:41.833Z">
+<meta property="og:updated_time" content="2016-07-24T10:58:17.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端知识杂记——CSS">
 <meta name="twitter:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
@@ -264,7 +264,11 @@ CSS
 <li><p>布局</p>
 <ol>
 <li><a href="http://www.w3cfuns.com/notes/15972/e7a1555bab4dbd270c64dd9626425b48/page/2.html" target="_blank" rel="external">自适应布局</a></li>
-<li><a href="https://segmentfault.com/a/1190000004524159" target="_blank" rel="external">圣杯布局</a><br> <a href="http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="external">负margin</a></li>
+<li><p><a href="https://segmentfault.com/a/1190000004524159" target="_blank" rel="external">圣杯布局</a><br>  <a href="http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="external">负margin</a><br> <a href="http://blog.qiji.tech/archives/11747" target="_blank" rel="external">双飞翼布局</a><br> 圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。</p>
+<p> 不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：<br> 圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。</p>
+<p> 双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。<br> 多了1个div，少用大致4个css属性（圣杯布局中间divpadding-left和padding-right这2个属性，加上左右两个div用相对布局position: relative及对应的right和left共4个属性，一共6个；而双飞翼布局子div里用margin-left和margin-right共2个属性，6-2=4）(<a href="https://www.zhihu.com/question/21504052/answer/50053054" target="_blank" rel="external">https://www.zhihu.com/question/21504052/answer/50053054</a>)</p>
+</li>
+<li></li>
 </ol>
 </li>
 <li>display<br>  常用的：<ol>
@@ -275,14 +279,8 @@ CSS
 <li>table-cell 标签元素以表格单元格的形式呈现<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external">更多</a></li>
 </ol>
 </li>
-<li><p>position<br>  元素在页面中的布局遵守一套文档流的方式，默认的定位属性值为static。它其实是未被设置定位的。</p>
-<p>  元素如果被定位了，那么它的top,left,bottom,right值就会生效，能设置定位的属性是relative,absolute和fixed。<br>  需要注意的另一点是被定位的元素层次(z-index)会得到提高。</p>
-<ol>
-<li>relative<br>设置了相对定位之后，通过修改top,left,bottom,right值，元素会在自身文档流所在位置上被移动，其他的元素则不会调整位置来弥补它偏离后剩下的空隙。</li>
-<li>absolute<br>设置了绝对定位之后，元素脱离文档流，其他的元素会调整位置来弥补它偏离后剩下的空隙。元素偏移是相对于是它最近的设置了定位属性（position值不为static）的元素。</li>
-<li>fixed(固定定位)<br>设置了固定定位之后，元素相对的偏移的参考是可视窗口，即使页面滚动，元素仍然会在固定位置<br>4.规定从父元素继承 position 属性的值。</li>
-</ol>
-</li>
+<li><a href="http://cherishsdan.github.io/2016/05/20/position/" target="_blank" rel="external">position</a></li>
+<li><a href="http://cherishsdan.github.io/2016/05/01/float/" target="_blank" rel="external">浮动</a></li>
 <li>CSS3新特性<ol>
 <li>各种CSS选择器</li>
 <li>圆角  </li>
@@ -320,7 +318,7 @@ CSS
 </ol>
 </li>
 <li>抽离样式模块<br>我理解的应该是提取页面公共样式。<br>一个项目的CSS可以拆分成2部分：公共CSS和业务CSS。我们在项目中抽出的这部分可以模块化的CSS就可以归类为公共CSS。这部分的代码命名不应涉及到具体的业务，只应对其在模块中负责的具体逻辑负责。<br>可以把网站的字体大小，公共控制，共用模块的样式都抽离出来，作为单独的模块来处理。这样，团队中的每个人如果需要这样的样式，都可以用这种公共样式，以此提高代码的重用率。<br>好的复用模块，应该是完整的、独立的。完整就是包含 PSD 中遇到的各种情况，对于不同的情况，只需要添加不同的类或者改用不同结构即可。独立性就是与其他模块和结构完全独立，直接粘贴复制不会产生任何影响。</li>
-<li>全屏滚动</li>
+<li>全屏滚</li>
 <li><a href="http://www.alloyteam.com/2014/01/parallax-scrolling-love-story/" target="_blank" rel="external">视觉差</a></li>
 <li><p>Chrome支持小于12px 的文字</p>
 <ol>
@@ -345,6 +343,12 @@ CSS
 <p>  后处理器例如：PostCSS，通常被视为在完成的样式表中根据CSS规范处理CSS，让其更有效；目前最常做的<br>是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。</p>
 </li>
 </ul>
+<ul>
+<li>初始化CSS样式<br>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。<br>当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。</li>
+</ul>
+<p>最简单的初始化方法： * {padding: 0; margin: 0;} （强烈不建议）</p>
+<p>淘宝的样式初始化代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">hr</span>, <span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, <span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">li</span>, <span class="selector-tag">pre</span>, <span class="selector-tag">form</span>, <span class="selector-tag">fieldset</span>, <span class="selector-tag">legend</span>, <span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">textarea</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span> &#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-tag">body</span>, <span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">select</span>, <span class="selector-tag">textarea</span> &#123; <span class="attribute">font</span>:<span class="number">12px</span>/<span class="number">1.5</span>tahoma, arial, \<span class="number">5</span>b8b\<span class="number">4</span>f53; &#125;</span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>&#123; <span class="attribute">font-size</span>:<span class="number">100%</span>; &#125;</span><br><span class="line"><span class="selector-tag">address</span>, <span class="selector-tag">cite</span>, <span class="selector-tag">dfn</span>, <span class="selector-tag">em</span>, <span class="selector-tag">var</span> &#123; <span class="attribute">font-style</span>:normal; &#125;</span><br><span class="line"><span class="selector-tag">code</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">pre</span>, <span class="selector-tag">samp</span> &#123; <span class="attribute">font-family</span>:couriernew, courier, monospace; &#125;</span><br><span class="line"><span class="selector-tag">small</span>&#123; <span class="attribute">font-size</span>:<span class="number">12px</span>; &#125;</span><br><span class="line"><span class="selector-tag">ul</span>, <span class="selector-tag">ol</span> &#123; <span class="attribute">list-style</span>:none; &#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123; <span class="attribute">text-decoration</span>:none; &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">text-decoration</span>:underline; &#125;</span><br><span class="line"><span class="selector-tag">sup</span> &#123; <span class="attribute">vertical-align</span>:text-top; &#125;</span><br><span class="line"><span class="selector-tag">sub</span>&#123; <span class="attribute">vertical-align</span>:text-bottom; &#125;</span><br><span class="line"><span class="selector-tag">legend</span> &#123; <span class="attribute">color</span>:<span class="number">#000</span>; &#125;</span><br><span class="line"><span class="selector-tag">fieldset</span>, <span class="selector-tag">img</span> &#123; <span class="attribute">border</span>:<span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">select</span>, <span class="selector-tag">textarea</span> &#123; <span class="attribute">font-size</span>:<span class="number">100%</span>; &#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123; <span class="attribute">border-collapse</span>:collapse; <span class="attribute">border-spacing</span>:<span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>* </p>
 
       
     </div>
