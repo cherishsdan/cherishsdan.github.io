@@ -10,11 +10,7 @@
 
 可重用
 封装了变量和function，和全局的namaspace不接触，松耦合
-只暴露可用public的方法，其它私有方法全部隐藏
-
-1、基本的模块化
-对象写法1234var Module = &amp;#123;    m1: function()&amp;#123;&amp;#125;,    m2: function()&amp;#123;&amp;#125;&amp;#125;
-减少 Global 上的变量数目,起到了一">
+只暴露可用public的方法，其它私有方法全部隐藏">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Module">
 <meta property="og:url" content="http://yoursite.com/2016/06/13/module/index.html">
@@ -23,23 +19,15 @@
 
 可重用
 封装了变量和function，和全局的namaspace不接触，松耦合
-只暴露可用public的方法，其它私有方法全部隐藏
-
-1、基本的模块化
-对象写法1234var Module = &amp;#123;    m1: function()&amp;#123;&amp;#125;,    m2: function()&amp;#123;&amp;#125;&amp;#125;
-减少 Global 上的变量数目,起到了一">
-<meta property="og:updated_time" content="2016-07-27T15:28:23.210Z">
+只暴露可用public的方法，其它私有方法全部隐藏">
+<meta property="og:updated_time" content="2016-07-27T15:35:44.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Module">
 <meta name="twitter:description" content="关于模块化：
 
 可重用
 封装了变量和function，和全局的namaspace不接触，松耦合
-只暴露可用public的方法，其它私有方法全部隐藏
-
-1、基本的模块化
-对象写法1234var Module = &amp;#123;    m1: function()&amp;#123;&amp;#125;,    m2: function()&amp;#123;&amp;#125;&amp;#125;
-减少 Global 上的变量数目,起到了一">
+只暴露可用public的方法，其它私有方法全部隐藏">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -224,9 +212,9 @@
 <ul>
 <li>可重用</li>
 <li>封装了变量和function，和全局的namaspace不接触，松耦合</li>
-<li>只暴露可用public的方法，其它私有方法全部隐藏</li>
+<li>只暴露可用public的方法，其它私有方法全部隐藏<a id="more"></a>
+1、基本的模块化</li>
 </ul>
-<p>1、基本的模块化</p>
 <h2 id="对象写法"><a href="#对象写法" class="headerlink" title="对象写法"></a>对象写法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Module = &#123;</span><br><span class="line">    m1: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;,</span><br><span class="line">    m2: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>减少 Global 上的变量数目,起到了一点点的命名空间作用<br>同样缺点明显: 会暴露所有模块成员，内部状态可以被外部改写</p>
 <h2 id="匿名闭包-：IIFE-模式"><a href="#匿名闭包-：IIFE-模式" class="headerlink" title="匿名闭包 ：IIFE 模式"></a>匿名闭包 ：IIFE 模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Module = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _private = <span class="string">"safe"</span>;</span><br><span class="line">    <span class="keyword">var</span> m1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">/* code */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        m1: m1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">Module.m1();</span><br><span class="line">Module._private; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
@@ -242,7 +230,6 @@
 <p>首个被引入的文件会创建Module命名空间（就是个JavaScript对象），而且所有使用这种结构的后续文件都只是重用此现有实例。</p>
 <h3 id="紧耦合扩展"><a href="#紧耦合扩展" class="headerlink" title="紧耦合扩展"></a>紧耦合扩展</h3><p>紧耦合扩展限制了加载顺序，但是提供了我们重载的机会</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Module = (<span class="function"><span class="keyword">function</span> (<span class="params">m</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oldMethod = m.AddMethod;</span><br><span class="line"></span><br><span class="line">    m.AddMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">/* code </span><br><span class="line">        可通过oldMethod调用旧的方法</span><br><span class="line">        */</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> m;</span><br><span class="line">&#125; (Module));</span><br></pre></td></tr></table></figure>
-<hr>
 <p>缺点：</p>
 <ul>
 <li>全局作用域下容易造成变量冲突</li>
