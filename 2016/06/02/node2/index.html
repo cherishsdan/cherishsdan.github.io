@@ -16,12 +16,14 @@ CommonJSCommonJS规范加载模块是同步的。根据CommonJS规范，一个�
 <meta property="og:description" content="再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中
 
 CommonJSCommonJS规范加载模块是同步的。根据CommonJS规范，一个单独的文件就是一个模块。每一个模块都是一个单独的作用域，也就是说，在一个文件定义的变量（还包括函数和类），都是私有的，对其他文件是不可见的。CommonJS规定，每个文件的对外接口是module.exports对象。这个对象的所有属性和方法，都可以">
-<meta property="og:updated_time" content="2016-06-08T06:49:00.773Z">
+<meta property="og:image" content="http://o6qp6st9j.bkt.clouddn.com/images/node/module.png">
+<meta property="og:updated_time" content="2016-07-28T03:31:58.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js(二)-模块机制">
 <meta name="twitter:description" content="再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中
 
 CommonJSCommonJS规范加载模块是同步的。根据CommonJS规范，一个单独的文件就是一个模块。每一个模块都是一个单独的作用域，也就是说，在一个文件定义的变量（还包括函数和类），都是私有的，对其他文件是不可见的。CommonJS规定，每个文件的对外接口是module.exports对象。这个对象的所有属性和方法，都可以">
+<meta name="twitter:image" content="http://o6qp6st9j.bkt.clouddn.com/images/node/module.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -107,7 +109,7 @@ CommonJSCommonJS规范加载模块是同步的。根据CommonJS规范，一个�
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 12.5px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 12.5px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -217,6 +219,7 @@ CommonJSCommonJS规范加载模块是同步的。根据CommonJS规范，一个�
 <ul>
 <li>module.exports &amp;&amp; exports<br>  module.exports属性表示当前模块对外输出的接口,为了方便，Node为每个模块提供一个exports变量，指向module.exports。等同于<br>  <code>var exports = module.exports;</code><br>  exports对象是通过形参方式传入的，直接赋值形参会改变形参的引用，但并不能改变作用域外的值。</li>
 </ul>
+<h2 id="思维脑图"><a href="#思维脑图" class="headerlink" title="思维脑图"></a>思维脑图</h2><p><img src="http://o6qp6st9j.bkt.clouddn.com/images/node/module.png" alt="node"></p>
 
       
     </div>

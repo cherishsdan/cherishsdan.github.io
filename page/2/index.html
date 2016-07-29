@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 12.5px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 12.5px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
 					</div>
 				</section>
 				
@@ -633,11 +633,11 @@
 
 
   
-    <article id="post-module" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iife" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/13/module/" class="article-date">
-  	<time datetime="2016-06-13T09:15:08.000Z" itemprop="datePublished">2016-06-13</time>
+      <a href="/2016/06/12/iife/" class="article-date">
+  	<time datetime="2016-06-12T07:31:24.000Z" itemprop="datePublished">2016-06-12</time>
 </a>
     </div>
   
@@ -650,7 +650,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/13/module/">Module</a>
+      <a class="article-title" href="/2016/06/12/iife/">立即执行函数表达式</a>
     </h1>
   
 
@@ -659,11 +659,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于模块化：</p>
-<ul>
-<li>可重用</li>
-<li>封装了变量和function，和全局的namaspace不接触，松耦合</li>
-<li>只暴露可用public的方法，其它私有方法全部隐藏
+        <p>function foo(){ /<em> code </em>/ }();//SyntaxError: Unexpected token<br>function(){ /<em> code </em>/}(); //SyntaxError: Unexpected token</p>
+<p>圆括号为了调用函数出现在函数后面时，无论在全局环境或者局部环境里遇到了这样的function关键字，默认的，它会将它当作是一个函数声明，而不是函数表达式.因为 JavaScript 文法明确规定表达式语句不得以 function 或者 { 开头.</p>
+<p>所以便出现了下面几种形式：<br>(function(){/<em> code </em>/}())<br>(function(){/<em> code </em>/})()<br>!function(){/<em> code </em>/}();<br>~function(){/<em> code </em>/}();<br>-function(){/<em> code </em>/}();<br>+function(){/<em> code </em>/}();<br>…</p>
+<h2 id="最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了-function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。"><a href="#最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了-function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。" class="headerlink" title="最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了 function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。"></a>最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了 function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。</h2><p>函数表达式 &amp;&amp; 函数声明</p>
+<p>函数表达式中的函数可以为匿名函数，也可以有函数名，但是不能直接使用，只能通过表达式左边的变量 a 来调用。<br><code>var a = function(){
+alert(&#39;Function expression&#39;);
+}
+var b = new a();</code></p>
+<p>函数声明时必须有函数名<br><code>function a(){
+alert(&#39;Function declaration&#39;);
+}
+a();</code><br>`</p>
+<p><script><br>!function() {<br>alert(“hello, world.”);<br>} ();<br></script><br>`<br>匿名函数通过一元操作符变成了函数表达式，因而可以通过（）来调用。<br>因此，执行匿名函数可以通过+，-，！，（） 这样的形式来转化为函数表达式，就可以通过（）来运行了。</p>
+
       
     </div>
     
@@ -671,15 +680,11 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/module/">module</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/13/module/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
