@@ -16,14 +16,12 @@
 <meta property="og:description" content="性能优化系列笔记，提升用户体验
 
 图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。">
-<meta property="og:image" content="http://o6qp6st9j.bkt.clouddn.com/images/effective/ePic.png">
-<meta property="og:updated_time" content="2016-07-22T10:41:39.381Z">
+<meta property="og:updated_time" content="2016-07-29T01:41:30.346Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端性能优化——图片">
 <meta name="twitter:description" content="性能优化系列笔记，提升用户体验
 
 图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。">
-<meta name="twitter:image" content="http://o6qp6st9j.bkt.clouddn.com/images/effective/ePic.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -211,24 +209,29 @@
 <ul>
 <li><p>图片格式比较</p>
 <ul>
-<li>JPEG 真彩色、有损压缩，不支持透明度及动画，适用于复杂颜色及形状、尤其是照片</li>
-<li>GIF 调色板、无损压缩、支持透明度（二进制类型，要么完全透明，要么完全不透明，不支持alpha（可变的）透明度）及动画、 适应于简单颜色，动画</li>
+<li>JPEG 真彩色、有损压缩，不支持透明度及动画，适用于复杂颜色及形状、尤其是照片。其压缩算法可以精确控制压缩比，以图像质量换得存储空间。</li>
+<li>GIF 只支持 256 种颜色、透明通道只有 1 bit、文件压缩比不高。它唯一的优势就是支持多帧动画</li>
 <li>PNG 有几种子类型（PNG8、PNG24、PNG32），无损压缩，支持alpha透明，不支持动画<ul>
 <li>PNG-8能够显示256种颜色，但能够同时支持256阶透明，因此颜色数较少但需要半透明的情景（如微信动画大表情）可以考虑PNG-8</li>
 <li>PNG-24可以显示真彩色，但不支持透明，颜色丰富的图片推荐使用（如屏幕截图、界面设计图）</li>
 <li>PNG-32可以显示真彩色，同时支持256阶透明，效果最好但尺寸也最大</li>
 </ul>
 </li>
-<li>webP 支持有损与无损压缩、Alpha 透明以及动画，优势体现在它具有更优的图像数据压缩算法，<a href="https://isux.tencent.com/introduction-of-webp.html" target="_blank" rel="external">more</a></li>
+<li>webP 用 VP8 视频帧内编码作为其算法基础，支持有损与无损压缩、Alpha 透明以及动画，优势体现在它具有更优的图像数据压缩算法，<a href="https://isux.tencent.com/introduction-of-webp.html" target="_blank" rel="external">more</a></li>
+<li>APNG 旨在替换掉画质低劣的 GIF 动画。它实际上只是相当于 PNG 格式的一个扩展</li>
+<li>BPG 一款超高压缩比的图片格式，使用 HEVC (即 H.265) 帧内编码作为其算法基础，同等体积下 BPG 能提供更高的图像质量。另外，得益于它本身基于视频编码算法的特性，它能以非常小的文件体积保存多帧动画</li>
 <li><p>SVG 无损压缩，支持透明度及动画，适应于简单图形，需要良好的放缩体验<br>需要动态控制图片特效</p>
-</li>
-<li><p>优化<br><img src="http://o6qp6st9j.bkt.clouddn.com/images/effective/ePic.png" alt="ePic"></p>
-<p>dataURL<br>对于极小的图片可以使用DataURL，除非在尽快要求展现的时候使用，其他时候应该避免使用，因为它在移动端的性能非常差</p>
+<p><a href="http://blog.ibireme.com/2015/11/02/mobile_image_benchmark/" target="_blank" rel="external">移动端的支持</a></p>
 </li>
 </ul>
 </li>
 </ul>
+<pre><code>- 优化
+![ePic](http://o6qp6st9j.bkt.clouddn.com/images/effective/ePic.png)
 
+dataURL
+对于极小的图片可以使用DataURL，除非在尽快要求展现的时候使用，其他时候应该避免使用，因为它在移动端的性能非常差
+</code></pre>
       
     </div>
     

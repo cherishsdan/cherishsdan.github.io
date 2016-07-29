@@ -306,7 +306,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>《<javascript 高级程序设计>》——继承</p>
+<p>《javascript 高级程序设计》——继承</p>
 </blockquote>
 <p>JavaScript 不包含传统的类继承模型，而是使用 prototype 原型模型,使用原型链的继承方式。</p>
 <p>prototype和length是每一个函数类型自带的两个属性，prototype属性是一个指针，指向它的原型对象。<br>原型对象内部也有一个指针（constructor属性）指向构造函数:Person.prototype.constructor = Person;<br>Js中的所有对象（undefined、null等特殊情况除外）都有一个内置的[[Prototype]]属性，指向它“父类”的prototype，这个内置属性在ECMA标准中并没有给出明确的获取方式，但是许多Js的实现（如Node、大部分浏览器等）都提供了一个<strong>proto</strong>属性来指代这一[[Prototype]]，ES5中增加了一个方法，Object.getPrototypeOf(),返回<em>proto</em>的值</p>
