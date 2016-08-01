@@ -20,7 +20,7 @@
 可重用
 封装了变量和function，和全局的namaspace不接触，松耦合
 只暴露可用public的方法，其它私有方法全部隐藏">
-<meta property="og:updated_time" content="2016-07-29T02:05:50.844Z">
+<meta property="og:updated_time" content="2016-07-29T02:07:11.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Module">
 <meta name="twitter:description" content="关于模块化：
@@ -240,9 +240,7 @@
 <li>在大型项目中各种资源难以管理，长期积累的问题导致代码库混乱不堪</li>
 </ul>
 <hr>
-<ol>
-<li>发展<br>模块规范</li>
-</ol>
+<p>模块规范</p>
 <ul>
 <li>COMMONJS<br>  CommonJS中，一个单独的文件就是一个模块。每一个模块都是一个单独的作用域，也就是说，在一个文件定义的变量（还包括函数和类），都是私有的，对其他文件是不可见的，除非定义为global对象的属性。<br>  通过 require 方法来同步加载所要依赖的其他模块，然后通过 exports 或 module.exports 来导出需要暴露的接口<br>  CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。<br>  <a href="http://javascript.ruanyifeng.com/nodejs/module.html" target="_blank" rel="external">more</a></li>
 <li><p>AMD<br>  AMD模式可以用于浏览器环境，并且允许非同步加载模块，也可以根据需要动态加载模块。RequireJS遵守AMD规范<br>  模块通过 define 函数定义在闭包中，格式如下<br>  <code>define(id?, dependencies?, factory);</code><br>  id 是模块的名字，它是可选的参数。<br>  dependencies 指定了所要依赖的模块列表，它是一个数组，也是可选的参数，每个依赖的模块的输出将作为参数一次传入 factory 中。如果没有指定 dependencies，那么它的默认值是 [“require”, “exports”, “module”]<br>  factory 是最后一个参数，它包裹了模块的具体实现，它是一个函数或者对象。如果是函数，那么它的返回值就是模块的输出接口或值。<br>  <a href="http://javascript.ruanyifeng.com/tool/requirejs.html" target="_blank" rel="external">more</a></p>

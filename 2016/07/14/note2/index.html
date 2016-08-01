@@ -22,7 +22,7 @@ javascript
 基本数据类型   Undefined、Null、Boolean、Number、String、Symbol(ES6)
 内置对象  Object 是 JavaScript 中所有对象的父对象
   数据封装类对象：Object、Array、Boolean、Number 和 String  其他对象：Fun">
-<meta property="og:updated_time" content="2016-07-26T08:26:11.502Z">
+<meta property="og:updated_time" content="2016-08-01T16:10:31.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端知识杂记——javascript">
 <meta name="twitter:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
@@ -219,7 +219,6 @@ javascript
 <li><p>内置对象<br>  Object 是 JavaScript 中所有对象的父对象</p>
 <p>  数据封装类对象：Object、Array、Boolean、Number 和 String<br>  其他对象：Function、Arguments、Math、Date、RegExp、Error</p>
 <a id="more"></a></li>
-<li>基本规范<br>  1.不要在同一行声明多个变量。<br>2.请使用 ===/!==来比较true/false或者数值<br>3.使用对象字面量替代new Array这种形式<br>4.不要使用全局函数。<br>5.Switch语句必须带有default分支<br>6.函数不应该有时候有返回值，有时候没有返回值。<br>7.For循环必须使用大括号<br>8.If语句必须使用大括号<br>9.for-in循环中的变量 应该使用var关键字明确限定作用域，从而避免作用域污染。</li>
 <li><p>JavaScript有几种类型的值<br>  栈：原始数据类型（Undefined，Null，Boolean，Number、String）<br>堆：引用数据类型（对象、数组和函数）</p>
 <p>  两种类型的区别是：存储位置不同；<br>  原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；<br>引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其<br>在栈中的地址，取得地址后从堆中获得实体</p>
 </li>
@@ -249,7 +248,6 @@ javascript
 </ul>
 </li>
 <li><a href="http://www.cnblogs.com/hustskyking/p/problem-javascript-event.html" target="_blank" rel="external">事件机制</a></li>
-<li>闭包</li>
 <li><p>use strict<br>  use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,</p>
 <p>  使JS编码更加规范化的模式,消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。<br>  默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值;<br>  全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用；<br>  消除代码运行的一些不安全之处，保证代码运行的安全,限制函数中的arguments修改，严格模式下的eval函数的行为和非严格模式的也不相同;</p>
 </li>
@@ -272,8 +270,14 @@ javascript
 <li><a href="http://cherishsdan.github.io/2016/06/13/module/" target="_blank" rel="external">模块化开发</a></li>
 <li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript6</a></li>
 <li>document.write，innerHtml<br>  document.write只能重绘整个页面<br>  innerHTML可以重绘页面的一部分</li>
-<li>DOM操作</li>
-<li><a href="http://www.w3cplus.com/javascript/javascript-hoisting-in-details.html" target="_blank" rel="external">作用域与变量声明提升</a></li>
+<li><p>offsetWidth</p>
+<blockquote>
+<p><strong>clientHeight</strong>和<strong>clientWidth</strong>用于描述元素内尺寸，是指 元素内容+内边距 大小，不包括边框（IE下实际包括）、外边距、滚动条部分<br><strong>offsetHeight</strong>和<strong>offsetWidth</strong>用于描述元素外尺寸，是指 元素内容+内边距+边框，不包括外边距和滚动条部分<br><strong>clientTop</strong>和<strong>clientLeft</strong>返回内边距的边缘和边框的外边缘之间的水平和垂直距离，也就是左，上边框宽度<br><strong>offsetTop</strong>和<strong>offsetLeft</strong>表示该元素的左上角（边框外边缘）与已定位的父容器（offsetParent对象）左上角的距离<br><strong>offsetParent</strong>对象是指元素最近的定位（relative,absolute）祖先元素，递归上溯，如果没有祖先元素是定位的话，会返回null<br>  ＞<strong>scrollWidth</strong>和<strong>scrollHeight</strong>是元素的内容区域加上内边距加上溢出尺寸，当内容正好和内容区域匹配没有溢出时，这些属性与clientWidth和clientHeight相等<br>  ＞<strong>scrollLeft</strong>和<strong>scrollTop</strong>是指元素滚动条位置，它们是可写的</p>
+</blockquote>
+</li>
+<li><p><a href="http://www.w3cplus.com/javascript/javascript-hoisting-in-details.html" target="_blank" rel="external">作用域与变量声明提升</a></p>
+</li>
+<li>getComputedStyle<br>  <strong>getComputedStyle</strong>是一个可以获取当前元素所有最终使用的CSS属性值。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，<strong>只读</strong>。<br>  vs element.style<br>  getComputedStyle方法是只读的，只能获取样式，不能设置；而<strong>element.style</strong>能读能写<br>  getComputedStyle方法获取的是最终应用在元素上的所有CSS属性对象,element.style只能获取元素style属性中的CSS样式<br>  element.currentStyle返回的是元素当前应用的最终CSS属性值（包括外链CSS文件，页面中嵌入的<style>属性等,从作用上将，getComputedStyle方法与currentStyle属性走的很近，形式上则style与currentStyle走的近<br>  <code>(element.currentStyle? element.currentStyle : window.getComputedStyle(element, null)).height</code></li>
 <li>高性能的Javascript</li>
 <li>内存泄漏</li>
 <li>jquery实现原理</li>
@@ -299,9 +303,9 @@ javascript
 <li>前端templating(Mustache, underscore, handlebars)是干嘛的, 怎么用</li>
 <li>js实现千位分隔符</li>
 <li>检测浏览器版本</li>
-<li><a href="https://segmentfault.com/a/1190000004623125" target="_blank" rel="external">CSRF XSS</a></li>
+<li><a href="https://segmentfault.com/a/1190000004623125">CSRF XSS</a></li>
 </ul>
-
+</style></li></ul>
       
     </div>
     
