@@ -160,89 +160,6 @@
 
       <div class="body-wrap">
   
-    <article id="post-promise" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/20/promise/" class="article-date">
-  	<time datetime="2016-06-20T11:03:01.000Z" itemprop="datePublished">2016-06-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/20/promise/">JavaScript 异步编程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>所谓的异步指的是函数的调用并不直接返回执行的结果，而往往是通过回调函数异步的执行。异步的主要目的是处理非阻塞，在和HTML交互的过程中，会需要一些IO操作（典型的就是Ajax请求，脚本文件加载），如果这些操作是同步的，就会阻塞其它操作，用户的体验就是页面失去了响应。avascript通过事件驱动机制，在单线程模型下，以异步回调函数的形式来实现非阻塞的IO操作。</p>
-<h2 id="常见的异步模型"><a href="#常见的异步模型" class="headerlink" title="常见的异步模型"></a>常见的异步模型</h2><ul>
-<li>高阶函数</li>
-<li><p>事件监听</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f.on(<span class="string">"evt"</span>, g);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    f.trigger(<span class="string">"evt"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>发布/订阅</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">E.subscribe(<span class="string">"evt"</span>, g);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    　　<span class="comment">// f的任务代码</span></span><br><span class="line">    　　E.publish(<span class="string">"evt"</span>);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Promise</p>
-</li>
-</ul>
-<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>传统的回调函数写法使得代码混成一团，变得横向发展而不是向下发展。Promises规范就是为了解决这个问题而提出的，目标是使用正常的程序流程（同步），来处理异步操作。</p>
-<p>Promise把类似的异步处理对象和处理规则进行规范化， 并按照采用统一的接口来编写，采取规定方法之外的写法都会出错。promise的功能是可以将复杂的异步处理轻松地进行模式化。<br>简单来说，它起到代理作用（proxy），充当异步操作与回调函数之间的中介。它使得异步操作具备同步操作的接口，使得程序具备正常的同步运行的流程，回调函数不必再一层层嵌套。它的思想是，每一个异步任务立刻返回一个Promise对象，由于是立刻返回，所以可以采用同步操作的流程。这个Promises对象有一个then方法，允许指定回调函数，在异步任务完成后调用。<br>ECMAScript 6将其写入语言标准，因此目前JavaScript语言原生支持Promise对象。<br>更多Promise操作-<a href="">Promise</a></p>
-<h2 id="异步操作的流程控制"><a href="#异步操作的流程控制" class="headerlink" title="异步操作的流程控制"></a>异步操作的流程控制</h2><p>1、串行执行</p>
-<p>可以编写一个流程控制函数，让它来控制异步任务，一个任务完成以后，再执行另一个。这就叫串行执行</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> ];</span><br><span class="line"><span class="keyword">var</span> results = [];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">series</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(item) &#123;</span><br><span class="line">    <span class="keyword">async</span>( item, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">      results.push(result);</span><br><span class="line">      <span class="keyword">return</span> series(items.shift());</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> final(results);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">series(items.shift());</span><br></pre></td></tr></table></figure>
-<p>函数series就是串行函数，它会依次执行异步任务，所有任务都完成后，才会执行final函数。items数组保存每一个异步任务的参数，results数组保存每一个异步任务的运行结果</p>
-<p>2、并行执行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> ];</span><br><span class="line"><span class="keyword">var</span> results = [];</span><br><span class="line"></span><br><span class="line">items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">async</span>(item, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    results.push(result);</span><br><span class="line">    <span class="keyword">if</span>(results.length == items.length) &#123;</span><br><span class="line">      final(results);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>上面代码中，forEach方法会同时发起6个异步任务，等到它们全部完成以后，才会执行final函数。</p>
-<p>并行执行的好处是效率较高，比起串行执行一次只能执行一个任务，较为节约时间。但是问题在于如果并行的任务较多，很容易耗尽系统资源，拖慢运行速度。因此有了第三种流程控制方式</p>
-<p>3、并行与串行的结合<br>所谓并行与串行的结合，就是设置一个门槛，每次最多只能并行执行n个异步任务。这样就避免了过分占用系统资源。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span> ];</span><br><span class="line"><span class="keyword">var</span> results = [];</span><br><span class="line"><span class="keyword">var</span> running = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> limit = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">launcher</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(running &lt; limit &amp;&amp; items.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> item = items.shift();</span><br><span class="line">    <span class="keyword">async</span>(item, <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">      results.push(result);</span><br><span class="line">      running--;</span><br><span class="line">      <span class="keyword">if</span>(items.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        launcher();</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span>(running == <span class="number">0</span>) &#123;</span><br><span class="line">        final();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    running++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">launcher();</span><br></pre></td></tr></table></figure>
-<h2 id="JavaScript-多线程"><a href="#JavaScript-多线程" class="headerlink" title="JavaScript 多线程"></a>JavaScript 多线程</h2><p>JavaScript 中的 Worker 对象可以创建一个独立线程来处理数据，很自然的处理了阻塞问题。我们可以把繁重的计算任务交给 Worker,等他处理完了再把数据 Post 过来。</p>
-<p>Worker 是一个有用的工具,可以创建 ajax 对象和 WebSocket 对象，也就是说他可以直接向服务器请求数据。不过他不能访问 DOM 的信息，更不能直接处理 DOM。</p>
-<p>更多的worker-<a href="">worker</a></p>
-<h2 id="Generator-对象解决异步"><a href="#Generator-对象解决异步" class="headerlink" title="Generator 对象解决异步"></a>Generator 对象解决异步</h2><p>参考：<a href="https://segmentfault.com/a/1190000002545312" target="_blank" rel="external">https://segmentfault.com/a/1190000002545312</a><br>      <a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Promise/">Promise</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-iife" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -757,6 +674,69 @@ a();</code><br>`</p>
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/26/vue/" class="article-date">
+  	<time datetime="2016-05-26T04:56:15.000Z" itemprop="datePublished">2016-05-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/26/vue/">Vue杂记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>VueJS学习过程中一些想法，杂记</p>
+</blockquote>
+<ol>
+<li>el<br> 一般传入一个id，简单来说，就是表示在这个id之后的内容，由vue接管了。<br> <code>input(type=&quot;text&quot;, placeholder=&quot;请输入关键字&quot;, v-model=&quot;keywords&quot;, v-el:keywords, autocapitalize=&quot;off&quot;, debounce=&quot;500&quot;)</code><br> v-el在这里，表示对这个标签的一个引用，简单来说就是一个别名<br>2.缩写<br> v-bind:href=”url”——:href=”url”<br> v-on:click=”doSomething”——@click=”doSomething”</li>
+<li><code>:class=&quot;{&#39;nav-slide&#39; : isSlide}</code><br> 意思是isSlide为True时，就应用nav-slide类</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VueJS/">VueJS</a></li></ul>
 	</div>
 
       

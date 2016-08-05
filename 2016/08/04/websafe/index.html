@@ -18,7 +18,7 @@ XSS  本质上是一种注入攻击，简单的说就是利用各种手段把恶
 
 
 XSS  本质上是一种注入攻击，简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。其特点是不对服务器端造成任何伤害，而是通过一些正常的站内交互途径，例如发布评论，提交含有 JavaScript 的内容文本。这时服务器端如果没有过滤或转义掉这些脚本，作为内容发布到了页面上，其他用户访问这个页面的时候就会运行这些脚本。当其它用户浏览该网站时，这段">
-<meta property="og:updated_time" content="2016-08-04T14:19:29.540Z">
+<meta property="og:updated_time" content="2016-08-05T09:50:30.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web安全">
 <meta name="twitter:description" content="对web 安全的一些笔记~
@@ -210,6 +210,7 @@ XSS  本质上是一种注入攻击，简单的说就是利用各种手段把恶
 </blockquote>
 <ul>
 <li><p>XSS<br>  本质上是一种注入攻击，简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。其特点是不对服务器端造成任何伤害，而是通过一些正常的站内交互途径，例如发布评论，提交含有 JavaScript 的内容文本。这时服务器端如果没有过滤或转义掉这些脚本，作为内容发布到了页面上，其他用户访问这个页面的时候就会运行这些脚本。当其它用户浏览该网站时，这段HTML代码会自动执行，从而达到攻击的目的。如，盗取用户Cookie、破坏页面结构、重定向到其它网站等。</p>
+<a id="more"></a>
 <p>  主要有以下2种：</p>
 <ul>
 <li>反射型XSS(过表单GET提交等方式出现在URL中，这些恶意脚本作为输入提交到服务器端，最后返回给浏览器执行。之所以叫做反射型是因为这种攻击方式只生效在本次提交、渲染，下次攻击需要再次提交脚本代码)</li>
@@ -244,15 +245,6 @@ XSS  本质上是一种注入攻击，简单的说就是利用各种手段把恶
   
     
 <nav id="article-nav">
-  
-    <a href="/2016/08/04/websafe/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
     <a href="/2016/07/21/ePic/" id="article-nav-older" class="article-nav-link-wrap">
