@@ -4,20 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>宿主机连接linux web服务器失败 | Hexo</title>
+  <title>web安全 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="环境：centos xftp xshell原因分析：linux的问题、VMware的问题、windows的问题">
+  <meta name="description" content="对web 安全的一些笔记~
+
+
+XSS  本质上是一种注入攻击，简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。其特点是不对服务器端造成任何伤害，而是通过一些正常的站内交互途径，例如发布评论，提交含有 JavaScript 的内容文本。这时服务器端如果没有过滤或转义掉这些脚本，作为内容发布到了页面上，其他用户访问这个页面的时候就会运行这些脚本。当其它用户浏览该网站时，这段">
 <meta property="og:type" content="article">
-<meta property="og:title" content="宿主机连接linux web服务器失败">
-<meta property="og:url" content="http://yoursite.com/2016/04/15/linux/index.html">
+<meta property="og:title" content="web安全">
+<meta property="og:url" content="http://yoursite.com/2016/08/04/websafe/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="环境：centos xftp xshell原因分析：linux的问题、VMware的问题、windows的问题">
-<meta property="og:image" content="http://o6qp6st9j.bkt.clouddn.com/1.PNG">
-<meta property="og:updated_time" content="2016-05-23T08:54:10.120Z">
+<meta property="og:description" content="对web 安全的一些笔记~
+
+
+XSS  本质上是一种注入攻击，简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。其特点是不对服务器端造成任何伤害，而是通过一些正常的站内交互途径，例如发布评论，提交含有 JavaScript 的内容文本。这时服务器端如果没有过滤或转义掉这些脚本，作为内容发布到了页面上，其他用户访问这个页面的时候就会运行这些脚本。当其它用户浏览该网站时，这段">
+<meta property="og:updated_time" content="2016-08-04T14:19:29.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="宿主机连接linux web服务器失败">
-<meta name="twitter:description" content="环境：centos xftp xshell原因分析：linux的问题、VMware的问题、windows的问题">
-<meta name="twitter:image" content="http://o6qp6st9j.bkt.clouddn.com/1.PNG">
+<meta name="twitter:title" content="web安全">
+<meta name="twitter:description" content="对web 安全的一些笔记~
+
+
+XSS  本质上是一种注入攻击，简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。其特点是不对服务器端造成任何伤害，而是通过一些正常的站内交互途径，例如发布评论，提交含有 JavaScript 的内容文本。这时服务器端如果没有过滤或转义掉这些脚本，作为内容发布到了页面上，其他用户访问这个页面的时候就会运行这些脚本。当其它用户浏览该网站时，这段">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,11 +168,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-linux" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-websafe" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/15/linux/" class="article-date">
-  	<time datetime="2016-04-15T08:32:53.000Z" itemprop="datePublished">2016-04-15</time>
+      <a href="/2016/08/04/websafe/" class="article-date">
+  	<time datetime="2016-08-04T12:47:49.000Z" itemprop="datePublished">2016-08-04</time>
 </a>
     </div>
   
@@ -178,7 +185,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      宿主机连接linux web服务器失败
+      web安全
     </h1>
   
 
@@ -187,7 +194,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 	</div>
 
         
@@ -198,21 +205,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>环境：centos xftp xshell<br>原因分析：linux的问题、VMware的问题、windows的问题<br><a id="more"></a></p>
+        <blockquote>
+<p>对web 安全的一些笔记~</p>
+</blockquote>
 <ul>
-<li>linux的问题：<ul>
-<li>iptables -F<br> iptables -P INPUT ACCEPT（设置默认允许规则）</li>
-<li>设置linux防火墙<br>  在 /etc/sysconfig/iptables 添加<pre><code>-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-</code></pre> 在linux中将web服务添加进入信任的服务中<pre><code>系统-&gt;管理-&gt;安全级别和防火墙-&gt;防火墙选项-&gt;将www（http）打钩
-</code></pre></li>
+<li><p>XSS<br>  本质上是一种注入攻击，简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。其特点是不对服务器端造成任何伤害，而是通过一些正常的站内交互途径，例如发布评论，提交含有 JavaScript 的内容文本。这时服务器端如果没有过滤或转义掉这些脚本，作为内容发布到了页面上，其他用户访问这个页面的时候就会运行这些脚本。当其它用户浏览该网站时，这段HTML代码会自动执行，从而达到攻击的目的。如，盗取用户Cookie、破坏页面结构、重定向到其它网站等。</p>
+<p>  主要有以下2种：</p>
+<ul>
+<li>反射型XSS(过表单GET提交等方式出现在URL中，这些恶意脚本作为输入提交到服务器端，最后返回给浏览器执行。之所以叫做反射型是因为这种攻击方式只生效在本次提交、渲染，下次攻击需要再次提交脚本代码)</li>
+<li>存储型XSS(提交的脚本代码会被存储在服务器端数据库、文件系统等地方，每次页面被访问都会被调用、执行)</li>
+<li><p>DOM型XSS(不需要服务器端参与，只需要客户端进行DOM解析)</p>
+<p>防范：永远不相信用户的输入。</p>
+</li>
+<li>何时候都不要把不受信任的数据直接插入到dom中的任何位置,一定要做转义。 </li>
+<li>使用JSON.parse 而不是eval,request 的content-type要指定是Content-Type: application/json;</li>
+<li>CSP(Content Security Policy)</li>
+<li>X-Frame-Options</li>
+<li>Http-Only</li>
 </ul>
 </li>
-<li>VMware的问题：是否在端口转发上出问题<br>设置VMware，端口转发<br>要把80端口打开，还要在VMware的Edit-&gt;Virtual Network Editor-&gt;NAT（选择VMnet8）-&gt;Edit-&gt;Port Forwarding中添加转发<br><img src="http://o6qp6st9j.bkt.clouddn.com/1.PNG" alt="此处输入图片的描述"></li>
-<li>windows问题<ul>
-<li>windows主机上设置防火墙<br>window下进入控制面板-&gt;windows防火墙-&gt;高级-&gt;设置VMware Network Adapter VMnet8-&gt;Web 服务器（HTTP）-&gt;将虚拟机的ip加入：192.168.152.129</li>
+<li><p>CSRF<br>  可以在受害者毫不知情的情况下以受害者名义伪造请求发送给受攻击站点，从而在并未授权的情况下执行在权限保护之下的操作<br>  利用的是网站服务器端所有参数都是可预先构造的原理，然后黑客拼接好具体URL，<br>  以任何方式去调用你的被攻击网站的接口。</p>
+<p>  防范：</p>
+<ul>
+<li>验证 HTTP Referer(记录了该 HTTP 请求的来源地址)<br>因为在通常情况下，访问一个安全受限页面的请求来自于同一个网站。</li>
+<li>在请求中放入黑客所不能伪造的信息 <a href="http://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html" target="_blank" rel="external">more</a></li>
 </ul>
 </li>
+<li><p>DNS劫持</p>
+</li>
+<li>http劫持 <a href="http://jixianqianduan.com/frontend-weboptimize/2016/03/20/web-security-and-https.html" target="_blank" rel="external">more</a></li>
 </ul>
+<p>参考：<br><a href="https://segmentfault.com/a/1190000003852910?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">https://segmentfault.com/a/1190000003852910?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io</a></p>
 
       
     </div>
@@ -222,18 +245,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/20/browser/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/08/04/websafe/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          浏览器兼容性
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/2016/04/10/whois/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">WHOIS 特征提取及 URL Parse（持续更新）</div>
+    <a href="/2016/07/21/ePic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端性能优化——图片</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -268,7 +291,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="linux" data-title="宿主机连接linux web服务器失败" data-url="http://yoursite.com/2016/04/15/linux/"></div>
+	<div class="ds-thread" data-thread-key="websafe" data-title="web安全" data-url="http://yoursite.com/2016/08/04/websafe/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

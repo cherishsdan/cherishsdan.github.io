@@ -19,7 +19,7 @@ CSS
 CSS
 盒子模型  盒模型指定元素如何显示，页面上的每个元素都被看成一个矩形框，这个框由元素的内容、内边距、边框和外边距组成。  内边距出现在元素的周围，如果在元素上添加背景，那么背景就会被应用于内容和内边距组成区域。常常使用内边距在元素周围创建一个隔离带。外边距是透明的，一般使用它控制元素之间的间隔。  CSS3中新增">
 <meta property="og:image" content="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg">
-<meta property="og:updated_time" content="2016-07-26T11:07:01.122Z">
+<meta property="og:updated_time" content="2016-08-04T08:03:13.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端知识杂记——CSS">
 <meta name="twitter:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
@@ -112,7 +112,7 @@ CSS
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 12.5px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 12.5px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
 					</div>
 				</section>
 				
@@ -217,6 +217,33 @@ CSS
 <li>border-box<br>width = border + padding + 内容的宽度<br>height = border + padding + 内容的高度</li>
 </ol>
 </li>
+<li><a href="http://cherishsdan.github.io/2016/07/14/containing-block/" target="_blank" rel="external">containing block</a></li>
+<li><a href="http://cherishsdan.github.io/2016/05/08/BFC/" target="_blank" rel="external">BFC</a>和haslayout<br>  Windows上的IE使用布局概念来控制元素的尺寸和定位，“拥有布局”(has layout)的元素负责本身及其子元素的尺寸设置和定位，如果一个元素没有“拥有布局”，那么它的尺寸和位置由最近的拥有布局的祖先元素控制。<a href="http://blog.csdn.net/borishuai/article/details/8127758" target="_blank" rel="external">more</a></li>
+<li>Flexbox</li>
+<li>display<br>  常用的：<ol>
+<li>none 关闭一个元素的显示（对布局没有影响）；其所有后代元素都也被会被关闭显示。文档渲染时，该元素如同不存在。</li>
+<li>inline 元素宽度由内容决定，与其他元素并列在一行</li>
+<li>block 可以设置宽度，独占一行</li>
+<li>inline-block 宽度可以自行设置，类似block，但是与其他元素共占一行，类似inline。长用于设置垂直居中</li>
+<li>table-cell 标签元素以表格单元格的形式呈现<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external">更多</a></li>
+</ol>
+</li>
+<li><a href="http://cherishsdan.github.io/2016/05/20/position/" target="_blank" rel="external">position</a></li>
+<li><a href="http://cherishsdan.github.io/2016/05/01/float/" target="_blank" rel="external">浮动</a></li>
+<li>visibility<ol>
+<li>visible:默认值。元素是可见的。</li>
+<li>hidden:元素是不可见的。会占据页面上的空间</li>
+<li>collapse:当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 “hidden”。<br>4.inherit: 规定应该从父元素继承 visibility 属性的值。<br>任何的版本的 Internet Explorer （包括 IE8）都不支持 “inherit” 和 “collapse” 属性值。</li>
+</ol>
+</li>
+<li><a href="http://www.cnblogs.com/jackyWHJ/p/3756087.html" target="_blank" rel="external">position跟display、margin collapse、overflow、float这些特性相互叠加</a></li>
+<li>margin和padding使用场景<ol>
+<li>margin：<br>需要在border外侧添加空白时<br>空白处不需要背景（色）时<br>上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白<ol>
+<li>padding<br>需要在border内测添加空白时<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”</li>
+</ol>
+</li>
+</ol>
+</li>
 </ul>
 <hr>
 <ul>
@@ -252,6 +279,9 @@ CSS
 </li>
 </ul>
 </li>
+</ul>
+<hr>
+<ul>
 <li><p>CSS选择符<br>  1.id选择器（ # myid）<br>  2.类选择器（.myclassname）<br>  3.标签选择器（div, h1, p）<br>  4.相邻选择器（h1 + p）<br>  5.子选择器（ul &gt; li）<br>  6.后代选择器（li a）<br>  7.通配符选择器（ * ）<br>  8.属性选择器（a[rel = “external”]）<br>  9.伪类选择器（a:hover, li:nth-child）</p>
 <p>  可继承的样式： font-size font-family color, UL LI DL DD DT;<br>  不可继承的样式：border padding margin width height ;<br>  `</p>
 </li>
@@ -261,27 +291,8 @@ CSS
 <li><p>CSS3新增伪类</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">p:first-of-type 选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:last-of-type  选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:only-of-type  选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:only-child        选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。</span><br><span class="line">p:nth-child(2)  选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。</span><br><span class="line"></span><br><span class="line">:after          在元素之前添加内容,也可以用来做清除浮动。</span><br><span class="line">:before         在元素之后添加内容</span><br><span class="line">:enabled        </span><br><span class="line">:disabled       控制表单控件的禁用状态。</span><br><span class="line">:checked        单选框或复选框被选中。`</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>布局</p>
+<li><p>CSS3新特性</p>
 <ol>
-<li><a href="http://www.w3cfuns.com/notes/15972/e7a1555bab4dbd270c64dd9626425b48/page/2.html" target="_blank" rel="external">自适应布局</a></li>
-<li><p><a href="https://segmentfault.com/a/1190000004524159" target="_blank" rel="external">圣杯布局</a><br>  <a href="http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="external">负margin</a><br> <a href="http://blog.qiji.tech/archives/11747" target="_blank" rel="external">双飞翼布局</a><br> 圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。</p>
-<p> 不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：<br> 圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。</p>
-<p> 双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。<br> 多了1个div，少用大致4个css属性（圣杯布局中间divpadding-left和padding-right这2个属性，加上左右两个div用相对布局position: relative及对应的right和left共4个属性，一共6个；而双飞翼布局子div里用margin-left和margin-right共2个属性，6-2=4）(<a href="https://www.zhihu.com/question/21504052/answer/50053054" target="_blank" rel="external">https://www.zhihu.com/question/21504052/answer/50053054</a>)</p>
-</li>
-<li><a href="https://li-xinyang.gitbooks.io/frontend-notebook/content/chapter4/02_layout.html" target="_blank" rel="external">居中</a></li>
-</ol>
-</li>
-<li>display<br>  常用的：<ol>
-<li>none 关闭一个元素的显示（对布局没有影响）；其所有后代元素都也被会被关闭显示。文档渲染时，该元素如同不存在。</li>
-<li>inline 元素宽度由内容决定，与其他元素并列在一行</li>
-<li>block 可以设置宽度，独占一行</li>
-<li>inline-block 宽度可以自行设置，类似block，但是与其他元素共占一行，类似inline。长用于设置垂直居中</li>
-<li>table-cell 标签元素以表格单元格的形式呈现<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/display" target="_blank" rel="external">更多</a></li>
-</ol>
-</li>
-<li><a href="http://cherishsdan.github.io/2016/05/20/position/" target="_blank" rel="external">position</a></li>
-<li><a href="http://cherishsdan.github.io/2016/05/01/float/" target="_blank" rel="external">浮动</a></li>
-<li>CSS3新特性<ol>
 <li>各种CSS选择器</li>
 <li>圆角  </li>
 <li>多列布局</li>
@@ -292,52 +303,38 @@ CSS
 <li>旋转,缩放,定位,倾斜,动画，多背景</li>
 </ol>
 </li>
-<li>Flexbox</li>
-<li>浏览器的兼容性</li>
-<li>媒体查询</li>
-<li>CSS 预处理器</li>
-<li>浏览器解析CSS选择器</li>
+<li><p>媒体查询</p>
+</li>
 <li>响应式设计</li>
-<li><a href="">containing block</a></li>
-<li>visibility<ol>
-<li>visible:默认值。元素是可见的。</li>
-<li>hidden:元素是不可见的。会占据页面上的空间</li>
-<li>collapse:当在表格元素中使用时，此值可删除一行或一列，但是它不会影响表格的布局。被行或列占据的空间会留给其他内容使用。如果此值被用在其他的元素上，会呈现为 “hidden”。<br>4.inherit: 规定应该从父元素继承 visibility 属性的值。<br>任何的版本的 Internet Explorer （包括 IE8）都不支持 “inherit” 和 “collapse” 属性值。</li>
+</ul>
+<hr>
+<ul>
+<li><p>布局</p>
+<ol>
+<li><a href="http://www.w3cfuns.com/notes/15972/e7a1555bab4dbd270c64dd9626425b48/page/2.html" target="_blank" rel="external">自适应布局</a></li>
+<li><p><a href="https://segmentfault.com/a/1190000004524159" target="_blank" rel="external">圣杯布局</a><br>  <a href="http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="external">负margin</a><br> <a href="http://blog.qiji.tech/archives/11747" target="_blank" rel="external">双飞翼布局</a><br> 圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。</p>
+<p> 不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：<br> 圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。</p>
+<p> 双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。<br> 多了1个div，少用大致4个css属性（圣杯布局中间divpadding-left和padding-right这2个属性，加上左右两个div用相对布局position: relative及对应的right和left共4个属性，一共6个；而双飞翼布局子div里用margin-left和margin-right共2个属性，6-2=4）(<a href="https://www.zhihu.com/question/21504052/answer/50053054" target="_blank" rel="external">https://www.zhihu.com/question/21504052/answer/50053054</a>)</p>
+</li>
+<li><a href="https://li-xinyang.gitbooks.io/frontend-notebook/content/chapter4/02_layout.html" target="_blank" rel="external">居中</a></li>
 </ol>
 </li>
-<li><a href="">BFC</a></li>
-<li><a href="http://www.cnblogs.com/jackyWHJ/p/3756087.html" target="_blank" rel="external">position跟display、margin collapse、overflow、float这些特性相互叠加</a></li>
-<li><a href="">css优化</a></li>
-<li><a href="https://www.zhihu.com/question/20440679" target="_blank" rel="external">在网页中的应该使用奇数还是偶数的字体</a></li>
-<li>margin和padding使用场景<ol>
-<li>margin：<br>需要在border外侧添加空白时<br>空白处不需要背景（色）时<br>上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白<ol>
-<li>padding<br>需要在border内测添加空白时<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”</li>
-</ol>
+</ul>
+<hr>
+<ul>
+<li><a href="http://cherishsdan.github.io/2016/04/20/browser/" target="_blank" rel="external">浏览器的兼容性</a></li>
+<li><p><a href="http://cherishsdan.github.io/2016/07/21/ePic/" target="_blank" rel="external">图片</a></p>
 </li>
-</ol>
+<li><p><a href="https://www.zhihu.com/question/20440679" target="_blank" rel="external">在网页中的应该使用奇数还是偶数的字体</a></p>
 </li>
+</ul>
+<ul>
 <li>抽离样式模块<br>我理解的应该是提取页面公共样式。<br>一个项目的CSS可以拆分成2部分：公共CSS和业务CSS。我们在项目中抽出的这部分可以模块化的CSS就可以归类为公共CSS。这部分的代码命名不应涉及到具体的业务，只应对其在模块中负责的具体逻辑负责。<br>可以把网站的字体大小，公共控制，共用模块的样式都抽离出来，作为单独的模块来处理。这样，团队中的每个人如果需要这样的样式，都可以用这种公共样式，以此提高代码的重用率。<br>好的复用模块，应该是完整的、独立的。完整就是包含 PSD 中遇到的各种情况，对于不同的情况，只需要添加不同的类或者改用不同结构即可。独立性就是与其他模块和结构完全独立，直接粘贴复制不会产生任何影响。</li>
 <li>全屏滚</li>
 <li><a href="http://www.alloyteam.com/2014/01/parallax-scrolling-love-story/" target="_blank" rel="external">视觉差</a></li>
-<li><p>Chrome支持小于12px 的文字</p>
-<ol>
-<li>-webkit-text-size-adjust:none;通过它即可实现字体大小不随终端设备或浏览器影响。是在最新版的谷歌里。已经不在支持这个属性，需要通过css3的transform来解决</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">span&#123;-webkit-transform:scale(0.8);-o-transform:scale(1);                 display:inline-block;&#125;</span><br></pre></td></tr></table></figure>
-<p>{webkit-transform:scale(0.8);  display:inline-block} //0.8位缩放倍数，具体自己根据实际需求修改，只能缩放可以定义宽高的元素，而span是行内元素，{-o-transform:scale(1);}opera现在最新版也是webkit内核，新版本的opera，本来就是10px的字体了</p>
-</li>
-</ol>
-</li>
-<li><p>手动写动画最小时间间隔<br>  多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms</p>
-</li>
-<li>display:inline-block 间隙<br>  真正意义上的inline-block水平呈现的元素间，换行显示或空格分隔的情况下会有间距<br>  解决：移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing<br>  <a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">more</a></li>
-<li>overflow: scroll时不能平滑滚动<br>  <code>-webkit-overflow-scrolling: touch</code><br>  <a href="http://www.cnblogs.com/PeunZhang/p/3553020.html" target="_blank" rel="external">more</a></li>
-<li>png、jpg、gif<ol>
-<li>png<br>清晰，无损压缩，压缩比率很高，可渐变透明<br>PNG有着另一个优点，那就是逐次逼近显示(progressive display)：传输图像文件的同时，可以先把整个轮廓显示出来，然后逐步显示图像的细节，即先显示低分辨率显示图像，从模糊到清晰，然后逐步提高它的分辨率。这是一个很好的用户体验。</li>
-<li>JPG / JPEG<br>特点是色彩还原性好，可以在照片不明显失真的情况下，大幅度压缩图片文件，所以储存体积不是很大。其缺点是不像PNG那样支持图片的透明度。 属于有损压缩，每次保存都会产生数据损失</li>
-<li>GIF<br>体积小，有着极好的压缩效果，支持动画，并且支持透明效果<br><a href="http://frontenddev.org/link/gif-png-jpg-webp-base64-the-advantages-and-disadvantages-of-apng-format-images.html" target="_blank" rel="external">more</a></li>
-</ol>
-</li>
-<li>Cookie 隔离<br>如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，非常浪费流量，<br>所以不如隔离开。<br>cookie隔离技术则是通过使用多个非主要域名来请求静态文件<br>因为cookie有域的限制，因此不能跨域提交请求，故使用非主要域名的时候，请求头中就不会带有cookie数据，这样可以降低请求头的大小，降低请求时间，从而达到降低整体请求延时的目的。同时这种方式不会将cookie传入webserver，也减少了webserver对cookie的处理分析环节，提高了webserver的http请求的解析速度。</li>
+<li>手动写动画最小时间间隔<br>  多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms</li>
+</ul>
+<ul>
 <li><p>CSS 预处理器 / 后处理器<br>  预处理器例如：LESS、Sass、Stylus，用来预编译Sass或less，增强了css代码的复用性，<br>还有层级、mixin、变量、循环、函数等，具有很方便的UI组件模块化开发能力，极大的提高工作效率。</p>
 <p>  后处理器例如：PostCSS，通常被视为在完成的样式表中根据CSS规范处理CSS，让其更有效；目前最常做的<br>是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。</p>
 </li>
@@ -347,7 +344,10 @@ CSS
 </ul>
 <p>最简单的初始化方法： * {padding: 0; margin: 0;} （强烈不建议）</p>
 <p>淘宝的样式初始化代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>, <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">hr</span>, <span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, <span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">li</span>, <span class="selector-tag">pre</span>, <span class="selector-tag">form</span>, <span class="selector-tag">fieldset</span>, <span class="selector-tag">legend</span>, <span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">textarea</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span> &#123; <span class="attribute">margin</span>:<span class="number">0</span>; <span class="attribute">padding</span>:<span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-tag">body</span>, <span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">select</span>, <span class="selector-tag">textarea</span> &#123; <span class="attribute">font</span>:<span class="number">12px</span>/<span class="number">1.5</span>tahoma, arial, \<span class="number">5</span>b8b\<span class="number">4</span>f53; &#125;</span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>&#123; <span class="attribute">font-size</span>:<span class="number">100%</span>; &#125;</span><br><span class="line"><span class="selector-tag">address</span>, <span class="selector-tag">cite</span>, <span class="selector-tag">dfn</span>, <span class="selector-tag">em</span>, <span class="selector-tag">var</span> &#123; <span class="attribute">font-style</span>:normal; &#125;</span><br><span class="line"><span class="selector-tag">code</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">pre</span>, <span class="selector-tag">samp</span> &#123; <span class="attribute">font-family</span>:couriernew, courier, monospace; &#125;</span><br><span class="line"><span class="selector-tag">small</span>&#123; <span class="attribute">font-size</span>:<span class="number">12px</span>; &#125;</span><br><span class="line"><span class="selector-tag">ul</span>, <span class="selector-tag">ol</span> &#123; <span class="attribute">list-style</span>:none; &#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123; <span class="attribute">text-decoration</span>:none; &#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">text-decoration</span>:underline; &#125;</span><br><span class="line"><span class="selector-tag">sup</span> &#123; <span class="attribute">vertical-align</span>:text-top; &#125;</span><br><span class="line"><span class="selector-tag">sub</span>&#123; <span class="attribute">vertical-align</span>:text-bottom; &#125;</span><br><span class="line"><span class="selector-tag">legend</span> &#123; <span class="attribute">color</span>:<span class="number">#000</span>; &#125;</span><br><span class="line"><span class="selector-tag">fieldset</span>, <span class="selector-tag">img</span> &#123; <span class="attribute">border</span>:<span class="number">0</span>; &#125;</span><br><span class="line"><span class="selector-tag">button</span>, <span class="selector-tag">input</span>, <span class="selector-tag">select</span>, <span class="selector-tag">textarea</span> &#123; <span class="attribute">font-size</span>:<span class="number">100%</span>; &#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123; <span class="attribute">border-collapse</span>:collapse; <span class="attribute">border-spacing</span>:<span class="number">0</span>; &#125;</span><br></pre></td></tr></table></figure></p>
-<p>* </p>
+<ul>
+<li><a href="">css优化</a></li>
+<li>Cookie 隔离<br>如果静态文件都放在主域名下，那静态文件请求的时候都带有的cookie的数据提交给server的，非常浪费流量，<br>所以不如隔离开。<br>cookie隔离技术则是通过使用多个非主要域名来请求静态文件<br>因为cookie有域的限制，因此不能跨域提交请求，故使用非主要域名的时候，请求头中就不会带有cookie数据，这样可以降低请求头的大小，降低请求时间，从而达到降低整体请求延时的目的。同时这种方式不会将cookie传入webserver，也减少了webserver对cookie的处理分析环节，提高了webserver的http请求的解析速度。</li>
+</ul>
 
       
     </div>
