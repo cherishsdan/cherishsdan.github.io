@@ -20,7 +20,7 @@
 跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但返回结果被浏览器拦截了，有些浏览器不允许从HTTPS协议的域 跨域访问 HTTP协议，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求
 
 同源策略  如果两个页面拥有相同的协议（protocol），端口，和域名，那么这两个页面就属于同一个源（origin），JavaScri">
-<meta property="og:updated_time" content="2016-08-05T10:41:45.563Z">
+<meta property="og:updated_time" content="2016-08-05T11:15:23.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域">
 <meta name="twitter:description" content="对跨域的一些总结，方便日后查阅
@@ -245,11 +245,9 @@
 </li>
 <li><p>CORS<br>  跨域资源共享。定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通.原理就是使用自定义的 HTTP 头部，让服务器能声明 哪些来源可以通过浏览器访问该服务器上的资源，从而决定请求或响应是应该成功还是失败,主要是通过设置响应头的 Access-Control-Allow-Origin 来达到目的的<br>  <a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">more</a></p>
 </li>
-<li><p>document.domain<br>  不同的子域 + iframe交互的时候，获取到另外一个 iframe 的 window对象是没有问题的，但是获取到的这个window的方法和属性大多数都是不能使用的。<br>  可以借助document.domain </p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">example.com</span><br><span class="line">&lt;iframe id=<span class="string">'example'</span> src=<span class="string">"a.example.com"</span> onload=<span class="string">"dosomething()"</span>&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'example.com'</span>;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"example"</span>).contentWindow;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">a.example.com</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'example.com'</span>;  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>window.name</p>
-</li>
+</ul>
+<ul>
+<li>window.name</li>
 </ul>
 <p>在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的。</p>
 <ul>

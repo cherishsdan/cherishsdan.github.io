@@ -22,7 +22,7 @@ JS
 
 NodeList对象转换为数组
 1234567891011    function convertToArray(nodes)&amp;#123;    var array = null;    try&amp;#123;    array = Array.prototype.splice.call(nodes,0);//IE8及更早将NodeList对象实现为一个com对象">
-<meta property="og:updated_time" content="2016-08-04T06:27:01.786Z">
+<meta property="og:updated_time" content="2016-08-05T12:48:43.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器兼容性">
 <meta name="twitter:description" content="遇到的一些浏览器兼容问题
@@ -261,7 +261,6 @@ NodeList对象转换为数组
 <hr>
 <p><strong>css</strong></p>
 <ul>
-<li><a href="http://www.imooc.com/article/3513" target="_blank" rel="external">css hack</a></li>
 <li>IE6的双倍边距BUG 块元素有浮动和横向的margin，横向margin会被放大2倍<br>  display: inline</li>
 <li>IE6下图片下方有空隙产生<br>  改变html的排版,或者设置img 为display:block，<br>或者设置vertical-align 属性为vertical-align:top bottom middle text-bottom都可以解决</li>
 <li><p>3像素文本偏移bug<br>  当文本与一个浮动元素相邻时，例如：将一个元素向左浮动，并且不希望相邻段落中的文本围绕浮动元素，你也许会在段落上应用一个左外边距，其宽度等于浮动元素的宽度<br>  解决：</p>
@@ -274,6 +273,17 @@ NodeList对象转换为数组
 </code></pre></li>
 <li><p>相对容器中的绝对定位<br>  相对元素没有获得IE内部的haslayout属性，因此不能创建新的上下文，所有绝对元素相对于视口定位<br>  <code>.container{height:1%;}</code></p>
 </li>
+<li><p>Chrome支持小于12px 的文字</p>
+<ol>
+<li>-webkit-text-size-adjust:none;通过它即可实现字体大小不随终端设备或浏览器影响。是在最新版的谷歌里。已经不在支持这个属性，需要通过css3的transform来解决</li>
+<li><code>span{-webkit-transform:scale(0.8);-o-transform:scale(1); display:inline-block;}</code><br><code>{webkit-transform:scale(0.8);  display:inline-block} //0.8位缩放倍数</code>，具体自己根据实际需求修改，只能缩放可以定义宽高的元素，而span是行内元素，<br><code>{-o-transform:scale(1);}</code>opera现在最新版也是webkit内核，新版本的opera，本来就是10px的字体了</li>
+</ol>
+</li>
+<li>display:inline-block 间隙<br>  真正意义上的inline-block水平呈现的元素间，换行显示或空格分隔的情况下会有间距<br>  解决：移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing<br>  <a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">more</a></li>
+<li>overflow: scroll时不能平滑滚动<br>  <code>-webkit-overflow-scrolling: touch</code><br>  <a href="http://www.cnblogs.com/PeunZhang/p/3553020.html" target="_blank" rel="external">more</a></li>
+</ul>
+<hr>
+<ul>
 <li><p>css Hack<br>  为了获得统一的页面效果，需要针对不同的浏览器或不同版本编写特定的CSS样式，这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack~</p>
 <ul>
 <li>CSS属性前缀法： IE6能识别下划线”<em>“和星号” <em> “，IE7能识别星号” </em> “，但不能识别下划线”</em>“，IE6~IE10都认识”\9”，但firefox前述三个都不能认识。</li>

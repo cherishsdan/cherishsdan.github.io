@@ -19,7 +19,7 @@ CSS
 CSS
 盒子模型  盒模型指定元素如何显示，页面上的每个元素都被看成一个矩形框，这个框由元素的内容、内边距、边框和外边距组成。  内边距出现在元素的周围，如果在元素上添加背景，那么背景就会被应用于内容和内边距组成区域。常常使用内边距在元素周围创建一个隔离带。外边距是透明的，一般使用它控制元素之间的间隔。  CSS3中新增">
 <meta property="og:image" content="https://leohxj.gitbooks.io/front-end-database/content/html-and-css-basic/assets/box-model.svg">
-<meta property="og:updated_time" content="2016-08-04T08:03:13.921Z">
+<meta property="og:updated_time" content="2016-08-05T12:46:14.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端知识杂记——CSS">
 <meta name="twitter:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
@@ -238,10 +238,8 @@ CSS
 </li>
 <li><a href="http://www.cnblogs.com/jackyWHJ/p/3756087.html" target="_blank" rel="external">position跟display、margin collapse、overflow、float这些特性相互叠加</a></li>
 <li>margin和padding使用场景<ol>
-<li>margin：<br>需要在border外侧添加空白时<br>空白处不需要背景（色）时<br>上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白<ol>
+<li>margin：<br>需要在border外侧添加空白时<br>空白处不需要背景（色）时<br>上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白</li>
 <li>padding<br>需要在border内测添加空白时<br>空白处需要背景（色）时。<br>上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白<br>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔。margin用于布局分开元素使元素与元素互不相干；padding用于元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”</li>
-</ol>
-</li>
 </ol>
 </li>
 </ul>
@@ -272,9 +270,7 @@ CSS
 <ul>
 <li>兄弟元素都不是float元素</li>
 <li>兄弟元素都不是absolute元素</li>
-<li>兄弟元素都不是inline-block元素<br>那么避免：让兄弟元素float<pre><code>让兄弟元素absolute
-让兄弟元素inline-block [more](http://www.smallni.com/collapsing-margin/)
-</code></pre></li>
+<li>兄弟元素都不是inline-block元素<br>那么避免：让兄弟元素float、让兄弟元素absolute、让兄弟元素inline-block <a href="http://www.smallni.com/collapsing-margin/" target="_blank" rel="external">more</a></li>
 </ul>
 </li>
 </ul>
@@ -312,7 +308,7 @@ CSS
 <li><p>布局</p>
 <ol>
 <li><a href="http://www.w3cfuns.com/notes/15972/e7a1555bab4dbd270c64dd9626425b48/page/2.html" target="_blank" rel="external">自适应布局</a></li>
-<li><p><a href="https://segmentfault.com/a/1190000004524159" target="_blank" rel="external">圣杯布局</a><br>  <a href="http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="external">负margin</a><br> <a href="http://blog.qiji.tech/archives/11747" target="_blank" rel="external">双飞翼布局</a><br> 圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。</p>
+<li><p><a href="https://segmentfault.com/a/1190000004524159" target="_blank" rel="external">圣杯布局</a><br> <a href="http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="external">负margin</a><br> <a href="http://blog.qiji.tech/archives/11747" target="_blank" rel="external">双飞翼布局</a><br> 圣杯布局和双飞翼布局解决问题的方案在前一半是相同的，也就是三栏全部float浮动，但左右两栏加上负margin让其跟中间栏div并排，以形成三栏布局。</p>
 <p> 不同在于解决”中间栏div内容不被遮挡“问题的思路不一样：<br> 圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。</p>
 <p> 双飞翼布局，为了中间div内容不被遮挡，直接在中间div内部创建子div用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。<br> 多了1个div，少用大致4个css属性（圣杯布局中间divpadding-left和padding-right这2个属性，加上左右两个div用相对布局position: relative及对应的right和left共4个属性，一共6个；而双飞翼布局子div里用margin-left和margin-right共2个属性，6-2=4）(<a href="https://www.zhihu.com/question/21504052/answer/50053054" target="_blank" rel="external">https://www.zhihu.com/question/21504052/answer/50053054</a>)</p>
 </li>
