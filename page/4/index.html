@@ -160,6 +160,69 @@
 
       <div class="body-wrap">
   
+    <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/26/vue/" class="article-date">
+  	<time datetime="2016-05-26T04:56:15.000Z" itemprop="datePublished">2016-05-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/26/vue/">Vue杂记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>VueJS学习过程中一些想法，杂记</p>
+</blockquote>
+<ol>
+<li>el<br> 一般传入一个id，简单来说，就是表示在这个id之后的内容，由vue接管了。<br> <code>input(type=&quot;text&quot;, placeholder=&quot;请输入关键字&quot;, v-model=&quot;keywords&quot;, v-el:keywords, autocapitalize=&quot;off&quot;, debounce=&quot;500&quot;)</code><br> v-el在这里，表示对这个标签的一个引用，简单来说就是一个别名<br>2.缩写<br> v-bind:href=”url”——:href=”url”<br> v-on:click=”doSomething”——@click=”doSomething”</li>
+<li><code>:class=&quot;{&#39;nav-slide&#39; : isSlide}</code><br> 意思是isSlide为True时，就应用nav-slide类</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VueJS/">VueJS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-react" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -499,7 +562,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="关于-BFC"><a href="#关于-BFC" class="headerlink" title="关于 BFC"></a>关于 BFC</h1><p>BFC(Block formattingcontext)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 </p>
+        <h1 id="关于-BFC"><a href="#关于-BFC" class="headerlink" title="关于 BFC"></a>关于 BFC</h1><p>BFC(Block formattingcontext)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干.(简单点说，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用)</p>
 <p>W3C的定义`</p>
 <blockquote>
 <p>浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。</p>
@@ -580,81 +643,6 @@
         <p class="article-more-link">
           <a  href="/2016/05/07/cache/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-float" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/01/float/" class="article-date">
-  	<time datetime="2016-05-01T05:27:13.000Z" itemprop="datePublished">2016-05-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/01/float/">float</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>元素设置了浮动，会脱离文档流，按照指定的一个方向移动直到碰到父级的边界或另一个浮动元素</p>
-<p>浮动元素特点：</p>
-<ul>
-<li>块在一排显示</li>
-<li>内联支持宽高</li>
-<li>默认内容撑开宽度</li>
-<li>脱离文档流（飘起来）</li>
-<li>提升层级半级</li>
-</ul>
-<p>画一个元素的横切面，大概是这个样子<br><img src="http://o6qp6st9j.bkt.clouddn.com/image/blog/cssfloat.PNG" alt="1"><br>所以下一个元素挤进来只有元素本身进来，元素的内容就被挤出去了</p>
-<p>清浮动：</p>
-<ul>
-<li>给父级也加浮动</li>
-<li>空标签清浮动<code>&lt;br clear=”all” /&gt;</code></li>
-<li>父元素设置 overflow:hidden（如果你还要兼顾IE6的话，加上*zoom:1;来触发hasLayout）</li>
-<li>:after伪元素<br>`<br>.clearfix:after {<br>  clear: both;<br>  content: “.”;<br>  display: block;<br>  height: 0;<br>  visibility: hidden;<br>}<br>.clearfix {<br>  *zoom: 1;<br>}</li>
-</ul>
-<p>`</p>
-<p>更多参照：<br> <a href="http://www.zhangxinxu.com/wordpress/?p=583，" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/?p=583，</a><br> <a href="https://www.zhihu.com/question/24529373/answer/29135021" target="_blank" rel="external">https://www.zhihu.com/question/24529373/answer/29135021</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/float/">float</a></li></ul>
-	</div>
-
-      
-
       
       <div class="clearfix"></div>
     </div>

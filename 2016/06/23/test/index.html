@@ -17,7 +17,7 @@
 
 输入网址之后发生了什么？">
 <meta property="og:image" content="http://www.linux178.com/usr/uploads/2014/01/3920594834.png">
-<meta property="og:updated_time" content="2016-08-05T13:07:45.869Z">
+<meta property="og:updated_time" content="2016-08-11T08:37:53.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Interview">
 <meta name="twitter:description" content="校招准备中，fighting！答案主要是网上一些资料的整理
@@ -289,10 +289,9 @@
 <li>构建DOM树<ul>
 <li>Tokenizing：根据HTML规范将字符流解析为标记</li>
 <li>Lexing：词法分析将标记转换为对象并定义属性和规则</li>
-<li>DOM construction：根据HTML标记关系将对象组成DOM树</li>
+<li>DOM construction：根据HTML标记关系将对象组成DOM树<br>加载过程中遇到外部css文件，浏览器发出一个请求，来获取css文件。<br>遇到图片资源，浏览器也会发出一个请求，来获取图片资源。这是异步请求，并不会影响html文档进行加载，但是当文档加载过程中遇到js文件，html文档会挂起渲染（加载解析渲染同步）的线程，不仅要等待文档中js文件加载完毕，还要等待解析执行完毕，才可以恢复html文档的渲染线程。虽然css文件的加载不影响js文件的加载，但是却影响js文件的执行，即使js文件内只有一行代码，也会造成阻塞。<a href="http://www.jianshu.com/p/e141d1543143" target="_blank" rel="external">more</a></li>
 </ul>
 </li>
-<li>解析过程中遇到图片、样式表、js文件，启动下载</li>
 <li>构建CSSOM树<ul>
 <li>Tokenizing：字符流转换为标记流</li>
 <li>Node：根据标记创建节点</li>

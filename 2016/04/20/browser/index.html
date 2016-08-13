@@ -22,7 +22,7 @@ JS
 
 NodeList对象转换为数组
 1234567891011    function convertToArray(nodes)&amp;#123;    var array = null;    try&amp;#123;    array = Array.prototype.splice.call(nodes,0);//IE8及更早将NodeList对象实现为一个com对象">
-<meta property="og:updated_time" content="2016-08-05T12:48:43.311Z">
+<meta property="og:updated_time" content="2016-08-13T15:40:42.601Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器兼容性">
 <meta name="twitter:description" content="遇到的一些浏览器兼容问题
@@ -280,7 +280,11 @@ NodeList对象转换为数组
 </ol>
 </li>
 <li>display:inline-block 间隙<br>  真正意义上的inline-block水平呈现的元素间，换行显示或空格分隔的情况下会有间距<br>  解决：移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing<br>  <a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">more</a></li>
-<li>overflow: scroll时不能平滑滚动<br>  <code>-webkit-overflow-scrolling: touch</code><br>  <a href="http://www.cnblogs.com/PeunZhang/p/3553020.html" target="_blank" rel="external">more</a></li>
+<li><p>overflow: scroll时不能平滑滚动<br>  <code>-webkit-overflow-scrolling: touch</code><br>  <a href="http://www.cnblogs.com/PeunZhang/p/3553020.html" target="_blank" rel="external">more</a></p>
+</li>
+<li><p>IE 9选择器数量限制问题</p>
+</li>
+<li>IE8 resize<br>  <a href="https://undefinedblog.com/recent-ie-quirks/" target="_blank" rel="external">参考</a></li>
 </ul>
 <hr>
 <ul>
