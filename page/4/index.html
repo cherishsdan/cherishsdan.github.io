@@ -100,7 +100,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 12.5px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
+						<a href="/tags/CSS/" style="font-size: 17.5px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 12.5px;">CSS3</a> <a href="/tags/CommonJS/" style="font-size: 10px;">CommonJS</a> <a href="/tags/DOM/" style="font-size: 10px;">DOM</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 17.5px;">HTML5</a> <a href="/tags/I-O/" style="font-size: 10px;">I/O</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/MVP/" style="font-size: 10px;">MVP</a> <a href="/tags/MVVM/" style="font-size: 10px;">MVVM</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/URL-Parse/" style="font-size: 10px;">URL Parse</a> <a href="/tags/VueJS/" style="font-size: 10px;">VueJS</a> <a href="/tags/WHOIS/" style="font-size: 10px;">WHOIS</a> <a href="/tags/animation/" style="font-size: 10px;">animation</a> <a href="/tags/browser/" style="font-size: 12.5px;">browser</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/float/" style="font-size: 10px;">float</a> <a href="/tags/image/" style="font-size: 10px;">image</a> <a href="/tags/interview/" style="font-size: 12.5px;">interview</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
 					</div>
 				</section>
 				
@@ -159,6 +159,180 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-node1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/01/node1/" class="article-date">
+  	<time datetime="2016-06-01T02:15:16.000Z" itemprop="datePublished">2016-06-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/01/node1/">Node.js(一)-简介</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中</p>
+</blockquote>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Node.js主要分为四大部分，Node Standard Library，Node Bindings，V8，Libuv，架构图如下：<br><img src="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/a9e67142615f49863438cc0086b594e48984d1c9.jpeg" alt="node1"></p>
+<ul>
+<li>Node Standard Library 是我们每天都在用的标准库，如Http, Buffer 模块。</li>
+<li>Node Bindings 是沟通JS 和 C++的桥梁，封装V8和Libuv的细节，向上层提供基础API服务</li>
+<li>第三层是支撑 Node.js 运行的关键，由 C/C++ 实现<ul>
+<li>V8 是Google开发的JavaScript引擎，提供JavaScript运行环境，可以说它就是 Node.js 的发动机。</li>
+<li>Libuv 是专门为Node.js开发的一个封装库，提供跨平台的异步I/O能力</li>
+<li>C-ares：提供了异步处理 DNS 相关的能力。</li>
+<li>http_parser、OpenSSL、zlib 等：提供包括 http 解析、SSL、数据压缩等其他的能力</li>
+</ul>
+</li>
+</ul>
+<h2 id="思维脑图"><a href="#思维脑图" class="headerlink" title="思维脑图"></a>思维脑图</h2><p><img src="http://o6qp6st9j.bkt.clouddn.com/images/node/Node%E7%AE%80%E4%BB%8B.png" alt="node"></p>
+<p>部分摘自：<a href="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/chapter1-0.html" target="_blank" rel="external">https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/chapter1-0.html</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Cors" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/28/Cors/" class="article-date">
+  	<time datetime="2016-05-28T07:54:47.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/28/Cors/">跨域</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>对跨域的一些总结，方便日后查阅</p>
+</blockquote>
+<p>跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但返回结果被浏览器拦截了，有些浏览器不允许从HTTPS协议的域 跨域访问 HTTP协议，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求</p>
+<ul>
+<li><p>同源策略<br>  如果两个页面拥有相同的协议（protocol），端口，和域名，那么这两个页面就属于同一个源（origin），JavaScript 允许这种同源页面的数据互相通信。<br>  一般web页面的端口号默认都是80</p>
+<p>  例如：<a href="http://xxx.com/a.html" target="_blank" rel="external">http://xxx.com/a.html</a> 协议是http、端口：80、域名：xxx.com</p>
+<p>  若非同源，则以下行为会受到限制：</p>
+<ol>
+<li>Cookie、LocalStorage 和 IndexedDB 无法读取</li>
+<li>DOM 无法获得</li>
+<li>AJAX 请求不能发送</li>
+</ol>
+</li>
+</ul>
+<p>跨域方案</p>
+<ul>
+<li><p>经典的JSONP<br>  <strong>回调函数和数据</strong>(script标签可以加载并执行其他域JS文件)</p>
+<p>  原理：站点A动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数(站点B把要提供的数据作为参数传给一个站点A定义的全局函数)，并且会把我们需要的json数据作为参数传入。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    &lt;script src=<span class="string">"http://xxx.com/data.php?callback=dosomething"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dosomething</span>(<span class="params">jsondata</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(jsondata);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  js文件载入成功后，会执行我们在url参数中指定的函数（dosomething），并且会把我们需要的json数据（jsondata）作为参数传入。所以再次强调jsonp是需要服务器端的页面进行相应的配合的。</p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$callback = $_GET[<span class="string">'callback'</span>];</span><br><span class="line">$data = &#123;<span class="string">'name'</span>:<span class="string">'XXX'</span>,sex:<span class="string">'X'</span>,age:<span class="string">'X'</span>&#125;;</span><br><span class="line"><span class="keyword">echo</span> $callback.<span class="string">'('</span>.json_encode($data).<span class="string">')'</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  缺点：1、 仅适应于HTTP的Get请求,不支持POST等其它类型的HTTP请求，不能提交大量数据；</p>
+<pre><code>2、 缺乏错误处理机制
+3、 不能解决不同域的两个页面之间如何进行JavaScript调用的问题
+</code></pre><p>  优点：1、 兼容性更好，在老版本的浏览器中可以运行</p>
+<pre><code>2、 请求完毕后可以通过调用callback的方式回传结果，方便调用
+</code></pre></li>
+<li><p>子域名代理<br>  在不同的子域 + iframe交互的时候，获取到另外一个 iframe 的 window对象是没有问题的，但是获取到的这个window的方法和属性大多数都是不能使用的</p>
+<p>  解决方法：document.domain</p>
+<p>  例如：A页面：<a href="http://xxx.com/a.html,在这个页面里面有一个iframe，它的src是http://y.xxx.com/b.html" target="_blank" rel="external">http://xxx.com/a.html,在这个页面里面有一个iframe，它的src是http://y.xxx.com/b.html</a></p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.html</span></span><br><span class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://y.xxx.com/b.html"</span> onload = <span class="string">"test()"</span>&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'xxx.com'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="built_in">document</span>.getElementById(<span class="string">'iframe'</span>).contentWindow);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//b.html</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'xxx.com'</span>;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>  document.domain的设置是有限制的，我们只能把document.domain设置成自身或更高一级的父域，且主域必须相同。</p>
+</li>
+<li><p>CORS<br>  跨域资源共享。定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通.原理就是使用自定义的 HTTP 头部，让服务器能声明 哪些来源可以通过浏览器访问该服务器上的资源，从而决定请求或响应是应该成功还是失败,主要是通过设置响应头的 Access-Control-Allow-Origin 来达到目的的<br>  <a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="external">more</a></p>
+</li>
+</ul>
+<ul>
+<li>window.name</li>
+</ul>
+<p>在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的。</p>
+<ul>
+<li>window.postMessage()<br>使用它来向其它的window对象发送消息,无论这个window对象是属于同源或不同源</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-vue" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -518,130 +692,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/05/09/strength/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-BFC" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/08/BFC/" class="article-date">
-  	<time datetime="2016-05-08T05:27:13.000Z" itemprop="datePublished">2016-05-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/08/BFC/">关于 BFC</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="关于-BFC"><a href="#关于-BFC" class="headerlink" title="关于 BFC"></a>关于 BFC</h1><p>BFC(Block formattingcontext)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干.(简单点说，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用)</p>
-<p>W3C的定义`</p>
-<blockquote>
-<p>浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/08/BFC/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-cache" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/07/cache/" class="article-date">
-  	<time datetime="2016-05-07T07:17:25.000Z" itemprop="datePublished">2016-05-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/07/cache/">浏览器缓存知识小结及应用（摘自开发者头条）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>浏览器缓存，也就是客户端缓存，既是网页性能优化里面静态资源相关优化的一大利器，也是无数web开发人员在工作过程不可避免的一大问题，所以在产品开发的时候我们总是想办法避免缓存产生，而在产品发布之时又在想策略管理缓存提升网页的访问速度。了解浏览器的缓存命中原理，是开发web应用的基础</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/">browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cache/">cache</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/07/cache/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
