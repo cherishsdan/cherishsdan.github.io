@@ -87,8 +87,8 @@
 <meta name="description" content="记录一些react的知识点及资料
 
 虚拟DOM是React核心，通过diff比较算法，实现了对界面上真正变化的部分进行实际的DOM操作
-
-diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态 react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、componen">
+diff算法传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态
+react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、component">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react相关">
 <meta property="og:url" content="http://yoursite.com/2016/08/31/react-1/index.html">
@@ -96,16 +96,16 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
 <meta property="og:description" content="记录一些react的知识点及资料
 
 虚拟DOM是React核心，通过diff比较算法，实现了对界面上真正变化的部分进行实际的DOM操作
-
-diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态 react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、componen">
-<meta property="og:updated_time" content="2016-09-04T15:36:53.607Z">
+diff算法传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态
+react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、component">
+<meta property="og:updated_time" content="2016-09-16T11:08:45.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react相关">
 <meta name="twitter:description" content="记录一些react的知识点及资料
 
 虚拟DOM是React核心，通过diff比较算法，实现了对界面上真正变化的部分进行实际的DOM操作
-
-diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态 react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、componen">
+diff算法传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态
+react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、component">
 
 
 
@@ -118,7 +118,7 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
     motion: true,
     duoshuo: {
       userId: 0,
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
@@ -131,7 +131,7 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
   <title> react相关 | Hexo </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -196,7 +196,7 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -206,7 +206,7 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -216,7 +216,7 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -269,7 +269,7 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-08-31T22:10:50+08:00" content="2016-08-31">
               2016-08-31
             </time>
@@ -309,26 +309,38 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
 <p>记录一些react的知识点及资料</p>
 </blockquote>
 <p>虚拟DOM是React核心，通过diff比较算法，实现了对界面上真正变化的部分进行实际的DOM操作</p>
-<ul>
-<li><p>diff算法<br> 传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态<br> react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、component diff 以及 element diff 进行算法优化<br> <a href="https://zhuanlan.zhihu.com/p/20346379?refer=purerender" target="_blank" rel="external">more</a></p>
-</li>
-<li><p>性能优化<br>  利用shouldComponentUpdate 函数<br>  <a href="http://imweb.io/topic/577512fe732b4107576230b9" target="_blank" rel="external">more</a></p>
-</li>
-<li><p>redux &amp;&amp; flux<br>  Flux 中是根据不同的功能拆分出多个 store 分而治之<br>  而 Redux 只允许应用中有唯一的 store，通过拆分出多个 reducer 分别管理对应的 state<br>  <a href="https://segmentfault.com/a/1190000006769471" target="_blank" rel="external">more</a></p>
-<p>  state是应用的状态，一般是一个普通对象，store 是应用状态 state 的管理者<br>  包含下列函数：</p>
-<pre><code>* getState() 获取整个 state
-* dispatch(action)  **触发 state 改变的唯一途径**
-* subscribe(listener)，类似于addEventListener
-* replaceReducer(nextReducer) 一般在 Webpack Code-Splitting 按需加载的时候用
-</code></pre><p>  获取state，<strong>state = store.getState()</strong><br>  一个应用只应有一个单一的 store，其管理着唯一的应用状态 state，不能直接修改应用的状态 state</p>
-<p>  若要修改state <strong>必须 dispatch 一个 action</strong></p>
-<p>  生成store，<strong>createStore</strong></p>
-<p>  <strong>Action</strong><br>  action（动作）实质上是包含 type 属性的普通对象，<br>   Action Creator是 action 的创造者，本质上就是一个函数，返回值是一个 action（对象），它用于绑定到用户的操作（点击按钮等），其返回值 action 用于之后的 dispatch(action)</p>
-<p>  <strong>Reducer</strong><br>  每次 dispatch(action) 后，都会触发 reducer 的执行，reducer 的实质是一个函数，根据 action.type 来更新 state 并返回 nextState<br>  最后会用 reducer 的返回值 nextState 完全替换掉原来的 state</p>
-<p>  流程：Action Creator =&gt; action =&gt; store.dispatch(action) =&gt; reducer(state, action) =&gt; state = nextState</p>
-</li>
-</ul>
+<h2 id="diff算法"><a href="#diff算法" class="headerlink" title="diff算法"></a>diff算法</h2><pre><code>传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态
+react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、component diff 以及 element diff 进行算法优化
+[more](https://zhuanlan.zhihu.com/p/20346379?refer=purerender)
+</code></pre><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><pre><code>利用shouldComponentUpdate 函数
+[more](http://imweb.io/topic/577512fe732b4107576230b9)
+</code></pre><h2 id="redux-amp-amp-flux"><a href="#redux-amp-amp-flux" class="headerlink" title="redux &amp;&amp; flux"></a>redux &amp;&amp; flux</h2><pre><code>Flux 中是根据不同的功能拆分出多个 store 分而治之
+而 Redux 只允许应用中有唯一的 store，通过拆分出多个 reducer 分别管理对应的 state
+[more](https://segmentfault.com/a/1190000006769471)
 
+state是应用的状态，一般是一个普通对象，store 是应用状态 state 的管理者
+包含下列函数：
+    * getState() 获取整个 state
+    * dispatch(action)  **触发 state 改变的唯一途径**
+    * subscribe(listener)，类似于addEventListener
+    * replaceReducer(nextReducer) 一般在 Webpack Code-Splitting 按需加载的时候用
+获取state，**state = store.getState()**
+一个应用只应有一个单一的 store，其管理着唯一的应用状态 state，不能直接修改应用的状态 state
+
+若要修改state **必须 dispatch 一个 action**
+
+生成store，**createStore**
+
+**Action**
+action（动作）实质上是包含 type 属性的普通对象，
+ Action Creator是 action 的创造者，本质上就是一个函数，返回值是一个 action（对象），它用于绑定到用户的操作（点击按钮等），其返回值 action 用于之后的 dispatch(action)
+
+**Reducer**
+每次 dispatch(action) 后，都会触发 reducer 的执行，reducer 的实质是一个函数，根据 action.type 来更新 state 并返回 nextState
+最后会用 reducer 的返回值 nextState 完全替换掉原来的 state
+
+流程：Action Creator =&gt; action =&gt; store.dispatch(action) =&gt; reducer(state, action) =&gt; state = nextState
+</code></pre>
       
     </div>
 
@@ -420,10 +432,10 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -439,8 +451,8 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">39</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">38</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
@@ -449,8 +461,8 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
               </a>
             </div>
           
@@ -478,7 +490,7 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
               
             
             
-              <p class="post-toc-empty">Dieser Artikel hat kein Inhaltsverzeichnis</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#diff算法"><span class="nav-number">1.</span> <span class="nav-text">diff算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化"><span class="nav-number">2.</span> <span class="nav-text">性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#redux-amp-amp-flux"><span class="nav-number">3.</span> <span class="nav-text">redux && flux</span></a></li></ol></div>
             
           </div>
         </section>
@@ -505,11 +517,11 @@ diff算法 传统的diff算法的时间复杂度是 O(n^3)，它会以根据befo
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
