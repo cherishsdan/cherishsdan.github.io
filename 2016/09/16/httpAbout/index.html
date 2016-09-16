@@ -1,0 +1,676 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTTP,HTTPS,HTTP2," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="HTTP协议缺省工作在TCP协议80端口，所有传输的内容都是明文。HTTPS简单来说，是HTTP的安全版本，运行在SSL/TLS之上，SSL/TLS运行在TCP的443端口之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。此外客户端可以验证服务器端的身份，如果配置了客户端验证，服务器方也可以验证客户端的身份。HTTP2 在HTTP协议的语义、方法、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP HTTPs HTTP2">
+<meta property="og:url" content="http://yoursite.com/2016/09/16/httpAbout/index.html">
+<meta property="og:site_name" content="JYsdan">
+<meta property="og:description" content="HTTP协议缺省工作在TCP协议80端口，所有传输的内容都是明文。HTTPS简单来说，是HTTP的安全版本，运行在SSL/TLS之上，SSL/TLS运行在TCP的443端口之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。此外客户端可以验证服务器端的身份，如果配置了客户端验证，服务器方也可以验证客户端的身份。HTTP2 在HTTP协议的语义、方法、">
+<meta property="og:image" content="https://github.com/music4kid/music4kid.github.io/blob/master/images/http1xvs2.png?raw=true">
+<meta property="og:updated_time" content="2016-09-16T13:52:34.023Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP HTTPs HTTP2">
+<meta name="twitter:description" content="HTTP协议缺省工作在TCP协议80端口，所有传输的内容都是明文。HTTPS简单来说，是HTTP的安全版本，运行在SSL/TLS之上，SSL/TLS运行在TCP的443端口之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。此外客户端可以验证服务器端的身份，如果配置了客户端验证，服务器方也可以验证客户端的身份。HTTP2 在HTTP协议的语义、方法、">
+<meta name="twitter:image" content="https://github.com/music4kid/music4kid.github.io/blob/master/images/http1xvs2.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/16/httpAbout/"/>
+
+  <title> HTTP HTTPs HTTP2 | JYsdan </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?de40916195e166138102d24d3daf56c2";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">JYsdan</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTTP HTTPs HTTP2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-16T19:25:00+08:00" content="2016-09-16">
+              2016-09-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/learning/" itemprop="url" rel="index">
+                    <span itemprop="name">learning~</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/16/httpAbout/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/16/httpAbout/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>HTTP协议缺省工作在TCP协议80端口，所有传输的内容都是明文。<br>HTTPS简单来说，是HTTP的安全版本，运行在SSL/TLS之上，SSL/TLS运行在TCP的443端口之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。此外客户端可以验证服务器端的身份，如果配置了客户端验证，服务器方也可以验证客户端的身份。<br>HTTP2 在HTTP协议的语义、方法、状态码等核心概念不变的情况下，实现了性能优化</p>
+<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><p>HTTPS其实是有两部分组成：HTTP + SSL / TLS，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据。<br>使用非对称加密算法保证对称加密密钥的安全传递，然后使用对称加密来保证数据传输过程中的安全性<br>它的传输过程：</p>
+<pre><code>* TCP 三次握手
+* client将自己支持的一套加密规则发送给server
+* server从中选出一组加密算法与HASH算法，并将自己的身份信息以证书的形式发回给client。证书里面包含了网站地址，加密公钥，以及证书的颁发机构等信息（采用HTTPS服务器必须要有一套数字证书，可以自己制作，也可以向组织申请。区别就是自己制作的证书需要客户端验证通过，才可以继续访问，而使用受信任的公司申请的证书则不会弹出提示页面）
+* 传送证书（其实就是公钥，只是包含了很多信息，如证书的颁发机构，过期时间等等）
+* 客户端验证及解析服务器数字证书（验证公钥是否有效，比如颁发机构，过期时间等等），产生一个用于后面通讯的“对称密码”，并用证书中提供的公钥加密
+* 发送加密后的对称秘钥
+* server用私钥解密后，得到了客户端传过来的随机值，使用随机值对消息进行对称加密，发送给client
+* client解密并计算握手消息的HASH，如果与服务端发来的HASH一致，此时握手过程结束，之后所有的通信数据将由之前浏览器生成的随机密码并利用对称加密算法进行加密。
+</code></pre><h2 id="HTTP现状"><a href="#HTTP现状" class="headerlink" title="HTTP现状"></a>HTTP现状</h2><pre><code>* HTTP1.1过于庞大，包含了太多细节和可选的部分
+* 未能充分利用TCP
+* 线头阻塞（Head of line blocking），导致带宽无法被充分利用，以及后续健康请求被阻塞
+* 延迟
+</code></pre><h2 id="HTTP2"><a href="#HTTP2" class="headerlink" title="HTTP2"></a>HTTP2</h2><h4 id="HTTP2的新特性"><a href="#HTTP2的新特性" class="headerlink" title="HTTP2的新特性"></a>HTTP2的新特性</h4><ul>
+<li>新的二进制格式<br>  http1.x诞生的时候是明文协议，解析是基于文本，基于文本协议的格式解析存在天然缺陷，因为文本的表现形式有多样性，要做到健壮性考虑的场景必然很多，二进制则不同，只认0和1的组合。基于这种考虑http2.0的协议解析决定采用二进制格式，实现方便且健壮。<br>  HTTP/2将所有传输的信息分割为更小的消息和帧<ul>
+<li>帧（frame）：HTTP/2通信的最小单位，每个帧包含帧首部，至少也会标识出当前帧所属的流。</li>
+<li>消息（message）：由一个或多个帧组合而成，例如请求和响应。</li>
+<li>连接（connection）：与 HTTP/1 相同，都是指对应的 TCP 连接；</li>
+<li>流（stream）：已建立的连接上的双向字节流。<br><img src="https://github.com/music4kid/music4kid.github.io/blob/master/images/http1xvs2.png?raw=true" alt="http2"><br>http2.0的格式定义更接近tcp层的方式。length定义了整个frame的开始到结束，type定义frame的类型（一共10种），flags用bit位定义一些重要的参数，stream id用作流控制，剩下的payload就是request的正文了。http2.0并没有改变http1.x的语义，只是把原来http1.x的header和body部分用frame重新封装了一层而已.<br>在HTTP/2中，数据流以消息的形式发送，而消息由一个或多个帧组成，帧可以在数据流上乱序发送，然后再根据每个帧首部的流标识符重新组装</li>
+</ul>
+</li>
+<li>多路复用<br>  HTTP1.x中，如果想并发多个请求，必须使用多个TCP链接，且浏览器为了控制资源，还会对单个域名有6-8的个数限制<br>  HTTP2中，同域名下所有通信都在单个连接上完成。单个连接可以承载任意数量的双向数据流。<br>  一个request对应一个stream并分配一个id，这样一个连接上可以有多个stream，每个stream的frame可以随机的混杂在一起，接收方可以根据stream id将frame再归属到各自不同的request里面。<br>  即单个连接上可以并行交错的请求和响应，之间互不干扰。</li>
+<li>流优先级<br>  在HTTP/2中，每个请求都可以带一个31bit的优先值，0表示最高优先级， 数值越大优先级越低。有了这个优先值，客户端和服务器就可以在处理不同的流时采取不同的策略，以最优的方式发送流、消息和帧。</li>
+<li>服务器推送<br>  服务器推送的资源有自己独立的URL，可以被浏览器缓存，可以达到多页面共享。<br>  资源推送遵守同源策略，服务器不可随便推送第三方资源给客户端。<br>  客户端可以拒绝推送过来的资源。</li>
+<li>头部压缩<br>  http1.x的header由于cookie和user agent很容易膨胀，而且每次都要重复发送。http2.0使用encoder来减少需要传输的header大小，通讯双方各自渐进地更新一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。高效的压缩算法可以很大的压缩header，减少发送包的数量从而降低延迟。</li>
+<li>APLN<br>  HTTP2.0使用了tls的拓展ALPN来做协议升级，除此之外加密这块还有一个改动，HTTP2.0对tls的安全性做了近一步加强，通过黑名单机制禁用了几百种不再安全的加密算法</li>
+</ul>
+<h4 id="HTTP2-与-web性能优化"><a href="#HTTP2-与-web性能优化" class="headerlink" title="HTTP2 与 web性能优化"></a>HTTP2 与 web性能优化</h4><ul>
+<li>资源加载<ul>
+<li>现有解决方案：资源内联、强缓存、localstorage、将重要资源内联在页面头部</li>
+<li>HTTP2中的Server Push，</li>
+</ul>
+</li>
+<li>TCP 连接<ul>
+<li>连接数优化（并发连接 + Keep-Alive、静态资源做域名散列、异步接口合并、图片合并，雪碧图、CSS、JS 合并/内联、图片内联…）</li>
+<li>HTTP/2 的多路复用和头部压缩</li>
+</ul>
+</li>
+</ul>
+<p>参考：<br><a href="https://www.gitbook.com/book/ye11ow/http2-explained" target="_blank" rel="external">https://www.gitbook.com/book/ye11ow/http2-explained</a><br><a href="https://imququ.com/post/http2-resource.html" target="_blank" rel="external">https://imququ.com/post/http2-resource.html</a><br><a href="http://mrpeak.cn/blog/http2/" target="_blank" rel="external">http://mrpeak.cn/blog/http2/</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTTP/" rel="tag">#HTTP</a>
+          
+            <a href="/tags/HTTPS/" rel="tag">#HTTPS</a>
+          
+            <a href="/tags/HTTP2/" rel="tag">#HTTP2</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/31/react-1/" rel="next" title="react相关">
+                <i class="fa fa-chevron-left"></i> react相关
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/16/httpAbout/"
+           data-title="HTTP HTTPs HTTP2" data-url="http://yoursite.com/2016/09/16/httpAbout/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://img3.duitang.com/uploads/item/201608/30/20160830194126_dWmAs.thumb.700_0.jpeg"
+               alt="JYsdan" />
+          <p class="site-author-name" itemprop="name">JYsdan</p>
+          <p class="site-description motion-element" itemprop="description">唯美食与代码不可辜负~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number">1.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP现状"><span class="nav-number">2.</span> <span class="nav-text">HTTP现状</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP2"><span class="nav-number">3.</span> <span class="nav-text">HTTP2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP2的新特性"><span class="nav-number">3.0.1.</span> <span class="nav-text">HTTP2的新特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP2-与-web性能优化"><span class="nav-number">3.0.2.</span> <span class="nav-text">HTTP2 与 web性能优化</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JYsdan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jysdan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
