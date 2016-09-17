@@ -73,7 +73,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two Italic:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -176,7 +176,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">JYsdan</span>
+      <span class="site-title"  style="font-family:Lobster Two,Roboto Slab;">JYsdan</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -289,8 +289,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/09/strength/" itemprop="url">
-                  Progressive Enhancement
+                <a class="post-title-link" href="/2016/06/12/iife/" itemprop="url">
+                  立即执行函数表达式
                 </a>
               
             
@@ -303,8 +303,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-09T15:17:25+08:00" content="2016-05-09">
-              2016-05-09
+            <time itemprop="dateCreated" datetime="2016-06-12T15:31:24+08:00" content="2016-06-12">
+              2016-06-12
             </time>
           </span>
 
@@ -333,8 +333,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/09/strength/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/strength/" itemprop="commentsCount"></span>
+                <a href="/2016/06/12/iife/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/iife/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -358,16 +358,22 @@
 
       
         
-          <h1 id="所谓农村包围城市——渐进增强"><a href="#所谓农村包围城市——渐进增强" class="headerlink" title="所谓农村包围城市——渐进增强"></a>所谓农村包围城市——渐进增强</h1><blockquote>
-<p>针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
-</blockquote>
-<p>CSS的“渐进增强”有别于CSS hack，hack可以说是提供选择，你死我亡，竞争效应;而“渐进增强”属于更进一步，锦上添花，辅助效应。前者应尽量避免使用，而后者适当使用则有裨益。</p>
-<p>渐进增强比较注重内容，即从内容出发，内容为样式和交互构建起坚实的基础。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/09/strength/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <p>function foo(){ /<em> code </em>/ }();//SyntaxError: Unexpected token<br>function(){ /<em> code </em>/}(); //SyntaxError: Unexpected token</p>
+<p>圆括号为了调用函数出现在函数后面时，无论在全局环境或者局部环境里遇到了这样的function关键字，默认的，它会将它当作是一个函数声明，而不是函数表达式.因为 JavaScript 文法明确规定表达式语句不得以 function 或者 { 开头.</p>
+<p>所以便出现了下面几种形式：<br>(function(){/<em> code </em>/}())<br>(function(){/<em> code </em>/})()<br>!function(){/<em> code </em>/}();<br>~function(){/<em> code </em>/}();<br>-function(){/<em> code </em>/}();<br>+function(){/<em> code </em>/}();<br>…</p>
+<h2 id="最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了-function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。"><a href="#最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了-function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。" class="headerlink" title="最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了 function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。"></a>最流行的也最被接受的方法是将函数声明包裹在圆括号里来告诉语法分析器去表达一个函数表达式，因为在Javascript里，圆括号不能包含声明。因为这点，当圆括号为了包裹函数碰上了 function关键词，它便知道将它作为一个函数表达式去解析而不是函数声明。</h2><p>函数表达式 &amp;&amp; 函数声明</p>
+<p>函数表达式中的函数可以为匿名函数，也可以有函数名，但是不能直接使用，只能通过表达式左边的变量 a 来调用。<br><code>var a = function(){
+alert(&#39;Function expression&#39;);
+}
+var b = new a();</code></p>
+<p>函数声明时必须有函数名<br><code>function a(){
+alert(&#39;Function declaration&#39;);
+}
+a();</code><br>`</p>
+<p><script><br>!function() {<br>alert(“hello, world.”);<br>} ();<br></script><br>`<br>匿名函数通过一元操作符变成了函数表达式，因而可以通过（）来调用。<br>因此，执行匿名函数可以通过+，-，！，（） 这样的形式来转化为函数表达式，就可以通过（）来运行了。</p>
+
+          
         
       
     </div>
@@ -415,8 +421,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/05/08/BFC/" itemprop="url">
-                  关于 BFC
+                <a class="post-title-link" href="/2016/06/10/moudle/" itemprop="url">
+                  Module
                 </a>
               
             
@@ -429,8 +435,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-08T13:27:13+08:00" content="2016-05-08">
-              2016-05-08
+            <time itemprop="dateCreated" datetime="2016-06-10T13:39:41+08:00" content="2016-06-10">
+              2016-06-10
             </time>
           </span>
 
@@ -459,8 +465,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/08/BFC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/08/BFC/" itemprop="commentsCount"></span>
+                <a href="/2016/06/10/moudle/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/10/moudle/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -484,276 +490,16 @@
 
       
         
-          <h1 id="关于-BFC"><a href="#关于-BFC" class="headerlink" title="关于 BFC"></a>关于 BFC</h1><p>BFC(Block formattingcontext)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干.(简单点说，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用)</p>
-<p>W3C的定义`</p>
-<blockquote>
-<p>浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/08/BFC/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/07/cache/" itemprop="url">
-                  浏览器缓存知识小结及应用（摘自开发者头条）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-07T15:17:25+08:00" content="2016-05-07">
-              2016-05-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/learning/" itemprop="url" rel="index">
-                    <span itemprop="name">learning~</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/07/cache/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/07/cache/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>浏览器缓存，也就是客户端缓存，既是网页性能优化里面静态资源相关优化的一大利器，也是无数web开发人员在工作过程不可避免的一大问题，所以在产品开发的时候我们总是想办法避免缓存产生，而在产品发布之时又在想策略管理缓存提升网页的访问速度。了解浏览器的缓存命中原理，是开发web应用的基础</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/07/cache/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/float/" itemprop="url">
-                  float
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-01T13:27:13+08:00" content="2016-05-01">
-              2016-05-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/learning/" itemprop="url" rel="index">
-                    <span itemprop="name">learning~</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/01/float/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/01/float/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>元素设置了浮动，会脱离文档流，按照指定的一个方向移动直到碰到父级的边界或另一个浮动元素</p>
-<p>浮动元素特点：</p>
+          <p>关于模块化：</p>
 <ul>
-<li>块在一排显示</li>
-<li>内联支持宽高</li>
-<li>默认内容撑开宽度</li>
-<li>脱离文档流（飘起来）</li>
-<li>提升层级半级</li>
-</ul>
-<p>画一个元素的横切面，大概是这个样子<br><img src="http://o6qp6st9j.bkt.clouddn.com/image/blog/cssfloat.PNG" alt="1"><br>所以下一个元素挤进来只有元素本身进来，元素的内容就被挤出去了</p>
-<p>清浮动：</p>
-<ul>
-<li>给父级也加浮动</li>
-<li>空标签清浮动<code>&lt;br clear=”all” /&gt;</code></li>
-<li>父元素设置 overflow:hidden（如果你还要兼顾IE6的话，加上*zoom:1;来触发hasLayout）</li>
-<li>:after伪元素<br>`<br>.clearfix:after {<br>  clear: both;<br>  content: “.”;<br>  display: block;<br>  height: 0;<br>  visibility: hidden;<br>}<br>.clearfix {<br>  *zoom: 1;<br>}</li>
-</ul>
-<p>`</p>
-<p>更多参照：<br> <a href="http://www.zhangxinxu.com/wordpress/?p=583，" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/?p=583，</a><br> <a href="https://www.zhihu.com/question/24529373/answer/29135021" target="_blank" rel="external">https://www.zhihu.com/question/24529373/answer/29135021</a></p>
-
-          
+<li>可重用</li>
+<li>封装了变量和function，和全局的namaspace不接触，松耦合</li>
+<li>只暴露可用public的方法，其它私有方法全部隐藏
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/10/moudle/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -801,8 +547,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/20/browser/" itemprop="url">
-                  浏览器兼容性
+                <a class="post-title-link" href="/2016/06/08/node4/" itemprop="url">
+                  Node.js(四)-内存控制
                 </a>
               
             
@@ -815,8 +561,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T15:20:13+08:00" content="2016-04-20">
-              2016-04-20
+            <time itemprop="dateCreated" datetime="2016-06-08T13:38:57+08:00" content="2016-06-08">
+              2016-06-08
             </time>
           </span>
 
@@ -845,8 +591,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/20/browser/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/browser/" itemprop="commentsCount"></span>
+                <a href="/2016/06/08/node4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/08/node4/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -872,97 +618,44 @@
         
           
             <blockquote>
-<p>遇到的一些浏览器兼容问题</p>
+<p>再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中</p>
 </blockquote>
+<p>在node中使用内存时只能使用部分内存（64位为1.4GB，32位为0.7GB），造成这个问题的主要原因是Node基于V8构建，所以在Node中使用的javascript对象基本上是通过V8自己的方式来进行分配和管理的（Buffer对象不经过V8的内存分配限制）。<br>在V8中，所有的javascript对象都是通过堆来进行分配的。在Node启动时可以传递<br>–max-old-space-size / –max-new-space-size调整内存限制</p>
+<h2 id="v8的内存管理模式"><a href="#v8的内存管理模式" class="headerlink" title="v8的内存管理模式"></a>v8的内存管理模式</h2><p>一个运行的程序通常是通过在内存中分配一部分空间来表示的。这部分空间被称为驻留集（Resident Set）。 V8的内存管理模式有点类似于Java虚拟机（JVM），它会将内存进行分段：</p>
 <ul>
-<li><p>IE 与其他浏览器不一样的特性</p>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">IE支持currentStyle，FIrefox使用getComputStyle</span><br><span class="line"></span><br><span class="line">IE 使用innerText，Firefox使用textContent</span><br><span class="line"></span><br><span class="line">滤镜方面：IE:filter:alpha(opacity= num)；Firefox：-moz-opacity:num</span><br><span class="line"></span><br><span class="line">事件方面：IE：attachEvent：火狐是addEventListener</span><br><span class="line"></span><br><span class="line">鼠标位置：IE是event.clientX；火狐是event.pageX</span><br><span class="line"></span><br><span class="line">IE使用event.srcElement；Firefox使用event.target</span><br><span class="line"></span><br><span class="line">IE中消除list的原点仅需margin:0即可达到最终效果；FIrefox需要设置margin:0;padding:0以及list-style:none</span><br><span class="line"></span><br><span class="line">CSS圆角：ie7以下不支持圆角</span><br></pre></td></tr></table></figure>
-</li>
+<li>代码 Code：实际被执行的代码</li>
+<li>栈 Stack：包括所有的携带指针引用堆上对象的值类型（原始类型，例如整型和布尔），以及定义程序控制流的指针。</li>
+<li>堆 Heap：用于保存引用类型（包括对象、字符串和闭包）的内存段</li>
 </ul>
-<hr>
-<p><strong>JS</strong></p>
+<h2 id="v8的垃圾回收机制"><a href="#v8的垃圾回收机制" class="headerlink" title="v8的垃圾回收机制"></a>v8的垃圾回收机制</h2><p>垃圾回收器解决基本问题就是，识别需要回收的内存。一旦辨别完毕，这些内存区域即可在未来的分配中重用，或者是返还给操作系统。一个对象当它不是处于活跃状态的时候它就死了。一个对象处于活跃状态，当且仅当它被一个根对象或另一个活跃对象指向。根对象被定义为处于活跃状态，是浏览器或V8所引用的对象。比如说全局对象属于根对象，因为它们始终可被访问；浏览器对象，如DOM元素，也属于根对象，尽管在某些场合下它们只是弱引用。</p>
+<h3 id="堆的构成"><a href="#堆的构成" class="headerlink" title="堆的构成"></a>堆的构成</h3><p>在 node-v4.x 之后，堆主要由以下及部分构成：</p>
 <ul>
-<li><p>NodeList对象转换为数组</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">convertToArray</span>(<span class="params">nodes</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> array = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">    array = <span class="built_in">Array</span>.prototype.splice.call(nodes,<span class="number">0</span>);<span class="comment">//IE8及更早将NodeList对象实现为一个com对象，所以会报错</span></span><br><span class="line">    &#125;<span class="keyword">catch</span>(ex)&#123;</span><br><span class="line">        array = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,len = nodes.length;i&lt;len;i++)&#123;</span><br><span class="line">        array.push(nodes[i]);</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>nodeType属性，用于表示节点的类型<br>  例如：Node.ELEMENT_NODE（1）<br>  确定节点的类型：<br>  someNode.NodeType == Node.ELEMENT_NODE //IE没有公开Node类型的构造函数，在IE中错误<br>  someNode.NodeType == 1 //兼容写法</p>
-</li>
-<li><p>cloneNode()<br>  cloneNode方法不会复制添加到DOM节点中的JavaScript属性，例如事件处理程序等。这个方法只复制特性、（参数为true会复制子节点），但IE会复制事件处理程序<br>  所以，复制之前最好先移除事件处理程序</p>
-</li>
-<li>IE下,event对象有x,y属性,但是没有pageX,pageY属性;<br>Firefox下,event对象有pageX,pageY属性,但是没有x,y属性</li>
-<li>链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序:<br>L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}</li>
-<li>document.doctype<ul>
-<li>ie8及之前，会将文档类型声明解释为一个注释并当做Comment节点，document.doctype为null</li>
-<li>IE9 FF：将文档类型声明作为文档第一个子节点，document.doctype为DocumentType对象</li>
-<li>Safari、Chrome Opera：将其解析但不作为文档子节点</li>
+<li>新生区：大多数对象开始时被分配在这里。新生区是一个很小的区域，垃圾回收在这个区域非常频繁，与其他区域相独立。</li>
+<li>老生区：保存原始数据对象，大多数从新生代晋升的对象会被移动到这里</li>
+<li>大对象区：这里存放体积超过1MB大小的对象。每个对象有自己的内存。垃圾回收器从不移动大对象</li>
+<li>Map区</li>
+<li>Code区：代码对象，也就是包含JIT之后指令的对象，会被分配到这里</li>
 </ul>
-</li>
-<li>getElementById<br>  在IE7中，若有表单元素的name特性值与给定id相等，则会返回表单元素</li>
-<li>setAttribute()<br>  IE7及以前，通过这个方法设置的class和style特性，设置事件处理程序没有任何效果</li>
-<li>document.createElement()</li>
-<li>元素的子节点解析不一致<br>  childNodes 标准下包含了文本和元素类型的节点，非标准下，只包含元素类型的节点</li>
-<li>matchesSelector()</li>
-<li>元素遍历，对于元素间的空格，IE9及之前不会返回文本节点，而其他都会返回文本节点</li>
-<li>innerHTML属性返回的值</li>
-<li>contentDocument</li>
-<li><p>页面坐标的位置</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</span><br><span class="line">    EventUtil.addHandler(div,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        event = EventUtil.getEvent(event);</span><br><span class="line">        <span class="keyword">var</span> pageX = event.pageX,</span><br><span class="line">            pageY = event.pageY;</span><br><span class="line">        <span class="keyword">if</span>(pageX == undefinded)&#123;</span><br><span class="line">            pageX = event.clientX + (<span class="built_in">document</span>.body.scrolLeft || <span class="built_in">document</span>.documentElement.scrolLeft;);</span><br><span class="line"><span class="comment">//IE7之前的版本：document.body</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pageY == undefinded)&#123;</span><br><span class="line">            pageY = event.clientY + (<span class="built_in">document</span>.body.scrolTop || <span class="built_in">document</span>.documentElement.scrolTop;);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>事件</p>
+<h3 id="识别指针和数据"><a href="#识别指针和数据" class="headerlink" title="识别指针和数据"></a>识别指针和数据</h3><p>垃圾回收器面临的第一个问题是，如何才能在堆中区分指针和数据，因为指针指向着活跃的对象。大多数垃圾回收算法会将对象在内存中挪动（以便减少内存碎片，使内存紧凑），因此即使不区分指针和数据，我们也常常需要对指针进行改写。<br>V8采用了标记指针法：这种方法需要在每个指针的末位预留一位来标记这个字代表的是指针或数据。</p>
+<h3 id="写屏障"><a href="#写屏障" class="headerlink" title="写屏障"></a>写屏障</h3><p>如果新生区中某个对象，只有一个指向它的指针，而这个指针恰好是在老生区的对象当中，我们如何才能知道新生区中那个对象是活跃的呢？ 为了解决这个问题，实际上在写缓冲区中有一个列表 store-buffer{.cc,.h,-inl.h}，列表中记录了所有老生区对象指向新生区的情况。新对象诞生的时候，并不会有指向它的指针，而当有老生区中的对象出现指向新生区对象的指针时，我们便记录下来这样的跨区指向。由于这种记录行为总是发生在写操作时，它被称为写屏障.</p>
+<h3 id="回收策略"><a href="#回收策略" class="headerlink" title="回收策略"></a>回收策略</h3><p>V8采用了一种分代回收的策略，将内存分为两个生代：新生代和老生代。新生代的对象为存活时间较短的对象，老生代中的对象为存活时间较长或常驻内存的对象。分别对新生代和老生代使用不同的垃圾回收算法来提升垃圾回收的效率。对象起初都会被分配到新生代，当新生代中的对象满足某些条件时，会被移动到老生代（晋升）</p>
+<p>1、V8的分代内存<br>默认情况下，64位环境下的V8引擎的新生代内存大小32MB、老生代内存大小为1400MB，而32位则减半，分别为16MB和700MB。V8内存的最大保留空间分别为1464MB（64位）和732MB（32位）。具体的计算公式是4*reserved_semispace<em>space</em> + max_old_generation<em>size</em>，新生代由两块reserved_semispace<em>space</em>组成，每块16MB（64位）或8MB（32位）</p>
+<p>2、新生代<br>大多数的对象被分配在这里，这个区域很小但是垃圾回收特别频繁。新生代使用半空间（Semi-space）分配策略，其中新对象最初分配在新生代的活跃半空间内。</p>
 <ul>
-<li>标准事件监听elem.addEventListener(type, handler, capture)/elem.removeEventListener(type, handler, capture)：handler接收保存事件信息的event对象作为参数，event.target为触发事件的对象，handler调用上下文this为绑定监听器的对象，event.preventDefault()取消事件默认行为，event.stopPropagation()/event.stopImmediatePropagation()取消事件传递</li>
-<li>老版本IE事件监听elem.attachEvent(‘on’+type, handler)/elem.detachEvent(‘on’+type, handler)：handler不接收event作为参数，事件信息保存在window.event中，触发事件的对象为event.srcElement，handler执行上下文this为window使用闭包中调用handler.call(elem, event)可模仿标准模型，然后返回闭包，保证了监听器的移除。event.returnValue为false时取消事件默认行为，event.cancleBubble为true时取消事件传播<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> EventUtil = &#123;</span><br><span class="line">    addHandler:<span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(element.addEventListener())&#123;</span><br><span class="line">            element.addEventListener(type, handler,<span class="literal">false</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent)&#123;</span><br><span class="line">            element.attachEvent(<span class="string">"on"</span>+type,handler);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            element[<span class="string">"on"</span>+type] = handler;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    getEvent:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> event?event||<span class="built_in">window</span>.event;</span><br><span class="line">    &#125;,</span><br><span class="line">    getTarget:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">    &#125;,</span><br><span class="line">    preventDefault: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.preventDefault()) &#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            event.returnValue = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    removeHandler:<span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(element.removeEventListener())&#123;</span><br><span class="line">            element.removeEventListener(type, handler,<span class="literal">false</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.detachEvent)&#123;</span><br><span class="line">            element.detachEvent(<span class="string">"on"</span>+type,handler);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            element[<span class="string">"on"</span>+type] = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    stopPropagation:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.stopPropagation()) &#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Scavenge算法<br>新生代使用Scavenge算法进行回收。在Scavenge算法的实现中，主要采用了Cheney算法</li>
 </ul>
-</li>
-</ul>
-<hr>
+<p>Cheney算法算法是一种采用复制的方式实现的垃圾回收算法。它将内存一分为二，每一部分空间称为semispace。在这两个semispace中，一个处于使用状态，另一个处于闲置状态。处于使用状态的semispace空间称为From空间，处于闲置状态的空间称为To空间，当我们分配对象时，先是在From空间中进行分配。当开始进行垃圾回收算法时，会检查From空间中的存活对象，这些存活对象将会被复制到To空间中（复制完成后会进行紧缩），而非活跃对象占用的空间将会被释放。完成复制后，From空间和To空间的角色发生对换。简而言之，在垃圾回收的过程中，就是通过将存活对象在两个semispace之间进行复制。<br>Scavenge算法（牺牲空间换取时间）的缺点是只能使用内存的一半，但它只复活存活的对象，并且对于生命周期短的场景存活对象只占少部分，所以它的时间效率比较高</p>
+<p>执行过程：<br>a、将From空间中所有能从根对象到达的对象复制到To区（scanPtr和allocationPtr指针，分别指向即将扫描的活跃对象和即将为新对象分配内存的地方）<br>b、开始循环，查找当前scanPtr所指向的对象的内部指针指向，指向From区，就把这个所指向的对象从From区复制到To区<br>c、复制完成后将scanPtr所指对象内的指针修改为新复制对象存放的地址，并移动allocationPtr<br>d、下一轮循环，直到scanPtr和allocationPtr相遇，开始清理垃圾</p>
+<p>3、对象晋升<br>具体移动的标准有两种：</p>
 <ul>
-<li><p>窗口滚动条偏移量</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 获取指定window中滚动条的偏移量，如未指定则获取当前window</span><br><span class="line"> * 滚动条偏移量</span><br><span class="line"> *</span><br><span class="line"> * @param &#123;window&#125; w 需要获取滚动条偏移量的窗口</span><br><span class="line"> * @return &#123;Object&#125; obj.x为水平滚动条偏移量,obj.y为竖直滚动条偏移量</span><br><span class="line"> */</span><br><span class="line">function getScrollOffset(w) &#123;</span><br><span class="line">    w =  w || window;</span><br><span class="line">    // 如果是标准浏览器</span><br><span class="line">    if (w.pageXOffset != null) &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            x: w.pageXOffset,</span><br><span class="line">            y: w.pageYOffset</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 老版本IE，根据兼容性不同访问不同元素</span><br><span class="line">    var d = w.document;</span><br><span class="line">    if (d.compatMode === 'CSS1Compat') &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            x: d.documentElement.scrollLeft,</span><br><span class="line">            y: d.documentElement.scrollTop</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return &#123;</span><br><span class="line">        x: d.body.scrollLeft,</span><br><span class="line">        y: d.body.scrollTop</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>返回指定窗口的视口尺寸</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* 查询指定窗口的视口尺寸，如果不指定窗口，查询当前窗口尺寸</span><br><span class="line">**/</span><br><span class="line">function getViewportSize(w) &#123;</span><br><span class="line">    w = w || window;</span><br><span class="line"></span><br><span class="line">    // IE9及标准浏览器中可使用此标准方法</span><br><span class="line">    if ('innerHeight' in w) &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            width: w.innerWidth,</span><br><span class="line">            height: w.innerHeight</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var d = w.document;</span><br><span class="line">    // IE 8及以下浏览器在标准模式下</span><br><span class="line">    if (document.compatMode === 'CSS1Compat') &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            width: d.documentElement.clientWidth,</span><br><span class="line">            height: d.documentElement.clientHeight</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // IE8及以下浏览器在怪癖模式下</span><br><span class="line">    return &#123;</span><br><span class="line">        width: d.body.clientWidth,</span><br><span class="line">        height: d.body.clientHeight</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>对象从From空间复制到To空间时，会检查它的内存地址来判断这个对象是否已经经历过一个新生代的清理，如果是，则复制到老生代中，否则复制到To空间中</li>
+<li>对象从From空间复制到To空间时，如果To空间已经被使用了超过25%，那么这个对象直接被复制到老生代</li>
 </ul>
-<hr>
-<p><strong>css</strong></p>
-<ul>
-<li>IE6的双倍边距BUG 块元素有浮动和横向的margin，横向margin会被放大2倍<br>  display: inline</li>
-<li>IE6下图片下方有空隙产生<br>  改变html的排版,或者设置img 为display:block，<br>或者设置vertical-align 属性为vertical-align:top bottom middle text-bottom都可以解决</li>
-<li><p>3像素文本偏移bug<br>  当文本与一个浮动元素相邻时，例如：将一个元素向左浮动，并且不希望相邻段落中的文本围绕浮动元素，你也许会在段落上应用一个左外边距，其宽度等于浮动元素的宽度<br>  解决：</p>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">p&#123;height:1%;//迫使元素拥有布局，拥有布局的元素被限制为矩形，并且出现在浮动元素旁边</span><br><span class="line">margin-left:0;</span><br><span class="line">&#125;</span><br><span class="line">.myFloat&#123;</span><br><span class="line">margin-right:-3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>IE6 重复字符bug<br>  在某些情况下，一些列浮动元素的最后一个元素中的最后几个字符会在浮动元素下重复出现（当一系列浮动元素的第一个和最后一个元素之间有多个注释时，前两个注释没有影响，但后续的每个注释会导致两个字符重复出现）<br>  解决：可以通过设置负右外边距。最安全的：去掉注释</p>
-</li>
-<li><p>“藏猫猫bug”<br>  一个浮动元素后面跟着一些非浮动元素，然后是一个清理元素，所有这些元素都包含在一个设置了背景颜色或图像的父元素里，如果清理元素碰到了浮动元素，那么中间的非浮动元素看起来消失了，隐藏到了父元素的背景颜色或图像后面，只有在刷新页面时才会重新出现<br>  解决：给父容器一个明确的“宽度”或“高度”，例如height:1%</p>
-<pre><code>或者：父容器和浮动元素的定位类型positon都设置为“相对”rellative
-</code></pre></li>
-<li><p>相对容器中的绝对定位<br>  相对元素没有获得IE内部的haslayout属性，因此不能创建新的上下文，所有绝对元素相对于视口定位<br>  <code>.container{height:1%;}</code></p>
-</li>
-<li><p>Chrome支持小于12px 的文字</p>
-<ol>
-<li>-webkit-text-size-adjust:none;通过它即可实现字体大小不随终端设备或浏览器影响。是在最新版的谷歌里。已经不在支持这个属性，需要通过css3的transform来解决</li>
-<li><code>span{-webkit-transform:scale(0.8);-o-transform:scale(1); display:inline-block;}</code><br><code>{webkit-transform:scale(0.8);  display:inline-block} //0.8位缩放倍数</code>，具体自己根据实际需求修改，只能缩放可以定义宽高的元素，而span是行内元素，<br><code>{-o-transform:scale(1);}</code>opera现在最新版也是webkit内核，新版本的opera，本来就是10px的字体了</li>
-</ol>
-</li>
-<li>display:inline-block 间隙<br>  真正意义上的inline-block水平呈现的元素间，换行显示或空格分隔的情况下会有间距<br>  解决：移除空格、使用margin负值、使用font-size:0、letter-spacing、word-spacing<br>  <a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">more</a></li>
-<li><p>overflow: scroll时不能平滑滚动<br>  <code>-webkit-overflow-scrolling: touch</code><br>  <a href="http://www.cnblogs.com/PeunZhang/p/3553020.html" target="_blank" rel="external">more</a></p>
-</li>
-<li><p>IE 9选择器数量限制问题</p>
-</li>
-<li>IE8 resize<br>  <a href="https://undefinedblog.com/recent-ie-quirks/" target="_blank" rel="external">参考</a></li>
-</ul>
-<hr>
-<ul>
-<li><p>css Hack<br>  为了获得统一的页面效果，需要针对不同的浏览器或不同版本编写特定的CSS样式，这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack~</p>
-<ul>
-<li>CSS属性前缀法： IE6能识别下划线”<em>“和星号” <em> “，IE7能识别星号” </em> “，但不能识别下划线”</em>“，IE6~IE10都认识”\9”，但firefox前述三个都不能认识。</li>
-<li>选择器前缀法：例如 IE6能识别<em>html .class{}，IE7能识别</em>+html .class{}或者*:first-child+html .class{}。</li>
-<li>IE条件注释法：针对所有IE(注：IE10+已经不再支持条件注释)： <code>&lt;!--[if IE]&gt;IE浏览器显示的内容 &lt;![endif]--&gt;</code>，针对IE6及以下版本： <code>&lt;!--[if lt IE 6]&gt;只在IE6-显示的内容 &lt;![endif]--&gt;</code>。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。<br><a href="http://blog.csdn.net/freshlover/article/details/12132801" target="_blank" rel="external">more</a></li>
-</ul>
-</li>
-</ul>
+<p>4、老生代<br>V8在老生代中的垃圾回收策略采用Mark-Sweep和Mark-Compact相结合<br>Mark-Sweep：标记清除分为标记和清除两个阶段。在标记阶段需要遍历堆中的所有对象，并标记那些活着的对象，然后进入清除阶段。在清除阶段总，只清除没有被标记的对象。由于标记清除只清除死亡对象，而死亡对象在老生代中占用的比例很小，所以效率较高<br>问题：内存碎片</p>
+<p>Mark-Compact（标记整理）：标记整理正是为了解决标记清除所带来的内存碎片的问题。标记整理在标记清除的基础进行修改。在整理的过程中，将活着的对象向内存区的一段移动，移动完成后直接清理掉边界外的内存。紧缩过程涉及对象的移动，所以效率并不是太好，但是能保证不会生成内存碎片</p>
+<p>V8的老生代使用标记清除和标记整理结合的方式，主要采用标记清除算法，如果空间不足以分配从新生代晋升过来的对象时，才使用标记整理</p>
+<p>5、优化<br>Incremental Marking（增量标记）<br>拆分成很多部分，每做完一部分就停下来，让JS的应用逻辑执行一会，这样垃圾回收与应用逻辑交替完成。经过增量标记的改进后，垃圾回收的最大停顿时间可以减少到原来的1/6左右</p>
+<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p><img src="http://o6qp6st9j.bkt.clouddn.com/images/node/cache.png" alt="cache"></p>
 
           
         
@@ -1012,8 +705,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/15/linux/" itemprop="url">
-                  宿主机连接linux web服务器失败
+                <a class="post-title-link" href="/2016/06/04/node3/" itemprop="url">
+                  Node.js(三)-异步I/O
                 </a>
               
             
@@ -1026,19 +719,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-15T16:32:53+08:00" content="2016-04-15">
-              2016-04-15
+            <time itemprop="dateCreated" datetime="2016-06-04T15:22:23+08:00" content="2016-06-04">
+              2016-06-04
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/learning/" itemprop="url" rel="index">
+                    <span itemprop="name">learning~</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/15/linux/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/15/linux/" itemprop="commentsCount"></span>
+                <a href="/2016/06/04/node3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/node3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1062,12 +774,19 @@
 
       
         
-          <p>环境：centos xftp xshell<br>原因分析：linux的问题、VMware的问题、windows的问题<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/15/linux/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+          
+            <blockquote>
+<p>再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中</p>
+</blockquote>
+<p>Node 利用单线程，远离多线程死锁、状态同步等问题；利用异步I/O,让单线程远离阻塞，以更好的使用CPU。</p>
+<p>阻塞I/O的一个特点是调用完成后一定要等到系统内核层面完成所有操作后。调用才结束。阻塞I/O造成CPU等待，浪费等待时间，CPU处理能力得不到充分利用，为了提高性能，内核提供了非阻塞I/O。非阻塞I/O调用之后会立即返回.返回之后，cpu的时间片可以用来处理其他事务。</p>
+<h2 id="基于libuv的架构"><a href="#基于libuv的架构" class="headerlink" title="基于libuv的架构"></a>基于libuv的架构</h2><p>node提供了libuv作为抽象层，使得所有平台兼容性的判断都由这一层完成，并保证上层的Node与下层的自定义线程池及IOCP之间各自独立，Node在编译期间会判断平台条件。在Node v0.9.3，*nix自行实现了线程池来完成。<br><img src="https://yjhjstz.gitbooks.io/deep-into-node/content/chapter1/FuX1qcGJgwYtX9zNbBAOSaQeD8Qz.png" alt="libuv"></p>
+<p>从图中可以看出，对于Network I/O和以File I/O为代表的另一类请求，异步处理的底层支撑机制是完全不一样的。</p>
+<p>对于Network I/O相关的请求， 根据OS平台不同，分别使用Linux上的epoll，OSX和BSD类OS上的kqueue，SunOS上的event ports以及Windows上的IOCP机制。</p>
+<p>而对于File I/O为代表的请求，则使用thread pool。利用thread pool的方式实现异步请求处理，在各类OS上都能获得很好的支持。</p>
+<p>要强调的是，我们时常提到的Node是单线程的，这里的单线程指的是javascript执行在单线程中，在Node中，无论是*nix还是windows平台，内部完成I/O的另有线程池。</p>
+
+          
         
       
     </div>
@@ -1115,8 +834,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/10/whois/" itemprop="url">
-                  WHOIS 特征提取及 URL Parse（持续更新）
+                <a class="post-title-link" href="/2016/06/02/node2/" itemprop="url">
+                  Node.js(二)-模块机制
                 </a>
               
             
@@ -1129,19 +848,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-10T14:32:53+08:00" content="2016-04-10">
-              2016-04-10
+            <time itemprop="dateCreated" datetime="2016-06-02T13:15:47+08:00" content="2016-06-02">
+              2016-06-02
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/learning/" itemprop="url" rel="index">
+                    <span itemprop="name">learning~</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/10/whois/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/10/whois/" itemprop="commentsCount"></span>
+                <a href="/2016/06/02/node2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/02/node2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1165,12 +903,18 @@
 
       
         
-          <p>DataSet： <strong>PhishTank &amp;&amp; DMOZ</strong>   -数据集不平衡</p>
-<pre><code>PhishTank爬取 23378条URL （2008-2016） 
-DMOZ 定时更新
-</code></pre>
+          <blockquote>
+<p>再次阅读《深入浅出Node.js》的笔记系列，内容主要摘自书中</p>
+</blockquote>
+<h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>CommonJS规范加载模块是同步的。根据CommonJS规范，一个单独的文件就是一个模块。每一个模块都是一个单独的作用域，也就是说，在一个文件定义的变量（还包括函数和类），都是私有的，对其他文件是不可见的。<br>CommonJS规定，每个文件的对外接口是module.exports对象。这个对象的所有属性和方法，都可以被其他文件导入。</p>
+<p>CommonJS模块的特点如下：</p>
+<ul>
+<li>所有代码都运行在模块作用域，不会污染全局作用域</li>
+<li>模块可以多次加载，但是只会在第一次加载时运行一次，然后运行结果就被缓存了，以后再加载，就直接读取缓存结果。要想让模块再次运行，必须清除缓存。</li>
+<li>模块加载的顺序，按照其在代码中出现的顺序</li>
+</ul>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/10/whois/#more" rel="contents">
+            <a class="btn" href="/2016/06/02/node2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1204,7 +948,7 @@ DMOZ 定时更新
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 

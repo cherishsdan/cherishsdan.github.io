@@ -60,7 +60,8 @@
 <h2 id="diff算法"><a href="#diff算法" class="headerlink" title="diff算法"></a>diff算法</h2><pre><code>传统的diff算法的时间复杂度是 O(n^3)，它会以根据before和after的最长子节点长度，循环遍历所有子节点，然后判断子节点的更新状态
 react中的diff算法将时间复杂度降为 O(n), 分别对 tree diff、component diff 以及 element diff 进行算法优化
 [more](https://zhuanlan.zhihu.com/p/20346379?refer=purerender)
-</code></pre><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><pre><code>利用shouldComponentUpdate 函数
+</code></pre><a id="more"></a>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><pre><code>利用shouldComponentUpdate 函数
 [more](http://imweb.io/topic/577512fe732b4107576230b9)
 </code></pre><h2 id="redux-amp-amp-flux"><a href="#redux-amp-amp-flux" class="headerlink" title="redux &amp;&amp; flux"></a>redux &amp;&amp; flux</h2><pre><code>Flux 中是根据不同的功能拆分出多个 store 分而治之
 而 Redux 只允许应用中有唯一的 store，通过拆分出多个 reducer 分别管理对应的 state
