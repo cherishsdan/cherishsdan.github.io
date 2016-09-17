@@ -6,17 +6,16 @@
     <entry>
       <title><![CDATA[js实现的数据结构、排序算法~~]]></title>
       <url>http://yoursite.com/2016/09/17/js-algorithms/</url>
-      <content type="html"><![CDATA[<p>用JavaScript实现了经典的十大排序算法，以及一些简单的数据结构,持续更新~</p>
-<p>相信随着ES6的普及，js会越来越完善  (≧▽≦)~</p>
+      <content type="html"><![CDATA[<p>用JavaScript实现了经典的十大排序算法，以及一些简单的数据结构,持续更新~<br>相信随着ES6的普及，js会越来越完善  (≧▽≦)~</p>
 <h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>  分别使用 基本写法、IIFE、ES6 3中形式实现</p>
 <ul>
 <li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/set" target="_blank" rel="external">Set</a></li>
 <li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/Queue" target="_blank" rel="external">Queue</a></li>
 <li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/stack" target="_blank" rel="external">stack</a></li>
 <li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/Tree" target="_blank" rel="external">Tree</a></li>
-<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/List" target="_blank" rel="external">List</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/List" target="_blank" rel="external">List</a><a id="more"></a>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2>实现了经典的十大排序算法，分析了各个算法的时间、空间复杂度~~</li>
 </ul>
-<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p>实现了经典的十大排序算法，分析了各个算法的时间、空间复杂度~~</p>
 <ul>
 <li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/Bubble.js" target="_blank" rel="external">冒泡排序</a></li>
 <li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/insertion.js" target="_blank" rel="external">插入排序</a></li>
