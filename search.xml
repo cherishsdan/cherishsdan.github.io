@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title><![CDATA[js实现的数据结构、排序算法~~]]></title>
+      <url>http://yoursite.com/2016/09/17/js-algorithms/</url>
+      <content type="html"><![CDATA[<p>用JavaScript实现了经典的十大排序算法，以及一些简单的数据结构,持续更新~</p>
+<p>相信随着ES6的普及，js会越来越完善  (≧▽≦)~</p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>  分别使用 基本写法、IIFE、ES6 3中形式实现</p>
+<ul>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/set" target="_blank" rel="external">Set</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/Queue" target="_blank" rel="external">Queue</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/stack" target="_blank" rel="external">stack</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/Tree" target="_blank" rel="external">Tree</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/tree/master/data-structure/List" target="_blank" rel="external">List</a></li>
+</ul>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p>实现了经典的十大排序算法，分析了各个算法的时间、空间复杂度~~</p>
+<ul>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/Bubble.js" target="_blank" rel="external">冒泡排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/insertion.js" target="_blank" rel="external">插入排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/selectionSort.js" target="_blank" rel="external">选择排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/merge.js" target="_blank" rel="external">归并排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/shell.js" target="_blank" rel="external">希尔排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/heapSort.js" target="_blank" rel="external">堆排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/quickSort.js" target="_blank" rel="external">快速排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/countSort.js" target="_blank" rel="external">计数排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/bucketSort.js" target="_blank" rel="external">桶排序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/sort/radixSort.js" target="_blank" rel="external">基数排序</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>数组、字符串常用操作的一些总结</p>
+<ul>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/simpleMethods/array/unique.js" target="_blank" rel="external">数组去重</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/simpleMethods/array/disorderArr.js" target="_blank" rel="external">数组乱序</a></li>
+<li><a href="https://github.com/cherishsdan/js-data-structures-algorithms/blob/master/simpleMethods/array/flattening.js" target="_blank" rel="external">数组扁平化</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[HTTP HTTPs HTTP2]]></title>
       <url>http://yoursite.com/2016/09/16/httpAbout/</url>
       <content type="html"><![CDATA[<p>HTTP协议缺省工作在TCP协议80端口，所有传输的内容都是明文。<br>HTTPS简单来说，是HTTP的安全版本，运行在SSL/TLS之上，SSL/TLS运行在TCP的443端口之上。所有传输的内容都经过加密，加密采用对称加密，但对称加密的密钥用服务器方的证书进行了非对称加密。此外客户端可以验证服务器端的身份，如果配置了客户端验证，服务器方也可以验证客户端的身份。<br>HTTP2 在HTTP协议的语义、方法、状态码等核心概念不变的情况下，实现了性能优化<br><a id="more"></a></p>
@@ -1541,7 +1576,7 @@ a();</code><br>`</p>
 <p>Cons：</p>
 <ul>
 <li>无法控制执行时间，执行时间由系统根据屏幕刷新时间决定。</li>
-<li>浏览器兼容性问题，IE10+及现代浏览器，低版本浏览器建议降级处理，使用setInterval或setTimeout </li>
+<li>浏览器兼容性问题，IE10+及现代浏览器，低版本浏览器建议降级处理，使用setInterval或setTimeout</li>
 </ul>
 </li>
 <li><p>Canvas<br>Pros：</p>
