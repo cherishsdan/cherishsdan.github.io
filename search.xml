@@ -130,33 +130,34 @@ action（动作）实质上是包含 type 属性的普通对象，
       <title><![CDATA[Project]]></title>
       <url>http://yoursite.com/2016/08/27/project/</url>
       <content type="html"><![CDATA[<blockquote>
-<p> 一些Project的截图，方便查看</p>
+<p> 一些Project及demo，做的比较杂~~</p>
 </blockquote>
-<p>1、doubanMovie<br>仿豆瓣的webApp，实现的功能：</p>
+<h3 id="实现的一些数据结构及简单算法"><a href="#实现的一些数据结构及简单算法" class="headerlink" title="实现的一些数据结构及简单算法"></a>实现的一些数据结构及简单算法</h3><p><a href="https://github.com/cherishsdan/js-data-structures-algorithms" target="_blank" rel="external">传送门</a></p>
+<h3 id="doubanMovie"><a href="#doubanMovie" class="headerlink" title="doubanMovie"></a>doubanMovie</h3><p>仿豆瓣的webApp，实现的功能：</p>
 <ul>
 <li>用户可以查看 正在上映的电影、豆瓣Top250的电影</li>
 <li>用户可以使用 大家都在搜、关键字搜索查找电影</li>
 <li>查看导演及其指导电影</li>
 <li>电影详情等</li>
-<li>用户可以提交反馈等<br><img src="http://o6qp6st9j.bkt.clouddn.com/image/project/movie11.gif" alt="doubanMovie"></li>
+<li>用户可以提交反馈等</li>
 </ul>
+<p><img src="http://o6qp6st9j.bkt.clouddn.com/image/project/movie11.gif" alt="doubanMovie"></p>
 <a id="more"></a>
-<p>2、Frogger Game(使用canvas、观察者模式等)</p>
-<ul>
+<h3 id="Frogger-Game-使用canvas、观察者模式等"><a href="#Frogger-Game-使用canvas、观察者模式等" class="headerlink" title="Frogger Game(使用canvas、观察者模式等)"></a>Frogger Game(使用canvas、观察者模式等)</h3><ul>
 <li>青蛙有5条命，需要越过障碍物通过过马路、河流等到达对岸，有时间限制</li>
 <li>游戏会记录玩家的最高分</li>
 <li>可以修改时间、帧数等<br><img src="http://o6qp6st9j.bkt.clouddn.com/game.gif" alt="Frogger"></li>
 </ul>
-<p>3、manageLife</p>
-<ul>
+<h3 id="Questions（问卷调查）"><a href="#Questions（问卷调查）" class="headerlink" title="Questions（问卷调查）"></a>Questions（问卷调查）</h3><ul>
+<li>前后端分离</li>
+<li>MEAN栈开发</li>
+<li>后台权限管理</li>
+</ul>
+<h3 id="NodeJS相关-project"><a href="#NodeJS相关-project" class="headerlink" title="NodeJS相关 project"></a>NodeJS相关 project</h3><p><a href="https://github.com/cherishsdan/Node-Action" target="_blank" rel="external">传送门</a></p>
+<h3 id="manageLife"><a href="#manageLife" class="headerlink" title="manageLife"></a>manageLife</h3><ul>
 <li>用户可以选择登录和不登录</li>
 <li>登录后可以保存上次设置的事项，也可以设置一些东西：激励自己的话语等</li>
 <li>小卡片之间可以相互移动，卡片间的各项也可以互相移动<br><img src="http://o6qp6st9j.bkt.clouddn.com/image/project/lifeml.gif" alt="manageLife"></li>
-</ul>
-<p>3、Questions（问卷调查）</p>
-<ul>
-<li>上传题目并预设好答案</li>
-<li>用户答题</li>
 </ul>
 ]]></content>
     </entry>
@@ -341,17 +342,13 @@ action（动作）实质上是包含 type 属性的普通对象，
 <p>性能优化系列笔记，提升用户体验</p>
 </blockquote>
 <p>图片内容占互联网内容总量的比例是非常大的，有一半多的流量和时间都用来下载图片，所以，图片是性能优化的重点。<br><a id="more"></a></p>
-<ul>
-<li><p>图片格式比较</p>
-<ul>
+<h3 id="图片格式比较"><a href="#图片格式比较" class="headerlink" title="图片格式比较"></a>图片格式比较</h3><ul>
 <li>JPEG 真彩色、有损压缩，不支持透明度及动画，适用于复杂颜色及形状、尤其是照片。其压缩算法可以精确控制压缩比，以图像质量换得存储空间。</li>
 <li>GIF 只支持 256 种颜色、透明通道只有 1 bit、文件压缩比不高。它唯一的优势就是支持多帧动画</li>
-<li>PNG 有几种子类型（PNG8、PNG24、PNG32），无损压缩，支持alpha透明，不支持动画<ul>
+<li>PNG 有几种子类型（PNG8、PNG24、PNG32），无损压缩，支持alpha透明，不支持动画</li>
 <li>PNG-8能够显示256种颜色，但能够同时支持256阶透明，因此颜色数较少但需要半透明的情景（如微信动画大表情）可以考虑PNG-8</li>
 <li>PNG-24可以显示真彩色，但不支持透明，颜色丰富的图片推荐使用（如屏幕截图、界面设计图）</li>
 <li>PNG-32可以显示真彩色，同时支持256阶透明，效果最好但尺寸也最大</li>
-</ul>
-</li>
 <li>webP 用 VP8 视频帧内编码作为其算法基础，支持有损与无损压缩、Alpha 透明以及动画，优势体现在它具有更优的图像数据压缩算法，<a href="https://isux.tencent.com/introduction-of-webp.html" target="_blank" rel="external">more</a></li>
 <li>APNG 旨在替换掉画质低劣的 GIF 动画。它实际上只是相当于 PNG 格式的一个扩展</li>
 <li>BPG 一款超高压缩比的图片格式，使用 HEVC (即 H.265) 帧内编码作为其算法基础，同等体积下 BPG 能提供更高的图像质量。另外，得益于它本身基于视频编码算法的特性，它能以非常小的文件体积保存多帧动画</li>
@@ -359,14 +356,9 @@ action（动作）实质上是包含 type 属性的普通对象，
 <p><a href="http://blog.ibireme.com/2015/11/02/mobile_image_benchmark/" target="_blank" rel="external">移动端的支持</a></p>
 </li>
 </ul>
-</li>
-</ul>
-<ul>
-<li><p>优化<br>  <img src="http://o6qp6st9j.bkt.clouddn.com/images/effective/ePic.png" alt="ePic"></p>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>  <img src="http://o6qp6st9j.bkt.clouddn.com/images/effective/ePic.png" alt="ePic"></p>
 <p>  dataURL<br>  对于极小的图片可以使用DataURL，除非在尽快要求展现的时候使用，其他时候应该避免使用，因为它在移动端的性能非常差</p>
 <p>  标明高度和宽度（如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了。）</p>
-</li>
-</ul>
 <p><a href="http://www.jianshu.com/p/dc5fd46ff22c" target="_blank" rel="external">图片的延迟加载</a><br><a href="http://www.jianshu.com/p/235ef450f5e9" target="_blank" rel="external">图片响应式处理方案</a></p>
 ]]></content>
     </entry>
@@ -409,7 +401,7 @@ action（动作）实质上是包含 type 属性的普通对象，
 <li><p>寄生组合式继承</p>
 </li>
 <li><p>最有效的继承方式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Shape</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">this</span>.y = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Shape.prototype.move = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x += x;</span><br><span class="line">    <span class="keyword">this</span>.y += y;</span><br><span class="line">    <span class="built_in">console</span>.info(<span class="string">"Shape moved."</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Rectangle - subclass</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Rectangle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  Shape.call(<span class="keyword">this</span>); <span class="comment">//call super constructor.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Rectangle.prototype = <span class="built_in">Object</span>.create(Shape.prototype);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> rect = <span class="keyword">new</span> Rectangle();</span><br><span class="line"></span><br><span class="line">rect <span class="keyword">instanceof</span> Rectangle <span class="comment">//true.</span></span><br><span class="line">rect <span class="keyword">instanceof</span> Shape <span class="comment">//true.</span></span><br><span class="line"></span><br><span class="line">rect.move(<span class="number">1</span>, <span class="number">1</span>); <span class="comment">//Outputs, "Shape moved."</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Polyfill</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Object</span>.create != <span class="string">'function'</span>) &#123;</span><br><span class="line">  <span class="built_in">Object</span>.create = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Temp</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> hasOwn = <span class="built_in">Object</span>.prototype.hasOwnProperty;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">O</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> O != <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="built_in">TypeError</span>(<span class="string">'Object prototype may only be an Object or null'</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      Temp.prototype = O;</span><br><span class="line">      <span class="keyword">var</span> obj = <span class="keyword">new</span> Temp();</span><br><span class="line">      Temp.prototype = <span class="literal">null</span>; </span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">arguments</span>.length &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// Object.defineProperties does ToObject on its first argument.</span></span><br><span class="line">        <span class="keyword">var</span> Properties = <span class="built_in">Object</span>(<span class="built_in">arguments</span>[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> prop <span class="keyword">in</span> Properties) &#123;</span><br><span class="line">          <span class="keyword">if</span> (hasOwn.call(Properties, prop)) &#123;</span><br><span class="line">            obj[prop] = Properties[prop];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Shape</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">this</span>.y = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Shape.prototype.move = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x += x;</span><br><span class="line">    <span class="keyword">this</span>.y += y;</span><br><span class="line">    <span class="built_in">console</span>.info(<span class="string">"Shape moved."</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Rectangle - subclass</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Rectangle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  Shape.call(<span class="keyword">this</span>); <span class="comment">//call super constructor.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Rectangle.prototype = <span class="built_in">Object</span>.create(Shape.prototype);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> rect = <span class="keyword">new</span> Rectangle();</span><br><span class="line"></span><br><span class="line">rect <span class="keyword">instanceof</span> Rectangle <span class="comment">//true.</span></span><br><span class="line">rect <span class="keyword">instanceof</span> Shape <span class="comment">//true.</span></span><br><span class="line"></span><br><span class="line">rect.move(<span class="number">1</span>, <span class="number">1</span>); <span class="comment">//Outputs, "Shape moved."</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Polyfill</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Object</span>.create != <span class="string">'function'</span>) &#123;</span><br><span class="line">  <span class="built_in">Object</span>.create = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Temp</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> hasOwn = <span class="built_in">Object</span>.prototype.hasOwnProperty;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">O</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> O != <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="built_in">TypeError</span>(<span class="string">'Object prototype may only be an Object or null'</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      Temp.prototype = O;</span><br><span class="line">      <span class="keyword">var</span> obj = <span class="keyword">new</span> Temp();</span><br><span class="line">      Temp.prototype = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">arguments</span>.length &gt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// Object.defineProperties does ToObject on its first argument.</span></span><br><span class="line">        <span class="keyword">var</span> Properties = <span class="built_in">Object</span>(<span class="built_in">arguments</span>[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> prop <span class="keyword">in</span> Properties) &#123;</span><br><span class="line">          <span class="keyword">if</span> (hasOwn.call(Properties, prop)) &#123;</span><br><span class="line">            obj[prop] = Properties[prop];</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -417,9 +409,10 @@ action（动作）实质上是包含 type 属性的普通对象，
 <ul>
 <li><p>hasOwnProperty<br>为了判断一个对象是否包含自定义属性而不是原型链上的属性， 我们需要使用继承自 Object.prototype 的 hasOwnProperty 方法。<br>hasOwnProperty 是 JavaScript 中唯一一个处理属性但是不查找原型链的函数。</p>
 </li>
-<li><p>确定原型与实例的关系<br>instanceof<br>isPrototypeOf() </p>
+<li><p>确定原型与实例的关系<br>instanceof<br>isPrototypeOf()</p>
 </li>
 </ul>
+<p><a href="https://zhuanlan.zhihu.com/p/22189387" target="_blank" rel="external">原型链图</a></p>
 ]]></content>
     </entry>
     
@@ -447,80 +440,64 @@ action（动作）实质上是包含 type 属性的普通对象，
       <content type="html"><![CDATA[<blockquote>
 <p>对前端开发知识的一些梳理,主要参考<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Questions-and-Answers/README.md" target="_blank" rel="external">前端开发面试题</a>及对它的补充，持续完善…</p>
 </blockquote>
-<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><ul>
-<li>基本数据类型<br>   Undefined、Null、Boolean、Number、String、Symbol(ES6)</li>
-<li><p>内置对象<br>  Object 是 JavaScript 中所有对象的父对象</p>
-<p>  数据封装类对象：Object、Array、Boolean、Number 和 String<br>  其他对象：Function、Arguments、Math、Date、RegExp、Error</p>
-<a id="more"></a></li>
-<li><p>JavaScript有几种类型的值<br>  栈：原始数据类型（Undefined，Null，Boolean，Number、String）<br>堆：引用数据类型（对象、数组和函数）</p>
-<p>  两种类型的区别是：存储位置不同；<br>  原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；<br>引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其<br>在栈中的地址，取得地址后从堆中获得实体</p>
-</li>
-<li><a href="http://cherishsdan.github.io/2016/07/17/super/" target="_blank" rel="external">继承</a></li>
-<li><a href="http://blog.rainy.im/2015/07/20/prototype-chain-in-js/" target="_blank" rel="external">原型</a></li>
-<li>创建对象<ul>
-<li>对象字面量的方式 </li>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>Undefined、Null、Boolean、Number、String、Symbol(ES6)</p>
+<h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><p>Object 是 JavaScript 中所有对象的父对象</p>
+<p>数据封装类对象：Object、Array、Boolean、Number 和 String<br>其他对象：Function、Arguments、Math、Date、RegExp、Error<br><a id="more"></a></p>
+<h3 id="JavaScript有几种类型的值"><a href="#JavaScript有几种类型的值" class="headerlink" title="JavaScript有几种类型的值"></a>JavaScript有几种类型的值</h3><p>栈：原始数据类型（Undefined，Null，Boolean，Number、String）<br>堆：引用数据类型（对象、数组和函数）</p>
+<p>两种类型的区别是：存储位置不同；<br>原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；<br>引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其<br>在栈中的地址，取得地址后从堆中获得实体</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a><a href="http://cherishsdan.github.io/2016/07/17/super/" target="_blank" rel="external">继承</a></h3><h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a><a href="http://blog.rainy.im/2015/07/20/prototype-chain-in-js/" target="_blank" rel="external">原型</a></h3><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul>
+<li>对象字面量的方式</li>
 <li>工厂函数</li>
 <li>原型链</li>
 </ul>
-</li>
-<li><a href="http://blog.rainy.im/2015/07/04/scope-chain-and-prototype-chain-in-js/" target="_blank" rel="external">作用域链</a></li>
-<li>This对象：引用的是函数据以执行的环境对象<ul>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a><a href="http://blog.rainy.im/2015/07/04/scope-chain-and-prototype-chain-in-js/" target="_blank" rel="external">作用域链</a></h3><h3 id="This对象：引用的是函数据以执行的环境对象"><a href="#This对象：引用的是函数据以执行的环境对象" class="headerlink" title="This对象：引用的是函数据以执行的环境对象"></a>This对象：引用的是函数据以执行的环境对象</h3><ul>
 <li>全局范围内:指向全局对象</li>
 <li>函数调用:<code>foo()</code> 指向全局对象</li>
 <li>方法调用:<code>test.foo();</code>this 指向 test 对象。</li>
 <li>调用构造函数:this 指向新创建的对象</li>
 <li>显式的设置 this:apply,call</li>
 </ul>
-</li>
-<li><p>null，undefined<br>  null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。<br>  当声明的变量还未被初始化时，变量的默认值为undefined。 null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</p>
-<p>  undefined表示”缺少值”<br>  （1）变量被声明了，但没有赋值时，就等于undefined。<br>  （2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。<br>  （3）对象没有赋值的属性，该属性的值为undefined。<br>  （4）函数没有返回值时，默认返回undefined。<br>  null表示”没有对象”，即该处不应该有值<br>  （1） 作为函数的参数，表示该函数的参数不是对象。<br>  （2） 作为对象原型链的终点。</p>
-</li>
-<li>attribute和property<br>  attribute是dom元素在文档中作为html标签拥有的属性；<br>  property就是dom元素在js中作为对象拥有的属性。<br>  对于html的标准属性来说，attribute和property是同步的，是会自动更新的，<br>  但是对于自定义的属性来说，他们是不同步的，</li>
-<li>window，document<ul>
-<li>DOM,文档对象模型,针对 HTML 和 XML 提供的一个API,以编程的方法操作HTML 的内容</li>
-<li>document,是整个 DOM 树的根节点，是window对象的一个属性。这个 document 包含了标题（document.title）、URL（document.URL）等属性，可以直接在 JS 中访问到,在一个浏览器窗口中可能有多个 document，例如，通过 iframe 加载的页面，每一个都是一个 document。</li>
-<li>BOM 浏览器对象模型,为了操作浏览器出现的 API。</li>
-<li>window 是 BOM 的一个对象,通过这个对象可以获取窗口位置、确定窗口大小、弹出对话框等等</li>
-</ul>
-</li>
-<li><a href="http://www.cnblogs.com/hustskyking/p/problem-javascript-event.html" target="_blank" rel="external">事件机制</a></li>
-<li><p>use strict<br>  use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,</p>
+<h3 id="null，undefined"><a href="#null，undefined" class="headerlink" title="null，undefined"></a>null，undefined</h3><p>  null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。<br>  当声明的变量还未被初始化时，变量的默认值为undefined。 null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</p>
+<p>  undefined表示”缺少值”<br>  （1）变量被声明了，但没有赋值时，就等于undefined。<br>  （2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。<br>  （3）对象没有赋值的属性，该属性的值为undefined。<br>  （4）函数没有返回值时，默认返回undefined。</p>
+<p>  null表示”没有对象”，即该处不应该有值<br>  （1） 作为函数的参数，表示该函数的参数不是对象。<br>  （2） 作为对象原型链的终点。</p>
+<h3 id="attribute和property"><a href="#attribute和property" class="headerlink" title="attribute和property"></a>attribute和property</h3><pre><code>attribute是dom元素在文档中作为html标签拥有的属性；
+property就是dom元素在js中作为对象拥有的属性。
+对于html的标准属性来说，attribute和property是同步的，是会自动更新的，
+但是对于自定义的属性来说，他们是不同步的，
+</code></pre><h3 id="window，document"><a href="#window，document" class="headerlink" title="window，document"></a>window，document</h3><pre><code>* DOM,文档对象模型,针对 HTML 和 XML 提供的一个API,以编程的方法操作HTML 的内容
+* document,是整个 DOM 树的根节点，是window对象的一个属性。这个 document 包含了标题（document.title）、URL（document.URL）等属性，可以直接在 JS 中访问到,在一个浏览器窗口中可能有多个 document，例如，通过 iframe 加载的页面，每一个都是一个 document。
+* BOM 浏览器对象模型,为了操作浏览器出现的 API。
+* window 是 BOM 的一个对象,通过这个对象可以获取窗口位置、确定窗口大小、弹出对话框等等
+</code></pre><h3 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a><a href="http://www.cnblogs.com/hustskyking/p/problem-javascript-event.html" target="_blank" rel="external">事件机制</a></h3><h3 id="use-strict"><a href="#use-strict" class="headerlink" title="use strict"></a>use strict</h3><p>  use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,</p>
 <p>  使JS编码更加规范化的模式,消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。<br>  默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值;<br>  全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用；<br>  消除代码运行的一些不安全之处，保证代码运行的安全,限制函数中的arguments修改，严格模式下的eval函数的行为和非严格模式的也不相同;</p>
+<h3 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h3><p>  1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。<br>  2、属性和方法被加入到 this 引用的对象中。<br>  3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj  = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Base.prototype;</span><br><span class="line">Base.call(obj);</span><br></pre></td></tr></table></figure></p>
+<h3 id="js延迟加载"><a href="#js延迟加载" class="headerlink" title="js延迟加载"></a>js延迟加载</h3><ul>
+<li><p>使用script标签的defer(HTML4)和async(HTML5)属性</p>
+<p>defer延迟加载脚本,该属性使得浏览器能延迟脚本的执行，等文档完成解析完成后会按照他们在文档出现顺序再去下载解析.</p>
+<p>在DOMContentLoaded事件之前执行完成。也就是说defer属性script就类似于将script放在body的效果.<br>而async属性能够异步的加载和执行脚本，不因为加载脚本而阻塞页面的加载。一旦加载到就会立刻执行。在window的load事件之前执行完成</p>
 </li>
-<li><p>new操作符<br>   1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。<br>   2、属性和方法被加入到 this 引用的对象中。<br>   3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。</p>
-   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj  = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Base.prototype;</span><br><span class="line">Base.call(obj);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>js延迟加载</p>
-<ul>
-<li>使用script标签的defer(HTML4)和async(HTML5)属性<br>  defer延迟加载脚本,该属性使得浏览器能延迟脚本的执行，等文档完成解析完成后会按照他们在文档出现顺序再去下载解析.在DOMContentLoaded事件之前执行完成。也就是说defer属性script就类似于将script放在body的效果.<br>  而async属性能够异步的加载和执行脚本，不因为加载脚本而阻塞页面的加载。一旦加载到就会立刻执行。在window的load事件之前执行完成</li>
-<li><p>动态创建DOM方式<br>  谷歌推荐的代码：</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">downloadJSAtOnload</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    element.src = <span class="string">"defer.js"</span>;</span><br><span class="line">    element.async = <span class="literal">true</span>;<span class="comment">//可以再Opera和旧版本的FF中支持异步加载</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(element);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.addEventListener)</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>, downloadJSAtOnload, <span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.attachEvent)</span><br><span class="line">    <span class="built_in">window</span>.attachEvent(<span class="string">"onload"</span>, downloadJSAtOnload);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">window</span>.onload = downloadJSAtOnload;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<li><p>动态创建DOM方式</p>
+<p>谷歌推荐的代码：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">downloadJSAtOnload</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">      element.src = <span class="string">"defer.js"</span>;</span><br><span class="line">      element.async = <span class="literal">true</span>;<span class="comment">//可以再Opera和旧版本的FF中支持异步加载</span></span><br><span class="line">      <span class="built_in">document</span>.body.appendChild(element);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">window</span>.addEventListener)</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>, downloadJSAtOnload, <span class="literal">false</span>);</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.attachEvent)</span><br><span class="line">      <span class="built_in">window</span>.attachEvent(<span class="string">"onload"</span>, downloadJSAtOnload);</span><br><span class="line">      <span class="keyword">else</span> <span class="built_in">window</span>.onload = downloadJSAtOnload;</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>通过ajax下载js脚本(无法引用使用CDN方式提供的js文件)</p>
+<h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a><a href="http://javascript.ruanyifeng.com/bom/ajax.html" target="_blank" rel="external">Ajax</a></h3><p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.</p>
+<p>(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.</p>
+<p>(3)设置响应HTTP请求状态变化的函数.</p>
+<p>(4)发送HTTP请求.</p>
+<p>(5)获取异步调用返回的数据.</p>
+<p>(6)使用JavaScript和DOM实现局部刷新.</p>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a><a href="http://cherishsdan.github.io/2016/05/28/Cors/" target="_blank" rel="external">跨域</a></h3><h3 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a><a href="http://cherishsdan.github.io/2016/06/10/moudle/" target="_blank" rel="external">模块化开发</a></h3><h3 id="ECMAScript6"><a href="#ECMAScript6" class="headerlink" title="ECMAScript6"></a><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript6</a></h3><h3 id="document-write，innerHtml"><a href="#document-write，innerHtml" class="headerlink" title="document.write，innerHtml"></a>document.write，innerHtml</h3><p>document.write只能重绘整个页面<br>innerHTML可以重绘页面的一部分</p>
+<h3 id="offsetWidth"><a href="#offsetWidth" class="headerlink" title="offsetWidth"></a>offsetWidth</h3><p><strong>clientHeight</strong>和<strong>clientWidth</strong>用于描述元素内尺寸，是指 元素内容+内边距 大小，不包括边框（IE下实际包括）、外边距、滚动条部分<br><strong>offsetHeight</strong>和<strong>offsetWidth</strong>用于描述元素外尺寸，是指 元素内容+内边距+边框，不包括外边距和滚动条部分<br><strong>clientTop</strong>和<strong>clientLeft</strong>返回内边距的边缘和边框的外边缘之间的水平和垂直距离，也就是左，上边框宽度<br><strong>offsetTop</strong>和<strong>offsetLeft</strong>表示该元素的左上角（边框外边缘）与已定位的父容器（offsetParent对象）左上角的距离<br><strong>offsetParent</strong>对象是指元素最近的定位（relative,absolute）祖先元素，递归上溯，如果没有祖先元素是定位的话，会返回null<br><strong>scrollWidth</strong>和<strong>scrollHeight</strong>是元素的内容区域加上内边距加上溢出尺寸，当内容正好和内容区域匹配没有溢出时，这些属性与clientWidth和clientHeight相等<br><strong>scrollLeft</strong>和<strong>scrollTop</strong>是指元素滚动条位置，它们是可写的</p>
 </li>
 </ul>
-</li>
-<li><a href="http://javascript.ruanyifeng.com/bom/ajax.html" target="_blank" rel="external">Ajax</a><br>  (1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.<br>  (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.<br>  (3)设置响应HTTP请求状态变化的函数.<br>  (4)发送HTTP请求.<br>  (5)获取异步调用返回的数据.<br>  (6)使用JavaScript和DOM实现局部刷新.</li>
-<li><a href="http://cherishsdan.github.io/2016/05/28/Cors/" target="_blank" rel="external">跨域</a></li>
-<li><a href="http://cherishsdan.github.io/2016/06/10/moudle/" target="_blank" rel="external">模块化开发</a></li>
-<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript6</a></li>
-<li>document.write，innerHtml<br>  document.write只能重绘整个页面<br>  innerHTML可以重绘页面的一部分</li>
-<li><p>offsetWidth</p>
-<blockquote>
-<p><strong>clientHeight</strong>和<strong>clientWidth</strong>用于描述元素内尺寸，是指 元素内容+内边距 大小，不包括边框（IE下实际包括）、外边距、滚动条部分<br><strong>offsetHeight</strong>和<strong>offsetWidth</strong>用于描述元素外尺寸，是指 元素内容+内边距+边框，不包括外边距和滚动条部分<br><strong>clientTop</strong>和<strong>clientLeft</strong>返回内边距的边缘和边框的外边缘之间的水平和垂直距离，也就是左，上边框宽度<br><strong>offsetTop</strong>和<strong>offsetLeft</strong>表示该元素的左上角（边框外边缘）与已定位的父容器（offsetParent对象）左上角的距离<br><strong>offsetParent</strong>对象是指元素最近的定位（relative,absolute）祖先元素，递归上溯，如果没有祖先元素是定位的话，会返回null<br>  ＞<strong>scrollWidth</strong>和<strong>scrollHeight</strong>是元素的内容区域加上内边距加上溢出尺寸，当内容正好和内容区域匹配没有溢出时，这些属性与clientWidth和clientHeight相等<br>  ＞<strong>scrollLeft</strong>和<strong>scrollTop</strong>是指元素滚动条位置，它们是可写的</p>
-</blockquote>
-</li>
-<li><p><a href="http://www.w3cplus.com/javascript/javascript-hoisting-in-details.html" target="_blank" rel="external">作用域与变量声明提升</a></p>
-</li>
-<li><p>getComputedStyle<br>  <strong>getComputedStyle</strong>是一个可以获取当前元素所有最终使用的CSS属性值。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，<strong>只读</strong>。<br>  vs element.style<br>  getComputedStyle方法是只读的，只能获取样式，不能设置；而<strong>element.style</strong>能读能写<br>  getComputedStyle方法获取的是最终应用在元素上的所有CSS属性对象,element.style只能获取元素style属性中的CSS样式<br>  element.currentStyle返回的是元素当前应用的最终CSS属性值（包括外链CSS文件，页面中嵌入的<style>属性等,从作用上将，getComputedStyle方法与currentStyle属性走的很近，形式上则style与currentStyle走的近<br>  <code>(element.currentStyle? element.currentStyle : window.getComputedStyle(element, null)).height</code></p>
-</li>
-<li><p>高性能的Javascript</p>
-</li>
-<li>cookie&amp;&amp;session<ul>
+<h3 id="作用域与变量声明提升"><a href="#作用域与变量声明提升" class="headerlink" title="作用域与变量声明提升"></a><a href="http://www.w3cplus.com/javascript/javascript-hoisting-in-details.html" target="_blank" rel="external">作用域与变量声明提升</a></h3><h3 id="getComputedStyle"><a href="#getComputedStyle" class="headerlink" title="getComputedStyle"></a>getComputedStyle</h3><p>  <strong>getComputedStyle</strong>是一个可以获取当前元素所有最终使用的CSS属性值。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，<strong>只读</strong>。<br>  vs element.style<br>  getComputedStyle方法是只读的，只能获取样式，不能设置；而<strong>element.style</strong>能读能写<br>  getComputedStyle方法获取的是最终应用在元素上的所有CSS属性对象,element.style只能获取元素style属性中的CSS样式<br>  element.currentStyle返回的是元素当前应用的最终CSS属性值（包括外链CSS文件，页面中嵌入的<style>属性等,从作用上将，getComputedStyle方法与currentStyle属性走的很近，形式上则style与currentStyle走的近<br>    <code>(element.currentStyle? element.currentStyle : window.getComputedStyle(element, null)).height</code></p>
+<h3 id="高性能的Javascript"><a href="#高性能的Javascript" class="headerlink" title="高性能的Javascript"></a>高性能的Javascript</h3><h3 id="cookie-amp-amp-session"><a href="#cookie-amp-amp-session" class="headerlink" title="cookie&amp;&amp;session"></a>cookie&amp;&amp;session</h3><ul>
 <li>cookie<br>服务器向客户端发送 cookie，通常使用 HTTP 协议规定的 set-cookie 头操作( cookie 的格式为 name = value)<br>浏览器将 cookie 保存<br>每次请求浏览器都会将 cookie 发向服务器<br>其他可选的 cookie 参数:<br>path:cookie 影响到的路径，匹配该路径才发送这个 cookie<br>secure:当 secure 值为 true 时，cookie 在 HTTP 中是无效，在 HTTPS 中才有效<br>expires 和 maxAge:告诉浏览器这个 cookie 什么时候过期，expires 是 UTC 格式时间，maxAge 是 cookie 相对时间。当不设置这两个选项时，会产生 session cookie，session cookie 是 transient 的，当用户关闭浏览器时，就被清除。一般用来保存 session 的 session_id。<br>httpOnly：浏览器不允许脚本操作 document.cookie 去更改 cookie。一般情况下都应该设置这个为 true，这样可以避免被 xss 攻击拿到 cookie。</li>
 <li>session<br>session 中的数据是保留在服务器端的,通过一个 session_id(express中是connect.sid)来进行。session_id 通常是存放在客户端的 cookie 中.当请求到来时，服务端检查 cookie 中保存的 session_id 并通过这个 session_id 与服务器端的 session data 关联起来，进行数据的保存和修改。<br>session 可以存放在 1）内存、2）cookie本身、3）redis 或 memcached 等缓存中，或者4）数据库中</li>
 </ul>
-</li>
+<hr>
+<ul>
 <li>内存泄漏</li>
 <li>jquery实现原理</li>
 <li>jQuery.fn的init方法返回的this指的是什么对象</li>
@@ -532,7 +509,7 @@ action（动作）实质上是包含 type 属性的普通对象，
 <li>fire函数、自定义事件</li>
 <li>jQuery 是通过哪个方法和 Sizzle 选择器结合的</li>
 <li>jQuery性能的优化</li>
-<li>Jquery与jQuery UI </li>
+<li>Jquery与jQuery UI</li>
 <li>jquery 中如何将数组转化为json字符串，然后再转化回来</li>
 <li>jQuery和Zepto</li>
 <li>Zepto的点透问题</li>
@@ -547,7 +524,7 @@ action（动作）实质上是包含 type 属性的普通对象，
 <li>检测浏览器版本</li>
 <li><a href="https://segmentfault.com/a/1190000004623125">CSRF XSS</a></li>
 </ul>
-</style></p></li></ul>]]></content>
+</style></p>]]></content>
     </entry>
     
     <entry>
@@ -1434,23 +1411,21 @@ a();</code><br>`</p>
       <title><![CDATA[position]]></title>
       <url>http://yoursite.com/2016/05/20/position/</url>
       <content type="html"><![CDATA[<p>元素在页面中的布局遵守一套文档流的方式，默认的定位属性值为static。它其实是未被设置定位的。<br>元素如果被定位了，那么它的top,left,bottom,right值就会生效，能设置定位的属性是relative,absolute和fixed。<br>需要注意的另一点是被定位的元素层次(z-index)会得到提高。<br><a id="more"></a></p>
-<ol>
-<li>relative<br> 自己通过定位跑开了还用着原来的位置，不会给周围的诸如文本流之类的元素<br> 设置了相对定位之后，通过修改top,left,bottom,right值，元素会在自身文档流所在位置上被移动，其他的元素则不会调整位置来弥补它偏离后剩下的空隙。<ul>
+<h3 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h3><p>自己通过定位跑开了还用着原来的位置，不会给周围的诸如文本流之类的元素<br>设置了相对定位之后，通过修改top,left,bottom,right值，元素会在自身文档流所在位置上被移动，其他的元素则不会调整位置来弥补它偏离后剩下的空隙。</p>
+<ul>
 <li>不影响元素本身的特性</li>
 <li>不使元素脱离文档流</li>
 </ul>
-</li>
-<li>absolute<br> 设置了绝对定位之后，元素脱离文档流，其他的元素会调整位置来弥补它偏离后剩下的空隙。元素偏移是相对于是它最近的设置了定位属性（position值不为static）的元素。<ul>
+<h3 id="absolute"><a href="#absolute" class="headerlink" title="absolute"></a>absolute</h3><p>设置了绝对定位之后，元素脱离文档流，其他的元素会调整位置来弥补它偏离后剩下的空隙。元素偏移是相对于是它最近的设置了定位属性（position值不为static）的元素。</p>
+<ul>
 <li>使元素完全脱离文档流</li>
 <li>使内嵌元素支持宽高</li>
 <li>块属性标签内容撑开宽度</li>
 <li>如果有定位父级则相当于定位父级发生偏移，没有定位父级则相当于整个文档发生偏移</li>
 </ul>
-</li>
-<li>fixed(固定定位)<br> 设置了固定定位之后，元素相对的偏移的参考是可视窗口，即使页面滚动，元素仍然会在固定位置</li>
-<li>规定从父元素继承 position 属性的值。</li>
-<li>position: sticky<br> 是一个新的css3属性，它的表现类似position:relative和position:fixed的合体，在目标区域在屏幕中可见时，它的行为就像position:relative; 而当页面滚动超出目标区域时，它的表现就像position:fixed，它会固定在目标位置。</li>
-</ol>
+<h3 id="fixed-固定定位"><a href="#fixed-固定定位" class="headerlink" title="fixed(固定定位)"></a>fixed(固定定位)</h3><p>设置了固定定位之后，元素相对的偏移的参考是可视窗口，即使页面滚动，元素仍然会在固定位置</p>
+<h3 id="static-默认值"><a href="#static-默认值" class="headerlink" title="static(默认值)"></a>static(默认值)</h3><p>没有定位，元素出现在正常的流中</p>
+<h3 id="position-sticky"><a href="#position-sticky" class="headerlink" title="position: sticky"></a>position: sticky</h3><p>是一个新的css3属性，它的表现类似position:relative和position:fixed的合体，在目标区域在屏幕中可见时，它的行为就像position:relative; 而当页面滚动超出目标区域时，它的表现就像position:fixed，它会固定在目标位置。</p>
 ]]></content>
     </entry>
     
@@ -1610,15 +1585,14 @@ a();</code><br>`</p>
     <entry>
       <title><![CDATA[关于 BFC]]></title>
       <url>http://yoursite.com/2016/05/08/BFC/</url>
-      <content type="html"><![CDATA[<h1 id="关于-BFC"><a href="#关于-BFC" class="headerlink" title="关于 BFC"></a>关于 BFC</h1><p>BFC(Block formattingcontext)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干.(简单点说，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用)</p>
+      <content type="html"><![CDATA[<p>BFC(Block formattingcontext)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干.(简单点说，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用)</p>
 <p>W3C的定义`</p>
 <blockquote>
 <p>浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为“visiable”的块级盒子，都会为他们的内容创建新的BFC（块级格式上下文）。</p>
 </blockquote>
 <a id="more"></a>
 <p>BFC是一个独立的布局环境，我们可以理解为一个箱子（实际上是看不见摸不着的），箱子里面物品的摆放是不受外界的影响的。转换为BFC的理解则是：BFC中的元素的布局是不受外界的影响（我们往往利用这个特性来消除浮动元素对其非浮动的兄弟元素和其子元素带来的影响。）并且在一个BFC中，块盒与行盒（行盒由一行中所有的内联元素所组成）都会垂直的沿着其父元素的边框排列。</p>
-<p> <strong>BFC布局规则</strong></p>
-<ol>
+<h3 id="BFC布局规则"><a href="#BFC布局规则" class="headerlink" title="BFC布局规则"></a>BFC布局规则</h3><ol>
 <li>内部的Box会在垂直方向，一个接一个地放置。</li>
 <li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
 <li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
@@ -1626,31 +1600,36 @@ a();</code><br>`</p>
 <li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
 <li>计算BFC的高度时，浮动元素也参与计算</li>
 </ol>
-<p><strong>产生BFC的元素</strong></p>
-<ol>
+<h3 id="产生BFC的元素"><a href="#产生BFC的元素" class="headerlink" title="产生BFC的元素"></a>产生BFC的元素</h3><ol>
 <li>根元素</li>
 <li>float属性不为none</li>
 <li>overflow不为visible</li>
-<li>display为inline-block, table-cell, table-caption, flex, inline-flexposition为absolute或fixed</li>
+<li>display为inline-block, table-cell, table-caption, flex, inline-flex,position为absolute或fixed</li>
 <li>position为absolute或fixed</li>
 </ol>
 <hr>
-<p><strong>BFC作用</strong></p>
-<p> <strong>1. 自适应两栏布局</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    body &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    .aside &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 150px;</span><br><span class="line">        float: left;</span><br><span class="line">        background: #f66;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    .main &#123;</span><br><span class="line">        height: 200px;</span><br><span class="line">        background: #fcc;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class="aside"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class="main"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="http://p1.qhimg.com/d/inn/4055c62a/4dca44a927d4c1ffc30e3ae5f53a0b79.png" alt="此处输入图片的描述"><br>根据BFC布局规则第3条：</p>
+<h3 id="BFC作用"><a href="#BFC作用" class="headerlink" title="BFC作用"></a>BFC作用</h3><ol>
+<li><p>自适应两栏布局</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  &lt;style&gt;</span><br><span class="line">    body &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        position: relative;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .aside &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 150px;</span><br><span class="line">        float: left;</span><br><span class="line">        background: #f66;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .main &#123;</span><br><span class="line">        height: 200px;</span><br><span class="line">        background: #fcc;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class="aside"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div class="main"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://p1.qhimg.com/d/inn/4055c62a/4dca44a927d4c1ffc30e3ae5f53a0b79.png" alt="此处输入图片的描述"></p>
+<p>  根据BFC布局规则第3条：</p>
 <blockquote>
 <p>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此</p>
 </blockquote>
-<p>　　因此，虽然存在浮动的元素aslide，但main的左边依然会与包含块的左边相接触。<br>　根据BFC布局规则第四条：</p>
+<p>  因此，虽然存在浮动的元素aslide，但main的左边依然会与包含块的左边相接触。<br>　根据BFC布局规则第四条：</p>
 <blockquote>
 <p> BFC的区域不会与float box重叠。</p>
 </blockquote>
-<p>　　我们可以通过通过触发main生成BFC， 来实现自适应两栏布局。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>　　当触发main生成BFC后，这个新的BFC不会与浮动的aside重叠。因此会根据包含块的宽度，和aside的宽度，自动变窄。效果如下：<br><img src="http://p6.qhimg.com/t01077886a9706cb26b.png" alt="此处输入图片的描述"></p>
+<p>  我们可以通过通过触发main生成BFC， 来实现自适应两栏布局。</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  当触发main生成BFC后，这个新的BFC不会与浮动的aside重叠。因此会根据包含块的宽度，和aside的宽度，自动变窄。效果如下：<br>  <img src="http://p6.qhimg.com/t01077886a9706cb26b.png" alt="此处输入图片的描述"></p>
+<ol>
+<li>防止垂直 margin 重叠<br><a href="http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html" target="_blank" rel="external">more</a></li>
+</ol>
 <hr>
-<p> <strong>2. 防止垂直 margin 重叠</strong></p>
-<h2 id="more"><a href="#more" class="headerlink" title="more"></a><a href="http://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html" target="_blank" rel="external">more</a></h2><p><strong>BFC包含浮动</strong></p>
+<p><strong>BFC包含浮动</strong></p>
 <p>  浮动元素是会脱离文档流的(绝对定位元素会脱离文档流)。如果一个没有高度或者<strong>height</strong>是<strong>auto</strong>的容器的子元素是浮动元素，则该容器的高度是不会被撑开的。我们通常会利用伪元素(<strong>:after</strong>或者<strong>:before</strong>)来解决这个问题。BFC能包含浮动，也能解决容器高度不会被撑开的问题。<br>  <img src="http://segmentfault.com/img/bVm2qT" alt="此处输入图片的描述"><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="container"&gt;</span><br><span class="line">    &lt;div&gt;Sibling&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;Sibling&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">  background-color: green;</span><br><span class="line">&#125;</span><br><span class="line">.container div &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  background-color: lightgreen;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>  在上面这个例子中，容器没有任何高度，并且它包不住浮动子元素，容器的高度并不会被撑开。为解决这个问题，可以在容器中创建一个BFC：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden; <span class="comment">/* creates block formatting context */</span></span><br><span class="line">    <span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">background-color</span>: lightgreen;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>  现在容器可以包住浮动子元素，并且其高度会扩展至包住其子元素，在这个新的BFC中浮动元素又回归到页面的常规流之中了。</p>
@@ -1781,17 +1760,17 @@ a();</code><br>`</p>
       <title><![CDATA[float]]></title>
       <url>http://yoursite.com/2016/05/01/float/</url>
       <content type="html"><![CDATA[<p>元素设置了浮动，会脱离文档流，按照指定的一个方向移动直到碰到父级的边界或另一个浮动元素</p>
-<p>浮动元素特点：</p>
-<ul>
+<h3 id="浮动元素特点："><a href="#浮动元素特点：" class="headerlink" title="浮动元素特点："></a>浮动元素特点：</h3><ul>
 <li>块在一排显示</li>
 <li>内联支持宽高</li>
 <li>默认内容撑开宽度</li>
 <li>脱离文档流（飘起来）</li>
 <li>提升层级半级</li>
 </ul>
-<p>画一个元素的横切面，大概是这个样子<br><img src="http://o6qp6st9j.bkt.clouddn.com/image/blog/cssfloat.PNG" alt="1"><br>所以下一个元素挤进来只有元素本身进来，元素的内容就被挤出去了</p>
-<p>清浮动：</p>
-<ul>
+<p>画一个元素的横切面，大概是这个样子</p>
+<p><img src="http://o6qp6st9j.bkt.clouddn.com/image/blog/cssfloat.PNG" alt="1"></p>
+<p>所以下一个元素挤进来只有元素本身进来，元素的内容就被挤出去了</p>
+<h3 id="清浮动："><a href="#清浮动：" class="headerlink" title="清浮动："></a>清浮动：</h3><ul>
 <li>给父级也加浮动</li>
 <li>空标签清浮动<code>&lt;br clear=”all” /&gt;</code></li>
 <li>父元素设置 overflow:hidden（如果你还要兼顾IE6的话，加上*zoom:1;来触发hasLayout）</li>
@@ -1808,14 +1787,9 @@ a();</code><br>`</p>
       <content type="html"><![CDATA[<blockquote>
 <p>遇到的一些浏览器兼容问题</p>
 </blockquote>
-<ul>
-<li><p>IE 与其他浏览器不一样的特性</p>
-  <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">IE支持currentStyle，FIrefox使用getComputStyle</span><br><span class="line"></span><br><span class="line">IE 使用innerText，Firefox使用textContent</span><br><span class="line"></span><br><span class="line">滤镜方面：IE:filter:alpha(opacity= num)；Firefox：-moz-opacity:num</span><br><span class="line"></span><br><span class="line">事件方面：IE：attachEvent：火狐是addEventListener</span><br><span class="line"></span><br><span class="line">鼠标位置：IE是event.clientX；火狐是event.pageX</span><br><span class="line"></span><br><span class="line">IE使用event.srcElement；Firefox使用event.target</span><br><span class="line"></span><br><span class="line">IE中消除list的原点仅需margin:0即可达到最终效果；FIrefox需要设置margin:0;padding:0以及list-style:none</span><br><span class="line"></span><br><span class="line">CSS圆角：ie7以下不支持圆角</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<h3 id="IE-与其他浏览器不一样的特性"><a href="#IE-与其他浏览器不一样的特性" class="headerlink" title="IE 与其他浏览器不一样的特性"></a>IE 与其他浏览器不一样的特性</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">IE支持currentStyle，FIrefox使用getComputStyle</span><br><span class="line"></span><br><span class="line">IE 使用innerText，Firefox使用textContent</span><br><span class="line"></span><br><span class="line">滤镜方面：IE:filter:alpha(opacity= num)；Firefox：-moz-opacity:num</span><br><span class="line"></span><br><span class="line">事件方面：IE：attachEvent：火狐是addEventListener</span><br><span class="line"></span><br><span class="line">鼠标位置：IE是event.clientX；火狐是event.pageX</span><br><span class="line"></span><br><span class="line">IE使用event.srcElement；Firefox使用event.target</span><br><span class="line"></span><br><span class="line">IE中消除list的原点仅需margin:0即可达到最终效果；FIrefox需要设置margin:0;padding:0以及list-style:none</span><br><span class="line"></span><br><span class="line">CSS圆角：ie7以下不支持圆角</span><br></pre></td></tr></table></figure>
 <hr>
-<p><strong>JS</strong></p>
-<ul>
+<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><ul>
 <li><p>NodeList对象转换为数组</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">convertToArray</span>(<span class="params">nodes</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> array = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">    array = <span class="built_in">Array</span>.prototype.splice.call(nodes,<span class="number">0</span>);<span class="comment">//IE8及更早将NodeList对象实现为一个com对象，所以会报错</span></span><br><span class="line">    &#125;<span class="keyword">catch</span>(ex)&#123;</span><br><span class="line">        array = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,len = nodes.length;i&lt;len;i++)&#123;</span><br><span class="line">        array.push(nodes[i]);</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -1839,15 +1813,16 @@ a();</code><br>`</p>
 <li>元素遍历，对于元素间的空格，IE9及之前不会返回文本节点，而其他都会返回文本节点</li>
 <li>innerHTML属性返回的值</li>
 <li>contentDocument</li>
-<li><p>页面坐标的位置</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</span><br><span class="line">    EventUtil.addHandler(div,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        event = EventUtil.getEvent(event);</span><br><span class="line">        <span class="keyword">var</span> pageX = event.pageX,</span><br><span class="line">            pageY = event.pageY;</span><br><span class="line">        <span class="keyword">if</span>(pageX == undefinded)&#123;</span><br><span class="line">            pageX = event.clientX + (<span class="built_in">document</span>.body.scrolLeft || <span class="built_in">document</span>.documentElement.scrolLeft;);</span><br><span class="line"><span class="comment">//IE7之前的版本：document.body</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pageY == undefinded)&#123;</span><br><span class="line">            pageY = event.clientY + (<span class="built_in">document</span>.body.scrolTop || <span class="built_in">document</span>.documentElement.scrolTop;);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-</li>
+<li>页面坐标的位置</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</span><br><span class="line">    EventUtil.addHandler(div,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        event = EventUtil.getEvent(event);</span><br><span class="line">        <span class="keyword">var</span> pageX = event.pageX,</span><br><span class="line">            pageY = event.pageY;</span><br><span class="line">        <span class="keyword">if</span>(pageX == undefinded)&#123;</span><br><span class="line">            pageX = event.clientX + (<span class="built_in">document</span>.body.scrolLeft || <span class="built_in">document</span>.documentElement.scrolLeft;);</span><br><span class="line"><span class="comment">//IE7之前的版本：document.body</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pageY == undefinded)&#123;</span><br><span class="line">            pageY = event.clientY + (<span class="built_in">document</span>.body.scrolTop || <span class="built_in">document</span>.documentElement.scrolTop;);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<ul>
 <li><p>事件</p>
 <ul>
 <li>标准事件监听elem.addEventListener(type, handler, capture)/elem.removeEventListener(type, handler, capture)：handler接收保存事件信息的event对象作为参数，event.target为触发事件的对象，handler调用上下文this为绑定监听器的对象，event.preventDefault()取消事件默认行为，event.stopPropagation()/event.stopImmediatePropagation()取消事件传递</li>
-<li>老版本IE事件监听elem.attachEvent(‘on’+type, handler)/elem.detachEvent(‘on’+type, handler)：handler不接收event作为参数，事件信息保存在window.event中，触发事件的对象为event.srcElement，handler执行上下文this为window使用闭包中调用handler.call(elem, event)可模仿标准模型，然后返回闭包，保证了监听器的移除。event.returnValue为false时取消事件默认行为，event.cancleBubble为true时取消事件传播<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> EventUtil = &#123;</span><br><span class="line">    addHandler:<span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(element.addEventListener())&#123;</span><br><span class="line">            element.addEventListener(type, handler,<span class="literal">false</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent)&#123;</span><br><span class="line">            element.attachEvent(<span class="string">"on"</span>+type,handler);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            element[<span class="string">"on"</span>+type] = handler;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    getEvent:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> event?event||<span class="built_in">window</span>.event;</span><br><span class="line">    &#125;,</span><br><span class="line">    getTarget:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">    &#125;,</span><br><span class="line">    preventDefault: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.preventDefault()) &#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            event.returnValue = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    removeHandler:<span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(element.removeEventListener())&#123;</span><br><span class="line">            element.removeEventListener(type, handler,<span class="literal">false</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.detachEvent)&#123;</span><br><span class="line">            element.detachEvent(<span class="string">"on"</span>+type,handler);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            element[<span class="string">"on"</span>+type] = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    stopPropagation:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.stopPropagation()) &#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>老版本IE事件监听elem.attachEvent(‘on’+type, handler)/elem.detachEvent(‘on’+type, handler)：handler不接收event作为参数，事件信息保存在window.event中，触发事件的对象为event.srcElement，handler执行上下文this为window使用闭包中调用handler.call(elem, event)可模仿标准模型，然后返回闭包，保证了监听器的移除。event.returnValue为false时取消事件默认行为，event.cancleBubble为true时取消事件传播</li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> EventUtil = &#123;</span><br><span class="line">    addHandler:<span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(element.addEventListener())&#123;</span><br><span class="line">            element.addEventListener(type, handler,<span class="literal">false</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent)&#123;</span><br><span class="line">            element.attachEvent(<span class="string">"on"</span>+type,handler);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            element[<span class="string">"on"</span>+type] = handler;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    getEvent:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> event?event||<span class="built_in">window</span>.event;</span><br><span class="line">    &#125;,</span><br><span class="line">    getTarget:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> event.target || event.srcElement;</span><br><span class="line">    &#125;,</span><br><span class="line">    preventDefault: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.preventDefault()) &#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            event.returnValue = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    removeHandler:<span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(element.removeEventListener())&#123;</span><br><span class="line">            element.removeEventListener(type, handler,<span class="literal">false</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.detachEvent)&#123;</span><br><span class="line">            element.detachEvent(<span class="string">"on"</span>+type,handler);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            element[<span class="string">"on"</span>+type] = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    stopPropagation:<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.stopPropagation()) &#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -1860,8 +1835,7 @@ a();</code><br>`</p>
 </li>
 </ul>
 <hr>
-<p><strong>css</strong></p>
-<ul>
+<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><ul>
 <li>IE6的双倍边距BUG 块元素有浮动和横向的margin，横向margin会被放大2倍<br>  display: inline</li>
 <li>IE6下图片下方有空隙产生<br>  改变html的排版,或者设置img 为display:block，<br>或者设置vertical-align 属性为vertical-align:top bottom middle text-bottom都可以解决</li>
 <li><p>3像素文本偏移bug<br>  当文本与一个浮动元素相邻时，例如：将一个元素向左浮动，并且不希望相邻段落中的文本围绕浮动元素，你也许会在段落上应用一个左外边距，其宽度等于浮动元素的宽度<br>  解决：</p>

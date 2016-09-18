@@ -104,29 +104,26 @@
 
 <meta name="description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
 
-javascript
-基本数据类型   Undefined、Null、Boolean、Number、String、Symbol(ES6)
-内置对象  Object 是 JavaScript 中所有对象的父对象
-  数据封装类对象：Object、Array、Boolean、Number 和 String  其他对象：Fun">
+基本数据类型Undefined、Null、Boolean、Number、String、Symbol(ES6)
+内置对象Object 是 JavaScript 中所有对象的父对象
+数据封装类对象：Object、Array、Boolean、Number 和 String其他对象：Function、Arguments、Math">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端知识杂记——javascript">
 <meta property="og:url" content="http://yoursite.com/2016/07/14/note2/index.html">
 <meta property="og:site_name" content="JYsdan">
 <meta property="og:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
 
-javascript
-基本数据类型   Undefined、Null、Boolean、Number、String、Symbol(ES6)
-内置对象  Object 是 JavaScript 中所有对象的父对象
-  数据封装类对象：Object、Array、Boolean、Number 和 String  其他对象：Fun">
-<meta property="og:updated_time" content="2016-09-17T05:33:08.465Z">
+基本数据类型Undefined、Null、Boolean、Number、String、Symbol(ES6)
+内置对象Object 是 JavaScript 中所有对象的父对象
+数据封装类对象：Object、Array、Boolean、Number 和 String其他对象：Function、Arguments、Math">
+<meta property="og:updated_time" content="2016-09-18T15:14:39.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端知识杂记——javascript">
 <meta name="twitter:description" content="对前端开发知识的一些梳理,主要参考前端开发面试题及对它的补充，持续完善…
 
-javascript
-基本数据类型   Undefined、Null、Boolean、Number、String、Symbol(ES6)
-内置对象  Object 是 JavaScript 中所有对象的父对象
-  数据封装类对象：Object、Array、Boolean、Number 和 String  其他对象：Fun">
+基本数据类型Undefined、Null、Boolean、Number、String、Symbol(ES6)
+内置对象Object 是 JavaScript 中所有对象的父对象
+数据封装类对象：Object、Array、Boolean、Number 和 String其他对象：Function、Arguments、Math">
 
 
 
@@ -379,80 +376,64 @@ javascript
         <blockquote>
 <p>对前端开发知识的一些梳理,主要参考<a href="https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions/Questions-and-Answers/README.md" target="_blank" rel="external">前端开发面试题</a>及对它的补充，持续完善…</p>
 </blockquote>
-<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><ul>
-<li>基本数据类型<br>   Undefined、Null、Boolean、Number、String、Symbol(ES6)</li>
-<li><p>内置对象<br>  Object 是 JavaScript 中所有对象的父对象</p>
-<p>  数据封装类对象：Object、Array、Boolean、Number 和 String<br>  其他对象：Function、Arguments、Math、Date、RegExp、Error</p>
-<a id="more"></a></li>
-<li><p>JavaScript有几种类型的值<br>  栈：原始数据类型（Undefined，Null，Boolean，Number、String）<br>堆：引用数据类型（对象、数组和函数）</p>
-<p>  两种类型的区别是：存储位置不同；<br>  原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；<br>引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其<br>在栈中的地址，取得地址后从堆中获得实体</p>
-</li>
-<li><a href="http://cherishsdan.github.io/2016/07/17/super/" target="_blank" rel="external">继承</a></li>
-<li><a href="http://blog.rainy.im/2015/07/20/prototype-chain-in-js/" target="_blank" rel="external">原型</a></li>
-<li>创建对象<ul>
-<li>对象字面量的方式 </li>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>Undefined、Null、Boolean、Number、String、Symbol(ES6)</p>
+<h3 id="内置对象"><a href="#内置对象" class="headerlink" title="内置对象"></a>内置对象</h3><p>Object 是 JavaScript 中所有对象的父对象</p>
+<p>数据封装类对象：Object、Array、Boolean、Number 和 String<br>其他对象：Function、Arguments、Math、Date、RegExp、Error<br><a id="more"></a></p>
+<h3 id="JavaScript有几种类型的值"><a href="#JavaScript有几种类型的值" class="headerlink" title="JavaScript有几种类型的值"></a>JavaScript有几种类型的值</h3><p>栈：原始数据类型（Undefined，Null，Boolean，Number、String）<br>堆：引用数据类型（对象、数组和函数）</p>
+<p>两种类型的区别是：存储位置不同；<br>原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；<br>引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其<br>在栈中的地址，取得地址后从堆中获得实体</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a><a href="http://cherishsdan.github.io/2016/07/17/super/" target="_blank" rel="external">继承</a></h3><h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a><a href="http://blog.rainy.im/2015/07/20/prototype-chain-in-js/" target="_blank" rel="external">原型</a></h3><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ul>
+<li>对象字面量的方式</li>
 <li>工厂函数</li>
 <li>原型链</li>
 </ul>
-</li>
-<li><a href="http://blog.rainy.im/2015/07/04/scope-chain-and-prototype-chain-in-js/" target="_blank" rel="external">作用域链</a></li>
-<li>This对象：引用的是函数据以执行的环境对象<ul>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a><a href="http://blog.rainy.im/2015/07/04/scope-chain-and-prototype-chain-in-js/" target="_blank" rel="external">作用域链</a></h3><h3 id="This对象：引用的是函数据以执行的环境对象"><a href="#This对象：引用的是函数据以执行的环境对象" class="headerlink" title="This对象：引用的是函数据以执行的环境对象"></a>This对象：引用的是函数据以执行的环境对象</h3><ul>
 <li>全局范围内:指向全局对象</li>
 <li>函数调用:<code>foo()</code> 指向全局对象</li>
 <li>方法调用:<code>test.foo();</code>this 指向 test 对象。</li>
 <li>调用构造函数:this 指向新创建的对象</li>
 <li>显式的设置 this:apply,call</li>
 </ul>
-</li>
-<li><p>null，undefined<br>  null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。<br>  当声明的变量还未被初始化时，变量的默认值为undefined。 null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</p>
-<p>  undefined表示”缺少值”<br>  （1）变量被声明了，但没有赋值时，就等于undefined。<br>  （2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。<br>  （3）对象没有赋值的属性，该属性的值为undefined。<br>  （4）函数没有返回值时，默认返回undefined。<br>  null表示”没有对象”，即该处不应该有值<br>  （1） 作为函数的参数，表示该函数的参数不是对象。<br>  （2） 作为对象原型链的终点。</p>
-</li>
-<li>attribute和property<br>  attribute是dom元素在文档中作为html标签拥有的属性；<br>  property就是dom元素在js中作为对象拥有的属性。<br>  对于html的标准属性来说，attribute和property是同步的，是会自动更新的，<br>  但是对于自定义的属性来说，他们是不同步的，</li>
-<li>window，document<ul>
-<li>DOM,文档对象模型,针对 HTML 和 XML 提供的一个API,以编程的方法操作HTML 的内容</li>
-<li>document,是整个 DOM 树的根节点，是window对象的一个属性。这个 document 包含了标题（document.title）、URL（document.URL）等属性，可以直接在 JS 中访问到,在一个浏览器窗口中可能有多个 document，例如，通过 iframe 加载的页面，每一个都是一个 document。</li>
-<li>BOM 浏览器对象模型,为了操作浏览器出现的 API。</li>
-<li>window 是 BOM 的一个对象,通过这个对象可以获取窗口位置、确定窗口大小、弹出对话框等等</li>
-</ul>
-</li>
-<li><a href="http://www.cnblogs.com/hustskyking/p/problem-javascript-event.html" target="_blank" rel="external">事件机制</a></li>
-<li><p>use strict<br>  use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,</p>
+<h3 id="null，undefined"><a href="#null，undefined" class="headerlink" title="null，undefined"></a>null，undefined</h3><p>  null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。<br>  当声明的变量还未被初始化时，变量的默认值为undefined。 null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</p>
+<p>  undefined表示”缺少值”<br>  （1）变量被声明了，但没有赋值时，就等于undefined。<br>  （2) 调用函数时，应该提供的参数没有提供，该参数等于undefined。<br>  （3）对象没有赋值的属性，该属性的值为undefined。<br>  （4）函数没有返回值时，默认返回undefined。</p>
+<p>  null表示”没有对象”，即该处不应该有值<br>  （1） 作为函数的参数，表示该函数的参数不是对象。<br>  （2） 作为对象原型链的终点。</p>
+<h3 id="attribute和property"><a href="#attribute和property" class="headerlink" title="attribute和property"></a>attribute和property</h3><pre><code>attribute是dom元素在文档中作为html标签拥有的属性；
+property就是dom元素在js中作为对象拥有的属性。
+对于html的标准属性来说，attribute和property是同步的，是会自动更新的，
+但是对于自定义的属性来说，他们是不同步的，
+</code></pre><h3 id="window，document"><a href="#window，document" class="headerlink" title="window，document"></a>window，document</h3><pre><code>* DOM,文档对象模型,针对 HTML 和 XML 提供的一个API,以编程的方法操作HTML 的内容
+* document,是整个 DOM 树的根节点，是window对象的一个属性。这个 document 包含了标题（document.title）、URL（document.URL）等属性，可以直接在 JS 中访问到,在一个浏览器窗口中可能有多个 document，例如，通过 iframe 加载的页面，每一个都是一个 document。
+* BOM 浏览器对象模型,为了操作浏览器出现的 API。
+* window 是 BOM 的一个对象,通过这个对象可以获取窗口位置、确定窗口大小、弹出对话框等等
+</code></pre><h3 id="事件机制"><a href="#事件机制" class="headerlink" title="事件机制"></a><a href="http://www.cnblogs.com/hustskyking/p/problem-javascript-event.html" target="_blank" rel="external">事件机制</a></h3><h3 id="use-strict"><a href="#use-strict" class="headerlink" title="use strict"></a>use strict</h3><p>  use strict是一种ECMAscript 5 添加的（严格）运行模式,这种模式使得 Javascript 在更严格的条件下运行,</p>
 <p>  使JS编码更加规范化的模式,消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为。<br>  默认支持的糟糕特性都会被禁用，比如不能用with，也不能在意外的情况下给全局变量赋值;<br>  全局变量的显示声明,函数必须声明在顶层，不允许在非函数代码块内声明函数,arguments.callee也不允许使用；<br>  消除代码运行的一些不安全之处，保证代码运行的安全,限制函数中的arguments修改，严格模式下的eval函数的行为和非严格模式的也不相同;</p>
+<h3 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h3><p>  1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。<br>  2、属性和方法被加入到 this 引用的对象中。<br>  3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj  = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Base.prototype;</span><br><span class="line">Base.call(obj);</span><br></pre></td></tr></table></figure></p>
+<h3 id="js延迟加载"><a href="#js延迟加载" class="headerlink" title="js延迟加载"></a>js延迟加载</h3><ul>
+<li><p>使用script标签的defer(HTML4)和async(HTML5)属性</p>
+<p>defer延迟加载脚本,该属性使得浏览器能延迟脚本的执行，等文档完成解析完成后会按照他们在文档出现顺序再去下载解析.</p>
+<p>在DOMContentLoaded事件之前执行完成。也就是说defer属性script就类似于将script放在body的效果.<br>而async属性能够异步的加载和执行脚本，不因为加载脚本而阻塞页面的加载。一旦加载到就会立刻执行。在window的load事件之前执行完成</p>
 </li>
-<li><p>new操作符<br>   1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。<br>   2、属性和方法被加入到 this 引用的对象中。<br>   3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。</p>
-   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj  = &#123;&#125;;</span><br><span class="line">obj.__proto__ = Base.prototype;</span><br><span class="line">Base.call(obj);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>js延迟加载</p>
-<ul>
-<li>使用script标签的defer(HTML4)和async(HTML5)属性<br>  defer延迟加载脚本,该属性使得浏览器能延迟脚本的执行，等文档完成解析完成后会按照他们在文档出现顺序再去下载解析.在DOMContentLoaded事件之前执行完成。也就是说defer属性script就类似于将script放在body的效果.<br>  而async属性能够异步的加载和执行脚本，不因为加载脚本而阻塞页面的加载。一旦加载到就会立刻执行。在window的load事件之前执行完成</li>
-<li><p>动态创建DOM方式<br>  谷歌推荐的代码：</p>
-  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">downloadJSAtOnload</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    element.src = <span class="string">"defer.js"</span>;</span><br><span class="line">    element.async = <span class="literal">true</span>;<span class="comment">//可以再Opera和旧版本的FF中支持异步加载</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(element);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.addEventListener)</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>, downloadJSAtOnload, <span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.attachEvent)</span><br><span class="line">    <span class="built_in">window</span>.attachEvent(<span class="string">"onload"</span>, downloadJSAtOnload);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">window</span>.onload = downloadJSAtOnload;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<li><p>动态创建DOM方式</p>
+<p>谷歌推荐的代码：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">downloadJSAtOnload</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">      element.src = <span class="string">"defer.js"</span>;</span><br><span class="line">      element.async = <span class="literal">true</span>;<span class="comment">//可以再Opera和旧版本的FF中支持异步加载</span></span><br><span class="line">      <span class="built_in">document</span>.body.appendChild(element);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">window</span>.addEventListener)</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(<span class="string">"load"</span>, downloadJSAtOnload, <span class="literal">false</span>);</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.attachEvent)</span><br><span class="line">      <span class="built_in">window</span>.attachEvent(<span class="string">"onload"</span>, downloadJSAtOnload);</span><br><span class="line">      <span class="keyword">else</span> <span class="built_in">window</span>.onload = downloadJSAtOnload;</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>通过ajax下载js脚本(无法引用使用CDN方式提供的js文件)</p>
+<h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a><a href="http://javascript.ruanyifeng.com/bom/ajax.html" target="_blank" rel="external">Ajax</a></h3><p>(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.</p>
+<p>(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.</p>
+<p>(3)设置响应HTTP请求状态变化的函数.</p>
+<p>(4)发送HTTP请求.</p>
+<p>(5)获取异步调用返回的数据.</p>
+<p>(6)使用JavaScript和DOM实现局部刷新.</p>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a><a href="http://cherishsdan.github.io/2016/05/28/Cors/" target="_blank" rel="external">跨域</a></h3><h3 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a><a href="http://cherishsdan.github.io/2016/06/10/moudle/" target="_blank" rel="external">模块化开发</a></h3><h3 id="ECMAScript6"><a href="#ECMAScript6" class="headerlink" title="ECMAScript6"></a><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript6</a></h3><h3 id="document-write，innerHtml"><a href="#document-write，innerHtml" class="headerlink" title="document.write，innerHtml"></a>document.write，innerHtml</h3><p>document.write只能重绘整个页面<br>innerHTML可以重绘页面的一部分</p>
+<h3 id="offsetWidth"><a href="#offsetWidth" class="headerlink" title="offsetWidth"></a>offsetWidth</h3><p><strong>clientHeight</strong>和<strong>clientWidth</strong>用于描述元素内尺寸，是指 元素内容+内边距 大小，不包括边框（IE下实际包括）、外边距、滚动条部分<br><strong>offsetHeight</strong>和<strong>offsetWidth</strong>用于描述元素外尺寸，是指 元素内容+内边距+边框，不包括外边距和滚动条部分<br><strong>clientTop</strong>和<strong>clientLeft</strong>返回内边距的边缘和边框的外边缘之间的水平和垂直距离，也就是左，上边框宽度<br><strong>offsetTop</strong>和<strong>offsetLeft</strong>表示该元素的左上角（边框外边缘）与已定位的父容器（offsetParent对象）左上角的距离<br><strong>offsetParent</strong>对象是指元素最近的定位（relative,absolute）祖先元素，递归上溯，如果没有祖先元素是定位的话，会返回null<br><strong>scrollWidth</strong>和<strong>scrollHeight</strong>是元素的内容区域加上内边距加上溢出尺寸，当内容正好和内容区域匹配没有溢出时，这些属性与clientWidth和clientHeight相等<br><strong>scrollLeft</strong>和<strong>scrollTop</strong>是指元素滚动条位置，它们是可写的</p>
 </li>
 </ul>
-</li>
-<li><a href="http://javascript.ruanyifeng.com/bom/ajax.html" target="_blank" rel="external">Ajax</a><br>  (1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.<br>  (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.<br>  (3)设置响应HTTP请求状态变化的函数.<br>  (4)发送HTTP请求.<br>  (5)获取异步调用返回的数据.<br>  (6)使用JavaScript和DOM实现局部刷新.</li>
-<li><a href="http://cherishsdan.github.io/2016/05/28/Cors/" target="_blank" rel="external">跨域</a></li>
-<li><a href="http://cherishsdan.github.io/2016/06/10/moudle/" target="_blank" rel="external">模块化开发</a></li>
-<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">ECMAScript6</a></li>
-<li>document.write，innerHtml<br>  document.write只能重绘整个页面<br>  innerHTML可以重绘页面的一部分</li>
-<li><p>offsetWidth</p>
-<blockquote>
-<p><strong>clientHeight</strong>和<strong>clientWidth</strong>用于描述元素内尺寸，是指 元素内容+内边距 大小，不包括边框（IE下实际包括）、外边距、滚动条部分<br><strong>offsetHeight</strong>和<strong>offsetWidth</strong>用于描述元素外尺寸，是指 元素内容+内边距+边框，不包括外边距和滚动条部分<br><strong>clientTop</strong>和<strong>clientLeft</strong>返回内边距的边缘和边框的外边缘之间的水平和垂直距离，也就是左，上边框宽度<br><strong>offsetTop</strong>和<strong>offsetLeft</strong>表示该元素的左上角（边框外边缘）与已定位的父容器（offsetParent对象）左上角的距离<br><strong>offsetParent</strong>对象是指元素最近的定位（relative,absolute）祖先元素，递归上溯，如果没有祖先元素是定位的话，会返回null<br>  ＞<strong>scrollWidth</strong>和<strong>scrollHeight</strong>是元素的内容区域加上内边距加上溢出尺寸，当内容正好和内容区域匹配没有溢出时，这些属性与clientWidth和clientHeight相等<br>  ＞<strong>scrollLeft</strong>和<strong>scrollTop</strong>是指元素滚动条位置，它们是可写的</p>
-</blockquote>
-</li>
-<li><p><a href="http://www.w3cplus.com/javascript/javascript-hoisting-in-details.html" target="_blank" rel="external">作用域与变量声明提升</a></p>
-</li>
-<li><p>getComputedStyle<br>  <strong>getComputedStyle</strong>是一个可以获取当前元素所有最终使用的CSS属性值。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，<strong>只读</strong>。<br>  vs element.style<br>  getComputedStyle方法是只读的，只能获取样式，不能设置；而<strong>element.style</strong>能读能写<br>  getComputedStyle方法获取的是最终应用在元素上的所有CSS属性对象,element.style只能获取元素style属性中的CSS样式<br>  element.currentStyle返回的是元素当前应用的最终CSS属性值（包括外链CSS文件，页面中嵌入的<style>属性等,从作用上将，getComputedStyle方法与currentStyle属性走的很近，形式上则style与currentStyle走的近<br>  <code>(element.currentStyle? element.currentStyle : window.getComputedStyle(element, null)).height</code></p>
-</li>
-<li><p>高性能的Javascript</p>
-</li>
-<li>cookie&amp;&amp;session<ul>
+<h3 id="作用域与变量声明提升"><a href="#作用域与变量声明提升" class="headerlink" title="作用域与变量声明提升"></a><a href="http://www.w3cplus.com/javascript/javascript-hoisting-in-details.html" target="_blank" rel="external">作用域与变量声明提升</a></h3><h3 id="getComputedStyle"><a href="#getComputedStyle" class="headerlink" title="getComputedStyle"></a>getComputedStyle</h3><p>  <strong>getComputedStyle</strong>是一个可以获取当前元素所有最终使用的CSS属性值。返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，<strong>只读</strong>。<br>  vs element.style<br>  getComputedStyle方法是只读的，只能获取样式，不能设置；而<strong>element.style</strong>能读能写<br>  getComputedStyle方法获取的是最终应用在元素上的所有CSS属性对象,element.style只能获取元素style属性中的CSS样式<br>  element.currentStyle返回的是元素当前应用的最终CSS属性值（包括外链CSS文件，页面中嵌入的<style>属性等,从作用上将，getComputedStyle方法与currentStyle属性走的很近，形式上则style与currentStyle走的近<br>    <code>(element.currentStyle? element.currentStyle : window.getComputedStyle(element, null)).height</code></p>
+<h3 id="高性能的Javascript"><a href="#高性能的Javascript" class="headerlink" title="高性能的Javascript"></a>高性能的Javascript</h3><h3 id="cookie-amp-amp-session"><a href="#cookie-amp-amp-session" class="headerlink" title="cookie&amp;&amp;session"></a>cookie&amp;&amp;session</h3><ul>
 <li>cookie<br>服务器向客户端发送 cookie，通常使用 HTTP 协议规定的 set-cookie 头操作( cookie 的格式为 name = value)<br>浏览器将 cookie 保存<br>每次请求浏览器都会将 cookie 发向服务器<br>其他可选的 cookie 参数:<br>path:cookie 影响到的路径，匹配该路径才发送这个 cookie<br>secure:当 secure 值为 true 时，cookie 在 HTTP 中是无效，在 HTTPS 中才有效<br>expires 和 maxAge:告诉浏览器这个 cookie 什么时候过期，expires 是 UTC 格式时间，maxAge 是 cookie 相对时间。当不设置这两个选项时，会产生 session cookie，session cookie 是 transient 的，当用户关闭浏览器时，就被清除。一般用来保存 session 的 session_id。<br>httpOnly：浏览器不允许脚本操作 document.cookie 去更改 cookie。一般情况下都应该设置这个为 true，这样可以避免被 xss 攻击拿到 cookie。</li>
 <li>session<br>session 中的数据是保留在服务器端的,通过一个 session_id(express中是connect.sid)来进行。session_id 通常是存放在客户端的 cookie 中.当请求到来时，服务端检查 cookie 中保存的 session_id 并通过这个 session_id 与服务器端的 session data 关联起来，进行数据的保存和修改。<br>session 可以存放在 1）内存、2）cookie本身、3）redis 或 memcached 等缓存中，或者4）数据库中</li>
 </ul>
-</li>
+<hr>
+<ul>
 <li>内存泄漏</li>
 <li>jquery实现原理</li>
 <li>jQuery.fn的init方法返回的this指的是什么对象</li>
@@ -464,7 +445,7 @@ javascript
 <li>fire函数、自定义事件</li>
 <li>jQuery 是通过哪个方法和 Sizzle 选择器结合的</li>
 <li>jQuery性能的优化</li>
-<li>Jquery与jQuery UI </li>
+<li>Jquery与jQuery UI</li>
 <li>jquery 中如何将数组转化为json字符串，然后再转化回来</li>
 <li>jQuery和Zepto</li>
 <li>Zepto的点透问题</li>
@@ -479,7 +460,7 @@ javascript
 <li>检测浏览器版本</li>
 <li><a href="https://segmentfault.com/a/1190000004623125">CSRF XSS</a></li>
 </ul>
-</style></p></li></ul>
+</style></p>
       
     </div>
 
@@ -638,7 +619,7 @@ javascript
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript"><span class="nav-number">1.</span> <span class="nav-text">javascript</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置对象"><span class="nav-number">2.</span> <span class="nav-text">内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript有几种类型的值"><span class="nav-number">3.</span> <span class="nav-text">JavaScript有几种类型的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">4.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型"><span class="nav-number">5.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建对象"><span class="nav-number">6.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域链"><span class="nav-number">7.</span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#This对象：引用的是函数据以执行的环境对象"><span class="nav-number">8.</span> <span class="nav-text">This对象：引用的是函数据以执行的环境对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null，undefined"><span class="nav-number">9.</span> <span class="nav-text">null，undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#attribute和property"><span class="nav-number">10.</span> <span class="nav-text">attribute和property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window，document"><span class="nav-number">11.</span> <span class="nav-text">window，document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件机制"><span class="nav-number">12.</span> <span class="nav-text">事件机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#use-strict"><span class="nav-number">13.</span> <span class="nav-text">use strict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new操作符"><span class="nav-number">14.</span> <span class="nav-text">new操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js延迟加载"><span class="nav-number">15.</span> <span class="nav-text">js延迟加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax"><span class="nav-number">16.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域"><span class="nav-number">17.</span> <span class="nav-text">跨域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块化开发"><span class="nav-number">18.</span> <span class="nav-text">模块化开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript6"><span class="nav-number">19.</span> <span class="nav-text">ECMAScript6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-write，innerHtml"><span class="nav-number">20.</span> <span class="nav-text">document.write，innerHtml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offsetWidth"><span class="nav-number">21.</span> <span class="nav-text">offsetWidth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域与变量声明提升"><span class="nav-number">22.</span> <span class="nav-text">作用域与变量声明提升</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getComputedStyle"><span class="nav-number">23.</span> <span class="nav-text">getComputedStyle</span></a></li></ol></div>
             
           </div>
         </section>

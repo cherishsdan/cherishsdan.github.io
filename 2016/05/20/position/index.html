@@ -108,7 +108,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/20/position/index.html">
 <meta property="og:site_name" content="JYsdan">
 <meta property="og:description" content="元素在页面中的布局遵守一套文档流的方式，默认的定位属性值为static。它其实是未被设置定位的。元素如果被定位了，那么它的top,left,bottom,right值就会生效，能设置定位的属性是relative,absolute和fixed。需要注意的另一点是被定位的元素层次(z-index)会得到提高。">
-<meta property="og:updated_time" content="2016-09-17T05:33:12.452Z">
+<meta property="og:updated_time" content="2016-09-18T14:24:12.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="position">
 <meta name="twitter:description" content="元素在页面中的布局遵守一套文档流的方式，默认的定位属性值为static。它其实是未被设置定位的。元素如果被定位了，那么它的top,left,bottom,right值就会生效，能设置定位的属性是relative,absolute和fixed。需要注意的另一点是被定位的元素层次(z-index)会得到提高。">
@@ -362,23 +362,21 @@
 
       
         <p>元素在页面中的布局遵守一套文档流的方式，默认的定位属性值为static。它其实是未被设置定位的。<br>元素如果被定位了，那么它的top,left,bottom,right值就会生效，能设置定位的属性是relative,absolute和fixed。<br>需要注意的另一点是被定位的元素层次(z-index)会得到提高。<br><a id="more"></a></p>
-<ol>
-<li>relative<br> 自己通过定位跑开了还用着原来的位置，不会给周围的诸如文本流之类的元素<br> 设置了相对定位之后，通过修改top,left,bottom,right值，元素会在自身文档流所在位置上被移动，其他的元素则不会调整位置来弥补它偏离后剩下的空隙。<ul>
+<h3 id="relative"><a href="#relative" class="headerlink" title="relative"></a>relative</h3><p>自己通过定位跑开了还用着原来的位置，不会给周围的诸如文本流之类的元素<br>设置了相对定位之后，通过修改top,left,bottom,right值，元素会在自身文档流所在位置上被移动，其他的元素则不会调整位置来弥补它偏离后剩下的空隙。</p>
+<ul>
 <li>不影响元素本身的特性</li>
 <li>不使元素脱离文档流</li>
 </ul>
-</li>
-<li>absolute<br> 设置了绝对定位之后，元素脱离文档流，其他的元素会调整位置来弥补它偏离后剩下的空隙。元素偏移是相对于是它最近的设置了定位属性（position值不为static）的元素。<ul>
+<h3 id="absolute"><a href="#absolute" class="headerlink" title="absolute"></a>absolute</h3><p>设置了绝对定位之后，元素脱离文档流，其他的元素会调整位置来弥补它偏离后剩下的空隙。元素偏移是相对于是它最近的设置了定位属性（position值不为static）的元素。</p>
+<ul>
 <li>使元素完全脱离文档流</li>
 <li>使内嵌元素支持宽高</li>
 <li>块属性标签内容撑开宽度</li>
 <li>如果有定位父级则相当于定位父级发生偏移，没有定位父级则相当于整个文档发生偏移</li>
 </ul>
-</li>
-<li>fixed(固定定位)<br> 设置了固定定位之后，元素相对的偏移的参考是可视窗口，即使页面滚动，元素仍然会在固定位置</li>
-<li>规定从父元素继承 position 属性的值。</li>
-<li>position: sticky<br> 是一个新的css3属性，它的表现类似position:relative和position:fixed的合体，在目标区域在屏幕中可见时，它的行为就像position:relative; 而当页面滚动超出目标区域时，它的表现就像position:fixed，它会固定在目标位置。</li>
-</ol>
+<h3 id="fixed-固定定位"><a href="#fixed-固定定位" class="headerlink" title="fixed(固定定位)"></a>fixed(固定定位)</h3><p>设置了固定定位之后，元素相对的偏移的参考是可视窗口，即使页面滚动，元素仍然会在固定位置</p>
+<h3 id="static-默认值"><a href="#static-默认值" class="headerlink" title="static(默认值)"></a>static(默认值)</h3><p>没有定位，元素出现在正常的流中</p>
+<h3 id="position-sticky"><a href="#position-sticky" class="headerlink" title="position: sticky"></a>position: sticky</h3><p>是一个新的css3属性，它的表现类似position:relative和position:fixed的合体，在目标区域在屏幕中可见时，它的行为就像position:relative; 而当页面滚动超出目标区域时，它的表现就像position:fixed，它会固定在目标位置。</p>
 
       
     </div>
@@ -538,7 +536,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#relative"><span class="nav-number">1.</span> <span class="nav-text">relative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#absolute"><span class="nav-number">2.</span> <span class="nav-text">absolute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fixed-固定定位"><span class="nav-number">3.</span> <span class="nav-text">fixed(固定定位)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-默认值"><span class="nav-number">4.</span> <span class="nav-text">static(默认值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position-sticky"><span class="nav-number">5.</span> <span class="nav-text">position: sticky</span></a></li></ol></div>
             
           </div>
         </section>
